@@ -5,17 +5,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xdev-software</groupId>
-	<artifactId>standard-maven-template</artifactId>
+	<artifactId>chartjs-java-model</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>standard-maven-template</name>
-	<description>standard-maven-template</description>
-	<url>https://github.com/xdev-software/standard-maven-template</url>
+	<name>chartjs-java-model</name>
+	<description>chartjs-java-model</description>
+	<url>https://github.com/xdev-software/chartjs-java-model</url>
 
 	<scm>
-		<url>https://github.com/xdev-software/standard-maven-template</url>
-		<connection>https://github.com/xdev-software/standard-maven-template.git</connection>
+		<url>https://github.com/xdev-software/chartjs-java-model</url>
+		<connection>https://github.com/xdev-software/chartjs-java-model.git</connection>
 	</scm>
 
 	<inceptionYear>2023</inceptionYear>
