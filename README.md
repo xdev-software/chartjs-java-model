@@ -10,6 +10,10 @@ This repo extends the abandoned [Chart.java](https://github.com/mdewilde/chart) 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/chartjs-java-model/releases/latest#Installation)
 
+#### Compatibility with Chart.js
+| Chart.js | ``chartjs-java-model`` version |
+| --- | --- |
+| 4.x | ``1+`` |
 
 ## Support
 If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services/support).
