@@ -61,3 +61,10 @@ jobs:
         name: demo-files-java-${{ matrix.java }}
         path: ${{ env.DEMO_MAVEN_MODULE }}/target/${{ env.DEMO_MAVEN_MODULE }}.jar
         if-no-files-found: error
+
+    - name: Upload screenshots of test failures
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-fail-screenshots-${{ matrix.java }}
+        path: ${{ env.PRIMARY_MAVEN_MODULE }}/target/screenshots
+        if-no-files-found: ignore
