@@ -6,11 +6,11 @@ import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import software.xdev.chart_java.charts.BarChart;
-import software.xdev.chart_java.charts.Chart;
-import software.xdev.chart_java.data.BarData;
-import software.xdev.chart_java.dataset.BarDataset;
-import software.xdev.chart_java.options.BarOptions;
+import software.xdev.chartjs.model.charts.BarChart;
+import software.xdev.chartjs.model.charts.Chart;
+import software.xdev.chartjs.model.data.BarData;
+import software.xdev.chartjs.model.dataset.BarDataset;
+import software.xdev.chartjs.model.options.BarOptions;
 
 
 public final class Application
