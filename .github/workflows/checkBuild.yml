@@ -63,6 +63,7 @@ jobs:
         if-no-files-found: error
 
     - name: Upload screenshots of test failures
+      if: failure()
       uses: actions/upload-artifact@v3
       with:
         name: test-fail-screenshots-${{ matrix.java }}
