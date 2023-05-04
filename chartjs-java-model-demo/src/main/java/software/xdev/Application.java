@@ -32,6 +32,7 @@ public final class Application
 			.setOptions(new BarOptions()));
 	}
 	
+	@SuppressWarnings("java:S5443") // Only a demo nothing sensitive is here
 	private static void createAndOpenTestFile(final Chart<?, ?, ?> chart)
 	{
 		try
@@ -43,16 +44,16 @@ public final class Application
 				"""
 					<!DOCTYPE html>
 					<html lang='en'>
-						<head>
-							<meta charset='UTF-8'>
-							<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"></script>
-						</head>
-						<body>
-							<canvas id='c' style='border:1px solid #555;'></canvas>
-							<script>
-								new Chart(document.getElementById('c').getContext('2d'), %s);
-							</script>
-						</body>
+					\t<head>
+					\t\t<meta charset='UTF-8'>
+					\t\t<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"></script>
+					\t</head>
+					\t<body>
+					\t\t<canvas id='c' style='border:1px solid #555;'></canvas>
+					\t\t<script>
+					\t\t\tnew Chart(document.getElementById('c').getContext('2d'), %s);
+					\t\t</script>
+					\t</body>
 					</html>
 					""".formatted(chart.toJson()));
 			
