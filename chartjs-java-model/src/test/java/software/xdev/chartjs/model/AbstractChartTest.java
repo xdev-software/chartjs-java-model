@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.Arrays;
 
 import org.openqa.selenium.OutputType;
@@ -129,6 +130,7 @@ public abstract class AbstractChartTest
 	protected Path createHtmlTempFileFor(final Chart<?, ?, ?> chart) throws IOException
 	{
 		final Path tmp = Files.createTempFile(TEMP_DIR, "chart_test_", ".html");
+		Files.setPosixFilePermissions(tmp, PosixFilePermissions.fromString("rwxrwxr-x"));
 		
 		final String json = chart.toJson();
 		Files.writeString(
