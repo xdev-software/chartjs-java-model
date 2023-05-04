@@ -30,18 +30,21 @@
  */
 package software.xdev.chart_java.color;
 
+import java.security.SecureRandom;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Random;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
 /**
  * Immutable RGBa color model.
  */
-public class Color {
-
-	private static final Random RANDOMIZER = new Random(System.nanoTime());
-
+public class Color
+{
+	private static final Random RANDOMIZER = new SecureRandom();
+	
 	public static final Color TRANSPARENT = new Color(0, 0, 0, 0);
 	public static final Color BLACK = new Color(0, 0, 0);
 	public static final Color WHITE = new Color(255, 255, 255);
@@ -104,33 +107,28 @@ public class Color {
 	public static final Color DIM_GRAY = new Color(105, 105, 105);
 	public static final Color DARK_GRAY = new Color(169, 169, 169);
 	public static final Color LIGHT_GRAY = new Color(211, 211, 211);
-
+	
 	private final int r;
 	private final int g;
 	private final int b;
 	private final double alpha;
-
+	
 	/**
 	 * Constructs a new Color instance
-	 * 
-	 * @param r
-	 *            value for Red color channel. Value between 0 and 255
-	 *            (inclusive).
-	 * @param g
-	 *            value for Green color channel. Value between 0 and 255
-	 *            (inclusive).
-	 * @param b
-	 *            value for Blue color channel. Value between 0 and 255
-	 *            (inclusive).
-	 * @param alpha
-	 *            value for alpha transparency. Value between 0 and 1
-	 *            (inclusive), with 0 fully transparent and 1 fully opaque.
+	 *
+	 * @param r     value for Red color channel. Value between 0 and 255 (inclusive).
+	 * @param g     value for Green color channel. Value between 0 and 255 (inclusive).
+	 * @param b     value for Blue color channel. Value between 0 and 255 (inclusive).
+	 * @param alpha value for alpha transparency. Value between 0 and 1 (inclusive), with 0 fully transparent and 1
+	 *              fully opaque.
 	 */
-	public Color(final int r, final int g, final int b, final double alpha) {
-		if (!Color.isChannelWithinBounds(r)
+	public Color(final int r, final int g, final int b, final double alpha)
+	{
+		if(!Color.isChannelWithinBounds(r)
 			|| !Color.isChannelWithinBounds(g)
 			|| !Color.isChannelWithinBounds(b)
-			|| !Color.isAlphaWithinBounds(alpha)) {
+			|| !Color.isAlphaWithinBounds(alpha))
+		{
 			throw new IllegalArgumentException("at least one argument is not within bounds");
 		}
 		this.r = r;
@@ -138,33 +136,31 @@ public class Color {
 		this.b = b;
 		this.alpha = alpha;
 	}
-
+	
 	/**
 	 * Constructs a new Color instance with alpha set fully opaque
-	 * 
-	 * @param r
-	 *            value for Red color channel. Value between 0 and 255
-	 *            (inclusive).
-	 * @param g
-	 *            value for Green color channel. Value between 0 and 255
-	 *            (inclusive).
-	 * @param b
-	 *            value for Blue color channel. Value between 0 and 255
-	 *            (inclusive).
+	 *
+	 * @param r value for Red color channel. Value between 0 and 255 (inclusive).
+	 * @param g value for Green color channel. Value between 0 and 255 (inclusive).
+	 * @param b value for Blue color channel. Value between 0 and 255 (inclusive).
 	 */
-	public Color(final int r, final int g, final int b) {
+	public Color(final int r, final int g, final int b)
+	{
 		this(r, g, b, 1);
 	}
-
+	
 	/**
-	 * Constructs a new Color instance with the RGB values of the Color argument
-	 * and the alpha transparency of the double argument.
+	 * Constructs a new Color instance with the RGB values of the Color argument and the alpha transparency of the
+	 * double argument.
 	 */
-	public Color(final Color color, final double alpha) {
-		if (color == null) {
+	public Color(final Color color, final double alpha)
+	{
+		if(color == null)
+		{
 			throw new IllegalArgumentException("Color argument may not be null");
 		}
-		if (!Color.isAlphaWithinBounds(alpha)) {
+		if(!Color.isAlphaWithinBounds(alpha))
+		{
 			throw new IllegalArgumentException("alpha double argument is not within allowed bounds: "
 				+ "allowed values are between 0 and 1 (inclusive), but value passed is " + alpha);
 		}
@@ -173,124 +169,125 @@ public class Color {
 		this.b = color.getB();
 		this.alpha = alpha;
 	}
-
+	
 	/**
 	 * Constructs and returns a new fully random Color instance.
-	 * 
+	 *
 	 * @return Color
 	 */
-	public static Color random() {
+	public static Color random()
+	{
 		final int r = RANDOMIZER.nextInt(256);
 		final int g = RANDOMIZER.nextInt(256);
 		final int b = RANDOMIZER.nextInt(256);
 		final double a = RANDOMIZER.nextDouble();
 		return new Color(r, g, b, a);
 	}
-
+	
 	/**
 	 * <p>
 	 * Verify that argument is valid value for the R, G or B channel.
 	 * </p>
-	 * 
+	 *
 	 * <p>
 	 * Any integer between 0 and 255 (inclusive) is valid.
 	 * </p>
-	 * 
+	 *
 	 * @param channel
 	 * @return true if argument is valid R, G or B value
 	 */
-	public static boolean isChannelWithinBounds(final int channel) {
+	public static boolean isChannelWithinBounds(final int channel)
+	{
 		return channel >= 0 && channel <= 255;
 	}
-
+	
 	/**
 	 * <p>
 	 * Verify that argument is valid value for the alpha channel.
 	 * </p>
-	 * 
+	 *
 	 * <p>
 	 * Any double between 0.0d and 1.0d (inclusive) is valid.
 	 * </p>
-	 * 
+	 *
 	 * @param alpha
 	 * @return true if argument is valid alpha value
 	 */
-	public static boolean isAlphaWithinBounds(final double alpha) {
+	public static boolean isAlphaWithinBounds(final double alpha)
+	{
 		return Double.compare(0.0d, alpha) <= 0 && Double.compare(1.0d, alpha) >= 0;
 	}
-
+	
 	/**
 	 * @return red channel value, between 0 and 255 (inclusive)
 	 */
-	public int getR() {
+	public int getR()
+	{
 		return this.r;
 	}
-
+	
 	/**
 	 * @return green channel value, between 0 and 255 (inclusive)
 	 */
-	public int getG() {
+	public int getG()
+	{
 		return this.g;
 	}
-
+	
 	/**
 	 * @return blue channel value, between 0 and 255 (inclusive)
 	 */
-	public int getB() {
+	public int getB()
+	{
 		return this.b;
 	}
-
+	
 	/**
 	 * @return alpha channel value, between 0.0d and 1.0d (inclusive)
 	 */
-	public double getAlpha() {
+	public double getAlpha()
+	{
 		return this.alpha;
 	}
-
+	
 	/**
 	 * @return serialized version of this {@code Color}, as used for JSON.
 	 */
 	@JsonValue
-	public String rgba() {
-		return "rgba(" + this.r + "," + this.g + "," + this.b + "," + String.format(Locale.US, "%.3f", this.alpha) + ")";
+	public String rgba()
+	{
+		return "rgba("
+			+ this.r + ","
+			+ this.g + ","
+			+ this.b + ","
+			+ String.format(Locale.US, "%.3f", this.alpha)
+			+ ")";
 	}
-
+	
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return this.rgba();
 	}
-
+	
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		final long temp;
-		temp = Double.doubleToLongBits(this.alpha);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + this.b;
-		result = prime * result + this.g;
-		result = prime * result + this.r;
-		return result;
-	}
-
-	@Override
-	public boolean equals(final Object obj) {
-		if (this == obj)
+	public boolean equals(final Object o)
+	{
+		if(this == o)
+		{
 			return true;
-		if (obj == null)
+		}
+		if(!(o instanceof final Color color))
+		{
 			return false;
-		if (this.getClass() != obj.getClass())
-			return false;
-		final Color other = (Color) obj;
-		if (Double.doubleToLongBits(this.alpha) != Double.doubleToLongBits(other.alpha))
-			return false;
-		if (this.b != other.b)
-			return false;
-		if (this.g != other.g)
-			return false;
-		if (this.r != other.r)
-			return false;
-		return true;
+		}
+		return this.getR() == color.getR() && this.getG() == color.getG() && this.getB() == color.getB()
+			&& Double.compare(color.getAlpha(), this.getAlpha()) == 0;
 	}
-
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(this.getR(), this.getG(), this.getB(), this.getAlpha());
+	}
 }
