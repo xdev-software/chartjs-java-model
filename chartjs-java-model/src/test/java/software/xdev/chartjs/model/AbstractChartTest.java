@@ -21,16 +21,13 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.attribute.PosixFilePermissions;
 import java.util.Arrays;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.testcontainers.containers.BindMode;
 import org.testcontainers.containers.BrowserWebDriverContainer;
+import org.testcontainers.utility.MountableFile;
 
 import software.xdev.chartjs.model.charts.Chart;
 import software.xdev.chartjs.model.container.SimpleBrowserWebDriverContainer;
@@ -42,24 +39,11 @@ public abstract class AbstractChartTest
 	protected static final String RESOURCES_SCREENSHOT_REFERENCES = "./src/test/resources/screenshotReferences/";
 	protected static final String SCREENSHOT_SUFFIX = ".png";
 	
-	protected static final String HOME_DIRECTORY = "/home/user/";
-	
-	protected static final Path TEMP_DIR = createTempDir();
+	protected static final String TEST_TEMPLATE_HTML_FILE = "test-template.html";
+	protected static final String CONTAINER_TEST_TEMPLATE_HTML_FILE = "/home/user/" + TEST_TEMPLATE_HTML_FILE;
 	
 	// One Container is started once and only the rendered HTML is changed. Improves performance.
 	protected static final SimpleBrowserWebDriverContainer WEB_CONTAINER = createBrowserWithTempDirectoryMounted();
-	
-	private static Path createTempDir()
-	{
-		try
-		{
-			return Files.createTempDirectory("charttests");
-		}
-		catch(final IOException e)
-		{
-			throw new UncheckedIOException(e);
-		}
-	}
 	
 	private static SimpleBrowserWebDriverContainer createBrowserWithTempDirectoryMounted()
 	{
@@ -70,9 +54,13 @@ public abstract class AbstractChartTest
 		}
 		
 		final SimpleBrowserWebDriverContainer browserContainer = new SimpleBrowserWebDriverContainer()
-			.withRecordingMode(BrowserWebDriverContainer.VncRecordingMode.SKIP, TEMP_DIR.toFile())
+			.withRecordingMode(
+				BrowserWebDriverContainer.VncRecordingMode.SKIP,
+				null)
 			.withCapabilities(new ChromeOptions())
-			.withFileSystemBind(TEMP_DIR.toAbsolutePath().toString(), HOME_DIRECTORY, BindMode.READ_ONLY);
+			.withCopyFileToContainer(
+				MountableFile.forClasspathResource("/" + TEST_TEMPLATE_HTML_FILE),
+				CONTAINER_TEST_TEMPLATE_HTML_FILE);
 		browserContainer.start();
 		return browserContainer;
 	}
@@ -89,8 +77,11 @@ public abstract class AbstractChartTest
 	{
 		try
 		{
-			final Path chartFile = this.createHtmlTempFileFor(chart);
-			browserContainer.webDriver().get("file://" + HOME_DIRECTORY + chartFile.getFileName());
+			browserContainer.webDriver().get("file://" + CONTAINER_TEST_TEMPLATE_HTML_FILE);
+			browserContainer.webDriver().executeScript(
+				String.format(
+					"new Chart(document.getElementById('c').getContext('2d'), %s)",
+					chart.toJson()));
 			this.assertCurrentBrowserViewEqualsScreenshot(
 				browserContainer,
 				chart.getClass().getSimpleName() + screenshotReference);
@@ -125,39 +116,5 @@ public abstract class AbstractChartTest
 			Files.write(path, actual);
 			assertArrayEquals(expected, actual);
 		}
-	}
-	
-	protected Path createHtmlTempFileFor(final Chart<?, ?, ?> chart) throws IOException
-	{
-		final Path tmp = Files.createTempFile(TEMP_DIR, "chart_test_", ".html");
-		Files.setPosixFilePermissions(tmp, PosixFilePermissions.fromString("rwxrwxr-x"));
-		
-		final String json = chart.toJson();
-		Files.writeString(
-			tmp,
-			"""
-				<!DOCTYPE html>
-				<html lang='en'>
-				\t<head>
-				\t\t<meta charset='UTF-8'>
-				\t\t<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"></script>
-				\t</head>
-				\t<body>
-				\t\t<canvas id='c' style='border:1px solid #555;'></canvas>
-				\t\t<script>
-				\t\t\tnew Chart(document.getElementById('c').getContext('2d'), %s);
-				\t\t</script>
-				\t</body>
-				</html>
-				""".formatted(json));
-		
-		this.log().info("Wrote file {} with:\n{}", tmp, json);
-		
-		return tmp;
-	}
-	
-	protected Logger log()
-	{
-		return LoggerFactory.getLogger(this.getClass());
 	}
 }
