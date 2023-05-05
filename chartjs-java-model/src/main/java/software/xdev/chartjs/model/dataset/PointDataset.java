@@ -30,7 +30,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 {
 	private String label;
 	
-	private Fill fill;
+	private Fill<?> fill;
 	
 	private Float lineTension;
 	
@@ -93,7 +93,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * If true, fill the area under the line
 	 */
-	public T setFill(final Fill fill)
+	public T setFill(final Fill<?> fill)
 	{
 		this.fill = fill;
 		return this.self();

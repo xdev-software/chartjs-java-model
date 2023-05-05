@@ -26,36 +26,7 @@ import software.xdev.chartjs.model.options.elements.BarElements;
 public class BarOptions extends Options<BarOptions, DefaultAnimation>
 {
 	protected IndexAxis indexAxis = IndexAxis.X;
-	protected Hover hover;
 	protected BarElements elements;
-	
-	/**
-	 * @return {@link Hover} instance or {@code null}
-	 * @see #setHover(Hover)
-	 */
-	@Override
-	public Hover getHover()
-	{
-		return this.hover;
-	}
-	
-	/**
-	 * <p>
-	 * Label's hover mode. "label" is used since the x axis displays data by the index in the dataset.
-	 * </p>
-	 * <p>
-	 * Default {@code "label"}
-	 * </p>
-	 *
-	 * @param hover {@link Hover} instance or {@code null}
-	 * @return this {@link BarOptions} instance for method chaining
-	 */
-	@Override
-	public BarOptions setHover(final Hover hover)
-	{
-		this.hover = hover;
-		return this;
-	}
 	
 	/**
 	 * @return {@link BarElements} instance, or {@code null} if not set

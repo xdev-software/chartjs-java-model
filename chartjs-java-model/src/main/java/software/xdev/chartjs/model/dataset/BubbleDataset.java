@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.dataset;
 
 import java.util.List;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.datapoint.BubbleDataPoint;
 import software.xdev.chartjs.model.objects.OptionalArray;
 
@@ -33,101 +32,7 @@ import software.xdev.chartjs.model.objects.OptionalArray;
  */
 public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
 {
-	
-	/**
-	 * @see #setHoverRadius(List)
-	 */
 	private final List<Integer> hoverRadius = new OptionalArray<>();
-	
-	/**
-	 * <p>
-	 * The fill color of the bubbles.
-	 * </p>
-	 *
-	 * <p>
-	 * Each BubbleDataPoint in this BubbleDataset uses the backgroundColor at its corresponding index.
-	 * </p>
-	 */
-	@Override
-	public BubbleDataset setBackgroundColor(final List<Color> backgroundColor)
-	{
-		return super.setBackgroundColor(backgroundColor);
-	}
-	
-	/**
-	 * <p>
-	 * The stroke color of the bubbles.
-	 * </p>
-	 *
-	 * <p>
-	 * Each BubbleDataPoint in this BubbleDataset uses the borderColor at its corresponding index.
-	 * </p>
-	 */
-	@Override
-	public BubbleDataset setBorderColor(final List<Color> borderColor)
-	{
-		return super.setBorderColor(borderColor);
-	}
-	
-	/**
-	 * <p>
-	 * The stroke width of bubble in pixels.
-	 * </p>
-	 *
-	 * <p>
-	 * Each BubbleDataPoint in this BubbleDataset uses the borderWidth at the its corresponding index.
-	 * </p>
-	 */
-	@Override
-	public BubbleDataset setBorderWidth(final List<Integer> borderWidth)
-	{
-		return super.setBorderWidth(borderWidth);
-	}
-	
-	/**
-	 * <p>
-	 * The fill color of the bubbles when hovered.
-	 * </p>
-	 *
-	 * <p>
-	 * Each BubbleDataPoint in this BubbleDataset uses the hoverBackgroundColor at its corresponding index.
-	 * </p>
-	 */
-	@Override
-	public BubbleDataset setHoverBackgroundColor(final List<Color> hoverBackgroundColor)
-	{
-		return super.setHoverBackgroundColor(hoverBackgroundColor);
-	}
-	
-	/**
-	 * <p>
-	 * The stroke color of the bubbles when hovered.
-	 * </p>
-	 *
-	 * <p>
-	 * Each BubbleDataPoint in this BubbleDataset uses the hoverBorderColor at its corresponding index.
-	 * </p>
-	 */
-	@Override
-	public BubbleDataset setHoverBorderColor(final List<Color> hoverBorderColor)
-	{
-		return super.setHoverBorderColor(hoverBorderColor);
-	}
-	
-	/**
-	 * <p>
-	 * The stroke width of the bubbles when hovered.
-	 * </p>
-	 *
-	 * <p>
-	 * Each BubbleDataPoint in this BubbleDataset uses the hoverBorderWidth at its corresponding index.
-	 * </p>
-	 */
-	@Override
-	public BubbleDataset setHoverBorderWidth(final List<Integer> hoverBorderWidth)
-	{
-		return super.setHoverBorderWidth(hoverBorderWidth);
-	}
 	
 	/**
 	 * <p>
@@ -155,5 +60,10 @@ public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
 	{
 		this.hoverRadius.add(hoverRadius);
 		return this;
+	}
+	
+	public List<Integer> getHoverRadius()
+	{
+		return this.hoverRadius;
 	}
 }

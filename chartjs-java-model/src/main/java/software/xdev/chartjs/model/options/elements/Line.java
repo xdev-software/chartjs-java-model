@@ -33,60 +33,16 @@ import software.xdev.chartjs.model.enums.BorderJoinStyle;
  */
 public class Line
 {
-	
-	/**
-	 * @see #setTension(Float)
-	 */
 	protected Float tension;
-	
-	/**
-	 * @see #setBackgroundColor(Color)
-	 */
 	protected Color backgroundColor;
-	
-	/**
-	 * @see #setBorderWidth(Integer)
-	 */
 	protected Integer borderWidth;
-	
-	/**
-	 * @see #setBorderColor(Color)
-	 */
 	protected Color borderColor;
-	
-	/**
-	 * @see #setBorderCapStyle(BorderCapStyle)
-	 */
 	protected BorderCapStyle borderCapStyle;
-	
-	/**
-	 * @see #setBorderDash(List)
-	 */
 	protected List<Integer> borderDash;
-	
-	/**
-	 * @see #setBorderDashOffset(Float)
-	 */
 	protected Float borderDashOffset;
-	
-	/**
-	 * @see #setBorderJoinStyle(BorderJoinStyle)
-	 */
 	protected BorderJoinStyle borderJoinStyle;
-	
-	/**
-	 * @see #setCapBezierPoints(Boolean)
-	 */
 	protected Boolean capBezierPoints;
-	
-	/**
-	 * @see #setFill(Fill)
-	 */
-	protected Fill fill;
-	
-	/**
-	 * @see #setStepped(Boolean)
-	 */
+	protected Fill<?> fill;
 	protected Boolean stepped;
 	
 	/**
@@ -339,7 +295,7 @@ public class Line
 	 * Default {@code true}
 	 * </p>
 	 */
-	public Line setFill(final Fill fill)
+	public Line setFill(final Fill<?> fill)
 	{
 		this.fill = fill;
 		return this;

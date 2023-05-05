@@ -15,11 +15,23 @@
  */
 package software.xdev.chartjs.model.options.animation;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import software.xdev.chartjs.model.EnumNameToCamelCase;
+
+
 public enum AnimationType
 {
-	x,
-	y,
-	borderWidth,
-	radius,
-	tension
+	X,
+	Y,
+	BORDER_WIDTH,
+	RADIUS,
+	TENSION;
+	
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		return EnumNameToCamelCase.getName(this);
+	}
 }

@@ -15,6 +15,8 @@
  */
 package software.xdev.chartjs.model.charts;
 
+import java.io.UncheckedIOException;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -96,7 +98,7 @@ public abstract class AbstractChart<T, O extends Options<O, ?>, D extends Data<D
 		}
 		catch(final JsonProcessingException e)
 		{
-			throw new RuntimeException(e);
+			throw new UncheckedIOException("Failed to write json", e);
 		}
 	}
 	

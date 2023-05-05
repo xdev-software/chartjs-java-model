@@ -99,7 +99,7 @@ public class BarChart extends AbstractChart<BarChart, BarOptions, BarData>
 			{
 				return false;
 			}
-			if(dataset.getData().size() > 0)
+			if(!dataset.getData().isEmpty())
 			{
 				sufficientData = true;
 			}

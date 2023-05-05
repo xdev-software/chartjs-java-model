@@ -31,13 +31,6 @@ public class BarScale<T extends Ticks<T>> extends Scale<T, BarScale<T>>
 	protected String type;
 	
 	/**
-	 * Default {@code true}
-	 *
-	 * @see #setDisplay(Boolean display)
-	 */
-	protected Boolean display;
-	
-	/**
 	 * Default {@code 0.8}
 	 *
 	 * @see #setCategoryPercentage(BigDecimal categoryPercentage)
@@ -56,13 +49,6 @@ public class BarScale<T extends Ticks<T>> extends Scale<T, BarScale<T>>
 	protected BigDecimal maxBarThickness;
 	
 	/**
-	 * Default {@code offsetGridLines == true}
-	 *
-	 * @see #setGridLines(GridLines gridLines)
-	 */
-	protected GridLines gridLines;
-	
-	/**
 	 * @see #setType(String type)
 	 */
 	public String getType()
@@ -73,7 +59,7 @@ public class BarScale<T extends Ticks<T>> extends Scale<T, BarScale<T>>
 	/**
 	 * As defined in Scales.
 	 */
-	public BarScale setType(final String type)
+	public BarScale<T> setType(final String type)
 	{
 		this.type = type;
 		return this;
@@ -91,7 +77,7 @@ public class BarScale<T extends Ticks<T>> extends Scale<T, BarScale<T>>
 	 * Percent (0-1) of the available width (the space between the gridlines for small datasets) for each data-point to
 	 * use for the bars.
 	 */
-	public BarScale setCategoryPercentage(final BigDecimal categoryPercentage)
+	public BarScale<T> setCategoryPercentage(final BigDecimal categoryPercentage)
 	{
 		this.categoryPercentage = categoryPercentage;
 		return this;
@@ -109,7 +95,7 @@ public class BarScale<T extends Ticks<T>> extends Scale<T, BarScale<T>>
 	 * Percent (0-1) of the available width each bar should be within the category percentage. 1.0 will take the whole
 	 * category width and put the bars right next to each other.
 	 */
-	public BarScale setBarPercentage(final BigDecimal barPercentage)
+	public BarScale<T> setBarPercentage(final BigDecimal barPercentage)
 	{
 		this.barPercentage = barPercentage;
 		return this;
@@ -129,7 +115,7 @@ public class BarScale<T extends Ticks<T>> extends Scale<T, BarScale<T>>
 	 * they take the full available widths without overlap. Then, the bars are sized using barPercentage and
 	 * categoryPercentage.
 	 */
-	public BarScale setBarThickness(final BigDecimal barThickness)
+	public BarScale<T> setBarThickness(final BigDecimal barThickness)
 	{
 		this.barThickness = barThickness;
 		return this;
@@ -146,7 +132,7 @@ public class BarScale<T extends Ticks<T>> extends Scale<T, BarScale<T>>
 	/**
 	 * Set this to ensure that bars are not sized thicker than this.
 	 */
-	public BarScale setMaxBarThickness(final BigDecimal maxBarThickness)
+	public BarScale<T> setMaxBarThickness(final BigDecimal maxBarThickness)
 	{
 		this.maxBarThickness = maxBarThickness;
 		return this;

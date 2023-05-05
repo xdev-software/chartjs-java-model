@@ -13,20 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.scales;
+package software.xdev.chartjs.model;
 
-import software.xdev.chartjs.model.options.ticks.LinearTicks;
+import java.util.Locale;
 
 
-/**
- * The linear scale is use to chart numerical data. It can be placed on either the x or y axis. The scatter chart type
- * automatically configures a line chart to use one of these scales for the x axis. As the name suggests, linear
- * interpolation is used to determine where a value lies on the axis.
- */
-public class LinearScale extends Scale<LinearTicks, LinearScale>
+public final class EnumNameToCamelCase
 {
-	public String getType()
+	private EnumNameToCamelCase()
 	{
-		return "linear";
+	}
+	
+	public static String getName(final Enum<?> e)
+	{
+		final StringBuilder sb = new StringBuilder(e.name().length());
+		for(final String s : e.name().split("_"))
+		{
+			if(sb.length() == 0)
+			{
+				sb.append(s.toLowerCase(Locale.ENGLISH));
+			}
+			else
+			{
+				sb.append(s.substring(0, 1).toUpperCase(Locale.ENGLISH));
+				sb.append(s.substring(1).toLowerCase(Locale.ENGLISH));
+			}
+		}
+		return sb.toString();
 	}
 }

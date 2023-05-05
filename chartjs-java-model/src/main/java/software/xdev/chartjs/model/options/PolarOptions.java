@@ -15,7 +15,6 @@
  */
 package software.xdev.chartjs.model.options;
 
-import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 import software.xdev.chartjs.model.options.animation.PolarAnimation;
 import software.xdev.chartjs.model.options.elements.ArcElements;
 import software.xdev.chartjs.model.options.scales.RadialLinearScale;
@@ -28,14 +27,8 @@ public class PolarOptions extends Options<PolarOptions, PolarAnimation>
 	/**
 	 * @see #setScale(RadialLinearScale scale)
 	 */
-	protected RadialLinearScale scale;
+	protected RadialLinearScale<?> scale;
 	
-	/**
-	 * Default {@code function(chart)}
-	 *
-	 * @see #setLegendCallback(JavaScriptFunction legendCallback)
-	 */
-	protected JavaScriptFunction legendCallback;
 	protected ArcElements elements;
 	
 	/**
@@ -45,7 +38,7 @@ public class PolarOptions extends Options<PolarOptions, PolarAnimation>
 	 */
 	public static RadialLinearScale scales()
 	{
-		return new RadialLinearScale();
+		return new RadialLinearScale<>();
 	}
 	
 	/**
@@ -59,28 +52,9 @@ public class PolarOptions extends Options<PolarOptions, PolarAnimation>
 	/**
 	 * Options for the one scale used on the chart. Use this to style the ticks, labels, and grid.
 	 */
-	public PolarOptions setScale(final RadialLinearScale scale)
+	public PolarOptions setScale(final RadialLinearScale<?> scale)
 	{
 		this.scale = scale;
-		return this;
-	}
-	
-	/**
-	 * @see #setLegendCallback(JavaScriptFunction legendCallback)
-	 */
-	@Override
-	public JavaScriptFunction getLegendCallback()
-	{
-		return this.legendCallback;
-	}
-	
-	/**
-	 * Generates the HTML legend via calls to generateLegend
-	 */
-	@Override
-	public PolarOptions setLegendCallback(final JavaScriptFunction legendCallback)
-	{
-		this.legendCallback = legendCallback;
 		return this;
 	}
 	

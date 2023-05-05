@@ -15,7 +15,6 @@
  */
 package software.xdev.chartjs.model.options.elements;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import software.xdev.chartjs.model.enums.FillMode;
@@ -28,6 +27,7 @@ import software.xdev.chartjs.model.enums.FillMode;
  */
 public class Fill<T>
 {
+	@SuppressWarnings("java:S1700") // Used inside JSON model
 	@JsonValue
 	protected T fill;
 	
@@ -38,6 +38,7 @@ public class Fill<T>
 	/**
 	 * @param fill - If true, fill the area under the line
 	 */
+	@SuppressWarnings("unchecked") // Support for legacy
 	public Fill(final Boolean fill)
 	{
 		this.fill = (T)fill;
@@ -46,6 +47,7 @@ public class Fill<T>
 	/**
 	 * @param index - Absolute dataset index
 	 */
+	@SuppressWarnings("unchecked") // Support for legacy
 	public Fill(final String index)
 	{
 		this.fill = (T)index;
@@ -54,23 +56,23 @@ public class Fill<T>
 	/**
 	 * @param index - Relative dataset index
 	 */
+	@SuppressWarnings("unchecked") // Support for legacy
 	public Fill(final Integer index)
 	{
 		this.fill = (T)index;
 	}
 	
+	@SuppressWarnings("unchecked") // Support for legacy
 	public Fill(final FillMode boundary)
 	{
 		this.fill = (T)boundary;
 	}
 	
-	@JsonIgnore
 	public T getFill()
 	{
 		return this.fill;
 	}
 	
-	@JsonIgnore
 	public void setFill(final T fill)
 	{
 		this.fill = fill;

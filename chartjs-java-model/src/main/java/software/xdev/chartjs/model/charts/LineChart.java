@@ -88,7 +88,7 @@ public class LineChart extends AbstractChart<LineChart, LineOptions, LineData>
 			{
 				return false;
 			}
-			if(dataset.getData().size() > 0)
+			if(!dataset.getData().isEmpty())
 			{
 				sufficientData = true;
 			}

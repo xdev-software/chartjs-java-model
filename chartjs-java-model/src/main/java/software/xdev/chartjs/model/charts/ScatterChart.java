@@ -89,7 +89,7 @@ public class ScatterChart extends AbstractChart<ScatterChart, LineOptions, Scatt
 			{
 				return false;
 			}
-			if(dataset.getData().size() > 0)
+			if(!dataset.getData().isEmpty())
 			{
 				sufficientData = true;
 			}

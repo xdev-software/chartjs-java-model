@@ -51,7 +51,7 @@ public class RadialLinearScale<T extends Ticks<T>> extends Scale<T, RadialLinear
 	 * Default {@code false}
 	 * </p>
 	 */
-	public RadialLinearScale setLineArc(final Boolean lineArc)
+	public RadialLinearScale<T> setLineArc(final Boolean lineArc)
 	{
 		this.lineArc = lineArc;
 		return this;
@@ -74,7 +74,7 @@ public class RadialLinearScale<T extends Ticks<T>> extends Scale<T, RadialLinear
 	 * Default {@code -}
 	 * </p>
 	 */
-	public RadialLinearScale setAngleLines(final AngleLines angleLines)
+	public RadialLinearScale<T> setAngleLines(final AngleLines angleLines)
 	{
 		this.angleLines = angleLines;
 		return this;
@@ -97,7 +97,7 @@ public class RadialLinearScale<T extends Ticks<T>> extends Scale<T, RadialLinear
 	 * Default {@code -}
 	 * </p>
 	 */
-	public RadialLinearScale setPointLabels(final PointLabels pointLabels)
+	public RadialLinearScale<T> setPointLabels(final PointLabels pointLabels)
 	{
 		this.pointLabels = pointLabels;
 		return this;

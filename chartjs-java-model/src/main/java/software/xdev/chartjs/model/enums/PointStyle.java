@@ -15,14 +15,13 @@
  */
 package software.xdev.chartjs.model.enums;
 
-import java.util.Locale;
-
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import software.xdev.chartjs.model.EnumNameToCamelCase;
 
 
 public enum PointStyle
 {
-	
 	CIRCLE,
 	TRIANGLE,
 	RECT,
@@ -33,30 +32,10 @@ public enum PointStyle
 	LINE,
 	DASH;
 	
-	private final String serialized;
-	
-	PointStyle()
-	{
-		final StringBuilder sb = new StringBuilder();
-		for(final String s : this.name().split("_"))
-		{
-			if(sb.length() == 0)
-			{
-				sb.append(s.toLowerCase(Locale.ENGLISH));
-			}
-			else
-			{
-				sb.append(s.substring(0, 1).toUpperCase(Locale.ENGLISH));
-				sb.append(s.substring(1).toLowerCase(Locale.ENGLISH));
-			}
-		}
-		this.serialized = sb.toString();
-	}
-	
-	@Override
 	@JsonValue
+	@Override
 	public String toString()
 	{
-		return this.serialized;
+		return EnumNameToCamelCase.getName(this);
 	}
 }
