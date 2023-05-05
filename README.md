@@ -1,6 +1,7 @@
 [![Latest version](https://img.shields.io/maven-central/v/com.xdev-software/chartjs-java-model)](https://mvnrepository.com/artifact/com.xdev-software/chartjs-java-model)
 [![Build](https://img.shields.io/github/actions/workflow/status/xdev-software/chartjs-java-model/checkBuild.yml?branch=develop)](https://github.com/xdev-software/chartjs-java-model/actions/workflows/checkBuild.yml?query=branch%3Adevelop)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xdev-software_chartjs-java-model&metric=alert_status)](https://sonarcloud.io/dashboard?id=xdev-software_chartjs-java-model)
+[![ChartJS Documentation](https://img.shields.io/badge/Chart.js-documentation-ff6384?logo=Chart.js)](https://www.chartjs.org/docs/latest/)
 
 # <img src="https://www.chartjs.org/media/logo.svg" height="38" /> chartjs-java-model
 Provides Java models for [Chart.js](https://www.chartjs.org/) so that e.g. a Java Server can build a chart and then instruct a JavaScript client what needs to be shown.
