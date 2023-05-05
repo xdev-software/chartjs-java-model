@@ -3,7 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xdev-software_chartjs-java-model&metric=alert_status)](https://sonarcloud.io/dashboard?id=xdev-software_chartjs-java-model)
 
 # <img src="https://www.chartjs.org/media/logo.svg" height="38" /> chartjs-java-model
-Provides Java models for [Chart.js](https://www.chartjs.org/) so that a Java Server can build a chart and then instruct a JavaScript client what needs to be shown.
+Provides Java models for [Chart.js](https://www.chartjs.org/) so that e.g. a Java Server can build a chart and then instruct a JavaScript client what needs to be shown.
 
 This repo extends the abandoned [Chart.java](https://github.com/mdewilde/chart) and adds support for Chart.js Version 4+.
 
