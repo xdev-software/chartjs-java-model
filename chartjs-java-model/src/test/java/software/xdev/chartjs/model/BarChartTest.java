@@ -131,4 +131,37 @@ class BarChartTest extends AbstractChartTest
 			this.getWebContainer(),
 			"Ticked");
 	}
+	
+	@Test
+	void testStackedHorizontal()
+	{
+		final BarDataset dataset1 = new BarDataset()
+			.setLabel("First stack")
+			.setData(65, 59, 80)
+			.addBackgroundColors(Color.RED, Color.RED, Color.RED);
+		
+		final BarDataset dataset2 = new BarDataset()
+			.setLabel("Second stack")
+			.setData(28, 45, 10)
+			.addBackgroundColors(Color.GREEN, Color.GREEN, Color.GREEN);
+		
+		final BarData data = new BarData()
+			.addLabels("First", "Second", "Third")
+			.addDataset(dataset1)
+			.addDataset(dataset2);
+		
+		final BarOptions options = new BarOptions();
+		options.setAnimation(false);
+		options.setIndexAxis(BarOptions.IndexAxis.Y);
+		options
+			.getScales()
+			.addScale(Scales.ScaleAxis.X, new BarScale<>().setStacked(true))
+			.addScale(Scales.ScaleAxis.Y, new BarScale<>().setStacked(true));
+		
+		this.createScreenshotAndCompare(
+			new BarChart(data, options),
+			this.getWebContainer(),
+			"StackedHorizontal"
+		);
+	}
 }
