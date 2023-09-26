@@ -29,6 +29,7 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	private String xAxisID;
 	private String yAxisID;
 	private final List<BorderSkipped> borderSkipped = new OptionalArray<>();
+	private String stack;
 	
 	
 	public String getLabel()
@@ -82,6 +83,15 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 		{
 			this.borderSkipped.addAll(borderSkipped);
 		}
+		return this;
+	}
+
+	public String getStack() {
+		return stack;
+	}
+
+	public BarDataset setStack(String stack) {
+		this.stack = stack;
 		return this;
 	}
 }
