@@ -16,16 +16,7 @@
 		<url>https://xdev.software</url>
 	</organization>
 
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
-
 	<properties>
-		<license.licenseName>apache_v2</license.licenseName>
-
 		<javaVersion>17</javaVersion>
 		<maven.compiler.release>${javaVersion}</maven.compiler.release>
 
@@ -58,11 +49,10 @@
 					</compilerArgs>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.5.0</version>
+				<version>3.6.0</version>
 				<configuration>
 					<archive>
 						<manifest>

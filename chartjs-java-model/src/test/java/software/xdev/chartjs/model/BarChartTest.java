@@ -90,8 +90,8 @@ class BarChartTest extends AbstractChartTest
 			.addDataset(dataset1)
 			.addDataset(dataset2);
 		
-		final BarOptions options = new BarOptions();
-		options.setAnimation(false);
+		final BarOptions options = new BarOptions()
+			.setAnimation(false);
 		options
 			.getScales()
 			.addScale(Scales.ScaleAxis.X, new BarScale<>().setStacked(true))
@@ -120,8 +120,8 @@ class BarChartTest extends AbstractChartTest
 			.setMax(100)
 			.setStepSize(5);
 		
-		final BarOptions options = new BarOptions();
-		options.setAnimation(false);
+		final BarOptions options = new BarOptions()
+			.setAnimation(false);
 		options
 			.getScales()
 			.addScale(Scales.ScaleAxis.Y, new BarScale<LinearTicks>().setTicks(ticks));
@@ -150,9 +150,9 @@ class BarChartTest extends AbstractChartTest
 			.addDataset(dataset1)
 			.addDataset(dataset2);
 		
-		final BarOptions options = new BarOptions();
-		options.setAnimation(false);
-		options.setIndexAxis(BarOptions.IndexAxis.Y);
+		final BarOptions options = new BarOptions()
+			.setAnimation(false)
+			.setIndexAxis(BarOptions.IndexAxis.Y);
 		options
 			.getScales()
 			.addScale(Scales.ScaleAxis.X, new BarScale<>().setStacked(true))
@@ -162,6 +162,49 @@ class BarChartTest extends AbstractChartTest
 			new BarChart(data, options),
 			this.getWebContainer(),
 			"StackedHorizontal"
+		);
+	}
+	
+	@Test
+	void testStackedWithGroups()
+	{
+		// This test orients itself on https://www.chartjs.org/docs/4.4.0/samples/bar/stacked-groups.html
+		final BarDataset dataset1 = new BarDataset()
+			.setLabel("First stack")
+			.setData(65, 59, 80)
+			.addBackgroundColors(Color.RED, Color.RED, Color.RED)
+			.setStack("Stack 1");
+		
+		final BarDataset dataset2 = new BarDataset()
+			.setLabel("Second stack")
+			.setData(28, 45, 10)
+			.addBackgroundColors(Color.GREEN, Color.GREEN, Color.GREEN)
+			.setStack("Stack 1");
+		
+		final BarDataset dataset3 = new BarDataset()
+			.setLabel("Third stack")
+			.setData(10, 23, 45)
+			.addBackgroundColors(Color.BLUE, Color.BLUE, Color.BLUE)
+			.setStack("Stack 2");
+		
+		final BarData data = new BarData()
+			.addLabels("First", "Second", "Third")
+			.addDataset(dataset1)
+			.addDataset(dataset2)
+			.addDataset(dataset3);
+		
+		final BarOptions options = new BarOptions()
+			.setAnimation(false)
+			.setIndexAxis(BarOptions.IndexAxis.Y);
+		options
+			.getScales()
+			.addScale(Scales.ScaleAxis.X, new BarScale<>().setStacked(true))
+			.addScale(Scales.ScaleAxis.Y, new BarScale<>().setStacked(true));
+		
+		this.createScreenshotAndCompare(
+			new BarChart(data, options),
+			this.getWebContainer(),
+			"StackedWithGroups"
 		);
 	}
 }

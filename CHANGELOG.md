@@ -1,3 +1,6 @@
+## 1.0.1
+* Added support for [stacked bar chart with groups](https://www.chartjs.org/docs/latest/samples/bar/stacked-groups.html)
+
 ## 1.0.0
 Initial release
 
@@ -11,3 +14,4 @@ Noteworthy changes compared to [Chart.java](https://github.com/mdewilde/chart):
   * [4.x Migration Guide](https://www.chartjs.org/docs/4.3.0/migration/v4-migration.html)
 * JSON is no longer pretty printed by default due to performance reasons
 * Implemented integration tests
+* Requires Java 17
