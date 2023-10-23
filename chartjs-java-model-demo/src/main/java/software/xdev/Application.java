@@ -41,21 +41,21 @@ public final class Application
 			
 			Files.writeString(
 				tmp,
-				"""
-					<!DOCTYPE html>
-					<html lang='en'>
-					\t<head>
-					\t\t<meta charset='UTF-8'>
-					\t\t<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"></script>
-					\t</head>
-					\t<body>
-					\t\t<canvas id='c' style='border:1px solid #555;'></canvas>
-					\t\t<script>
-					\t\t\tnew Chart(document.getElementById('c').getContext('2d'), %s);
-					\t\t</script>
-					\t</body>
-					</html>
-					""".formatted(chart.toJson()));
+				String.format("<!DOCTYPE html>\n"
+					+ "<html lang='en'>\n"
+					+ "\t<head>\n"
+					+ "\t\t<meta charset='UTF-8'>\n"
+					+ "\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd"
+					+ ".js\"></script>\n"
+					+ "\t</head>\n"
+					+ "\t<body>\n"
+					+ "\t\t<canvas id='c' style='border:1px solid #555;'></canvas>\n"
+					+ "\t\t<script>\n"
+					+ "\t\t\tnew Chart(document.getElementById('c').getContext('2d'), %s);\n"
+					+ "\t\t</script>\n"
+					+ "\t</body>\n"
+					+ "</html>", chart.toJson())
+			);
 			
 			Desktop.getDesktop().browse(tmp.toUri());
 		}
