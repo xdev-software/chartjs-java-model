@@ -1,3 +1,7 @@
+## 1.0.2
+* Support Java 11
+* Updated dependencies
+
 ## 1.0.1
 * Added support for [stacked bar chart with groups](https://www.chartjs.org/docs/latest/samples/bar/stacked-groups.html)
 

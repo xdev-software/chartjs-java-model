@@ -262,12 +262,13 @@ public class Color
 		{
 			return true;
 		}
-		if(!(o instanceof final Color color))
+		if(!(o instanceof Color))
 		{
 			return false;
 		}
+		final Color color = (Color)o;
 		return this.getR() == color.getR() && this.getG() == color.getG() && this.getB() == color.getB()
-			&& Double.compare(color.getAlpha(), this.getAlpha()) == 0;
+			&& Double.compare(this.getAlpha(), color.getAlpha()) == 0;
 	}
 	
 	@Override
