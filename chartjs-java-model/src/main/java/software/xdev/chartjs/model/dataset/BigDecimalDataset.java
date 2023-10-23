@@ -47,7 +47,7 @@ public interface BigDecimalDataset<S extends Dataset<?, BigDecimal>>
 	/**
 	 * Add the data point to this {@code Dataset}
 	 *
-	 * @see #setData(Collection)
+	 * @see Dataset#setData(Collection)
 	 */
 	default S addData(final int data)
 	{
