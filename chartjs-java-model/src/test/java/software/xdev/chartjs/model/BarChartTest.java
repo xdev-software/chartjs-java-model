@@ -17,6 +17,7 @@ package software.xdev.chartjs.model;
 
 import java.math.BigDecimal;
 import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -25,6 +26,7 @@ import org.junit.jupiter.api.Test;
 import software.xdev.chartjs.model.charts.BarChart;
 import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.data.BarData;
+import software.xdev.chartjs.model.datapoint.XYDataPoint;
 import software.xdev.chartjs.model.dataset.BarDataset;
 import software.xdev.chartjs.model.options.BarOptions;
 import software.xdev.chartjs.model.options.scales.BarScale;
@@ -37,7 +39,18 @@ import software.xdev.chartjs.model.options.ticks.LinearTicks;
 class BarChartTest extends AbstractChartTest
 {
 	@Test
-	void testScale()
+	void testScaleChecked()
+	{
+		this.testScale(BarDataset::addData);
+	}
+	
+	@Test
+	void testScaleUncheckedData()
+	{
+		this.testScale((dataset, value) -> dataset.addDataUnchecked(new XYDataPoint(value, value)));
+	}
+	
+	void testScale(final BiConsumer<BarDataset, BigDecimal> addDataFunc)
 	{
 		final BarDataset dataset = new BarDataset();
 		final BarData data = new BarData();
@@ -48,7 +61,7 @@ class BarChartTest extends AbstractChartTest
 			.entrySet())
 		{
 			data.addLabel(entry.getKey());
-			dataset.addData(entry.getValue());
+			addDataFunc.accept(dataset, entry.getValue());
 		}
 		
 		final BarOptions barOptions = new BarOptions()
