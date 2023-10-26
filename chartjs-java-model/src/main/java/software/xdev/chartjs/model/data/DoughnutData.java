@@ -15,12 +15,9 @@
  */
 package software.xdev.chartjs.model.data;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.dataset.DoughnutDataset;
 
 
-public class DoughnutData extends Data<DoughnutData, DoughnutDataset, BigDecimal>
+public class DoughnutData extends Data<DoughnutData, DoughnutDataset>
 {
-
 }

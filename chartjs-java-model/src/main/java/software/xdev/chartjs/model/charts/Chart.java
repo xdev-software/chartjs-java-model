@@ -22,7 +22,7 @@ import software.xdev.chartjs.model.options.Options;
 
 
 @SuppressWarnings("java:S119") // SELF means the Chart itself... Not a problem
-public interface Chart<SELF, O extends Options<O, ?>, D extends Data<D, ?, ?>>
+public interface Chart<SELF, O extends Options<O, ?>, D extends Data<D, ?>>
 {
 	/**
 	 * @return type of this {@link Chart} implementation for proper drawing in JavaScript.

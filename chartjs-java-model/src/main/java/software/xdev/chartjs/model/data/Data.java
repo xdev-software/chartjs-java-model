@@ -24,9 +24,8 @@ import java.util.List;
 import software.xdev.chartjs.model.dataset.Dataset;
 
 
-public class Data<D extends Data<D, T, O>, T extends Dataset<T, O>, O>
+public class Data<D extends Data<D, T>, T extends Dataset<T, ?>>
 {
-
 	private final List<String> labels = new ArrayList<>();
 	private final List<T> datasets = new ArrayList<>();
 
@@ -40,7 +39,6 @@ public class Data<D extends Data<D, T, O>, T extends Dataset<T, O>, O>
 	/**
 	 * Sets the backing label list, replacing any labels previously added or set
 	 * 
-	 * @param labels
 	 * @return this object to allow method chaining
 	 */
 	public D setLabels(final Collection<String> labels) {
@@ -54,7 +52,6 @@ public class Data<D extends Data<D, T, O>, T extends Dataset<T, O>, O>
 	/**
 	 * Sets the backing label list, replacing any labels previously added or set
 	 * 
-	 * @param labels
 	 * @return this object to allow method chaining
 	 */
 	public D setLabels(final String... labels) {

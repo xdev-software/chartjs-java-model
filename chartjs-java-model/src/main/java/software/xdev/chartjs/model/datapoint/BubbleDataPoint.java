@@ -18,22 +18,8 @@ package software.xdev.chartjs.model.datapoint;
 import java.math.BigDecimal;
 
 
-public class BubbleDataPoint
+public class BubbleDataPoint extends XYDataPointBase<BubbleDataPoint>
 {
-	
-	/**
-	 * @see #setX(BigDecimal)
-	 */
-	private BigDecimal x;
-	
-	/**
-	 * @see #setY(BigDecimal)
-	 */
-	private BigDecimal y;
-	
-	/**
-	 * @see #setR(BigDecimal)
-	 */
 	private BigDecimal r;
 	
 	public BubbleDataPoint()
@@ -42,68 +28,15 @@ public class BubbleDataPoint
 	
 	public BubbleDataPoint(final BigDecimal x, final BigDecimal y, final BigDecimal r)
 	{
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.r = r;
 	}
 	
-	public BigDecimal getX()
-	{
-		return this.x;
-	}
-	
-	public BubbleDataPoint setX(final int x)
-	{
-		this.x = new BigDecimal(x);
-		return this;
-	}
-	
-	public BubbleDataPoint setX(final double x)
-	{
-		this.x = new BigDecimal(String.valueOf(x));
-		return this;
-	}
-	
-	public BubbleDataPoint setX(final BigDecimal x)
-	{
-		this.x = x;
-		return this;
-	}
-	
-	public BigDecimal getY()
-	{
-		return this.y;
-	}
-	
-	public BubbleDataPoint setY(final int y)
-	{
-		this.y = new BigDecimal(y);
-		return this;
-	}
-	
-	public BubbleDataPoint setY(final double y)
-	{
-		this.y = new BigDecimal(String.valueOf(y));
-		return this;
-	}
-	
-	public BubbleDataPoint setY(final BigDecimal y)
-	{
-		this.y = y;
-		return this;
-	}
-	
-	/**
-	 * @see #setR(BigDecimal)
-	 */
 	public BigDecimal getR()
 	{
 		return this.r;
 	}
 	
-	/**
-	 * @see #setR(BigDecimal)
-	 */
 	public BubbleDataPoint setR(final double r)
 	{
 		this.r = new BigDecimal(String.valueOf(r));

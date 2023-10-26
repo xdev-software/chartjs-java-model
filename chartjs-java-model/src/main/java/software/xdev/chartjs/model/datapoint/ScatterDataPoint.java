@@ -17,82 +17,25 @@ package software.xdev.chartjs.model.datapoint;
 
 import java.math.BigDecimal;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 
-
-@JsonInclude()
-public class ScatterDataPoint
+public class ScatterDataPoint extends XYDataPointBase<ScatterDataPoint>
 {
-	
-	private BigDecimal x;
-	
-	private BigDecimal y;
-	
 	public ScatterDataPoint()
 	{
 	}
 	
 	public ScatterDataPoint(final int x, final int y)
 	{
-		this.setX(x);
-		this.setY(y);
+		super(x, y);
 	}
 	
 	public ScatterDataPoint(final double x, final double y)
 	{
-		this.setX(x);
-		this.setY(y);
+		super(x, y);
 	}
 	
 	public ScatterDataPoint(final BigDecimal x, final BigDecimal y)
 	{
-		this.setX(x);
-		this.setY(y);
-	}
-	
-	public BigDecimal getX()
-	{
-		return this.x;
-	}
-	
-	public ScatterDataPoint setX(final int x)
-	{
-		this.x = new BigDecimal(x);
-		return this;
-	}
-	
-	public ScatterDataPoint setX(final double x)
-	{
-		this.x = new BigDecimal(String.valueOf(x));
-		return this;
-	}
-	
-	public ScatterDataPoint setX(final BigDecimal x)
-	{
-		this.x = x;
-		return this;
-	}
-	
-	public BigDecimal getY()
-	{
-		return this.y;
-	}
-	
-	public ScatterDataPoint setY(final int y)
-	{
-		this.y = new BigDecimal(y);
-		return this;
-	}
-	
-	public ScatterDataPoint setY(final double y)
-	{
-		this.y = new BigDecimal(String.valueOf(y));
-		return this;
-	}
-	
-	public ScatterDataPoint setY(final BigDecimal y)
-	{
-		this.y = y;
-		return this;
+		super(x, y);
 	}
 }

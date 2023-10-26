@@ -15,12 +15,9 @@
  */
 package software.xdev.chartjs.model.data;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.dataset.LineDataset;
 
 
-public class LineData extends Data<LineData, LineDataset, BigDecimal>
+public class LineData extends Data<LineData, LineDataset>
 {
-
 }
