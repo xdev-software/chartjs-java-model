@@ -21,19 +21,10 @@ import java.math.BigDecimal;
 public class BubbleDataPoint
 {
 	
-	/**
-	 * @see #setX(BigDecimal)
-	 */
 	private BigDecimal x;
 	
-	/**
-	 * @see #setY(BigDecimal)
-	 */
 	private BigDecimal y;
 	
-	/**
-	 * @see #setR(BigDecimal)
-	 */
 	private BigDecimal r;
 	
 	public BubbleDataPoint()
@@ -93,17 +84,11 @@ public class BubbleDataPoint
 		return this;
 	}
 	
-	/**
-	 * @see #setR(BigDecimal)
-	 */
 	public BigDecimal getR()
 	{
 		return this.r;
 	}
 	
-	/**
-	 * @see #setR(BigDecimal)
-	 */
 	public BubbleDataPoint setR(final double r)
 	{
 		this.r = new BigDecimal(String.valueOf(r));

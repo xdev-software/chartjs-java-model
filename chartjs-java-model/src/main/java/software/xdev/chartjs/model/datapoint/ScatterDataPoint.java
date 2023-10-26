@@ -17,10 +17,7 @@ package software.xdev.chartjs.model.datapoint;
 
 import java.math.BigDecimal;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 
-
-@JsonInclude()
 public class ScatterDataPoint
 {
 	
