@@ -20,26 +20,36 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public abstract class Dataset<T extends Dataset<T, O>, O>
 {
-	protected final List<O> data = new ArrayList<>();
+	protected final List<Object> data = new ArrayList<>();
 	
 	/**
 	 * @return an unmodifiable view of the data held in this {@code Dataset}, never {@code null}
 	 */
-	public List<O> getData()
+	public List<Object> getData()
 	{
 		return Collections.unmodifiableList(this.data);
 	}
 	
 	/**
-	 * Sets the backing data list to the argument, replacing any data already added or set
-	 *
-	 * @param data The data to plot in a line
+	 * @return an unmodifiable view of the data held in this {@code Dataset}, never {@code null}
 	 */
-	public T setData(final Collection<O> data)
+	public <X> List<X> getData(final Class<X> filterClazz)
+	{
+		return this.data.stream()
+			.filter(filterClazz::isInstance)
+			.map(filterClazz::cast)
+			.collect(Collectors.toUnmodifiableList());
+	}
+	
+	/**
+	 * @see #setData(Collection)
+	 */
+	public T setDataUnchecked(final Collection<?> data)
 	{
 		this.clearData();
 		if(data != null)
@@ -54,14 +64,28 @@ public abstract class Dataset<T extends Dataset<T, O>, O>
 	 *
 	 * @param data The data to plot in a line
 	 */
+	public T setData(final Collection<O> data)
+	{
+		return this.setDataUnchecked(data);
+	}
+	
+	/**
+	 * @see #setData(Object[])
+	 */
+	public T setDataUnchecked(final Object... data)
+	{
+		return this.setDataUnchecked(Arrays.asList(data));
+	}
+	
+	/**
+	 * Sets the backing data list to the argument, replacing any data already added or set
+	 *
+	 * @param data The data to plot in a line
+	 */
+	@SuppressWarnings("unchecked") // Works fine
 	public T setData(final O... data)
 	{
-		this.clearData();
-		if(data != null)
-		{
-			this.data.addAll(Arrays.asList(data));
-		}
-		return this.self();
+		return this.setData(Arrays.asList(data));
 	}
 	
 	/**
@@ -74,6 +98,15 @@ public abstract class Dataset<T extends Dataset<T, O>, O>
 	}
 	
 	/**
+	 * @see #addData(Object)
+	 */
+	public T addDataUnchecked(final Object data)
+	{
+		this.data.add(data);
+		return this.self();
+	}
+	
+	/**
 	 * Add the data point to this {@code Dataset}
 	 *
 	 * @param data a {@code O}, can be {@code null} to signify absence of data for a given point
@@ -81,8 +114,7 @@ public abstract class Dataset<T extends Dataset<T, O>, O>
 	 */
 	public T addData(final O data)
 	{
-		this.data.add(data);
-		return this.self();
+		return this.addDataUnchecked(data);
 	}
 	
 	@SuppressWarnings("unchecked")
