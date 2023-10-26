@@ -23,6 +23,7 @@ import java.util.List;
 public class RadarDataset extends PointDataset<RadarDataset, BigDecimal> implements BigDecimalDataset<RadarDataset>
 {
 	private final List<Integer> hitRadius = new ArrayList<>();
+	
 	public List<Integer> getHitRadius()
 	{
 		return this.hitRadius;

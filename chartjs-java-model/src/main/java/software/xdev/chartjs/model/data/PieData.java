@@ -20,5 +20,4 @@ import software.xdev.chartjs.model.dataset.PieDataset;
 
 public class PieData extends Data<PieData, PieDataset>
 {
-
 }

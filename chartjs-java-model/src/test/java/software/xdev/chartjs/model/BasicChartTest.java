@@ -100,8 +100,7 @@ class BasicChartTest extends AbstractChartTest
 				BarOptions::new,
 				() -> {
 					final BarDataset dataset = new BarDataset();
-					final BarData data = new BarData();
-					data.addDataset(dataset);
+					final BarData data = new BarData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());
@@ -114,8 +113,7 @@ class BasicChartTest extends AbstractChartTest
 				BubbleOptions::new,
 				() -> {
 					final BubbleDataset dataset = new BubbleDataset();
-					final BubbleData data = new BubbleData();
-					data.addDataset(dataset);
+					final BubbleData data = new BubbleData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());
@@ -132,8 +130,7 @@ class BasicChartTest extends AbstractChartTest
 				DoughnutOptions::new,
 				() -> {
 					final DoughnutDataset dataset = new DoughnutDataset();
-					final DoughnutData data = new DoughnutData();
-					data.addDataset(dataset);
+					final DoughnutData data = new DoughnutData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());
@@ -146,8 +143,7 @@ class BasicChartTest extends AbstractChartTest
 				LineOptions::new,
 				() -> {
 					final LineDataset dataset = new LineDataset();
-					final LineData data = new LineData();
-					data.addDataset(dataset);
+					final LineData data = new LineData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());
@@ -160,8 +156,7 @@ class BasicChartTest extends AbstractChartTest
 				PieOptions::new,
 				() -> {
 					final PieDataset dataset = new PieDataset();
-					final PieData data = new PieData();
-					data.addDataset(dataset);
+					final PieData data = new PieData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());
@@ -174,8 +169,7 @@ class BasicChartTest extends AbstractChartTest
 				PolarOptions::new,
 				() -> {
 					final PolarDataset dataset = new PolarDataset();
-					final PolarData data = new PolarData();
-					data.addDataset(dataset);
+					final PolarData data = new PolarData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());
@@ -188,8 +182,7 @@ class BasicChartTest extends AbstractChartTest
 				RadarOptions::new,
 				() -> {
 					final RadarDataset dataset = new RadarDataset();
-					final RadarData data = new RadarData();
-					data.addDataset(dataset);
+					final RadarData data = new RadarData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());
@@ -202,8 +195,7 @@ class BasicChartTest extends AbstractChartTest
 				LineOptions::new,
 				() -> {
 					final ScatterDataset dataset = new ScatterDataset();
-					final ScatterData data = new ScatterData();
-					data.addDataset(dataset);
+					final ScatterData data = new ScatterData().addDataset(dataset);
 					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
 					{
 						data.addLabel(entry.getKey());

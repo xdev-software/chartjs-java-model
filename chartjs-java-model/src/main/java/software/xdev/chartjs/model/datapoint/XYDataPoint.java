@@ -13,11 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.data;
+package software.xdev.chartjs.model.datapoint;
 
-import software.xdev.chartjs.model.dataset.PolarDataset;
+import java.math.BigDecimal;
 
 
-public class PolarData extends Data<PolarData, PolarDataset>
+public class XYDataPoint extends XYDataPointBase<XYDataPoint>
 {
+	public XYDataPoint()
+	{
+	}
+	
+	public XYDataPoint(final int x, final int y)
+	{
+		super(x, y);
+	}
+	
+	public XYDataPoint(final double x, final double y)
+	{
+		super(x, y);
+	}
+	
+	public XYDataPoint(final BigDecimal x, final BigDecimal y)
+	{
+		super(x, y);
+	}
 }

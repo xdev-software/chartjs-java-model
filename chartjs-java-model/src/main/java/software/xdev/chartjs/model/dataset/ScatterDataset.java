@@ -20,5 +20,4 @@ import software.xdev.chartjs.model.datapoint.ScatterDataPoint;
 
 public class ScatterDataset extends BaseLineDataset<ScatterDataset, ScatterDataPoint>
 {
-
 }

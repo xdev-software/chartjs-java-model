@@ -20,5 +20,4 @@ import software.xdev.chartjs.model.dataset.DoughnutDataset;
 
 public class DoughnutData extends Data<DoughnutData, DoughnutDataset>
 {
-
 }

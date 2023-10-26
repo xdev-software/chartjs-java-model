@@ -20,5 +20,4 @@ import software.xdev.chartjs.model.dataset.RadarDataset;
 
 public class RadarData extends Data<RadarData, RadarDataset>
 {
-
 }

@@ -20,5 +20,4 @@ import software.xdev.chartjs.model.dataset.LineDataset;
 
 public class LineData extends Data<LineData, LineDataset>
 {
-
 }

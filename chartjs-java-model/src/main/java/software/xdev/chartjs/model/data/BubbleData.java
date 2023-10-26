@@ -20,5 +20,4 @@ import software.xdev.chartjs.model.dataset.BubbleDataset;
 
 public class BubbleData extends Data<BubbleData, BubbleDataset>
 {
-
 }

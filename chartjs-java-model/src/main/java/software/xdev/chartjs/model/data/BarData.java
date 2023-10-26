@@ -20,5 +20,4 @@ import software.xdev.chartjs.model.dataset.BarDataset;
 
 public class BarData extends Data<BarData, BarDataset>
 {
-
 }
