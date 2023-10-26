@@ -15,12 +15,9 @@
  */
 package software.xdev.chartjs.model.data;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.dataset.BarDataset;
 
 
-public class BarData extends Data<BarData, BarDataset, BigDecimal>
+public class BarData extends Data<BarData, BarDataset>
 {
-
 }

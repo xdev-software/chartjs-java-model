@@ -19,5 +19,4 @@ import java.math.BigDecimal;
 
 public class LineDataset extends BaseLineDataset<LineDataset, BigDecimal> implements BigDecimalDataset<LineDataset>
 {
-
 }
