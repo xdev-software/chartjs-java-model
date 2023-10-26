@@ -17,7 +17,7 @@ package software.xdev.chartjs.model;
 
 import java.math.BigDecimal;
 import java.util.Map;
-import java.util.Set;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -49,6 +49,7 @@ import software.xdev.chartjs.model.datapoint.BubbleDataPoint;
 import software.xdev.chartjs.model.datapoint.ScatterDataPoint;
 import software.xdev.chartjs.model.dataset.BarDataset;
 import software.xdev.chartjs.model.dataset.BubbleDataset;
+import software.xdev.chartjs.model.dataset.Dataset;
 import software.xdev.chartjs.model.dataset.DoughnutDataset;
 import software.xdev.chartjs.model.dataset.LineDataset;
 import software.xdev.chartjs.model.dataset.PieDataset;
@@ -89,126 +90,82 @@ class BasicChartTest extends AbstractChartTest
 	
 	static Stream<Arguments> basicTest()
 	{
-		final Set<Map.Entry<String, BigDecimal>> defaultDataEntrySet = IntStream.rangeClosed(0, 3)
+		final Map<String, BigDecimal> defaultData = IntStream.rangeClosed(0, 3)
 			.boxed()
-			.collect(Collectors.toMap(String::valueOf, BigDecimal::valueOf))
-			.entrySet();
+			.collect(Collectors.toMap(String::valueOf, BigDecimal::valueOf));
 		
 		return Stream.of(
 			new ArgumentDTO<>(
 				BarChart::new,
 				BarOptions::new,
-				() -> {
-					final BarDataset dataset = new BarDataset();
-					final BarData data = new BarData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(entry.getValue());
-					}
-					return data;
-				}),
+				createData(defaultData, BarData::new, BarDataset::new)),
 			new ArgumentDTO<>(
 				BubbleChart::new,
 				BubbleOptions::new,
-				() -> {
-					final BubbleDataset dataset = new BubbleDataset();
-					final BubbleData data = new BubbleData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(
-							new BubbleDataPoint(
-								entry.getValue(),
-								entry.getValue(),
-								entry.getValue().multiply(BigDecimal.TEN)));
-					}
-					return data;
-				}),
+				createData(defaultData, BubbleData::new, BubbleDataset::new, entry -> new BubbleDataPoint(
+					entry.getValue(),
+					entry.getValue(),
+					entry.getValue().multiply(BigDecimal.TEN)))),
 			new ArgumentDTO<>(
 				DoughnutChart::new,
 				DoughnutOptions::new,
-				() -> {
-					final DoughnutDataset dataset = new DoughnutDataset();
-					final DoughnutData data = new DoughnutData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(entry.getValue());
-					}
-					return data;
-				}),
+				createData(defaultData, DoughnutData::new, DoughnutDataset::new)),
 			new ArgumentDTO<>(
 				LineChart::new,
 				LineOptions::new,
-				() -> {
-					final LineDataset dataset = new LineDataset();
-					final LineData data = new LineData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(entry.getValue());
-					}
-					return data;
-				}),
+				createData(defaultData, LineData::new, LineDataset::new)),
 			new ArgumentDTO<>(
 				PieChart::new,
 				PieOptions::new,
-				() -> {
-					final PieDataset dataset = new PieDataset();
-					final PieData data = new PieData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(entry.getValue());
-					}
-					return data;
-				}),
+				createData(defaultData, PieData::new, PieDataset::new)),
 			new ArgumentDTO<>(
 				PolarChart::new,
 				PolarOptions::new,
-				() -> {
-					final PolarDataset dataset = new PolarDataset();
-					final PolarData data = new PolarData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(entry.getValue());
-					}
-					return data;
-				}),
+				createData(defaultData, PolarData::new, PolarDataset::new)),
 			new ArgumentDTO<>(
 				RadarChart::new,
 				RadarOptions::new,
-				() -> {
-					final RadarDataset dataset = new RadarDataset();
-					final RadarData data = new RadarData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(entry.getValue());
-					}
-					return data;
-				}),
+				createData(defaultData, RadarData::new, RadarDataset::new)),
 			new ArgumentDTO<>(
 				ScatterChart::new,
 				LineOptions::new,
-				() -> {
-					final ScatterDataset dataset = new ScatterDataset();
-					final ScatterData data = new ScatterData().addDataset(dataset);
-					for(final Map.Entry<String, BigDecimal> entry : defaultDataEntrySet)
-					{
-						data.addLabel(entry.getKey());
-						dataset.addData(new ScatterDataPoint(entry.getValue(), entry.getValue()));
-					}
-					return data;
-				})
+				createData(
+					defaultData,
+					ScatterData::new,
+					ScatterDataset::new,
+					entry -> new ScatterDataPoint(entry.getValue(), entry.getValue())))
 		).map(dto ->
 			Arguments.of(
 				dto.chartSupplier().get().getClass().getSimpleName(),
 				dto.chartSupplier().get(),
 				dto.optionsSupplier().get(),
 				dto.dataSupplier().get()));
+	}
+	
+	private static <D extends Data<D, S>, S extends Dataset<S, BigDecimal>> Supplier<D> createData(
+		final Map<String, BigDecimal> defaultDataMap,
+		final Supplier<D> dataSupplier,
+		final Supplier<S> dataSetSupplier)
+	{
+		return createData(defaultDataMap, dataSupplier, dataSetSupplier, Map.Entry::getValue);
+	}
+	
+	private static <D extends Data<D, S>, S extends Dataset<S, O>, O> Supplier<D> createData(
+		final Map<String, BigDecimal> defaultDataMap,
+		final Supplier<D> dataSupplier,
+		final Supplier<S> dataSetSupplier,
+		final Function<Map.Entry<String, BigDecimal>, O> addDataFunc)
+	{
+		return () -> {
+			final S dataset = dataSetSupplier.get();
+			final D data = dataSupplier.get().addDataset(dataset);
+			for(final Map.Entry<String, BigDecimal> entry : defaultDataMap.entrySet())
+			{
+				data.addLabel(entry.getKey());
+				dataset.addData(addDataFunc.apply(entry));
+			}
+			return data;
+		};
 	}
 	
 	public static class ArgumentDTO<O extends Options<O, ?>, D extends Data<D, ?>>
