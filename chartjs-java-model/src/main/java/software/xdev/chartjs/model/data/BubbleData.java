@@ -15,11 +15,10 @@
  */
 package software.xdev.chartjs.model.data;
 
-import software.xdev.chartjs.model.datapoint.BubbleDataPoint;
 import software.xdev.chartjs.model.dataset.BubbleDataset;
 
 
-public class BubbleData extends Data<BubbleData, BubbleDataset, BubbleDataPoint>
+public class BubbleData extends Data<BubbleData, BubbleDataset>
 {
 
 }

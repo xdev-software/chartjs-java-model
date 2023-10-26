@@ -15,11 +15,10 @@
  */
 package software.xdev.chartjs.model.data;
 
-import software.xdev.chartjs.model.datapoint.ScatterDataPoint;
 import software.xdev.chartjs.model.dataset.ScatterDataset;
 
 
-public class ScatterData extends Data<ScatterData, ScatterDataset, ScatterDataPoint>
+public class ScatterData extends Data<ScatterData, ScatterDataset>
 {
 
 }

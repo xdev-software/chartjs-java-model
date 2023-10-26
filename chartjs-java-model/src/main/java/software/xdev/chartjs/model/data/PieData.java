@@ -15,12 +15,10 @@
  */
 package software.xdev.chartjs.model.data;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.dataset.PieDataset;
 
 
-public class PieData extends Data<PieData, PieDataset, BigDecimal>
+public class PieData extends Data<PieData, PieDataset>
 {
 
 }

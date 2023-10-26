@@ -28,7 +28,7 @@ import software.xdev.chartjs.model.data.Data;
 import software.xdev.chartjs.model.options.Options;
 
 
-public abstract class AbstractChart<T, O extends Options<O, ?>, D extends Data<D, ?, ?>>
+public abstract class AbstractChart<T, O extends Options<O, ?>, D extends Data<D, ?>>
 	implements Chart<T, O, D>
 {
 	protected D data;

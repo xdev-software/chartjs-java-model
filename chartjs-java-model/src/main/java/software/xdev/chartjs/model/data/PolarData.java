@@ -15,12 +15,10 @@
  */
 package software.xdev.chartjs.model.data;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.dataset.PolarDataset;
 
 
-public class PolarData extends Data<PolarData, PolarDataset, BigDecimal>
+public class PolarData extends Data<PolarData, PolarDataset>
 {
 
 }

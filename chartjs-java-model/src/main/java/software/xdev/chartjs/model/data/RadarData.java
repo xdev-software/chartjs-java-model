@@ -15,12 +15,10 @@
  */
 package software.xdev.chartjs.model.data;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.dataset.RadarDataset;
 
 
-public class RadarData extends Data<RadarData, RadarDataset, BigDecimal>
+public class RadarData extends Data<RadarData, RadarDataset>
 {
 
 }

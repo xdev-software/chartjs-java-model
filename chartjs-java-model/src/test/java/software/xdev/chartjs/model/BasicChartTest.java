@@ -70,7 +70,7 @@ class BasicChartTest extends AbstractChartTest
 {
 	@ParameterizedTest(name = "Check if basic {0} is displayed correctly")
 	@MethodSource
-	<O extends Options<O, ?>, D extends Data<D, ?, ?>> void basicTest(
+	<O extends Options<O, ?>, D extends Data<D, ?>> void basicTest(
 		final String chartName,
 		final Chart<?, O, D> chart,
 		final O options,
@@ -219,7 +219,7 @@ class BasicChartTest extends AbstractChartTest
 				dto.dataSupplier().get()));
 	}
 	
-	public static class ArgumentDTO<O extends Options<O, ?>, D extends Data<D, ?, ?>>
+	public static class ArgumentDTO<O extends Options<O, ?>, D extends Data<D, ?>>
 	{
 		private final Supplier<Chart<?, O, D>> chartSupplier;
 		private final Supplier<O> optionsSupplier;
