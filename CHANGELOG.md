@@ -1,9 +1,13 @@
+## 1.1.0
+* Added support for more [data structures](https://www.chartjs.org/docs/4.4.0/general/data-structures.html) inside ``Dataset#data``
+  * ``Dataset#data`` can now contain ``Object``s
+
 ## 1.0.2
 * Support Java 11
 * Updated dependencies
 
 ## 1.0.1
-* Added support for [stacked bar chart with groups](https://www.chartjs.org/docs/latest/samples/bar/stacked-groups.html)
+* Added support for [stacked bar chart with groups](https://www.chartjs.org/docs/4.4.0/samples/bar/stacked-groups.html)
 
 ## 1.0.0
 Initial release
