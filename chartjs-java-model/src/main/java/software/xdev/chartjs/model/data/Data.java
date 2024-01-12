@@ -28,93 +28,104 @@ public class Data<D extends Data<D, T>, T extends Dataset<T, ?>>
 {
 	private final List<String> labels = new ArrayList<>();
 	private final List<T> datasets = new ArrayList<>();
-
+	
 	/**
 	 * @return unmodifiable list of all labels, never {@code null}
 	 */
-	public List<String> getLabels() {
+	public List<String> getLabels()
+	{
 		return Collections.unmodifiableList(this.labels);
 	}
-
+	
 	/**
 	 * Sets the backing label list, replacing any labels previously added or set
-	 * 
+	 *
 	 * @return this object to allow method chaining
 	 */
-	public D setLabels(final Collection<String> labels) {
+	public D setLabels(final Collection<String> labels)
+	{
 		this.labels.clear();
-		if (labels != null) {
+		if(labels != null)
+		{
 			this.labels.addAll(labels);
 		}
 		return this.self();
 	}
-
+	
 	/**
 	 * Sets the backing label list, replacing any labels previously added or set
-	 * 
+	 *
 	 * @return this object to allow method chaining
 	 */
-	public D setLabels(final String... labels) {
+	public D setLabels(final String... labels)
+	{
 		this.labels.clear();
-		if (labels != null) {
+		if(labels != null)
+		{
 			this.labels.addAll(Arrays.asList(labels));
 		}
 		return this.self();
 	}
-
+	
 	/**
 	 * Removes all labels from the backing list
-	 * 
+	 *
 	 * @return this object to allow method chaining
 	 */
-	public D clearLabels() {
+	public D clearLabels()
+	{
 		this.labels.clear();
 		return this.self();
 	}
-
+	
 	/**
 	 * Adds the label to the backing label list
-	 * 
+	 *
 	 * @return this object to allow method chaining
 	 */
-	public D addLabel(final String label) {
+	public D addLabel(final String label)
+	{
 		this.labels.add(label);
 		return this.self();
 	}
-
+	
 	/**
 	 * Adds the labels to the backing label list
-	 * 
+	 *
 	 * @return this object to allow method chaining
 	 */
-	public D addLabels(final String... label) {
+	public D addLabels(final String... label)
+	{
 		this.labels.addAll(Arrays.asList(label));
 		return this.self();
 	}
 	
 	/**
-	 * @return unmodifiable list of all datasets, never
-	 *         {@code null}
+	 * @return unmodifiable list of all datasets, never {@code null}
 	 */
-	public List<T> getDatasets() {
+	public List<T> getDatasets()
+	{
 		return Collections.unmodifiableList(this.datasets);
 	}
-
+	
 	/**
 	 * @return this object to allow method chaining
 	 */
-	public D setDatasets(final Collection<T> datasets) {
+	public D setDatasets(final Collection<T> datasets)
+	{
 		this.datasets.clear();
-		if (datasets != null) {
+		if(datasets != null)
+		{
 			this.datasets.addAll(datasets);
 		}
 		return this.self();
 	}
-
+	
 	/**
 	 * @return this object to allow method chaining
 	 */
-	public D addDataset(final T dataset) {
+	public D addDataset(final T dataset)
+	{
 		this.datasets.add(dataset);
 		return this.self();
 	}

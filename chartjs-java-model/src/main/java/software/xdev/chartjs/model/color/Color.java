@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Immutable RGBa color model.
  */
+@SuppressWarnings("checkstyle:MagicNumber") // RGB Numbers
 public class Color
 {
 	private static final Random RANDOMIZER = new SecureRandom();
@@ -178,7 +179,6 @@ public class Color
 	 * Any integer between 0 and 255 (inclusive) is valid.
 	 * </p>
 	 *
-	 * @param channel
 	 * @return true if argument is valid R, G or B value
 	 */
 	public static boolean isChannelWithinBounds(final int channel)
@@ -195,7 +195,6 @@ public class Color
 	 * Any double between 0.0d and 1.0d (inclusive) is valid.
 	 * </p>
 	 *
-	 * @param alpha
 	 * @return true if argument is valid alpha value
 	 */
 	public static boolean isAlphaWithinBounds(final double alpha)

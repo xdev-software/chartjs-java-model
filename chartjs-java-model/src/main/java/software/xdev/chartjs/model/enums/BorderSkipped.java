@@ -19,23 +19,25 @@ import java.util.Locale;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum BorderSkipped {
-	
+
+public enum BorderSkipped
+{
 	BOTTOM,
 	LEFT,
 	TOP,
 	RIGHT;
 	
 	private final String serialized;
-
-	BorderSkipped() {
+	
+	BorderSkipped()
+	{
 		this.serialized = this.name().toLowerCase(Locale.ENGLISH);
 	}
-
+	
 	@Override
 	@JsonValue
-	public String toString() {
+	public String toString()
+	{
 		return this.serialized;
 	}
-
 }

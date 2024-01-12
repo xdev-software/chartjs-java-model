@@ -61,8 +61,6 @@ public class BarOptions extends Options<BarOptions, DefaultAnimation>
 	 * <p>
 	 * Default {@code "x"}
 	 * </p>
-	 *
-	 * @param indexAxis
 	 */
 	public BarOptions setIndexAxis(final IndexAxis indexAxis)
 	{
