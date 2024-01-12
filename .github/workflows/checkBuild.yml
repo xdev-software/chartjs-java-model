@@ -6,10 +6,16 @@ on:
     branches: [ develop ]
     paths-ignore: 
       - '**.md'
+      - '.config/**'
+      - '.idea/**'
+      - 'assets/**'
   pull_request:
     branches: [ develop ]
     paths-ignore: 
       - '**.md'
+      - '.config/**'
+      - '.idea/**'
+      - 'assets/**'
 
 env:
   PRIMARY_MAVEN_MODULE: ${{ github.event.repository.name }}
@@ -28,7 +34,7 @@ jobs:
     - uses: actions/checkout@v4
       
     - name: Set up JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         distribution: ${{ matrix.distribution }}
         java-version: ${{ matrix.java }}
@@ -56,7 +62,7 @@ jobs:
         fi
 
     - name: Upload demo files
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: demo-files-java-${{ matrix.java }}
         path: ${{ env.DEMO_MAVEN_MODULE }}/target/${{ env.DEMO_MAVEN_MODULE }}.jar
@@ -69,3 +75,24 @@ jobs:
         name: test-fail-screenshots-${{ matrix.java }}
         path: ${{ env.PRIMARY_MAVEN_MODULE }}/target/screenshots
         if-no-files-found: ignore
+
+  code-style:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        java: [17]
+        distribution: [temurin]
+
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: ${{ matrix.distribution }}
+        java-version: ${{ matrix.java }}
+        cache: 'maven'
+
+    - name: Run Checkstyle
+      run: mvn -B checkstyle:check -P checkstyle -T2C
