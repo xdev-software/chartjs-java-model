@@ -1,4 +1,8 @@
 ## 1.1.0
+* ``AngleLines#lineWidth`` now uses ``BigDecimal`` #76
+* Updated dependencies
+
+## 1.1.0
 * Added support for more [data structures](https://www.chartjs.org/docs/4.4.0/general/data-structures.html) inside ``Dataset#data``
   * ``Dataset#data`` can now contain ``Object``s
 
