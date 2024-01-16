@@ -1,4 +1,4 @@
-## 1.1.0
+## 1.1.1
 * ``AngleLines#lineWidth`` now uses ``BigDecimal`` #76
 * Updated dependencies
 
