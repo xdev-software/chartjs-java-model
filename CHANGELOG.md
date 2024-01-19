@@ -1,3 +1,6 @@
+## 1.1.2
+* ⚠️ GroupId changed from ``com.xdev-software`` to ``software.xdev``
+
 ## 1.1.1
 * ``AngleLines#lineWidth`` now uses ``BigDecimal`` #76
 * Updated dependencies
