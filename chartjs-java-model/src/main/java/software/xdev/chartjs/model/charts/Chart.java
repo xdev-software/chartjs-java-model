@@ -37,7 +37,20 @@ public interface Chart<SELF, O extends Options<O, ?>, D extends Data<D, ?>>
 	 *
 	 * @return json representation of {@code this} {@link Chart}
 	 */
-	String toJson();
+	String toJsonNative();
+	
+	/**
+	 * Same as {@link #toJsonNative()} but also check if the diagram {@link #isDrawable() is drawable}
+	 * @see #toJson()
+	 */
+	default String toJson()
+	{
+		if(!this.isDrawable())
+		{
+			throw new IllegalArgumentException("Chart is not drawable");
+		}
+		return this.toJsonNative();
+	}
 	
 	/**
 	 * <p>

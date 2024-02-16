@@ -85,13 +85,8 @@ public abstract class AbstractChart<T, O extends Options<O, ?>, D extends Data<D
 	}
 	
 	@Override
-	public String toJson()
+	public String toJsonNative()
 	{
-		if(!this.isDrawable())
-		{
-			throw new IllegalArgumentException("Chart is not drawable");
-		}
-		
 		try
 		{
 			return this.objectWriter.writeValueAsString(this);
