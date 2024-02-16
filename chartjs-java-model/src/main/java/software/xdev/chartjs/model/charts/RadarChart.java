@@ -76,7 +76,7 @@ public class RadarChart extends AbstractChart<RadarChart, RadarOptions, RadarDat
 	{
 		for(final RadarDataset dataset : this.getData().getDatasets())
 		{
-			if(dataset.getData().size() > 2)
+			if(dataset.getData().size() >= 3)
 			{
 				return true;
 			}

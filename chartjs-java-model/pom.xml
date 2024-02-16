@@ -48,9 +48,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<slf4j-version>2.0.11</slf4j-version>
+		<slf4j-version>2.0.12</slf4j-version>
 		<log4j-version>2.22.1</log4j-version>
-		<testcontainers-version>1.19.3</testcontainers-version>
+		<testcontainers-version>1.19.5</testcontainers-version>
 
 		<!-- by default run no tests as Docker is required -->
 		<skipTests>true</skipTests>
@@ -129,7 +129,7 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>5.10.1</version>
+			<version>5.10.2</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -157,7 +157,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-chrome-driver</artifactId>
-			<version>4.16.1</version>
+			<version>4.17.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -309,7 +309,7 @@
 							<dependency>
 								<groupId>com.puppycrawl.tools</groupId>
 								<artifactId>checkstyle</artifactId>
-								<version>10.12.7</version>
+								<version>10.13.0</version>
 							</dependency>
 						</dependencies>
 						<configuration>

@@ -1,3 +1,6 @@
+## 1.1.3
+* Add ``toJsonNative`` method which doesn't run the ``isDrawable`` check #91
+
 ## 1.1.2
 * ⚠️ GroupId changed from ``com.xdev-software`` to ``software.xdev``
 
