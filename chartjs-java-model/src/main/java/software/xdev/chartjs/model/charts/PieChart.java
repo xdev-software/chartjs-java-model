@@ -76,7 +76,7 @@ public class PieChart extends AbstractChart<PieChart, PieOptions, PieData>
 	{
 		for(final PieDataset dataset : this.getData().getDatasets())
 		{
-			if(dataset.getData().size() > 1)
+			if(!dataset.getData().isEmpty())
 			{
 				return true;
 			}

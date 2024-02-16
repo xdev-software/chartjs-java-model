@@ -76,7 +76,7 @@ public class PolarChart extends AbstractChart<PolarChart, PolarOptions, PolarDat
 	{
 		for(final PolarDataset dataset : this.getData().getDatasets())
 		{
-			if(dataset.getData().size() > 1)
+			if(dataset.getData().size() >= 2)
 			{
 				return true;
 			}
