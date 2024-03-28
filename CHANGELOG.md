@@ -1,3 +1,6 @@
+## 1.1.4
+* Updated dependencies
+
 ## 1.1.3
 * Add ``toJsonNative`` method which doesn't run the ``isDrawable`` check #91
 
