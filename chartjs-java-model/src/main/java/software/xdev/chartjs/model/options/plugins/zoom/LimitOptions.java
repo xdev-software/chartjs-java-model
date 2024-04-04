@@ -15,25 +15,30 @@
  */
 package software.xdev.chartjs.model.options.plugins.zoom;
 
-public class LimitOptions {
-    protected ScaleLimits x;
-    protected ScaleLimits y;
-
-    public ScaleLimits getX() {
-        return x;
-    }
-
-    public LimitOptions setX(ScaleLimits x) {
-        this.x = x;
-        return this;
-    }
-
-    public ScaleLimits getY() {
-        return y;
-    }
-
-    public LimitOptions setY(ScaleLimits y) {
-        this.y = y;
-        return this;
-    }
+public class LimitOptions
+{
+	protected ScaleLimits x;
+	protected ScaleLimits y;
+	
+	public ScaleLimits getX()
+	{
+		return x;
+	}
+	
+	public LimitOptions setX(final ScaleLimits x)
+	{
+		this.x = x;
+		return this;
+	}
+	
+	public ScaleLimits getY()
+	{
+		return y;
+	}
+	
+	public LimitOptions setY(final ScaleLimits y)
+	{
+		this.y = y;
+		return this;
+	}
 }

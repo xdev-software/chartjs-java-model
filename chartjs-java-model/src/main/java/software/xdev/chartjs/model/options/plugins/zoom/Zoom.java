@@ -15,45 +15,40 @@
  */
 package software.xdev.chartjs.model.options.plugins.zoom;
 
-import software.xdev.chartjs.model.color.Color;
-import software.xdev.chartjs.model.enums.FontStyle;
-import software.xdev.chartjs.model.enums.TitlePosition;
-
-
 public class Zoom
 {
 	protected PanOptions pan;
 	protected LimitOptions limits;
 	protected ZoomOptions zoom;
-
+	
 	public PanOptions getPan()
 	{
 		return this.pan;
 	}
-
+	
 	public Zoom setPan(final PanOptions pan)
 	{
 		this.pan = pan;
 		return this;
 	}
-
+	
 	public LimitOptions getLimits()
 	{
 		return limits;
 	}
-
-	public Zoom setLimits(LimitOptions limits)
+	
+	public Zoom setLimits(final LimitOptions limits)
 	{
 		this.limits = limits;
 		return this;
 	}
-
+	
 	public ZoomOptions getZoom()
 	{
 		return zoom;
 	}
-
-	public Zoom setZoom(ZoomOptions zoom)
+	
+	public Zoom setZoom(final ZoomOptions zoom)
 	{
 		this.zoom = zoom;
 		return this;

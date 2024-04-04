@@ -23,57 +23,69 @@ public class PanOptions
 	protected String scaleMode;
 	protected String overScaleMode;
 	protected Integer threshold;
-
-	public Boolean getEnabled() {
+	
+	public Boolean getEnabled()
+	{
 		return enabled;
 	}
-
-	public PanOptions setEnabled(Boolean enabled) {
+	
+	public PanOptions setEnabled(final Boolean enabled)
+	{
 		this.enabled = enabled;
 		return this;
 	}
-
-	public String getMode() {
+	
+	public String getMode()
+	{
 		return mode;
 	}
-
-	public PanOptions setMode(String mode) {
+	
+	public PanOptions setMode(final String mode)
+	{
 		this.mode = mode;
 		return this;
 	}
-
-	public String getModifierKey() {
+	
+	public String getModifierKey()
+	{
 		return modifierKey;
 	}
-
-	public PanOptions setModifierKey(String modifierKey) {
+	
+	public PanOptions setModifierKey(final String modifierKey)
+	{
 		this.modifierKey = modifierKey;
 		return this;
 	}
-
-	public String getScaleMode() {
+	
+	public String getScaleMode()
+	{
 		return scaleMode;
 	}
-
-	public PanOptions setScaleMode(String scaleMode) {
+	
+	public PanOptions setScaleMode(final String scaleMode)
+	{
 		this.scaleMode = scaleMode;
 		return this;
 	}
-
-	public String getOverScaleMode() {
+	
+	public String getOverScaleMode()
+	{
 		return overScaleMode;
 	}
-
-	public PanOptions setOverScaleMode(String overScaleMode) {
+	
+	public PanOptions setOverScaleMode(final String overScaleMode)
+	{
 		this.overScaleMode = overScaleMode;
 		return this;
 	}
-
-	public Integer getThreshold() {
+	
+	public Integer getThreshold()
+	{
 		return threshold;
 	}
-
-	public PanOptions setThreshold(Integer threshold) {
+	
+	public PanOptions setThreshold(final Integer threshold)
+	{
 		this.threshold = threshold;
 		return this;
 	}

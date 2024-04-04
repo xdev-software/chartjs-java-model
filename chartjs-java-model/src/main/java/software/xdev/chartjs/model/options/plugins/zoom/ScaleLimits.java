@@ -17,35 +17,43 @@ package software.xdev.chartjs.model.options.plugins.zoom;
 
 import java.math.BigDecimal;
 
-public class ScaleLimits {
-    protected BigDecimal min;
-    protected BigDecimal max;
-    protected BigDecimal minRange;
 
-    public BigDecimal getMin() {
-        return min;
-    }
-
-    public ScaleLimits setMin(BigDecimal min) {
-        this.min = min;
+public class ScaleLimits
+{
+	protected Object min;
+	protected Object max;
+	protected BigDecimal minRange;
+	
+	public Object getMin()
+	{
+		return min;
+	}
+	
+	public ScaleLimits setMin(final Object min)
+	{
+		this.min = min;
 		return this;
-    }
-
-    public BigDecimal getMax() {
-        return max;
-    }
-
-    public ScaleLimits setMax(BigDecimal max) {
-        this.max = max;
+	}
+	
+	public Object getMax()
+	{
+		return max;
+	}
+	
+	public ScaleLimits setMax(final Object max)
+	{
+		this.max = max;
 		return this;
-    }
-
-    public BigDecimal getMinRange() {
-        return minRange;
-    }
-
-    public ScaleLimits setMinRange(BigDecimal minRange) {
-        this.minRange = minRange;
+	}
+	
+	public BigDecimal getMinRange()
+	{
+		return minRange;
+	}
+	
+	public ScaleLimits setMinRange(final BigDecimal minRange)
+	{
+		this.minRange = minRange;
 		return this;
-    }
+	}
 }

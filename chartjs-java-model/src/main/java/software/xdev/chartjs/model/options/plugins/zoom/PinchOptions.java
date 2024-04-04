@@ -18,12 +18,14 @@ package software.xdev.chartjs.model.options.plugins.zoom;
 public class PinchOptions
 {
 	protected Boolean enabled;
-
-	public Boolean getEnabled() {
+	
+	public Boolean getEnabled()
+	{
 		return enabled;
 	}
-
-	public PinchOptions setEnabled(Boolean enabled) {
+	
+	public PinchOptions setEnabled(final Boolean enabled)
+	{
 		this.enabled = enabled;
 		return this;
 	}

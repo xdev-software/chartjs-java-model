@@ -15,35 +15,42 @@
  */
 package software.xdev.chartjs.model.options.plugins.zoom;
 
-public class WheelOptions {
-    protected Boolean enabled;
-    protected Number speed;
-    protected String modifierKey;
-
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public WheelOptions setEnabled(Boolean enabled) {
-        this.enabled = enabled;
+public class WheelOptions
+{
+	protected Boolean enabled;
+	protected Number speed;
+	protected String modifierKey;
+	
+	public Boolean getEnabled()
+	{
+		return enabled;
+	}
+	
+	public WheelOptions setEnabled(final Boolean enabled)
+	{
+		this.enabled = enabled;
 		return this;
-    }
-
-    public Number getSpeed() {
-        return speed;
-    }
-
-    public WheelOptions setSpeed(Number speed) {
-        this.speed = speed;
+	}
+	
+	public Number getSpeed()
+	{
+		return speed;
+	}
+	
+	public WheelOptions setSpeed(final Number speed)
+	{
+		this.speed = speed;
 		return this;
-    }
-
-    public String getModifierKey() {
-        return modifierKey;
-    }
-
-    public WheelOptions setModifierKey(String modifierKey) {
-        this.modifierKey = modifierKey;
+	}
+	
+	public String getModifierKey()
+	{
+		return modifierKey;
+	}
+	
+	public WheelOptions setModifierKey(final String modifierKey)
+	{
+		this.modifierKey = modifierKey;
 		return this;
-    }
+	}
 }

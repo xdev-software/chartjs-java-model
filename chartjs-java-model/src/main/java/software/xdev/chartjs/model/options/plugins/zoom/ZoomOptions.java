@@ -23,57 +23,69 @@ public class ZoomOptions
 	protected String mode;
 	protected String scaleMode;
 	protected String overScaleMode;
-
-	public WheelOptions getWheel() {
+	
+	public WheelOptions getWheel()
+	{
 		return wheel;
 	}
-
-	public ZoomOptions setWheel(WheelOptions wheel) {
+	
+	public ZoomOptions setWheel(final WheelOptions wheel)
+	{
 		this.wheel = wheel;
 		return this;
 	}
-
-	public DragOptions getDrag() {
+	
+	public DragOptions getDrag()
+	{
 		return drag;
 	}
-
-	public ZoomOptions setDrag(DragOptions drag) {
+	
+	public ZoomOptions setDrag(final DragOptions drag)
+	{
 		this.drag = drag;
 		return this;
 	}
-
-	public PinchOptions getPinch() {
+	
+	public PinchOptions getPinch()
+	{
 		return pinch;
 	}
-
-	public ZoomOptions setPinch(PinchOptions pinch) {
+	
+	public ZoomOptions setPinch(final PinchOptions pinch)
+	{
 		this.pinch = pinch;
 		return this;
 	}
-
-	public String getMode() {
+	
+	public String getMode()
+	{
 		return mode;
 	}
-
-	public ZoomOptions setMode(String mode) {
+	
+	public ZoomOptions setMode(final String mode)
+	{
 		this.mode = mode;
 		return this;
 	}
-
-	public String getScaleMode() {
+	
+	public String getScaleMode()
+	{
 		return scaleMode;
 	}
-
-	public ZoomOptions setScaleMode(String scaleMode) {
+	
+	public ZoomOptions setScaleMode(final String scaleMode)
+	{
 		this.scaleMode = scaleMode;
 		return this;
 	}
-
-	public String getOverScaleMode() {
+	
+	public String getOverScaleMode()
+	{
 		return overScaleMode;
 	}
-
-	public ZoomOptions setOverScaleMode(String overScaleMode) {
+	
+	public ZoomOptions setOverScaleMode(final String overScaleMode)
+	{
 		this.overScaleMode = overScaleMode;
 		return this;
 	}
