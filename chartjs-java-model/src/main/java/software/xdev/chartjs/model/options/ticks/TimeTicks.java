@@ -15,16 +15,15 @@
  */
 package software.xdev.chartjs.model.options.ticks;
 
-
 public class TimeTicks extends Ticks<TimeTicks>
 {
-    /**
+	/**
 	 * Default {@code "auto"}
 	 *
 	 * @see #setSource(String type)
 	 */
 	protected String source;
-
+	
 	/**
 	 * @see #setSource(String)
 	 */
@@ -32,17 +31,15 @@ public class TimeTicks extends Ticks<TimeTicks>
 	{
 		return this.source;
 	}
-
+	
 	/**
-	 * How ticks are generated, possible values are:
-     *  - 'auto': generates "optimal" ticks based on scale size and time options
-     *  - 'data': generates ticks from data (including labels from data {x|y} objects)
-     *  - 'labels': generates ticks from user given labels ONLY
+	 * How ticks are generated, possible values are: 'auto' - generates "optimal" ticks based on scale size and time
+	 * options; 'data' - generates ticks from data (including labels from data {x|y} objects); 'labels' - generates
+	 * ticks from user given labels ONLY
 	 */
 	public TimeTicks setSource(final String source)
 	{
 		this.source = source;
 		return this;
 	}
-
 }

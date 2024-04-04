@@ -15,10 +15,6 @@
  */
 package software.xdev.chartjs.model.options.scales;
 
-import software.xdev.chartjs.model.color.Color;
-import software.xdev.chartjs.model.enums.ScaleLabelAlignment;
-
-
 /**
  * Options for adapter for external date library if that adapter needs or supports options.
  */
@@ -30,7 +26,7 @@ public class ScaleAdapters
 	{
 		return this.date;
 	}
-
+	
 	public ScaleAdapters setDate(final Object date)
 	{
 		this.date = date;

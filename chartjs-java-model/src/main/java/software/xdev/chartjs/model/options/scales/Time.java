@@ -236,7 +236,7 @@ public class Time
 	{
 		return this.minUnit;
 	}
-
+	
 	/**
 	 * The minimum display format to be used for a time unit.
 	 */

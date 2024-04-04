@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.scales;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.options.ticks.TimeTicks;
 
 
@@ -28,11 +26,11 @@ public class TimeScale extends Scale<TimeTicks, TimeScale>
 	 * @see #setType(String type)
 	 */
 	protected String type = "time";
-
-    protected Time time;
-
-    protected ScaleAdapters adapters;
-
+	
+	protected Time time;
+	
+	protected ScaleAdapters adapters;
+	
 	/**
 	 * @see #setType(String type)
 	 */
@@ -40,7 +38,7 @@ public class TimeScale extends Scale<TimeTicks, TimeScale>
 	{
 		return this.type;
 	}
-
+	
 	/**
 	 * As defined in Scales. Could be {@code "time"} or {@code "timeseries"}.
 	 */
@@ -49,34 +47,38 @@ public class TimeScale extends Scale<TimeTicks, TimeScale>
 		this.type = type;
 		return this;
 	}
-
+	
 	/**
 	 * @see #setTime(Time)
 	 */
-    public Time getTime() {
-        return time;
-    }
-
+	public Time getTime()
+	{
+		return time;
+	}
+	
 	/**
 	 * As defined in Time.
 	 */
-    public TimeScale setTime(Time time) {
-        this.time = time;
+	public TimeScale setTime(final Time time)
+	{
+		this.time = time;
 		return this;
-    }
-
+	}
+	
 	/**
 	 * @see #setAdapters(ScaleAdapters)
 	 */
-    public ScaleAdapters getAdapters() {
-        return adapters;
-    }
-
+	public ScaleAdapters getAdapters()
+	{
+		return adapters;
+	}
+	
 	/**
 	 * Options for adapter for external date library if that adapter needs or supports options.
 	 */
-    public TimeScale setAdapters(ScaleAdapters adapters) {
-        this.adapters = adapters;
+	public TimeScale setAdapters(final ScaleAdapters adapters)
+	{
+		this.adapters = adapters;
 		return this;
-    }
+	}
 }
