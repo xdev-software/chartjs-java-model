@@ -1,5 +1,6 @@
-## 1.1.4
+## 1.2.0
 * Add TimeScale and TimeTicks to allow building linear time charts #90
+* Add options for the [Zoom plugin](https://www.chartjs.org/chartjs-plugin-zoom/latest/) #117
 * Updated dependencies
 
 ## 1.1.3
