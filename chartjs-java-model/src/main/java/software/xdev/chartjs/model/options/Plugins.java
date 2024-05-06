@@ -15,12 +15,15 @@
  */
 package software.xdev.chartjs.model.options;
 
+import software.xdev.chartjs.model.options.plugins.zoom.Zoom;
+
 public class Plugins
 {
 	protected Title title;
 	protected Legend legend;
 	protected Tooltip tooltip;
-	
+	protected Zoom zoom;
+
 	/**
 	 * @see #setTitle(Title)
 	 */
@@ -78,6 +81,27 @@ public class Plugins
 	public Plugins setTooltip(final Tooltip tooltip)
 	{
 		this.tooltip = tooltip;
+		return this;
+	}
+
+	/**
+	 * @see #setZoom(Zoom)
+	 */
+	public Zoom getZoom()
+	{
+		return this.zoom;
+	}
+	
+	/**
+	 * A zoom and pan plugin for Chart.js. Panning can be done via the mouse or with a finger. Zooming is done via the
+	 * mouse wheel or via a pinch gesture.
+	 * <p>
+	 * Note: Requires the {@link Zoom} plugin installed.
+	 * </p>
+	 */
+	public Plugins setZoom(final Zoom zoom)
+	{
+		this.zoom = zoom;
 		return this;
 	}
 }

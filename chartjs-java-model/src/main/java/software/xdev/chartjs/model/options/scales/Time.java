@@ -78,6 +78,13 @@ public class Time
 	protected String unit;
 	
 	/**
+	 * Default {@code 'millisecond'}
+	 *
+	 * @see #setMinUnit(String)
+	 */
+	protected String minUnit;
+	
+	/**
 	 * Default {@code 1}
 	 *
 	 * @see #setUnitStepSize(BigDecimal)
@@ -219,6 +226,23 @@ public class Time
 	public Time setUnit(final String unit)
 	{
 		this.unit = unit;
+		return this;
+	}
+	
+	/**
+	 * @see #setMinUnit(String)
+	 */
+	public String getMinUnit()
+	{
+		return this.minUnit;
+	}
+	
+	/**
+	 * The minimum display format to be used for a time unit.
+	 */
+	public Time setMinUnit(final String minUnit)
+	{
+		this.minUnit = minUnit;
 		return this;
 	}
 	
