@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.plugins.zoom;
+package software.xdev.chartjs.model.options.plugins.zoom.zoom;
 
+/**
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#zoom-options">ChartJS docs</a>
+ */
 public class ZoomOptions
 {
 	protected WheelOptions wheel;
@@ -26,7 +29,7 @@ public class ZoomOptions
 	
 	public WheelOptions getWheel()
 	{
-		return wheel;
+		return this.wheel;
 	}
 	
 	public ZoomOptions setWheel(final WheelOptions wheel)
@@ -37,7 +40,7 @@ public class ZoomOptions
 	
 	public DragOptions getDrag()
 	{
-		return drag;
+		return this.drag;
 	}
 	
 	public ZoomOptions setDrag(final DragOptions drag)
@@ -48,7 +51,7 @@ public class ZoomOptions
 	
 	public PinchOptions getPinch()
 	{
-		return pinch;
+		return this.pinch;
 	}
 	
 	public ZoomOptions setPinch(final PinchOptions pinch)
@@ -59,7 +62,7 @@ public class ZoomOptions
 	
 	public String getMode()
 	{
-		return mode;
+		return this.mode;
 	}
 	
 	public ZoomOptions setMode(final String mode)
@@ -70,7 +73,7 @@ public class ZoomOptions
 	
 	public String getScaleMode()
 	{
-		return scaleMode;
+		return this.scaleMode;
 	}
 	
 	public ZoomOptions setScaleMode(final String scaleMode)
@@ -81,7 +84,7 @@ public class ZoomOptions
 	
 	public String getOverScaleMode()
 	{
-		return overScaleMode;
+		return this.overScaleMode;
 	}
 	
 	public ZoomOptions setOverScaleMode(final String overScaleMode)

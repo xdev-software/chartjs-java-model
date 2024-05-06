@@ -13,32 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.plugins.zoom;
+package software.xdev.chartjs.model.options.plugins.zoom.zoom;
 
-public class LimitOptions
+/**
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#pinch-options">ChartJS docs</a>
+ */
+public class PinchOptions
 {
-	protected ScaleLimits x;
-	protected ScaleLimits y;
+	protected Boolean enabled;
 	
-	public ScaleLimits getX()
+	public Boolean getEnabled()
 	{
-		return x;
+		return this.enabled;
 	}
 	
-	public LimitOptions setX(final ScaleLimits x)
+	public PinchOptions setEnabled(final Boolean enabled)
 	{
-		this.x = x;
-		return this;
-	}
-	
-	public ScaleLimits getY()
-	{
-		return y;
-	}
-	
-	public LimitOptions setY(final ScaleLimits y)
-	{
-		this.y = y;
+		this.enabled = enabled;
 		return this;
 	}
 }

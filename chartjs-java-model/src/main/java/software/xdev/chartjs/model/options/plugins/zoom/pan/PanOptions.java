@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.plugins.zoom;
+package software.xdev.chartjs.model.options.plugins.zoom.pan;
 
+/**
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#pan-options">ChartJS docs</a>
+ */
 public class PanOptions
 {
 	protected Boolean enabled;
@@ -26,7 +29,7 @@ public class PanOptions
 	
 	public Boolean getEnabled()
 	{
-		return enabled;
+		return this.enabled;
 	}
 	
 	public PanOptions setEnabled(final Boolean enabled)
@@ -37,7 +40,7 @@ public class PanOptions
 	
 	public String getMode()
 	{
-		return mode;
+		return this.mode;
 	}
 	
 	public PanOptions setMode(final String mode)
@@ -48,7 +51,7 @@ public class PanOptions
 	
 	public String getModifierKey()
 	{
-		return modifierKey;
+		return this.modifierKey;
 	}
 	
 	public PanOptions setModifierKey(final String modifierKey)
@@ -59,7 +62,7 @@ public class PanOptions
 	
 	public String getScaleMode()
 	{
-		return scaleMode;
+		return this.scaleMode;
 	}
 	
 	public PanOptions setScaleMode(final String scaleMode)
@@ -70,7 +73,7 @@ public class PanOptions
 	
 	public String getOverScaleMode()
 	{
-		return overScaleMode;
+		return this.overScaleMode;
 	}
 	
 	public PanOptions setOverScaleMode(final String overScaleMode)
@@ -81,7 +84,7 @@ public class PanOptions
 	
 	public Integer getThreshold()
 	{
-		return threshold;
+		return this.threshold;
 	}
 	
 	public PanOptions setThreshold(final Integer threshold)

@@ -13,47 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.plugins.zoom;
+package software.xdev.chartjs.model.options.plugins.zoom.limits;
 
-import java.math.BigDecimal;
-
-
-public class ScaleLimits
+/**
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#limit-options">ChartJS docs</a>
+ */
+public class LimitOptions
 {
-	protected Object min;
-	protected Object max;
-	protected BigDecimal minRange;
+	protected ScaleLimits x;
+	protected ScaleLimits y;
 	
-	public Object getMin()
+	public ScaleLimits getX()
 	{
-		return min;
+		return this.x;
 	}
 	
-	public ScaleLimits setMin(final Object min)
+	public LimitOptions setX(final ScaleLimits x)
 	{
-		this.min = min;
+		this.x = x;
 		return this;
 	}
 	
-	public Object getMax()
+	public ScaleLimits getY()
 	{
-		return max;
+		return this.y;
 	}
 	
-	public ScaleLimits setMax(final Object max)
+	public LimitOptions setY(final ScaleLimits y)
 	{
-		this.max = max;
-		return this;
-	}
-	
-	public BigDecimal getMinRange()
-	{
-		return minRange;
-	}
-	
-	public ScaleLimits setMinRange(final BigDecimal minRange)
-	{
-		this.minRange = minRange;
+		this.y = y;
 		return this;
 	}
 }

@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.plugins.zoom;
+package software.xdev.chartjs.model.options.plugins.zoom.zoom;
 
+/**
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#wheel-options">ChartJS docs</a>
+ */
 public class WheelOptions
 {
 	protected Boolean enabled;
@@ -23,7 +26,7 @@ public class WheelOptions
 	
 	public Boolean getEnabled()
 	{
-		return enabled;
+		return this.enabled;
 	}
 	
 	public WheelOptions setEnabled(final Boolean enabled)
@@ -34,7 +37,7 @@ public class WheelOptions
 	
 	public Number getSpeed()
 	{
-		return speed;
+		return this.speed;
 	}
 	
 	public WheelOptions setSpeed(final Number speed)
@@ -45,7 +48,7 @@ public class WheelOptions
 	
 	public String getModifierKey()
 	{
-		return modifierKey;
+		return this.modifierKey;
 	}
 	
 	public WheelOptions setModifierKey(final String modifierKey)

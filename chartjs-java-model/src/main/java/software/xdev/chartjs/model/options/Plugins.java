@@ -95,6 +95,9 @@ public class Plugins
 	/**
 	 * A zoom and pan plugin for Chart.js. Panning can be done via the mouse or with a finger. Zooming is done via the
 	 * mouse wheel or via a pinch gesture.
+	 * <p>
+	 * Note: Requires the {@link Zoom} plugin installed.
+	 * </p>
 	 */
 	public Plugins setZoom(final Zoom zoom)
 	{

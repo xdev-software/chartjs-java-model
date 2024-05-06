@@ -13,20 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/**
+ * This package describes options for the
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest">ChartJS Zoom Plugin</a>
+ */
 package software.xdev.chartjs.model.options.plugins.zoom;
-
-public class PinchOptions
-{
-	protected Boolean enabled;
-	
-	public Boolean getEnabled()
-	{
-		return enabled;
-	}
-	
-	public PinchOptions setEnabled(final Boolean enabled)
-	{
-		this.enabled = enabled;
-		return this;
-	}
-}

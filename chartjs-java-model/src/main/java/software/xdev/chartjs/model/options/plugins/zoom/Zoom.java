@@ -15,10 +15,19 @@
  */
 package software.xdev.chartjs.model.options.plugins.zoom;
 
+import software.xdev.chartjs.model.options.plugins.zoom.limits.LimitOptions;
+import software.xdev.chartjs.model.options.plugins.zoom.pan.PanOptions;
+import software.xdev.chartjs.model.options.plugins.zoom.zoom.ZoomOptions;
+
+
+/**
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html">ChartJS docs</a>
+ */
 public class Zoom
 {
 	protected PanOptions pan;
 	protected LimitOptions limits;
+	@SuppressWarnings("java:S1700")
 	protected ZoomOptions zoom;
 	
 	public PanOptions getPan()
@@ -34,7 +43,7 @@ public class Zoom
 	
 	public LimitOptions getLimits()
 	{
-		return limits;
+		return this.limits;
 	}
 	
 	public Zoom setLimits(final LimitOptions limits)
@@ -45,7 +54,7 @@ public class Zoom
 	
 	public ZoomOptions getZoom()
 	{
-		return zoom;
+		return this.zoom;
 	}
 	
 	public Zoom setZoom(final ZoomOptions zoom)

@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.plugins.zoom;
+package software.xdev.chartjs.model.options.plugins.zoom.zoom;
 
 import software.xdev.chartjs.model.color.Color;
 
 
+/**
+ * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#drag-options">ChartJS docs</a>
+ */
 public class DragOptions
 {
 	protected Boolean enabled;
@@ -30,7 +33,7 @@ public class DragOptions
 	
 	public Boolean getEnabled()
 	{
-		return enabled;
+		return this.enabled;
 	}
 	
 	public DragOptions setEnabled(final Boolean enabled)
@@ -41,7 +44,7 @@ public class DragOptions
 	
 	public Color getBackgroundColor()
 	{
-		return backgroundColor;
+		return this.backgroundColor;
 	}
 	
 	public DragOptions setBackgroundColor(final Color backgroundColor)
@@ -52,7 +55,7 @@ public class DragOptions
 	
 	public Color getBorderColor()
 	{
-		return borderColor;
+		return this.borderColor;
 	}
 	
 	public DragOptions setBorderColor(final Color borderColor)
@@ -63,7 +66,7 @@ public class DragOptions
 	
 	public Integer getBorderWidth()
 	{
-		return borderWidth;
+		return this.borderWidth;
 	}
 	
 	public DragOptions setBorderWidth(final Integer borderWidth)
@@ -74,7 +77,7 @@ public class DragOptions
 	
 	public String getDrawTime()
 	{
-		return drawTime;
+		return this.drawTime;
 	}
 	
 	public DragOptions setDrawTime(final String drawTime)
@@ -85,7 +88,7 @@ public class DragOptions
 	
 	public Integer getThreshold()
 	{
-		return threshold;
+		return this.threshold;
 	}
 	
 	public DragOptions setThreshold(final Integer threshold)
@@ -96,7 +99,7 @@ public class DragOptions
 	
 	public String getModifierKey()
 	{
-		return modifierKey;
+		return this.modifierKey;
 	}
 	
 	public DragOptions setModifierKey(final String modifierKey)
