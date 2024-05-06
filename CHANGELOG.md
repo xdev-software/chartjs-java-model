@@ -1,4 +1,5 @@
 ## 1.1.4
+* Add TimeScale and TimeTicks to allow building linear time charts #90
 * Updated dependencies
 
 ## 1.1.3
