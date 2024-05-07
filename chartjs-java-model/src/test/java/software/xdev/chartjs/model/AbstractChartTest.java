@@ -26,11 +26,11 @@ import java.util.Arrays;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.testcontainers.containers.BrowserWebDriverContainer;
 import org.testcontainers.utility.MountableFile;
 
 import software.xdev.chartjs.model.charts.Chart;
-import software.xdev.chartjs.model.container.SimpleBrowserWebDriverContainer;
+import software.xdev.chartjs.model.container.SeleniumBrowserWebDriverContainer;
+import software.xdev.testcontainers.selenium.containers.browser.BrowserWebDriverContainer;
 
 
 public abstract class AbstractChartTest
@@ -43,9 +43,9 @@ public abstract class AbstractChartTest
 	protected static final String CONTAINER_TEST_TEMPLATE_HTML_FILE = "/home/user/" + TEST_TEMPLATE_HTML_FILE;
 	
 	// One Container is started once and only the rendered HTML is changed. Improves performance.
-	protected static final SimpleBrowserWebDriverContainer WEB_CONTAINER = createBrowserWithTempDirectoryMounted();
+	protected static final SeleniumBrowserWebDriverContainer WEB_CONTAINER = createBrowserWithTempDirectoryMounted();
 	
-	private static SimpleBrowserWebDriverContainer createBrowserWithTempDirectoryMounted()
+	private static SeleniumBrowserWebDriverContainer createBrowserWithTempDirectoryMounted()
 	{
 		if(!SLF4JBridgeHandler.isInstalled())
 		{
@@ -53,26 +53,24 @@ public abstract class AbstractChartTest
 			SLF4JBridgeHandler.install();
 		}
 		
-		final SimpleBrowserWebDriverContainer browserContainer = new SimpleBrowserWebDriverContainer()
-			.withRecordingMode(
-				BrowserWebDriverContainer.VncRecordingMode.SKIP,
-				null)
-			.withCapabilities(new ChromeOptions())
-			.withCopyFileToContainer(
-				MountableFile.forClasspathResource("/" + TEST_TEMPLATE_HTML_FILE),
-				CONTAINER_TEST_TEMPLATE_HTML_FILE);
+		final SeleniumBrowserWebDriverContainer browserContainer =
+			new SeleniumBrowserWebDriverContainer(new ChromeOptions())
+				.withRecordingMode(BrowserWebDriverContainer.RecordingMode.SKIP)
+				.withCopyFileToContainer(
+					MountableFile.forClasspathResource("/" + TEST_TEMPLATE_HTML_FILE),
+					CONTAINER_TEST_TEMPLATE_HTML_FILE);
 		browserContainer.start();
 		return browserContainer;
 	}
 	
-	protected SimpleBrowserWebDriverContainer getWebContainer()
+	protected SeleniumBrowserWebDriverContainer getWebContainer()
 	{
 		return WEB_CONTAINER;
 	}
 	
 	protected void createScreenshotAndCompare(
 		final Chart<?, ?, ?> chart,
-		final SimpleBrowserWebDriverContainer browserContainer,
+		final SeleniumBrowserWebDriverContainer browserContainer,
 		final String screenshotReference)
 	{
 		try
@@ -93,7 +91,7 @@ public abstract class AbstractChartTest
 	}
 	
 	protected void assertCurrentBrowserViewEqualsScreenshot(
-		final SimpleBrowserWebDriverContainer browserContainer,
+		final SeleniumBrowserWebDriverContainer browserContainer,
 		final String screenshotReference) throws IOException
 	{
 		final byte[] actual = browserContainer.webDriver().getScreenshotAs(OutputType.BYTES);

@@ -21,20 +21,20 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.rnorth.ducttape.timeouts.Timeouts;
 import org.rnorth.ducttape.unreliables.Unreliables;
-import org.testcontainers.containers.BrowserWebDriverContainer;
+
+import software.xdev.testcontainers.selenium.containers.browser.CapabilitiesBrowserWebDriverContainer;
 
 
-public class SimpleBrowserWebDriverContainer extends BrowserWebDriverContainer<SimpleBrowserWebDriverContainer>
+public class SeleniumBrowserWebDriverContainer
+	extends CapabilitiesBrowserWebDriverContainer<SeleniumBrowserWebDriverContainer>
 {
 	protected RemoteWebDriver webDriver;
-	
 	protected Capabilities capabilities;
 	
-	@Override
-	public SimpleBrowserWebDriverContainer withCapabilities(final Capabilities capabilities)
+	public SeleniumBrowserWebDriverContainer(final Capabilities capabilities)
 	{
+		super(capabilities);
 		this.capabilities = capabilities;
-		return super.withCapabilities(capabilities);
 	}
 	
 	public synchronized RemoteWebDriver webDriver()
@@ -46,7 +46,7 @@ public class SimpleBrowserWebDriverContainer extends BrowserWebDriverContainer<S
 				() -> Timeouts.getWithTimeout(
 					20,
 					TimeUnit.SECONDS,
-					() -> new RemoteWebDriver(this.getSeleniumAddress(), this.capabilities)
+					() -> new RemoteWebDriver(this.getSeleniumAddressURI().toURL(), this.capabilities, false)
 				)
 			);
 		}
