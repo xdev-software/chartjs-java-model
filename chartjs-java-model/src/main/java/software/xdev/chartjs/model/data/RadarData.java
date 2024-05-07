@@ -18,6 +18,6 @@ package software.xdev.chartjs.model.data;
 import software.xdev.chartjs.model.dataset.RadarDataset;
 
 
-public class RadarData extends Data<RadarData, RadarDataset>
+public class RadarData extends HomogeneousData<RadarData, RadarDataset>
 {
 }

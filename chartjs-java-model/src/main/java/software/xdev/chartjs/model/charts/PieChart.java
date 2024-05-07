@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.PieData;
 import software.xdev.chartjs.model.dataset.PieDataset;
 import software.xdev.chartjs.model.options.Options;
 import software.xdev.chartjs.model.options.PieOptions;
 
 
-public class PieChart extends AbstractChart<PieChart, PieOptions, PieData>
+public class PieChart extends HomogeneousChart<PieChart, PieOptions, PieData>
 {
 	public PieChart()
 	{
@@ -39,7 +39,7 @@ public class PieChart extends AbstractChart<PieChart, PieOptions, PieData>
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link PieChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link PieChart}.
 	 *
 	 * @return a new {@link PieData} instance
 	 */

@@ -19,4 +19,9 @@ import java.math.BigDecimal;
 
 public class PolarDataset extends RoundDataset<PolarDataset, BigDecimal> implements BigDecimalDataset<PolarDataset>
 {
+	@Override
+	protected String defaultType()
+	{
+		return "polarArea";
+	}
 }

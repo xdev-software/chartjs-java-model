@@ -6,7 +6,7 @@
 
 	<groupId>software.xdev</groupId>
 	<artifactId>chartjs-java-model</artifactId>
-	<version>1.2.1-SNAPSHOT</version>
+	<version>1.3.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>chartjs-java-model</name>
@@ -139,6 +139,19 @@
 			<artifactId>testcontainers</artifactId>
 			<version>${testcontainers-version}</version>
 			<scope>test</scope>
+			<exclusions>
+				<!-- No JUnit 4 -->
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>software.xdev</groupId>
+			<artifactId>testcontainers-junit4-mock</artifactId>
+			<version>1.0.1</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.testcontainers</groupId>
@@ -147,9 +160,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>selenium</artifactId>
-			<version>${testcontainers-version}</version>
+			<groupId>software.xdev</groupId>
+			<artifactId>testcontainers-selenium</artifactId>
+			<version>1.0.1</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -159,6 +172,13 @@
 			<artifactId>selenium-chrome-driver</artifactId>
 			<version>4.20.0</version>
 			<scope>test</scope>
+			<exclusions>
+				<!-- Tracing is not needed -->
+				<exclusion>
+					<groupId>io.opentelemetry</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 

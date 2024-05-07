@@ -18,6 +18,6 @@ package software.xdev.chartjs.model.data;
 import software.xdev.chartjs.model.dataset.LineDataset;
 
 
-public class LineData extends Data<LineData, LineDataset>
+public class LineData extends HomogeneousData<LineData, LineDataset>
 {
 }

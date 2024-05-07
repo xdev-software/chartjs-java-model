@@ -18,6 +18,6 @@ package software.xdev.chartjs.model.data;
 import software.xdev.chartjs.model.dataset.PolarDataset;
 
 
-public class PolarData extends Data<PolarData, PolarDataset>
+public class PolarData extends HomogeneousData<PolarData, PolarDataset>
 {
 }

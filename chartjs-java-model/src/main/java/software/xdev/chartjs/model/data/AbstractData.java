@@ -24,7 +24,7 @@ import java.util.List;
 import software.xdev.chartjs.model.dataset.Dataset;
 
 
-public class Data<D extends Data<D, T>, T extends Dataset<T, ?>>
+public abstract class AbstractData<D extends AbstractData<D, T>, T extends Dataset<?, ?>>
 {
 	private final List<String> labels = new ArrayList<>();
 	private final List<T> datasets = new ArrayList<>();

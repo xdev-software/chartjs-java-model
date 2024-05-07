@@ -16,12 +16,12 @@
 package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.BubbleData;
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.options.BubbleOptions;
 import software.xdev.chartjs.model.options.Options;
 
 
-public class BubbleChart extends AbstractChart<BubbleChart, BubbleOptions, BubbleData>
+public class BubbleChart extends HomogeneousChart<BubbleChart, BubbleOptions, BubbleData>
 {
 	public BubbleChart()
 	{
@@ -38,7 +38,7 @@ public class BubbleChart extends AbstractChart<BubbleChart, BubbleOptions, Bubbl
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link BubbleChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link BubbleChart}.
 	 *
 	 * @return a new {@link BubbleData} instance
 	 */

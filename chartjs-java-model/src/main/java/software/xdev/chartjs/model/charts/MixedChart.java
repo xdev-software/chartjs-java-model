@@ -13,11 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.data;
+package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.dataset.DoughnutDataset;
+import software.xdev.chartjs.model.data.MixedData;
+import software.xdev.chartjs.model.options.Options;
 
 
-public class DoughnutData extends HomogeneousData<DoughnutData, DoughnutDataset>
+/**
+ * Allows creation of <a href="https://www.chartjs.org/docs/latest/charts/mixed.html">mixed chart types</a>
+ */
+public class MixedChart extends AbstractChart<MixedChart, Options<?, ?>, MixedData>
 {
+	protected String type;
+	
+	public MixedChart setType(final String type)
+	{
+		this.type = type;
+		return this.self();
+	}
+	
+	@Override
+	public String getType()
+	{
+		return this.type;
+	}
+	
+	@Override
+	public boolean isDrawable()
+	{
+		// Warning: Unchecked
+		return true;
+	}
 }

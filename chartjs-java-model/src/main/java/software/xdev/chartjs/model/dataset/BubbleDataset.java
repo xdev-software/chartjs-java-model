@@ -34,6 +34,12 @@ public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
 {
 	private final List<Integer> hoverRadius = new OptionalArray<>();
 	
+	@Override
+	protected String defaultType()
+	{
+		return "bubble";
+	}
+	
 	/**
 	 * <p>
 	 * Additional radius to add to data radius on hover.

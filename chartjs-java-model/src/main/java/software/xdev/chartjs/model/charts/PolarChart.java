@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.PolarData;
 import software.xdev.chartjs.model.dataset.PolarDataset;
 import software.xdev.chartjs.model.options.Options;
 import software.xdev.chartjs.model.options.PolarOptions;
 
 
-public class PolarChart extends AbstractChart<PolarChart, PolarOptions, PolarData>
+public class PolarChart extends HomogeneousChart<PolarChart, PolarOptions, PolarData>
 {
 	public PolarChart()
 	{
@@ -39,7 +39,7 @@ public class PolarChart extends AbstractChart<PolarChart, PolarOptions, PolarDat
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link PolarChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link PolarChart}.
 	 *
 	 * @return a new {@link PolarData} instance
 	 */

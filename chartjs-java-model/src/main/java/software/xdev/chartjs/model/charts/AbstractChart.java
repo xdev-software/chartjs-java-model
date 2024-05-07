@@ -24,11 +24,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.AbstractData;
 import software.xdev.chartjs.model.options.Options;
 
 
-public abstract class AbstractChart<T, O extends Options<O, ?>, D extends Data<D, ?>>
+public abstract class AbstractChart<T, O extends Options<?, ?>, D extends AbstractData<?, ?>>
 	implements Chart<T, O, D>
 {
 	protected D data;

@@ -15,9 +15,9 @@
  */
 package software.xdev.chartjs.model.data;
 
-import software.xdev.chartjs.model.dataset.DoughnutDataset;
+import software.xdev.chartjs.model.dataset.Dataset;
 
 
-public class DoughnutData extends HomogeneousData<DoughnutData, DoughnutDataset>
+public class HomogeneousData<D extends HomogeneousData<D, T>, T extends Dataset<T, ?>> extends AbstractData<D, T>
 {
 }

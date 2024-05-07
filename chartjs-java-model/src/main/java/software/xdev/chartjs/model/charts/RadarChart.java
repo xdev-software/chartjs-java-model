@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.RadarData;
 import software.xdev.chartjs.model.dataset.RadarDataset;
 import software.xdev.chartjs.model.options.Options;
 import software.xdev.chartjs.model.options.RadarOptions;
 
 
-public class RadarChart extends AbstractChart<RadarChart, RadarOptions, RadarData>
+public class RadarChart extends HomogeneousChart<RadarChart, RadarOptions, RadarData>
 {
 	public RadarChart()
 	{
@@ -39,7 +39,7 @@ public class RadarChart extends AbstractChart<RadarChart, RadarOptions, RadarDat
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link RadarChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link RadarChart}.
 	 *
 	 * @return a new {@link RadarData} instance
 	 */

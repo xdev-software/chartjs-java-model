@@ -13,11 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.data;
+package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.dataset.DoughnutDataset;
+import software.xdev.chartjs.model.data.HomogeneousData;
+import software.xdev.chartjs.model.options.Options;
 
 
-public class DoughnutData extends HomogeneousData<DoughnutData, DoughnutDataset>
+public abstract class HomogeneousChart<T, O extends Options<O, ?>, D extends HomogeneousData<D, ?>>
+	extends AbstractChart<T, O, D>
 {
+	protected HomogeneousChart()
+	{
+	}
+	
+	protected HomogeneousChart(final D data)
+	{
+		super(data);
+	}
+	
+	protected HomogeneousChart(final D data, final O options)
+	{
+		super(data, options);
+	}
 }

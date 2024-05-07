@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.LineData;
 import software.xdev.chartjs.model.dataset.LineDataset;
 import software.xdev.chartjs.model.options.LineOptions;
 import software.xdev.chartjs.model.options.Options;
 
 
-public class LineChart extends AbstractChart<LineChart, LineOptions, LineData>
+public class LineChart extends HomogeneousChart<LineChart, LineOptions, LineData>
 {
 	public LineChart()
 	{
@@ -39,7 +39,7 @@ public class LineChart extends AbstractChart<LineChart, LineOptions, LineData>
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link LineChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link LineChart}.
 	 *
 	 * @return a new {@link LineData} instance
 	 */
