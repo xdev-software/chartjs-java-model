@@ -1,3 +1,10 @@
+## 1.3.0
+* Allows creation of mixed charts #128
+  * New chart class: ``MixedChart``
+  * Some classes have been renamed
+    * ``Data`` -> ``HomogeneousData``
+    * ``AbstractChart`` -> ``HomogeneousChart``
+
 ## 1.2.0
 * Add TimeScale and TimeTicks to allow building linear time charts #90
 * Add options for the [Zoom plugin](https://www.chartjs.org/chartjs-plugin-zoom/latest/) #117
