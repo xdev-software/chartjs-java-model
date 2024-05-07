@@ -43,8 +43,8 @@ jobs:
         cache: 'maven'
       
     - name: Build with Maven
-      # Java 17 is required for running integration tests
-      run: ./mvnw -B clean package ${{ matrix.java >=17 && '-P run-integration-tests' || '' }}
+      # Java 17 is required for tests
+      run: ./mvnw -B clean package ${{ matrix.java >=17 && '-P run-integration-tests' || '-Dmaven.test.skip=true' }}
       
     - name: Check for uncommited changes
       run: |
