@@ -25,7 +25,35 @@ import java.util.stream.Collectors;
 
 public abstract class Dataset<T extends Dataset<T, O>, O>
 {
+	protected String type;
 	protected final List<Object> data = new ArrayList<>();
+	
+	protected abstract String defaultType();
+	
+	/**
+	 * Set's the default type
+	 */
+	public T withDefaultType()
+	{
+		return this.setType(this.defaultType());
+	}
+	
+	public String getType()
+	{
+		return this.type;
+	}
+	
+	/**
+	 * Sets the {@code type} of the dataset.
+	 * <p>
+	 * Usually only required for <a href="https://www.chartjs.org/docs/latest/charts/mixed.html">mixed charts</a>
+	 * </p>
+	 */
+	public T setType(final String type)
+	{
+		this.type = type;
+		return this.self();
+	}
 	
 	/**
 	 * @return an unmodifiable view of the data held in this {@code Dataset}, never {@code null}

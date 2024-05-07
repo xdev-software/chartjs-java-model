@@ -19,4 +19,9 @@ import java.math.BigDecimal;
 
 public class PieDataset extends RoundDataset<PieDataset, BigDecimal> implements BigDecimalDataset<PieDataset>
 {
+	@Override
+	protected String defaultType()
+	{
+		return "pie";
+	}
 }

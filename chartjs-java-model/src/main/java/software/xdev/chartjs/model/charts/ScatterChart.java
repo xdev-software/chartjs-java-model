@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.ScatterData;
 import software.xdev.chartjs.model.dataset.ScatterDataset;
 import software.xdev.chartjs.model.options.LineOptions;
 import software.xdev.chartjs.model.options.Options;
 
 
-public class ScatterChart extends AbstractChart<ScatterChart, LineOptions, ScatterData>
+public class ScatterChart extends HomogeneousChart<ScatterChart, LineOptions, ScatterData>
 {
 	
 	public ScatterChart()
@@ -40,7 +40,7 @@ public class ScatterChart extends AbstractChart<ScatterChart, LineOptions, Scatt
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link ScatterChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link ScatterChart}.
 	 *
 	 * @return a new {@link ScatterData} instance
 	 */

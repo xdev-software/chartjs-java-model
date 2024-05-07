@@ -17,12 +17,12 @@ package software.xdev.chartjs.model.charts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.AbstractData;
 import software.xdev.chartjs.model.options.Options;
 
 
 @SuppressWarnings("java:S119") // SELF means the Chart itself... Not a problem
-public interface Chart<SELF, O extends Options<O, ?>, D extends Data<D, ?>>
+public interface Chart<SELF, O extends Options<?, ?>, D extends AbstractData<?, ?>>
 {
 	/**
 	 * @return type of this {@link Chart} implementation for proper drawing in JavaScript.

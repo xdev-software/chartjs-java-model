@@ -18,6 +18,6 @@ package software.xdev.chartjs.model.data;
 import software.xdev.chartjs.model.dataset.BarDataset;
 
 
-public class BarData extends Data<BarData, BarDataset>
+public class BarData extends HomogeneousData<BarData, BarDataset>
 {
 }

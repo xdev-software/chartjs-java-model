@@ -15,13 +15,13 @@
  */
 package software.xdev.chartjs.model.charts;
 
-import software.xdev.chartjs.model.data.Data;
 import software.xdev.chartjs.model.data.DoughnutData;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.options.DoughnutOptions;
 import software.xdev.chartjs.model.options.Options;
 
 
-public class DoughnutChart extends AbstractChart<DoughnutChart, DoughnutOptions, DoughnutData>
+public class DoughnutChart extends HomogeneousChart<DoughnutChart, DoughnutOptions, DoughnutData>
 {
 	public DoughnutChart()
 	{
@@ -38,7 +38,7 @@ public class DoughnutChart extends AbstractChart<DoughnutChart, DoughnutOptions,
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link DoughnutChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link DoughnutChart}.
 	 *
 	 * @return a new {@link DoughnutData} instance
 	 */

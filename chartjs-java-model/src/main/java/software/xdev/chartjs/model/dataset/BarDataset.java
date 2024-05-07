@@ -31,6 +31,12 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	private final List<BorderSkipped> borderSkipped = new OptionalArray<>();
 	private String stack;
 	
+	@Override
+	protected String defaultType()
+	{
+		return "bar";
+	}
+	
 	public String getLabel()
 	{
 		return this.label;

@@ -24,6 +24,12 @@ public class RadarDataset extends PointDataset<RadarDataset, BigDecimal> impleme
 {
 	private final List<Integer> hitRadius = new ArrayList<>();
 	
+	@Override
+	protected String defaultType()
+	{
+		return "radar";
+	}
+	
 	public List<Integer> getHitRadius()
 	{
 		return this.hitRadius;

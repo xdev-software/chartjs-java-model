@@ -16,13 +16,13 @@
 package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.BarData;
-import software.xdev.chartjs.model.data.Data;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.dataset.BarDataset;
 import software.xdev.chartjs.model.options.BarOptions;
 import software.xdev.chartjs.model.options.Options;
 
 
-public class BarChart extends AbstractChart<BarChart, BarOptions, BarData>
+public class BarChart extends HomogeneousChart<BarChart, BarOptions, BarData>
 {
 	public BarChart()
 	{
@@ -39,7 +39,7 @@ public class BarChart extends AbstractChart<BarChart, BarOptions, BarData>
 	}
 	
 	/**
-	 * Static factory, constructs an {@link Data} implementation appropriate for a {@link BarChart}.
+	 * Static factory, constructs an {@link HomogeneousData} implementation appropriate for a {@link BarChart}.
 	 *
 	 * @return a new {@link BarData} instance
 	 */

@@ -18,6 +18,6 @@ package software.xdev.chartjs.model.data;
 import software.xdev.chartjs.model.dataset.BubbleDataset;
 
 
-public class BubbleData extends Data<BubbleData, BubbleDataset>
+public class BubbleData extends HomogeneousData<BubbleData, BubbleDataset>
 {
 }

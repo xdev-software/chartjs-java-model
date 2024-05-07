@@ -21,4 +21,9 @@ import java.math.BigDecimal;
 public class DoughnutDataset extends RoundDataset<DoughnutDataset, BigDecimal>
 	implements BigDecimalDataset<DoughnutDataset>
 {
+	@Override
+	protected String defaultType()
+	{
+		return "doughnut";
+	}
 }
