@@ -32,15 +32,18 @@ import software.xdev.chartjs.model.charts.BubbleChart;
 import software.xdev.chartjs.model.charts.Chart;
 import software.xdev.chartjs.model.charts.DoughnutChart;
 import software.xdev.chartjs.model.charts.LineChart;
+import software.xdev.chartjs.model.charts.MixedChart;
 import software.xdev.chartjs.model.charts.PieChart;
 import software.xdev.chartjs.model.charts.PolarChart;
 import software.xdev.chartjs.model.charts.RadarChart;
 import software.xdev.chartjs.model.charts.ScatterChart;
+import software.xdev.chartjs.model.data.AbstractData;
 import software.xdev.chartjs.model.data.BarData;
 import software.xdev.chartjs.model.data.BubbleData;
-import software.xdev.chartjs.model.data.Data;
 import software.xdev.chartjs.model.data.DoughnutData;
+import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.LineData;
+import software.xdev.chartjs.model.data.MixedData;
 import software.xdev.chartjs.model.data.PieData;
 import software.xdev.chartjs.model.data.PolarData;
 import software.xdev.chartjs.model.data.RadarData;
@@ -71,7 +74,7 @@ class BasicChartTest extends AbstractChartTest
 {
 	@ParameterizedTest(name = "Check if basic {0} is displayed correctly")
 	@MethodSource
-	<O extends Options<O, ?>, D extends Data<D, ?>> void basicTest(
+	<O extends Options<?, ?>, D extends AbstractData<?, ?>> void basicTest(
 		final String chartName,
 		final Chart<?, O, D> chart,
 		final O options,
@@ -133,7 +136,21 @@ class BasicChartTest extends AbstractChartTest
 					defaultData,
 					ScatterData::new,
 					ScatterDataset::new,
-					entry -> new ScatterDataPoint(entry.getValue(), entry.getValue())))
+					entry -> new ScatterDataPoint(entry.getValue(), entry.getValue()))),
+			new ArgumentDTO<>(
+				MixedChart::new,
+				LineOptions::new,
+				() -> new MixedData()
+					.addLabels("A", "B", "C")
+					.addDataset(new BarDataset()
+						.withDefaultType()
+						.setLabel("Dataset1")
+						.setData(1, 3, 2))
+					.addDataset(new LineDataset()
+						.withDefaultType()
+						.setLabel("Dataset2")
+						.setData(1, 2, 3))
+			)
 		).map(dto ->
 			Arguments.of(
 				dto.chartSupplier().get().getClass().getSimpleName(),
@@ -142,7 +159,7 @@ class BasicChartTest extends AbstractChartTest
 				dto.dataSupplier().get()));
 	}
 	
-	private static <D extends Data<D, S>, S extends Dataset<S, BigDecimal>> Supplier<D> createData(
+	private static <D extends HomogeneousData<D, S>, S extends Dataset<S, BigDecimal>> Supplier<D> createData(
 		final Map<String, BigDecimal> defaultDataMap,
 		final Supplier<D> dataSupplier,
 		final Supplier<S> dataSetSupplier)
@@ -150,7 +167,7 @@ class BasicChartTest extends AbstractChartTest
 		return createData(defaultDataMap, dataSupplier, dataSetSupplier, Map.Entry::getValue);
 	}
 	
-	private static <D extends Data<D, S>, S extends Dataset<S, O>, O> Supplier<D> createData(
+	private static <D extends HomogeneousData<D, S>, S extends Dataset<S, O>, O> Supplier<D> createData(
 		final Map<String, BigDecimal> defaultDataMap,
 		final Supplier<D> dataSupplier,
 		final Supplier<S> dataSetSupplier,
@@ -168,7 +185,7 @@ class BasicChartTest extends AbstractChartTest
 		};
 	}
 	
-	public static class ArgumentDTO<O extends Options<O, ?>, D extends Data<D, ?>>
+	public static class ArgumentDTO<O extends Options<?, ?>, D extends AbstractData<?, ?>>
 	{
 		private final Supplier<Chart<?, O, D>> chartSupplier;
 		private final Supplier<O> optionsSupplier;
