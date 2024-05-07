@@ -4,6 +4,7 @@
   * Some classes have been renamed
     * ``Data`` -> ``HomogeneousData``
     * ``AbstractChart`` -> ``HomogeneousChart``
+* Slim down test dependencies
 
 ## 1.2.0
 * Add TimeScale and TimeTicks to allow building linear time charts #90
