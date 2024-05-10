@@ -18,6 +18,7 @@ package software.xdev.chartjs.model.dataset;
 import java.util.List;
 
 import software.xdev.chartjs.model.datapoint.BubbleDataPoint;
+import software.xdev.chartjs.model.enums.PointStyle;
 import software.xdev.chartjs.model.objects.OptionalArray;
 
 
@@ -33,6 +34,8 @@ import software.xdev.chartjs.model.objects.OptionalArray;
 public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
 {
 	private final List<Integer> hoverRadius = new OptionalArray<>();
+        
+        private  PointStyle pointStyle;
 	
 	@Override
 	protected String defaultType()
@@ -72,4 +75,15 @@ public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
 	{
 		return this.hoverRadius;
 	}
+
+        public PointStyle getPointStyle()
+        {
+          return pointStyle;
+        }
+
+        public BubbleDataset setPointStyle(final PointStyle pointStyle)
+        {
+          this.pointStyle = pointStyle;
+          return this;
+        }
 }
