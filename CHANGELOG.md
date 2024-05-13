@@ -1,3 +1,10 @@
+## 1.3.1
+* Add subtitle option #141 (@aripddev)
+* Add ``PointStyle#rectRounded`` #143 (@aripddev)
+* Add ``BubbleDataset#pointStyle`` #144 (@aripddev)
+* ``reverse`` property should be on the ``Scale`` object #145
+* Added all available properties for ``Legend``
+
 ## 1.3.0
 * Allows creation of mixed charts #128
   * New chart class: ``MixedChart``
@@ -7,8 +14,8 @@
 * Slim down test dependencies
 
 ## 1.2.0
-* Add TimeScale and TimeTicks to allow building linear time charts #90
-* Add options for the [Zoom plugin](https://www.chartjs.org/chartjs-plugin-zoom/latest/) #117
+* Add TimeScale and TimeTicks to allow building linear time charts #90 (@astappiev)
+* Add options for the [Zoom plugin](https://www.chartjs.org/chartjs-plugin-zoom/latest/) #117 (@astappiev)
 * Updated dependencies
 
 ## 1.1.3
@@ -30,7 +37,7 @@
 * Updated dependencies
 
 ## 1.0.1
-* Added support for [stacked bar chart with groups](https://www.chartjs.org/docs/4.4.0/samples/bar/stacked-groups.html)
+* Added support for [stacked bar chart with groups](https://www.chartjs.org/docs/4.4.0/samples/bar/stacked-groups.html) (@dlemaignent)
 
 ## 1.0.0
 Initial release

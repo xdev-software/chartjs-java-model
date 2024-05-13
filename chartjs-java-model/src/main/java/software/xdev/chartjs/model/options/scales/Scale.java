@@ -50,6 +50,7 @@ public class Scale<T extends Ticks<T>, S extends Scale<T, S>>
 	protected GridLines gridLines;
 	protected ScaleTitle title;
 	protected Boolean stacked;
+	protected Boolean reverse;
 	
 	/**
 	 * @see #setTicks(Ticks)
@@ -567,6 +568,30 @@ public class Scale<T extends Ticks<T>, S extends Scale<T, S>>
 		return this.self();
 	}
 	
+	/**
+	 * @see #setReverse(Boolean)
+	 */
+	public Boolean getReverse()
+	{
+		return this.reverse;
+	}
+	
+	/**
+	 * <p>
+	 * Reverses order of tick labels.
+	 * </p>
+	 *
+	 * <p>
+	 * Default {@code false}
+	 * </p>
+	 */
+	public S setReverse(final Boolean reverse)
+	{
+		this.reverse = reverse;
+		return this.self();
+	}
+	
+	@SuppressWarnings("unchecked")
 	protected S self()
 	{
 		return (S)this;

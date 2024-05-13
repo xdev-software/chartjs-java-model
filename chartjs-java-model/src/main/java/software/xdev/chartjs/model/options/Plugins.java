@@ -17,13 +17,15 @@ package software.xdev.chartjs.model.options;
 
 import software.xdev.chartjs.model.options.plugins.zoom.Zoom;
 
+
 public class Plugins
 {
 	protected Title title;
+	protected Title subtitle;
 	protected Legend legend;
 	protected Tooltip tooltip;
 	protected Zoom zoom;
-
+	
 	/**
 	 * @see #setTitle(Title)
 	 */
@@ -39,6 +41,24 @@ public class Plugins
 	public Plugins setTitle(final Title title)
 	{
 		this.title = title;
+		return this;
+	}
+	
+	/**
+	 * @see #setSubtitle(Title)
+	 */
+	public Title getSubtitle()
+	{
+		return this.subtitle;
+	}
+	
+	/**
+	 * The subtitle configuration is passed into the options.subtitle namespace. The global options for the chart
+	 * subtitle is defined in Chart.defaults.global.subtitle.
+	 */
+	public Plugins setSubtitle(final Title subtitle)
+	{
+		this.subtitle = subtitle;
 		return this;
 	}
 	
@@ -83,7 +103,7 @@ public class Plugins
 		this.tooltip = tooltip;
 		return this;
 	}
-
+	
 	/**
 	 * @see #setZoom(Zoom)
 	 */

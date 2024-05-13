@@ -41,7 +41,6 @@ public class Ticks<T extends Ticks<T>>
 	protected BigDecimal minRotation;
 	protected Boolean mirror;
 	protected BigDecimal padding;
-	protected Boolean reverse;
 	
 	/**
 	 * @see #setAutoSkip(Boolean)
@@ -358,30 +357,6 @@ public class Ticks<T extends Ticks<T>>
 	public T setPadding(final BigDecimal padding)
 	{
 		this.padding = padding;
-		return (T)this;
-	}
-	
-	/**
-	 * @see #setReverse(Boolean)
-	 */
-	public Boolean getReverse()
-	{
-		return this.reverse;
-	}
-	
-	/**
-	 * <p>
-	 * Reverses order of tick labels.
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code false}
-	 * </p>
-	 */
-	@SuppressWarnings("unchecked")
-	public T setReverse(final Boolean reverse)
-	{
-		this.reverse = reverse;
 		return (T)this;
 	}
 }

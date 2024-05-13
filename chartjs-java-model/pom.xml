@@ -50,7 +50,7 @@
 
 		<slf4j-version>2.0.13</slf4j-version>
 		<log4j-version>2.23.1</log4j-version>
-		<testcontainers-version>1.19.7</testcontainers-version>
+		<testcontainers-version>1.19.8</testcontainers-version>
 
 		<!-- by default run no tests as Docker is required -->
 		<skipTests>true</skipTests>
@@ -188,7 +188,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>4.0.0-M13</version>
+					<version>4.0.0-M14</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -201,7 +201,7 @@
 			<plugin>
 				<groupId>com.mycila</groupId>
 				<artifactId>license-maven-plugin</artifactId>
-				<version>4.3</version>
+				<version>4.5</version>
 				<configuration>
 					<properties>
 						<email>${project.organization.url}</email>

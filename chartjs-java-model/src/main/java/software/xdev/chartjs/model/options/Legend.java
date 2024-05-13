@@ -26,9 +26,18 @@ public class Legend
 {
 	protected Boolean display;
 	protected Position position;
-	protected Boolean fullWidth;
+	protected String align;
+	protected Integer maxHeight;
+	protected Integer maxWidth;
+	protected Boolean fullSize;
 	protected JavaScriptFunction onClick;
+	protected JavaScriptFunction onHover;
+	protected JavaScriptFunction onLeave;
+	protected Boolean reverse;
 	protected LegendLabels labels;
+	protected Boolean rtl;
+	protected String textDirection;
+	protected LegendTitle title;
 	
 	/**
 	 * @see #setDisplay(Boolean)
@@ -69,11 +78,64 @@ public class Legend
 	}
 	
 	/**
-	 * @see #setFullWidth(Boolean)
+	 * @see #setAlign(String)
 	 */
-	public Boolean getFullWidth()
+	public String getAlign()
 	{
-		return this.fullWidth;
+		return this.align;
+	}
+	
+	/**
+	 * Default 'center'.
+	 * <p>
+	 * Alignment of the legend
+	 */
+	public Legend setAlign(final String align)
+	{
+		this.align = align;
+		return this;
+	}
+	
+	/**
+	 * @see #setMaxHeight(Integer)
+	 */
+	public Integer getMaxHeight()
+	{
+		return this.maxHeight;
+	}
+	
+	/**
+	 * Maximum height of the legend, in pixels
+	 */
+	public Legend setMaxHeight(final Integer maxHeight)
+	{
+		this.maxHeight = maxHeight;
+		return this;
+	}
+	
+	/**
+	 * @see #setMaxWidth(Integer)
+	 */
+	public Integer getMaxWidth()
+	{
+		return this.maxWidth;
+	}
+	
+	/**
+	 * Maximum width of the legend, in pixels
+	 */
+	public Legend setMaxWidth(final Integer maxWidth)
+	{
+		this.maxWidth = maxWidth;
+		return this;
+	}
+	
+	/**
+	 * @see #setFullSize(Boolean)
+	 */
+	public Boolean getFullSize()
+	{
+		return this.fullSize;
 	}
 	
 	/**
@@ -81,9 +143,9 @@ public class Legend
 	 * <p>
 	 * Marks that this box should take the full width of the canvas (pushing down other boxes)
 	 */
-	public Legend setFullWidth(final Boolean fullWidth)
+	public Legend setFullSize(final Boolean fullSize)
 	{
-		this.fullWidth = fullWidth;
+		this.fullSize = fullSize;
 		return this;
 	}
 	
@@ -96,13 +158,64 @@ public class Legend
 	}
 	
 	/**
-	 * Default {@code function(event, legendItem) {}}
-	 * <p>
 	 * A callback that is called when a click is registered on top of a label item
 	 */
 	public Legend setOnClick(final JavaScriptFunction onClick)
 	{
 		this.onClick = onClick;
+		return this;
+	}
+	
+	/**
+	 * @see #setOnHover(JavaScriptFunction)
+	 */
+	public JavaScriptFunction getOnHover()
+	{
+		return this.onHover;
+	}
+	
+	/**
+	 * A callback that is called when a 'mousemove' event is registered on top of a label item
+	 */
+	public Legend setOnHover(final JavaScriptFunction onHover)
+	{
+		this.onHover = onHover;
+		return this;
+	}
+	
+	/**
+	 * @see #setOnLeave(JavaScriptFunction)
+	 */
+	public JavaScriptFunction getOnLeave()
+	{
+		return this.onLeave;
+	}
+	
+	/**
+	 * A callback that is called when a 'mousemove' event is registered outside of a previously hovered label item
+	 */
+	public Legend setOnLeave(final JavaScriptFunction onLeave)
+	{
+		this.onLeave = onLeave;
+		return this;
+	}
+	
+	/**
+	 * @see #setReverse(Boolean)
+	 */
+	public Boolean getReverse()
+	{
+		return this.reverse;
+	}
+	
+	/**
+	 * Default <code>false</code>
+	 * <p>
+	 * Legend will show datasets in reverse order
+	 */
+	public Legend setReverse(final Boolean reverse)
+	{
+		this.reverse = reverse;
 		return this;
 	}
 	
@@ -122,6 +235,58 @@ public class Legend
 	public Legend setLabels(final LegendLabels labels)
 	{
 		this.labels = labels;
+		return this;
+	}
+	
+	/**
+	 * @see #setRtl(Boolean)
+	 */
+	public Boolean getRtl()
+	{
+		return this.rtl;
+	}
+	
+	/**
+	 * <code>true</code> for rendering the legends from right to left
+	 */
+	public Legend setRtl(final Boolean rtl)
+	{
+		this.rtl = rtl;
+		return this;
+	}
+	
+	/**
+	 * @see #setTextDirection(String)
+	 */
+	public String getTextDirection()
+	{
+		return this.textDirection;
+	}
+	
+	/**
+	 * This will force the text direction 'rtl' or 'ltr' on the canvas for rendering the legend, regardless of the css
+	 * specified on the canvas
+	 */
+	public Legend setTextDirection(final String textDirection)
+	{
+		this.textDirection = textDirection;
+		return this;
+	}
+	
+	/**
+	 * @see #setTitle(LegendTitle)
+	 */
+	public LegendTitle getTitle()
+	{
+		return this.title;
+	}
+	
+	/**
+	 * @see LegendTitle
+	 */
+	public Legend setTitle(final LegendTitle title)
+	{
+		this.title = title;
 		return this;
 	}
 	

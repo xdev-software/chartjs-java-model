@@ -25,6 +25,7 @@ public enum PointStyle
 	CIRCLE,
 	TRIANGLE,
 	RECT,
+	RECT_ROUNDED,
 	RECT_ROT,
 	CROSS,
 	CROSS_ROT,
