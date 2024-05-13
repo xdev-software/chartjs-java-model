@@ -34,8 +34,8 @@ import software.xdev.chartjs.model.objects.OptionalArray;
 public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
 {
 	private final List<Integer> hoverRadius = new OptionalArray<>();
-        
-        private  PointStyle pointStyle;
+	
+	private PointStyle pointStyle;
 	
 	@Override
 	protected String defaultType()
@@ -75,15 +75,15 @@ public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
 	{
 		return this.hoverRadius;
 	}
-
-        public PointStyle getPointStyle()
-        {
-          return pointStyle;
-        }
-
-        public BubbleDataset setPointStyle(final PointStyle pointStyle)
-        {
-          this.pointStyle = pointStyle;
-          return this;
-        }
+	
+	public PointStyle getPointStyle()
+	{
+		return this.pointStyle;
+	}
+	
+	public BubbleDataset setPointStyle(final PointStyle pointStyle)
+	{
+		this.pointStyle = pointStyle;
+		return this;
+	}
 }
