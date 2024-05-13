@@ -2,6 +2,7 @@
 * Add subtitle option #141 (@aripddev)
 * Add ``PointStyle#rectRounded`` #143 (@aripddev)
 * Add ``BubbleDataset#pointStyle`` #144 (@aripddev)
+* ``reverse`` property should be on the ``Scale`` object #145
 
 ## 1.3.0
 * Allows creation of mixed charts #128
