@@ -56,7 +56,7 @@ public class Plugins
 	 * The subtitle configuration is passed into the options.subtitle namespace. The global options for the chart
 	 * subtitle is defined in Chart.defaults.global.subtitle.
 	 */
-	public Plugins setSubtitle(Title subtitle)
+	public Plugins setSubtitle(final Title subtitle)
 	{
 		this.subtitle = subtitle;
 		return this;
