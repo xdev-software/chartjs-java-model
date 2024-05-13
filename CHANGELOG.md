@@ -3,6 +3,7 @@
 * Add ``PointStyle#rectRounded`` #143 (@aripddev)
 * Add ``BubbleDataset#pointStyle`` #144 (@aripddev)
 * ``reverse`` property should be on the ``Scale`` object #145
+* Added all available properties for ``Legend``
 
 ## 1.3.0
 * Allows creation of mixed charts #128
