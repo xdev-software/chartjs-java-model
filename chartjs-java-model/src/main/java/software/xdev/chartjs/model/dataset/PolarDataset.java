@@ -15,9 +15,7 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-import java.math.BigDecimal;
-
-public class PolarDataset extends RoundDataset<PolarDataset, BigDecimal> implements BigDecimalDataset<PolarDataset>
+public class PolarDataset extends RoundDataset<PolarDataset, Number> implements NumberDataset<PolarDataset>
 {
 	@Override
 	protected String defaultType()

@@ -15,11 +15,8 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-import java.math.BigDecimal;
-
-
-public class DoughnutDataset extends RoundDataset<DoughnutDataset, BigDecimal>
-	implements BigDecimalDataset<DoughnutDataset>
+public class DoughnutDataset extends RoundDataset<DoughnutDataset, Number>
+	implements NumberDataset<DoughnutDataset>
 {
 	@Override
 	protected String defaultType()

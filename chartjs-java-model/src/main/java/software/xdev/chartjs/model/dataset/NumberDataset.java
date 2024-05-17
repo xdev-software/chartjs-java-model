@@ -15,26 +15,15 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collection;
 
 
-public interface BigDecimalDataset<S extends Dataset<?, BigDecimal>>
+public interface NumberDataset<S extends Dataset<?, Number>>
 {
 	S self();
 	
-	default S setData(final int... data)
-	{
-		this.self().clearData();
-		if(data != null)
-		{
-			Arrays.stream(data).forEach(this::addData);
-		}
-		return this.self();
-	}
-	
-	default S setData(final double... data)
+	default S setData(final Number... data)
 	{
 		this.self().clearData();
 		if(data != null)
@@ -49,15 +38,9 @@ public interface BigDecimalDataset<S extends Dataset<?, BigDecimal>>
 	 *
 	 * @see Dataset#setData(Collection)
 	 */
-	default S addData(final int data)
+	default S addData(final Number data)
 	{
-		this.self().addData(BigDecimal.valueOf(data));
-		return this.self();
-	}
-	
-	default S addData(final double data)
-	{
-		this.self().addData(BigDecimal.valueOf(data));
+		this.self().addData(data);
 		return this.self();
 	}
 }

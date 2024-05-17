@@ -15,26 +15,13 @@
  */
 package software.xdev.chartjs.model.datapoint;
 
-import java.math.BigDecimal;
-
-
 public class ScatterDataPoint extends XYDataPointBase<ScatterDataPoint>
 {
 	public ScatterDataPoint()
 	{
 	}
 	
-	public ScatterDataPoint(final int x, final int y)
-	{
-		super(x, y);
-	}
-	
-	public ScatterDataPoint(final double x, final double y)
-	{
-		super(x, y);
-	}
-	
-	public ScatterDataPoint(final BigDecimal x, final BigDecimal y)
+	public ScatterDataPoint(final Number x, final Number y)
 	{
 		super(x, y);
 	}

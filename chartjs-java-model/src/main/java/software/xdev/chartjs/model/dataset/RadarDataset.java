@@ -15,12 +15,11 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class RadarDataset extends PointDataset<RadarDataset, BigDecimal> implements BigDecimalDataset<RadarDataset>
+public class RadarDataset extends PointDataset<RadarDataset, Number> implements NumberDataset<RadarDataset>
 {
 	private final List<Integer> hitRadius = new ArrayList<>();
 	

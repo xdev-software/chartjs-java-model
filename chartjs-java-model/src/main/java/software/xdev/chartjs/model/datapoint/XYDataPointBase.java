@@ -15,78 +15,38 @@
  */
 package software.xdev.chartjs.model.datapoint;
 
-import java.math.BigDecimal;
-
-
 public abstract class XYDataPointBase<S extends XYDataPointBase<S>>
 {
-	private BigDecimal x;
-	
-	private BigDecimal y;
+	private Number x;
+	private Number y;
 	
 	protected XYDataPointBase()
 	{
 	}
 	
-	protected XYDataPointBase(final int x, final int y)
+	protected XYDataPointBase(final Number x, final Number y)
 	{
 		this.setX(x);
 		this.setY(y);
 	}
 	
-	protected XYDataPointBase(final double x, final double y)
-	{
-		this.setX(x);
-		this.setY(y);
-	}
-	
-	protected XYDataPointBase(final BigDecimal x, final BigDecimal y)
-	{
-		this.setX(x);
-		this.setY(y);
-	}
-	
-	public BigDecimal getX()
+	public Number getX()
 	{
 		return this.x;
 	}
 	
-	public S setX(final int x)
-	{
-		this.x = new BigDecimal(x);
-		return this.self();
-	}
-	
-	public S setX(final double x)
-	{
-		this.x = new BigDecimal(String.valueOf(x));
-		return this.self();
-	}
-	
-	public S setX(final BigDecimal x)
+	public S setX(final Number x)
 	{
 		this.x = x;
 		return this.self();
 	}
 	
-	public BigDecimal getY()
+	public Number getY()
 	{
 		return this.y;
 	}
 	
-	public S setY(final int y)
-	{
-		this.y = new BigDecimal(y);
-		return this.self();
-	}
-	
-	public S setY(final double y)
-	{
-		this.y = new BigDecimal(String.valueOf(y));
-		return this.self();
-	}
-	
-	public S setY(final BigDecimal y)
+	public S setY(final Number y)
 	{
 		this.y = y;
 		return this.self();

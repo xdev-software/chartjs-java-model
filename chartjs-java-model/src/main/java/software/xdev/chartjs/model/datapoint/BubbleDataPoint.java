@@ -15,38 +15,29 @@
  */
 package software.xdev.chartjs.model.datapoint;
 
-import java.math.BigDecimal;
-
-
 public class BubbleDataPoint extends XYDataPointBase<BubbleDataPoint>
 {
-	private BigDecimal r;
+	private Number r;
 	
 	public BubbleDataPoint()
 	{
 	}
 	
-	public BubbleDataPoint(final BigDecimal x, final BigDecimal y, final BigDecimal r)
+	public BubbleDataPoint(final Number x, final Number y, final Number r)
 	{
 		super(x, y);
 		this.r = r;
 	}
 	
-	public BigDecimal getR()
+	public Number getR()
 	{
 		return this.r;
-	}
-	
-	public BubbleDataPoint setR(final double r)
-	{
-		this.r = new BigDecimal(String.valueOf(r));
-		return this;
 	}
 	
 	/**
 	 * Radius of bubble
 	 */
-	public BubbleDataPoint setR(final BigDecimal r)
+	public BubbleDataPoint setR(final Number r)
 	{
 		this.r = r;
 		return this;

@@ -15,15 +15,14 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import software.xdev.chartjs.model.enums.BorderSkipped;
 import software.xdev.chartjs.model.objects.OptionalArray;
 
 
-public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDecimal>
-	implements BigDecimalDataset<BarDataset>
+public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, Number>
+	implements NumberDataset<BarDataset>
 {
 	private String label;
 	private String xAxisID;
