@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.scales;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.enums.ScalesPosition;
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 import software.xdev.chartjs.model.options.ticks.Ticks;
@@ -27,12 +25,12 @@ public class Scale<T extends Ticks<T>, S extends Scale<T, S>>
 	protected T ticks;
 	protected Boolean display;
 	protected ScalesPosition position;
-	protected BigDecimal min;
-	protected BigDecimal max;
-	protected BigDecimal suggestedMin;
-	protected BigDecimal suggestedMax;
+	protected Number min;
+	protected Number max;
+	protected Number suggestedMin;
+	protected Number suggestedMax;
 	protected String stack;
-	protected BigDecimal stackWeight;
+	protected Number stackWeight;
 	protected JavaScriptFunction beforeUpdate;
 	protected JavaScriptFunction beforeSetDimensions;
 	protected JavaScriptFunction afterSetDimensions;
@@ -69,45 +67,45 @@ public class Scale<T extends Ticks<T>, S extends Scale<T, S>>
 		return this.self();
 	}
 	
-	public BigDecimal getMin()
+	public Number getMin()
 	{
 		return this.min;
 	}
 	
-	public S setMin(final BigDecimal min)
+	public S setMin(final Number min)
 	{
 		this.min = min;
 		return this.self();
 	}
 	
-	public BigDecimal getMax()
+	public Number getMax()
 	{
 		return this.max;
 	}
 	
-	public S setMax(final BigDecimal max)
+	public S setMax(final Number max)
 	{
 		this.max = max;
 		return this.self();
 	}
 	
-	public BigDecimal getSuggestedMin()
+	public Number getSuggestedMin()
 	{
 		return this.suggestedMin;
 	}
 	
-	public S setSuggestedMin(final BigDecimal suggestedMin)
+	public S setSuggestedMin(final Number suggestedMin)
 	{
 		this.suggestedMin = suggestedMin;
 		return this.self();
 	}
 	
-	public BigDecimal getSuggestedMax()
+	public Number getSuggestedMax()
 	{
 		return this.suggestedMax;
 	}
 	
-	public S setSuggestedMax(final BigDecimal suggestedMax)
+	public S setSuggestedMax(final Number suggestedMax)
 	{
 		this.suggestedMax = suggestedMax;
 		return this.self();
@@ -540,12 +538,12 @@ public class Scale<T extends Ticks<T>, S extends Scale<T, S>>
 		return this.self();
 	}
 	
-	public BigDecimal getStackWeight()
+	public Number getStackWeight()
 	{
 		return this.stackWeight;
 	}
 	
-	public S setStackWeight(final BigDecimal stackWeight)
+	public S setStackWeight(final Number stackWeight)
 	{
 		this.stackWeight = stackWeight;
 		return this.self();

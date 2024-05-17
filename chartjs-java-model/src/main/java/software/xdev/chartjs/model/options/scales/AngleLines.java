@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.scales;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.color.Color;
 
 
@@ -27,7 +25,7 @@ public class AngleLines
 {
 	protected Boolean display;
 	protected Color color;
-	protected BigDecimal lineWidth;
+	protected Number lineWidth;
 	
 	/**
 	 * @see #setDisplay(Boolean)
@@ -76,9 +74,9 @@ public class AngleLines
 	}
 	
 	/**
-	 * @see #setLineWidth(BigDecimal)
+	 * @see #setLineWidth(Number)
 	 */
-	public BigDecimal getLineWidth()
+	public Number getLineWidth()
 	{
 		return this.lineWidth;
 	}
@@ -92,7 +90,7 @@ public class AngleLines
 	 * Default {@code 1}
 	 * </p>
 	 */
-	public AngleLines setLineWidth(final BigDecimal lineWidth)
+	public AngleLines setLineWidth(final Number lineWidth)
 	{
 		this.lineWidth = lineWidth;
 		return this;

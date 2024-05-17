@@ -15,17 +15,15 @@
  */
 package software.xdev.chartjs.model.options.scales;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.enums.FontStyle;
 
 
 public class Font
 {
 	protected String family;
-	protected BigDecimal size;
+	protected Number size;
 	protected FontStyle style;
-	protected BigDecimal weight;
+	protected Number weight;
 	
 	public String getFamily()
 	{
@@ -47,7 +45,7 @@ public class Font
 		return this;
 	}
 	
-	public BigDecimal getSize()
+	public Number getSize()
 	{
 		return this.size;
 	}
@@ -61,7 +59,7 @@ public class Font
 	 * Default {@code 12}
 	 * </p>
 	 */
-	public Font setSize(final BigDecimal size)
+	public Font setSize(final Number size)
 	{
 		this.size = size;
 		return this;
@@ -87,12 +85,12 @@ public class Font
 		return this;
 	}
 	
-	public BigDecimal getWeight()
+	public Number getWeight()
 	{
 		return this.weight;
 	}
 	
-	public Font setWeight(final BigDecimal weight)
+	public Font setWeight(final Number weight)
 	{
 		this.weight = weight;
 		return this;

@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.scales;
 
-import java.math.BigDecimal;
-
 
 public class Time
 {
@@ -87,9 +85,9 @@ public class Time
 	/**
 	 * Default {@code 1}
 	 *
-	 * @see #setUnitStepSize(BigDecimal)
+	 * @see #setUnitStepSize(Number)
 	 */
-	protected BigDecimal unitStepSize;
+	protected Number unitStepSize;
 	
 	/**
 	 * @see #setDisplayFormats(DisplayFormats)
@@ -247,9 +245,9 @@ public class Time
 	}
 	
 	/**
-	 * @see #setUnitStepSize(BigDecimal)
+	 * @see #setUnitStepSize(Number)
 	 */
-	public BigDecimal getUnitStepSize()
+	public Number getUnitStepSize()
 	{
 		return this.unitStepSize;
 	}
@@ -257,7 +255,7 @@ public class Time
 	/**
 	 * The number of units between grid lines.
 	 */
-	public Time setUnitStepSize(final BigDecimal unitStepSize)
+	public Time setUnitStepSize(final Number unitStepSize)
 	{
 		this.unitStepSize = unitStepSize;
 		return this;
