@@ -1,3 +1,6 @@
+## 1.4.0
+* Simplify API by using ``Number`` instead of ``BigDecimal``, ``int`` and ``double`` for ``Datapoints`` #154 (@aripddev)
+
 ## 1.3.1
 * Add subtitle option #141 (@aripddev)
 * Add ``PointStyle#rectRounded`` #143 (@aripddev)

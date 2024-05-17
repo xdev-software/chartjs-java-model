@@ -15,9 +15,7 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-import java.math.BigDecimal;
-
-public class PieDataset extends RoundDataset<PieDataset, BigDecimal> implements BigDecimalDataset<PieDataset>
+public class PieDataset extends RoundDataset<PieDataset, Number> implements NumberDataset<PieDataset>
 {
 	@Override
 	protected String defaultType()

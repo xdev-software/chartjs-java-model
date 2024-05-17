@@ -159,7 +159,7 @@ class BasicChartTest extends AbstractChartTest
 				dto.dataSupplier().get()));
 	}
 	
-	private static <D extends HomogeneousData<D, S>, S extends Dataset<S, BigDecimal>> Supplier<D> createData(
+	private static <D extends HomogeneousData<D, S>, S extends Dataset<S, Number>> Supplier<D> createData(
 		final Map<String, BigDecimal> defaultDataMap,
 		final Supplier<D> dataSupplier,
 		final Supplier<S> dataSetSupplier)
