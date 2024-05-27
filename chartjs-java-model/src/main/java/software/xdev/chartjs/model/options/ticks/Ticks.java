@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.ticks;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.FontStyle;
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
@@ -29,18 +27,18 @@ import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 public class Ticks<T extends Ticks<T>>
 {
 	protected Boolean autoSkip;
-	protected BigDecimal autoSkipPadding;
+	protected Number autoSkipPadding;
 	protected JavaScriptFunction callback;
 	protected Boolean display;
 	protected Color fontColor;
 	protected String fontFamily;
-	protected BigDecimal fontSize;
+	protected Number fontSize;
 	protected FontStyle fontStyle;
-	protected BigDecimal labelOffset;
-	protected BigDecimal maxRotation;
-	protected BigDecimal minRotation;
+	protected Number labelOffset;
+	protected Number maxRotation;
+	protected Number minRotation;
 	protected Boolean mirror;
-	protected BigDecimal padding;
+	protected Number padding;
 	
 	/**
 	 * @see #setAutoSkip(Boolean)
@@ -68,9 +66,9 @@ public class Ticks<T extends Ticks<T>>
 	}
 	
 	/**
-	 * @see #setAutoSkipPadding(BigDecimal)
+	 * @see #setAutoSkipPadding(Number)
 	 */
-	public BigDecimal getAutoSkipPadding()
+	public Number getAutoSkipPadding()
 	{
 		return this.autoSkipPadding;
 	}
@@ -85,7 +83,7 @@ public class Ticks<T extends Ticks<T>>
 	 * </p>
 	 */
 	@SuppressWarnings("unchecked")
-	public T setAutoSkipPadding(final BigDecimal autoSkipPadding)
+	public T setAutoSkipPadding(final Number autoSkipPadding)
 	{
 		this.autoSkipPadding = autoSkipPadding;
 		return (T)this;
@@ -189,9 +187,9 @@ public class Ticks<T extends Ticks<T>>
 	}
 	
 	/**
-	 * @see #setFontSize(BigDecimal)
+	 * @see #setFontSize(Number)
 	 */
-	public BigDecimal getFontSize()
+	public Number getFontSize()
 	{
 		return this.fontSize;
 	}
@@ -206,7 +204,7 @@ public class Ticks<T extends Ticks<T>>
 	 * </p>
 	 */
 	@SuppressWarnings("unchecked")
-	public T setFontSize(final BigDecimal fontSize)
+	public T setFontSize(final Number fontSize)
 	{
 		this.fontSize = fontSize;
 		return (T)this;
@@ -237,9 +235,9 @@ public class Ticks<T extends Ticks<T>>
 	}
 	
 	/**
-	 * @see #setLabelOffset(BigDecimal)
+	 * @see #setLabelOffset(Number)
 	 */
-	public BigDecimal getLabelOffset()
+	public Number getLabelOffset()
 	{
 		return this.labelOffset;
 	}
@@ -256,16 +254,16 @@ public class Ticks<T extends Ticks<T>>
 	 * </p>
 	 */
 	@SuppressWarnings("unchecked")
-	public T setLabelOffset(final BigDecimal labelOffset)
+	public T setLabelOffset(final Number labelOffset)
 	{
 		this.labelOffset = labelOffset;
 		return (T)this;
 	}
 	
 	/**
-	 * @see #setMaxRotation(BigDecimal)
+	 * @see #setMaxRotation(Number)
 	 */
-	public BigDecimal getMaxRotation()
+	public Number getMaxRotation()
 	{
 		return this.maxRotation;
 	}
@@ -281,16 +279,16 @@ public class Ticks<T extends Ticks<T>>
 	 * </p>
 	 */
 	@SuppressWarnings("unchecked")
-	public T setMaxRotation(final BigDecimal maxRotation)
+	public T setMaxRotation(final Number maxRotation)
 	{
 		this.maxRotation = maxRotation;
 		return (T)this;
 	}
 	
 	/**
-	 * @see #setMinRotation(BigDecimal)
+	 * @see #setMinRotation(Number)
 	 */
-	public BigDecimal getMinRotation()
+	public Number getMinRotation()
 	{
 		return this.minRotation;
 	}
@@ -305,7 +303,7 @@ public class Ticks<T extends Ticks<T>>
 	 * </p>
 	 */
 	@SuppressWarnings("unchecked")
-	public T setMinRotation(final BigDecimal minRotation)
+	public T setMinRotation(final Number minRotation)
 	{
 		this.minRotation = minRotation;
 		return (T)this;
@@ -337,9 +335,9 @@ public class Ticks<T extends Ticks<T>>
 	}
 	
 	/**
-	 * @see #setPadding(BigDecimal)
+	 * @see #setPadding(Number)
 	 */
-	public BigDecimal getPadding()
+	public Number getPadding()
 	{
 		return this.padding;
 	}
@@ -354,7 +352,7 @@ public class Ticks<T extends Ticks<T>>
 	 * </p>
 	 */
 	@SuppressWarnings("unchecked")
-	public T setPadding(final BigDecimal padding)
+	public T setPadding(final Number padding)
 	{
 		this.padding = padding;
 		return (T)this;

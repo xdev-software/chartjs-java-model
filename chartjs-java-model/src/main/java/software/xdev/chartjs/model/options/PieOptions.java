@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.options.animation.PieAnimation;
 import software.xdev.chartjs.model.options.elements.ArcElements;
 
@@ -27,30 +25,30 @@ public class PieOptions extends Options<PieOptions, PieAnimation>
 	/**
 	 * Default {@code 50 - for doughnut, 0 - for pie}
 	 *
-	 * @see #setCutoutPercentage(BigDecimal cutoutPercentage)
+	 * @see #setCutoutPercentage(Number cutoutPercentage)
 	 */
-	protected BigDecimal cutoutPercentage;
+	protected Number cutoutPercentage;
 	
 	/**
 	 * Default {@code -0.5 * Math.PI}
 	 *
-	 * @see #setRotation(BigDecimal rotation)
+	 * @see #setRotation(Number rotation)
 	 */
-	protected BigDecimal rotation;
+	protected Number rotation;
 	
 	/**
 	 * Default {@code 2 * Math.PI}
 	 *
-	 * @see #setCircumference(BigDecimal circumference)
+	 * @see #setCircumference(Number circumference)
 	 */
-	protected BigDecimal circumference;
+	protected Number circumference;
 	
 	protected ArcElements elements;
 	
 	/**
-	 * @see #setCutoutPercentage(BigDecimal cutoutPercentage)
+	 * @see #setCutoutPercentage(Number cutoutPercentage)
 	 */
-	public BigDecimal getCutoutPercentage()
+	public Number getCutoutPercentage()
 	{
 		return this.cutoutPercentage;
 	}
@@ -58,16 +56,16 @@ public class PieOptions extends Options<PieOptions, PieAnimation>
 	/**
 	 * The percentage of the chart that is cut out of the middle.
 	 */
-	public PieOptions setCutoutPercentage(final BigDecimal cutoutPercentage)
+	public PieOptions setCutoutPercentage(final Number cutoutPercentage)
 	{
 		this.cutoutPercentage = cutoutPercentage;
 		return this;
 	}
 	
 	/**
-	 * @see #setRotation(BigDecimal rotation)
+	 * @see #setRotation(Number rotation)
 	 */
-	public BigDecimal getRotation()
+	public Number getRotation()
 	{
 		return this.rotation;
 	}
@@ -75,16 +73,16 @@ public class PieOptions extends Options<PieOptions, PieAnimation>
 	/**
 	 * Starting angle to draw arcs from
 	 */
-	public PieOptions setRotation(final BigDecimal rotation)
+	public PieOptions setRotation(final Number rotation)
 	{
 		this.rotation = rotation;
 		return this;
 	}
 	
 	/**
-	 * @see #setCircumference(BigDecimal circumference)
+	 * @see #setCircumference(Number circumference)
 	 */
-	public BigDecimal getCircumference()
+	public Number getCircumference()
 	{
 		return this.circumference;
 	}
@@ -92,7 +90,7 @@ public class PieOptions extends Options<PieOptions, PieAnimation>
 	/**
 	 * Sweep to allow arcs to cover
 	 */
-	public PieOptions setCircumference(final BigDecimal circumference)
+	public PieOptions setCircumference(final Number circumference)
 	{
 		this.circumference = circumference;
 		return this;
