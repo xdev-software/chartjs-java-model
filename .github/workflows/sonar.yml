@@ -27,19 +27,21 @@ jobs:
   sonar:
     name: SonarCloud Scan
     runs-on: ubuntu-latest
-    if: ${{ !(github.event_name == 'pull_request' && startsWith(github.head_ref, 'renovate/')) && secrets.SONAR_TOKEN != '' }}
+    if: ${{ !(github.event_name == 'pull_request' && startsWith(github.head_ref, 'renovate/')) }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: Set up JDK
+        if: ${{ secrets.SONAR_TOKEN != '' }}
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 17
 
       - name: Cache SonarCloud packages
+        if: ${{ secrets.SONAR_TOKEN != '' }}
         uses: actions/cache@v4
         with:
           path: ~/.sonar/cache
@@ -47,6 +49,7 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
 
       - name: Cache Maven packages
+        if: ${{ secrets.SONAR_TOKEN != '' }}
         uses: actions/cache@v4
         with:
           path: ~/.m2
@@ -54,6 +57,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build with Maven
+        if: ${{ secrets.SONAR_TOKEN != '' }}
         run: |
           ./mvnw -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -DskipTests \
