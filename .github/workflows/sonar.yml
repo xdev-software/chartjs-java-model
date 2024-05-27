@@ -29,8 +29,7 @@ jobs:
     outputs:
       hasToken: ${{ steps.check-token.outputs.has }}
     steps:
-      - name: Check Token
-        id: check-token
+      - id: check-token
         run: |
           [ -z $SONAR_TOKEN ] && echo "has=false" || echo "has=true" >> "$GITHUB_OUTPUT"
         env:
