@@ -146,7 +146,7 @@ class BarChartTest extends AbstractChartTest
 	}
 	
 	@Test
-	void testStackedHorizontal()
+	void testStackedHorizontal() // A comment
 	{
 		final BarDataset dataset1 = new BarDataset()
 			.setLabel("First stack")
