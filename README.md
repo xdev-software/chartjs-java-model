@@ -25,4 +25,8 @@ See the [contributing guide](./CONTRIBUTING.md) for detailed instructions on how
 ## Dependencies and Licenses
 View the [license of the current project](LICENSE) or the [summary including all dependencies](https://xdev-software.github.io/chartjs-java-model/dependencies)
 
+## Acknowledgment
+* To all [contributors](https://github.com/xdev-software/chartjs-java-model/graphs/contributors) that helped to improve this library
+  * Especially to the devs at [PrimeTek/PrimeFaces](https://www.primefaces.org/) that regularly provide feedback and PRs
+
 <sub>Disclaimer: This is not an official ChartJS product and not associated</sub>
