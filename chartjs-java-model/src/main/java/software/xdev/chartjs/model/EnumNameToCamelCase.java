@@ -20,6 +20,7 @@ import java.util.Locale;
 
 public final class EnumNameToCamelCase
 {
+	// TEST
 	private EnumNameToCamelCase()
 	{
 	}
