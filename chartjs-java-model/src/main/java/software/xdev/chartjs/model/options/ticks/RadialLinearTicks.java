@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.ticks;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.color.Color;
 
 
@@ -33,16 +31,16 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	/**
 	 * Default {@code 2}
 	 *
-	 * @see #setBackdropPaddingX(BigDecimal backdropPaddingX)
+	 * @see #setBackdropPaddingX(Number backdropPaddingX)
 	 */
-	protected BigDecimal backdropPaddingX;
+	protected Number backdropPaddingX;
 	
 	/**
 	 * Default {@code 2}
 	 *
-	 * @see #setBackdropPaddingY(BigDecimal backdropPaddingY)
+	 * @see #setBackdropPaddingY(Number backdropPaddingY)
 	 */
-	protected BigDecimal backdropPaddingY;
+	protected Number backdropPaddingY;
 	
 	/**
 	 * Default {@code -}
@@ -54,23 +52,23 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	/**
 	 * Default {@code -}
 	 *
-	 * @see #setMin(BigDecimal min)
+	 * @see #setMin(Number min)
 	 */
-	protected BigDecimal min;
+	protected Number min;
 	
 	/**
 	 * Default {@code -}
 	 *
-	 * @see #setMax(BigDecimal max)
+	 * @see #setMax(Number max)
 	 */
-	protected BigDecimal max;
+	protected Number max;
 	
 	/**
 	 * Default {@code 11}
 	 *
-	 * @see #setMaxTicksLimit(BigDecimal maxTicksLimit)
+	 * @see #setMaxTicksLimit(Number maxTicksLimit)
 	 */
-	protected BigDecimal maxTicksLimit;
+	protected Number maxTicksLimit;
 	
 	/**
 	 * Default {@code true}
@@ -82,30 +80,30 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	/**
 	 * Default {@code -}
 	 *
-	 * @see #setStepSize(BigDecimal fixedStepSize)
+	 * @see #setStepSize(Number fixedStepSize)
 	 */
-	protected BigDecimal fixedStepSize;
+	protected Number fixedStepSize;
 	
 	/**
 	 * Default {@code -}
 	 *
-	 * @see #setStepSize(BigDecimal stepSize)
+	 * @see #setStepSize(Number stepSize)
 	 */
-	protected BigDecimal stepSize;
+	protected Number stepSize;
 	
 	/**
 	 * Default {@code -}
 	 *
-	 * @see #setSuggestedMax(BigDecimal suggestedMax)
+	 * @see #setSuggestedMax(Number suggestedMax)
 	 */
-	protected BigDecimal suggestedMax;
+	protected Number suggestedMax;
 	
 	/**
 	 * Default {@code -}
 	 *
-	 * @see #setSuggestedMin(BigDecimal suggestedMin)
+	 * @see #setSuggestedMin(Number suggestedMin)
 	 */
-	protected BigDecimal suggestedMin;
+	protected Number suggestedMin;
 	
 	/**
 	 * @see #setBackdropColor(Color backdropColor)
@@ -125,9 +123,9 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	}
 	
 	/**
-	 * @see #setBackdropPaddingX(BigDecimal backdropPaddingX)
+	 * @see #setBackdropPaddingX(Number backdropPaddingX)
 	 */
-	public BigDecimal getBackdropPaddingX()
+	public Number getBackdropPaddingX()
 	{
 		return this.backdropPaddingX;
 	}
@@ -135,16 +133,16 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	/**
 	 * Horizontal padding of label backdrop
 	 */
-	public RadialLinearTicks setBackdropPaddingX(final BigDecimal backdropPaddingX)
+	public RadialLinearTicks setBackdropPaddingX(final Number backdropPaddingX)
 	{
 		this.backdropPaddingX = backdropPaddingX;
 		return this;
 	}
 	
 	/**
-	 * @see #setBackdropPaddingY(BigDecimal backdropPaddingY)
+	 * @see #setBackdropPaddingY(Number backdropPaddingY)
 	 */
-	public BigDecimal getBackdropPaddingY()
+	public Number getBackdropPaddingY()
 	{
 		return this.backdropPaddingY;
 	}
@@ -152,7 +150,7 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	/**
 	 * Vertical padding of label backdrop
 	 */
-	public RadialLinearTicks setBackdropPaddingY(final BigDecimal backdropPaddingY)
+	public RadialLinearTicks setBackdropPaddingY(final Number backdropPaddingY)
 	{
 		this.backdropPaddingY = backdropPaddingY;
 		return this;
@@ -176,9 +174,9 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	}
 	
 	/**
-	 * @see #setMin(BigDecimal min)
+	 * @see #setMin(Number min)
 	 */
-	public BigDecimal getMin()
+	public Number getMin()
 	{
 		return this.min;
 	}
@@ -186,16 +184,16 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	/**
 	 * User defined minimum number for the scale, overrides minimum value from data.
 	 */
-	public RadialLinearTicks setMin(final BigDecimal min)
+	public RadialLinearTicks setMin(final Number min)
 	{
 		this.min = min;
 		return this;
 	}
 	
 	/**
-	 * @see #setMax(BigDecimal max)
+	 * @see #setMax(Number max)
 	 */
-	public BigDecimal getMax()
+	public Number getMax()
 	{
 		return this.max;
 	}
@@ -203,16 +201,16 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	/**
 	 * User defined maximum number for the scale, overrides maximum value from data.
 	 */
-	public RadialLinearTicks setMax(final BigDecimal max)
+	public RadialLinearTicks setMax(final Number max)
 	{
 		this.max = max;
 		return this;
 	}
 	
 	/**
-	 * @see #setMaxTicksLimit(BigDecimal maxTicksLimit)
+	 * @see #setMaxTicksLimit(Number maxTicksLimit)
 	 */
-	public BigDecimal getMaxTicksLimit()
+	public Number getMaxTicksLimit()
 	{
 		return this.maxTicksLimit;
 	}
@@ -221,7 +219,7 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	 * Maximum number of ticks and gridlines to show. If not defined, it will limit to 11 ticks but will show all
 	 * gridlines.
 	 */
-	public RadialLinearTicks setMaxTicksLimit(final BigDecimal maxTicksLimit)
+	public RadialLinearTicks setMaxTicksLimit(final Number maxTicksLimit)
 	{
 		this.maxTicksLimit = maxTicksLimit;
 		return this;
@@ -245,9 +243,9 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	}
 	
 	/**
-	 * @see #setStepSize(BigDecimal fixedStepSize)
+	 * @see #setStepSize(Number fixedStepSize)
 	 */
-	public BigDecimal getFixedStepSize()
+	public Number getFixedStepSize()
 	{
 		return this.fixedStepSize;
 	}
@@ -256,16 +254,16 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	 * User defined fixed step size for the scale. If set, the scale ticks will be enumerated by multiple of stepSize,
 	 * having one tick per increment. If not set, the ticks are labeled automatically using the nice numbers algorithm.
 	 */
-	public RadialLinearTicks setFixedStepSize(final BigDecimal fixedStepSize)
+	public RadialLinearTicks setFixedStepSize(final Number fixedStepSize)
 	{
 		this.fixedStepSize = fixedStepSize;
 		return this;
 	}
 	
 	/**
-	 * @see #setStepSize(BigDecimal stepSize)
+	 * @see #setStepSize(Number stepSize)
 	 */
-	public BigDecimal getStepSize()
+	public Number getStepSize()
 	{
 		return this.stepSize;
 	}
@@ -274,16 +272,16 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	 * if defined, it can be used along with the min and the max to give a custom number of steps. See the example
 	 * below.
 	 */
-	public RadialLinearTicks setStepSize(final BigDecimal stepSize)
+	public RadialLinearTicks setStepSize(final Number stepSize)
 	{
 		this.stepSize = stepSize;
 		return this;
 	}
 	
 	/**
-	 * @see #setSuggestedMax(BigDecimal suggestedMax)
+	 * @see #setSuggestedMax(Number suggestedMax)
 	 */
-	public BigDecimal getSuggestedMax()
+	public Number getSuggestedMax()
 	{
 		return this.suggestedMax;
 	}
@@ -292,16 +290,16 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	 * User defined maximum number for the scale, overrides maximum value except for if it is lower than the maximum
 	 * value.
 	 */
-	public RadialLinearTicks setSuggestedMax(final BigDecimal suggestedMax)
+	public RadialLinearTicks setSuggestedMax(final Number suggestedMax)
 	{
 		this.suggestedMax = suggestedMax;
 		return this;
 	}
 	
 	/**
-	 * @see #setSuggestedMin(BigDecimal suggestedMin)
+	 * @see #setSuggestedMin(Number suggestedMin)
 	 */
-	public BigDecimal getSuggestedMin()
+	public Number getSuggestedMin()
 	{
 		return this.suggestedMin;
 	}
@@ -310,7 +308,7 @@ public class RadialLinearTicks extends Ticks<RadialLinearTicks>
 	 * User defined minimum number for the scale, overrides minimum value except for if it is higher than the minimum
 	 * value.
 	 */
-	public RadialLinearTicks setSuggestedMin(final BigDecimal suggestedMin)
+	public RadialLinearTicks setSuggestedMin(final Number suggestedMin)
 	{
 		this.suggestedMin = suggestedMin;
 		return this;

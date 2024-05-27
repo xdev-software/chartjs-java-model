@@ -15,19 +15,17 @@
  */
 package software.xdev.chartjs.model.options.ticks;
 
-import java.math.BigDecimal;
-
 
 public class LinearTicks extends Ticks<LinearTicks>
 {
 	protected Boolean beginAtZero;
-	protected BigDecimal min;
-	protected BigDecimal max;
-	protected BigDecimal maxTicksLimit;
-	protected BigDecimal fixedStepSize;
-	protected BigDecimal stepSize;
-	protected BigDecimal suggestedMax;
-	protected BigDecimal suggestedMin;
+	protected Number min;
+	protected Number max;
+	protected Number maxTicksLimit;
+	protected Number fixedStepSize;
+	protected Number stepSize;
+	protected Number suggestedMax;
+	protected Number suggestedMin;
 	
 	public Boolean getBeginAtZero()
 	{
@@ -50,20 +48,11 @@ public class LinearTicks extends Ticks<LinearTicks>
 	}
 	
 	/**
-	 * @see #setMin(BigDecimal)
+	 * @see #setMin(Number)
 	 */
-	public BigDecimal getMin()
+	public Number getMin()
 	{
 		return this.min;
-	}
-	
-	/**
-	 * @see #setMin(BigDecimal)
-	 */
-	public LinearTicks setMin(final int min)
-	{
-		this.min = new BigDecimal(min);
-		return this;
 	}
 	
 	/**
@@ -75,27 +64,18 @@ public class LinearTicks extends Ticks<LinearTicks>
 	 * Default {@code -}
 	 * </p>
 	 */
-	public LinearTicks setMin(final BigDecimal min)
+	public LinearTicks setMin(final Number min)
 	{
 		this.min = min;
 		return this;
 	}
 	
 	/**
-	 * @see #setMax(BigDecimal)
+	 * @see #setMax(Number)
 	 */
-	public BigDecimal getMax()
+	public Number getMax()
 	{
 		return this.max;
-	}
-	
-	/**
-	 * @see #setMax(BigDecimal)
-	 */
-	public LinearTicks setMax(final int max)
-	{
-		this.max = new BigDecimal(max);
-		return this;
 	}
 	
 	/**
@@ -107,16 +87,16 @@ public class LinearTicks extends Ticks<LinearTicks>
 	 * Default {@code -}
 	 * </p>
 	 */
-	public LinearTicks setMax(final BigDecimal max)
+	public LinearTicks setMax(final Number max)
 	{
 		this.max = max;
 		return this;
 	}
 	
 	/**
-	 * @see #setMaxTicksLimit(BigDecimal)
+	 * @see #setMaxTicksLimit(Number)
 	 */
-	public BigDecimal getMaxTicksLimit()
+	public Number getMaxTicksLimit()
 	{
 		return this.maxTicksLimit;
 	}
@@ -131,16 +111,16 @@ public class LinearTicks extends Ticks<LinearTicks>
 	 * Default {@code 11}
 	 * </p>
 	 */
-	public LinearTicks setMaxTicksLimit(final BigDecimal maxTicksLimit)
+	public LinearTicks setMaxTicksLimit(final Number maxTicksLimit)
 	{
 		this.maxTicksLimit = maxTicksLimit;
 		return this;
 	}
 	
 	/**
-	 * @see #setFixedStepSize(BigDecimal)
+	 * @see #setFixedStepSize(Number)
 	 */
-	public BigDecimal getFixedStepSize()
+	public Number getFixedStepSize()
 	{
 		return this.fixedStepSize;
 	}
@@ -155,36 +135,18 @@ public class LinearTicks extends Ticks<LinearTicks>
 	 * Default {@code -}
 	 * </p>
 	 */
-	public LinearTicks setFixedStepSize(final BigDecimal fixedStepSize)
+	public LinearTicks setFixedStepSize(final Number fixedStepSize)
 	{
 		this.fixedStepSize = fixedStepSize;
 		return this;
 	}
 	
 	/**
-	 * @see #setStepSize(BigDecimal)
+	 * @see #setStepSize(Number)
 	 */
-	public BigDecimal getStepSize()
+	public Number getStepSize()
 	{
 		return this.stepSize;
-	}
-	
-	/**
-	 * @see #setStepSize(BigDecimal)
-	 */
-	public LinearTicks setStepSize(final double stepSize)
-	{
-		this.stepSize = new BigDecimal(String.valueOf(stepSize));
-		return this;
-	}
-	
-	/**
-	 * @see #setStepSize(BigDecimal)
-	 */
-	public LinearTicks setStepSize(final int stepSize)
-	{
-		this.stepSize = new BigDecimal(stepSize);
-		return this;
 	}
 	
 	/**
@@ -197,16 +159,16 @@ public class LinearTicks extends Ticks<LinearTicks>
 	 * Default {@code -}
 	 * </p>
 	 */
-	public LinearTicks setStepSize(final BigDecimal stepSize)
+	public LinearTicks setStepSize(final Number stepSize)
 	{
 		this.stepSize = stepSize;
 		return this;
 	}
 	
 	/**
-	 * @see #setSuggestedMax(BigDecimal)
+	 * @see #setSuggestedMax(Number)
 	 */
-	public BigDecimal getSuggestedMax()
+	public Number getSuggestedMax()
 	{
 		return this.suggestedMax;
 	}
@@ -221,16 +183,16 @@ public class LinearTicks extends Ticks<LinearTicks>
 	 * Default {@code -}
 	 * </p>
 	 */
-	public LinearTicks setSuggestedMax(final BigDecimal suggestedMax)
+	public LinearTicks setSuggestedMax(final Number suggestedMax)
 	{
 		this.suggestedMax = suggestedMax;
 		return this;
 	}
 	
 	/**
-	 * @see #setSuggestedMin(BigDecimal)
+	 * @see #setSuggestedMin(Number)
 	 */
-	public BigDecimal getSuggestedMin()
+	public Number getSuggestedMin()
 	{
 		return this.suggestedMin;
 	}
@@ -245,7 +207,7 @@ public class LinearTicks extends Ticks<LinearTicks>
 	 * Default {@code -}
 	 * </p>
 	 */
-	public LinearTicks setSuggestedMin(final BigDecimal suggestedMin)
+	public LinearTicks setSuggestedMin(final Number suggestedMin)
 	{
 		this.suggestedMin = suggestedMin;
 		return this;

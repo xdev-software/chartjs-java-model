@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.plugins.zoom.limits;
 
-import java.math.BigDecimal;
-
 
 /**
  * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#scale-limits">ChartJS docs</a>
@@ -25,7 +23,7 @@ public class ScaleLimits
 {
 	protected Object min;
 	protected Object max;
-	protected BigDecimal minRange;
+	protected Number minRange;
 	
 	public Object getMin()
 	{
@@ -49,12 +47,12 @@ public class ScaleLimits
 		return this;
 	}
 	
-	public BigDecimal getMinRange()
+	public Number getMinRange()
 	{
 		return this.minRange;
 	}
 	
-	public ScaleLimits setMinRange(final BigDecimal minRange)
+	public ScaleLimits setMinRange(final Number minRange)
 	{
 		this.minRange = minRange;
 		return this;

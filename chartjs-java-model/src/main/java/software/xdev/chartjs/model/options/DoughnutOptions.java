@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.options.animation.DoughnutAnimation;
 import software.xdev.chartjs.model.options.elements.ArcElements;
 
@@ -26,30 +24,30 @@ public class DoughnutOptions extends Options<DoughnutOptions, DoughnutAnimation>
 	/**
 	 * Default {@code 50}
 	 *
-	 * @see #setCutout(BigDecimal cutout)
+	 * @see #setCutout(Number cutout)
 	 */
-	protected BigDecimal cutout;
+	protected Number cutout;
 	
 	/**
 	 * Rotation in degrees. Default {@code 0}. {@code 0} is at the top.
 	 *
-	 * @see #setRotation(BigDecimal rotation)
+	 * @see #setRotation(Number rotation)
 	 */
-	protected BigDecimal rotation;
+	protected Number rotation;
 	
 	/**
 	 * Circumference in degrees. Default {@code 360}.
 	 *
-	 * @see #setCircumference(BigDecimal circumference)
+	 * @see #setCircumference(Number circumference)
 	 */
-	protected BigDecimal circumference;
+	protected Number circumference;
 	
 	protected ArcElements elements;
 	
 	/**
-	 * @see #setCutout(BigDecimal cutoutPercentage)
+	 * @see #setCutout(Number cutoutPercentage)
 	 */
-	public BigDecimal getCutout()
+	public Number getCutout()
 	{
 		return this.cutout;
 	}
@@ -57,16 +55,16 @@ public class DoughnutOptions extends Options<DoughnutOptions, DoughnutAnimation>
 	/**
 	 * The pixels as number of the chart that is cut out of the middle.
 	 */
-	public DoughnutOptions setCutout(final BigDecimal cutout)
+	public DoughnutOptions setCutout(final Number cutout)
 	{
 		this.cutout = cutout;
 		return this;
 	}
 	
 	/**
-	 * @see #setRotation(BigDecimal rotation)
+	 * @see #setRotation(Number rotation)
 	 */
-	public BigDecimal getRotation()
+	public Number getRotation()
 	{
 		return this.rotation;
 	}
@@ -74,16 +72,16 @@ public class DoughnutOptions extends Options<DoughnutOptions, DoughnutAnimation>
 	/**
 	 * Starting angle to draw arcs from in degrees
 	 */
-	public DoughnutOptions setRotation(final BigDecimal rotation)
+	public DoughnutOptions setRotation(final Number rotation)
 	{
 		this.rotation = rotation;
 		return this;
 	}
 	
 	/**
-	 * @see #setCircumference(BigDecimal circumference)
+	 * @see #setCircumference(Number circumference)
 	 */
-	public BigDecimal getCircumference()
+	public Number getCircumference()
 	{
 		return this.circumference;
 	}
@@ -91,7 +89,7 @@ public class DoughnutOptions extends Options<DoughnutOptions, DoughnutAnimation>
 	/**
 	 * Sweep to allow arcs to cover in degrees
 	 */
-	public DoughnutOptions setCircumference(final BigDecimal circumference)
+	public DoughnutOptions setCircumference(final Number circumference)
 	{
 		this.circumference = circumference;
 		return this;

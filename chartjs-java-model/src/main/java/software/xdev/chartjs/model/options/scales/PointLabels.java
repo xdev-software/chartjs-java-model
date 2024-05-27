@@ -15,8 +15,6 @@
  */
 package software.xdev.chartjs.model.options.scales;
 
-import java.math.BigDecimal;
-
 import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.FontStyle;
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
@@ -31,7 +29,7 @@ public class PointLabels
 	protected JavaScriptFunction callback;
 	protected Color fontColor;
 	protected String fontFamily;
-	protected BigDecimal fontSize;
+	protected Number fontSize;
 	protected FontStyle fontStyle;
 	
 	/**
@@ -104,9 +102,9 @@ public class PointLabels
 	}
 	
 	/**
-	 * @see #setFontSize(BigDecimal)
+	 * @see #setFontSize(Number)
 	 */
-	public BigDecimal getFontSize()
+	public Number getFontSize()
 	{
 		return this.fontSize;
 	}
@@ -120,7 +118,7 @@ public class PointLabels
 	 * Default {@code 10}
 	 * </p>
 	 */
-	public PointLabels setFontSize(final BigDecimal fontSize)
+	public PointLabels setFontSize(final Number fontSize)
 	{
 		this.fontSize = fontSize;
 		return this;
