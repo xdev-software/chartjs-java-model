@@ -29,6 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !(github.event_name == 'pull_request' && startsWith(github.head_ref, 'renovate/')) && github.repository_owner == 'xdev-software' }}
     steps:
+      - run: echo ${{ github.repository_owner }}
+      
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
