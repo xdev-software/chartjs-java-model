@@ -1,3 +1,6 @@
+## 1.4.1
+* Use ``Number`` instead of ``BigDecimal`` on some additional places in the code #159 (@aripddev)
+
 ## 1.4.0
 * Simplify API by using ``Number`` instead of ``BigDecimal``, ``int`` and ``double`` for ``Datapoints`` #154 (@aripddev)
 
