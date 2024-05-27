@@ -6,7 +6,7 @@
 
 	<groupId>software.xdev</groupId>
 	<artifactId>chartjs-java-model-root</artifactId>
-	<version>1.4.1</version>
+	<version>1.4.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<organization>
