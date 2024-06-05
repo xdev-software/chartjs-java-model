@@ -1,3 +1,6 @@
+## 1.4.2
+* Added ``JsonIgnore`` to certain fields to help prevent infinite loops #174
+
 ## 1.4.1
 * Use ``Number`` instead of ``BigDecimal`` in some additional places #159 (@aripddev)
 
