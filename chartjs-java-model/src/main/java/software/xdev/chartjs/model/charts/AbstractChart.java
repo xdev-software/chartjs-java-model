@@ -18,6 +18,7 @@ package software.xdev.chartjs.model.charts;
 import java.io.UncheckedIOException;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -34,7 +35,8 @@ public abstract class AbstractChart<T, O extends Options<?, ?>, D extends Abstra
 	protected D data;
 	protected O options;
 	
-	protected final ObjectWriter objectWriter = new ObjectMapper()
+	@JsonIgnore
+	protected ObjectWriter defaultObjectWriter = new ObjectMapper()
 		.setDefaultPropertyInclusion(JsonInclude.Include.NON_EMPTY)
 		.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
 		.setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)
@@ -84,12 +86,25 @@ public abstract class AbstractChart<T, O extends Options<?, ?>, D extends Abstra
 		return this.self();
 	}
 	
+	@JsonIgnore
+	public ObjectWriter getDefaultObjectWriter()
+	{
+		return this.defaultObjectWriter;
+	}
+	
+	@JsonIgnore
+	public T setDefaultObjectWriter(final ObjectWriter defaultObjectWriter)
+	{
+		this.defaultObjectWriter = defaultObjectWriter;
+		return this.self();
+	}
+	
 	@Override
 	public String toJsonNative()
 	{
 		try
 		{
-			return this.objectWriter.writeValueAsString(this);
+			return this.defaultObjectWriter.writeValueAsString(this);
 		}
 		catch(final JsonProcessingException e)
 		{
