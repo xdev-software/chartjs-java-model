@@ -16,21 +16,86 @@
 package software.xdev.chartjs.model.options;
 
 import software.xdev.chartjs.model.color.Color;
-import software.xdev.chartjs.model.enums.FontStyle;
-import software.xdev.chartjs.model.enums.TitlePosition;
+import software.xdev.chartjs.model.options.scales.Font;
 
 
 public class Title
 {
+	protected String align;
+	protected Color color;
 	protected Boolean display;
-	protected TitlePosition position;
-	protected Boolean fullWidth;
-	protected Integer fontSize;
-	protected String fontFamily;
-	protected Color fontColor;
-	protected FontStyle fontStyle;
+	protected Boolean fullSize;
+	protected String position;
+	protected Font font;
 	protected Integer padding;
 	protected String text;
+	
+	/**
+	 * @see #setAlign(String)
+	 */
+	public String getAlign()
+	{
+		return this.align;
+	}
+	
+	/**
+	 * Alignment of the title
+	 *
+	 * <p>Default: center</p>
+	 */
+	public Title setAlign(final String align)
+	{
+		this.align = align;
+		return this;
+	}
+	
+	/**
+	 * @see #setColor(Color)
+	 */
+	public Color getColor()
+	{
+		return this.color;
+	}
+	
+	/**
+	 * Color of text
+	 */
+	public Title setColor(final Color color)
+	{
+		this.color = color;
+		return this;
+	}
+	
+	/**
+	 * @see #setFullSize(Boolean)
+	 */
+	public Boolean getFullSize()
+	{
+		return this.fullSize;
+	}
+	
+	/**
+	 * Marks that this box should take the full width/height of the canvas. If false, the box is sized and placed
+	 * above/beside the chart area.
+	 *
+	 * <p>Default: true</p>
+	 */
+	public Title setFullSize(final Boolean fullSize)
+	{
+		this.fullSize = fullSize;
+		return this;
+	}
+	
+	public Font getFont()
+	{
+		return this.font;
+	}
+	
+	public Title setFont(final Font font)
+	{
+		this.font = font;
+		return this;
+	}
 	
 	/**
 	 * @see #setDisplay(Boolean)
@@ -56,9 +121,9 @@ public class Title
 	}
 	
 	/**
-	 * @see #setPosition(TitlePosition)
+	 * @see #setPosition(String)
 	 */
-	public TitlePosition getPosition()
+	public String getPosition()
 	{
 		return this.position;
 	}
@@ -72,124 +137,9 @@ public class Title
 	 * Default {@code 'top'}
 	 * </p>
 	 */
-	public Title setPosition(final TitlePosition position)
+	public Title setPosition(final String position)
 	{
 		this.position = position;
-		return this;
-	}
-	
-	/**
-	 * @see #setFullWidth(Boolean)
-	 */
-	public Boolean getFullWidth()
-	{
-		return this.fullWidth;
-	}
-	
-	/**
-	 * <p>
-	 * Marks that this box should take the full width of the canvas (pushing down other boxes)
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code true}
-	 * </p>
-	 */
-	public Title setFullWidth(final Boolean fullWidth)
-	{
-		this.fullWidth = fullWidth;
-		return this;
-	}
-	
-	/**
-	 * @see #setFontSize(Integer)
-	 */
-	public Integer getFontSize()
-	{
-		return this.fontSize;
-	}
-	
-	/**
-	 * <p>
-	 * Font size inherited from global configuration
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code 12}
-	 * </p>
-	 */
-	public Title setFontSize(final Integer fontSize)
-	{
-		this.fontSize = fontSize;
-		return this;
-	}
-	
-	/**
-	 * @see #setFontFamily(String)
-	 */
-	public String getFontFamily()
-	{
-		return this.fontFamily;
-	}
-	
-	/**
-	 * <p>
-	 * Font family inherited from global configuration
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"}
-	 * </p>
-	 */
-	public Title setFontFamily(final String fontFamily)
-	{
-		this.fontFamily = fontFamily;
-		return this;
-	}
-	
-	/**
-	 * @see #setFontColor(Color)
-	 */
-	public Color getFontColor()
-	{
-		return this.fontColor;
-	}
-	
-	/**
-	 * <p>
-	 * Font color inherited from global configuration
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code "#666"}
-	 * </p>
-	 */
-	public Title setFontColor(final Color fontColor)
-	{
-		this.fontColor = fontColor;
-		return this;
-	}
-	
-	/**
-	 * @see #setFontStyle(FontStyle)
-	 */
-	public FontStyle getFontStyle()
-	{
-		return this.fontStyle;
-	}
-	
-	/**
-	 * <p>
-	 * Font styling of the title, follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit).
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code 'bold'}
-	 * </p>
-	 */
-	public Title setFontStyle(final FontStyle fontStyle)
-	{
-		this.fontStyle = fontStyle;
 		return this;
 	}
 	

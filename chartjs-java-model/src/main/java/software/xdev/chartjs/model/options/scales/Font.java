@@ -24,6 +24,7 @@ public class Font
 	protected Number size;
 	protected FontStyle style;
 	protected Number weight;
+	protected String lineHeight;
 	
 	public String getFamily()
 	{
@@ -94,5 +95,21 @@ public class Font
 	{
 		this.weight = weight;
 		return this;
+	}
+	
+	/**
+	 * @see #setLineHeight(String)
+	 */
+	public String getLineHeight()
+	{
+		return this.lineHeight;
+	}
+	
+	/**
+	 * Height of an individual line of text
+	 */
+	public void setLineHeight(final String lineHeight)
+	{
+		this.lineHeight = lineHeight;
 	}
 }
