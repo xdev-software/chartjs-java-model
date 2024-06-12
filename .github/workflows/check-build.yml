@@ -29,7 +29,7 @@ jobs:
 
     strategy:
       matrix:
-        java: [17, 21]
+        java: [11, 17, 21]
         distribution: [temurin]
 
     steps:
@@ -43,7 +43,8 @@ jobs:
         cache: 'maven'
       
     - name: Build with Maven
-      run: ./mvnw -B clean package
+      # Java 17 is required for tests
+      run: ./mvnw -B clean package ${{ matrix.java >=17 && '-P run-integration-tests' || '-Dmaven.test.skip=true' }}
       
     - name: Check for uncommited changes
       run: |
@@ -69,6 +70,14 @@ jobs:
         name: demo-files-java-${{ matrix.java }}
         path: ${{ env.DEMO_MAVEN_MODULE }}/target/${{ env.DEMO_MAVEN_MODULE }}.jar
         if-no-files-found: error
+
+    - name: Upload screenshots of test failures
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-fail-screenshots-${{ matrix.java }}
+        path: ${{ env.PRIMARY_MAVEN_MODULE }}/target/screenshots
+        if-no-files-found: ignore
 
   code-style:
     runs-on: ubuntu-latest
