@@ -1,6 +1,7 @@
 ## 2.0.0
 * Scales have been reworked and are now nearly identical to the types defined in ChartJS
-* The use of ``Color`` is no longer required. It's also possible to use strings now.
+* The use of ``Color`` for various coloring related options is no longer required. 
+  * It's now possible to use e.g. strings
 
 ## 1.5.0
 * Added ``JsonIgnore`` to certain fields to help prevent infinite loops #174
