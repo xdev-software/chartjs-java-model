@@ -15,23 +15,21 @@
  */
 package software.xdev.chartjs.model.options;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.options.layout.Padding;
-import software.xdev.chartjs.model.options.scales.Font;
 
 
 public class LegendTitle
 {
-	protected Color color;
+	protected Object color;
 	protected Boolean display;
 	protected Font font;
 	protected Padding padding;
 	protected String text;
 	
 	/**
-	 * @see #setColor(Color)
+	 * @see #setColor(Object)
 	 */
-	public Color getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
@@ -41,7 +39,7 @@ public class LegendTitle
 	 * <p/>
 	 * Color of text
 	 */
-	public LegendTitle setColor(final Color color)
+	public LegendTitle setColor(final Object color)
 	{
 		this.color = color;
 		return this;

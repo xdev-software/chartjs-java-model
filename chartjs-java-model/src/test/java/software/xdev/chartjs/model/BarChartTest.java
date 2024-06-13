@@ -29,10 +29,11 @@ import software.xdev.chartjs.model.data.BarData;
 import software.xdev.chartjs.model.datapoint.XYDataPoint;
 import software.xdev.chartjs.model.dataset.BarDataset;
 import software.xdev.chartjs.model.options.BarOptions;
-import software.xdev.chartjs.model.options.scales.BarScale;
-import software.xdev.chartjs.model.options.scales.ScaleTitle;
-import software.xdev.chartjs.model.options.scales.Scales;
-import software.xdev.chartjs.model.options.ticks.LinearTicks;
+import software.xdev.chartjs.model.options.scale.Scales;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianScaleOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.CartesianScaleOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.linear.LinearScaleOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.linear.LinearTickOptions;
 
 
 @SuppressWarnings("java:S2699") // Done in custom method
@@ -71,8 +72,8 @@ class BarChartTest extends AbstractChartTest
 			.getScales()
 			.addScale(
 				Scales.ScaleAxis.Y,
-				new BarScale<>()
-					.setTitle(new ScaleTitle().setText("Test"))
+				new LinearScaleOptions()
+					.setTitle(new AbstractCartesianScaleOptions.Title().setText("Test"))
 					.setMax(BigDecimal.valueOf(2)));
 		
 		final BarChart chart = new BarChart()
@@ -107,8 +108,8 @@ class BarChartTest extends AbstractChartTest
 			.setAnimation(false);
 		options
 			.getScales()
-			.addScale(Scales.ScaleAxis.X, new BarScale<>().setStacked(true))
-			.addScale(Scales.ScaleAxis.Y, new BarScale<>().setStacked(true));
+			.addScale(Scales.ScaleAxis.X, new CartesianScaleOptions().setStacked(true))
+			.addScale(Scales.ScaleAxis.Y, new CartesianScaleOptions().setStacked(true));
 		
 		this.createScreenshotAndCompare(
 			new BarChart(data, options),
@@ -128,16 +129,14 @@ class BarChartTest extends AbstractChartTest
 			.addLabels("First", "Second", "Third")
 			.addDataset(dataset1);
 		
-		final LinearTicks ticks = new LinearTicks()
-			.setMin(20)
-			.setMax(100)
-			.setStepSize(5);
-		
-		final BarOptions options = new BarOptions()
-			.setAnimation(false);
+		final BarOptions options = new BarOptions().setAnimation(false);
 		options
 			.getScales()
-			.addScale(Scales.ScaleAxis.Y, new BarScale<LinearTicks>().setTicks(ticks));
+			.addScale(Scales.ScaleAxis.Y, new LinearScaleOptions()
+				.setMin(20)
+				.setMax(100)
+				.setTicks(new LinearTickOptions()
+					.setStepSize(5)));
 		
 		this.createScreenshotAndCompare(
 			new BarChart(data, options),
@@ -168,8 +167,8 @@ class BarChartTest extends AbstractChartTest
 			.setIndexAxis(BarOptions.IndexAxis.Y);
 		options
 			.getScales()
-			.addScale(Scales.ScaleAxis.X, new BarScale<>().setStacked(true))
-			.addScale(Scales.ScaleAxis.Y, new BarScale<>().setStacked(true));
+			.addScale(Scales.ScaleAxis.X, new CartesianScaleOptions().setStacked(true))
+			.addScale(Scales.ScaleAxis.Y, new CartesianScaleOptions().setStacked(true));
 		
 		this.createScreenshotAndCompare(
 			new BarChart(data, options),
@@ -211,8 +210,8 @@ class BarChartTest extends AbstractChartTest
 			.setIndexAxis(BarOptions.IndexAxis.Y);
 		options
 			.getScales()
-			.addScale(Scales.ScaleAxis.X, new BarScale<>().setStacked(true))
-			.addScale(Scales.ScaleAxis.Y, new BarScale<>().setStacked(true));
+			.addScale(Scales.ScaleAxis.X, new CartesianScaleOptions().setStacked(true))
+			.addScale(Scales.ScaleAxis.Y, new CartesianScaleOptions().setStacked(true));
 		
 		this.createScreenshotAndCompare(
 			new BarChart(data, options),

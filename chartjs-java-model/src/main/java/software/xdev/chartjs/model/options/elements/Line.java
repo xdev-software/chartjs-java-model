@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.options.elements;
 
 import java.util.List;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.BorderCapStyle;
 import software.xdev.chartjs.model.enums.BorderJoinStyle;
 
@@ -34,9 +33,9 @@ import software.xdev.chartjs.model.enums.BorderJoinStyle;
 public class Line
 {
 	protected Float tension;
-	protected Color backgroundColor;
+	protected Object backgroundColor;
 	protected Integer borderWidth;
-	protected Color borderColor;
+	protected Object borderColor;
 	protected BorderCapStyle borderCapStyle;
 	protected List<Integer> borderDash;
 	protected Float borderDashOffset;
@@ -69,9 +68,9 @@ public class Line
 	}
 	
 	/**
-	 * @see #setBackgroundColor(Color)
+	 * @see #setBackgroundColor(Object)
 	 */
-	public Color getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
@@ -85,7 +84,7 @@ public class Line
 	 * Default {@code 'rgba(0,0,0,0.1)'}
 	 * </p>
 	 */
-	public Line setBackgroundColor(final Color backgroundColor)
+	public Line setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this;
@@ -115,9 +114,9 @@ public class Line
 	}
 	
 	/**
-	 * @see #setBorderColor(Color)
+	 * @see #setBorderColor(Object)
 	 */
-	public Color getBorderColor()
+	public Object getBorderColor()
 	{
 		return this.borderColor;
 	}
@@ -131,7 +130,7 @@ public class Line
 	 * Default {@code 'rgba(0,0,0,0.1)'}
 	 * </p>
 	 */
-	public Line setBorderColor(final Color borderColor)
+	public Line setBorderColor(final Object borderColor)
 	{
 		this.borderColor = borderColor;
 		return this;

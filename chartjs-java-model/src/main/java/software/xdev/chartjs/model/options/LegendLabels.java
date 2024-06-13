@@ -15,7 +15,6 @@
  */
 package software.xdev.chartjs.model.options;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.FontStyle;
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 
@@ -25,7 +24,7 @@ public class LegendLabels
 	protected Integer boxWidth;
 	protected Integer fontSize;
 	protected FontStyle fontStyle;
-	protected Color fontColor;
+	protected Object fontColor;
 	protected String fontFamily;
 	protected Integer padding;
 	protected JavaScriptFunction generateLabels;
@@ -101,9 +100,9 @@ public class LegendLabels
 	}
 	
 	/**
-	 * @see #setFontColor(Color)
+	 * @see #setFontColor(Object)
 	 */
-	public Color getFontColor()
+	public Object getFontColor()
 	{
 		return this.fontColor;
 	}
@@ -117,7 +116,7 @@ public class LegendLabels
 	 * Default {@code "#666"}
 	 * </p>
 	 */
-	public LegendLabels setFontColor(final Color fontColor)
+	public LegendLabels setFontColor(final Object fontColor)
 	{
 		this.fontColor = fontColor;
 		return this;
