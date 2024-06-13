@@ -13,20 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.scales;
-
-import software.xdev.chartjs.model.options.ticks.LinearTicks;
-
+package software.xdev.chartjs.model.options.scale.cartesian.time;
 
 /**
- * The linear scale is use to chart numerical data. It can be placed on either the x or y axis. The scatter chart type
- * automatically configures a line chart to use one of these scales for the x axis. As the name suggests, linear
- * interpolation is used to determine where a value lies on the axis.
+ * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/timeseries.html">ChartJS docs</a>
  */
-public class LinearScale extends Scale<LinearTicks, LinearScale>
+public class TimeSeriesScaleOptions extends TimeScaleOptions
 {
-	public String getType()
+	public TimeSeriesScaleOptions()
 	{
-		return "linear";
+		super("timeseries");
 	}
 }

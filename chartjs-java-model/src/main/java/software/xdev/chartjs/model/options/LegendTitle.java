@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.options;
 
 import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.options.layout.Padding;
-import software.xdev.chartjs.model.options.scales.Font;
 
 
 public class LegendTitle

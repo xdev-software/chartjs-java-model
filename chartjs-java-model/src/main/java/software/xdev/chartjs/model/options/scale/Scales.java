@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.scales;
+package software.xdev.chartjs.model.options.scale;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -34,20 +34,20 @@ public class Scales
 		return this.scalesList;
 	}
 	
-	public Scales addScale(final String customScaleName, final Scale<?, ?> scale)
+	public Scales addScale(final String customScaleName, final CoreScaleOptions<?, ?> scale)
 	{
 		this.getScalesList().put(customScaleName, scale);
 		return this;
 	}
 	
-	public Scales addScale(final ScaleAxis axis, final Scale<?, ?> scale)
+	public Scales addScale(final ScaleAxis axis, final CoreScaleOptions<?, ?> scale)
 	{
-		this.getScalesList().put(axis.toString(), scale);
-		return this;
+		return this.addScale(axis.toString(), scale);
 	}
 	
 	public enum ScaleAxis
 	{
+		R,
 		X,
 		Y;
 		

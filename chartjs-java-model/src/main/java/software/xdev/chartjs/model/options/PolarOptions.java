@@ -17,34 +17,32 @@ package software.xdev.chartjs.model.options;
 
 import software.xdev.chartjs.model.options.animation.PolarAnimation;
 import software.xdev.chartjs.model.options.elements.ArcElements;
-import software.xdev.chartjs.model.options.scales.RadialLinearScale;
-import software.xdev.chartjs.model.options.scales.Scale;
+import software.xdev.chartjs.model.options.scale.radial.RadialLinearScaleOptions;
 
 
 public class PolarOptions extends Options<PolarOptions, PolarAnimation>
 {
-	
 	/**
-	 * @see #setScale(RadialLinearScale scale)
+	 * @see #setScale(RadialLinearScaleOptions scale)
 	 */
-	protected RadialLinearScale<?> scale;
+	protected RadialLinearScaleOptions scale;
 	
 	protected ArcElements elements;
 	
 	/**
-	 * Static factory, constructs a {@link Scale} implementation appropriate for a {@link PolarOptions} instance.
+	 * Static factory, constructs a Scale implementation appropriate for a {@link PolarOptions} instance.
 	 *
-	 * @return a new {@link RadialLinearScale} instance
+	 * @return a new {@link RadialLinearScaleOptions} instance
 	 */
-	public static RadialLinearScale scales()
+	public static RadialLinearScaleOptions scales()
 	{
-		return new RadialLinearScale<>();
+		return new RadialLinearScaleOptions();
 	}
 	
 	/**
-	 * @see #setScale(RadialLinearScale)
+	 * @see #setScale(RadialLinearScaleOptions)
 	 */
-	public RadialLinearScale getScale()
+	public RadialLinearScaleOptions getScale()
 	{
 		return this.scale;
 	}
@@ -52,7 +50,7 @@ public class PolarOptions extends Options<PolarOptions, PolarAnimation>
 	/**
 	 * Options for the one scale used on the chart. Use this to style the ticks, labels, and grid.
 	 */
-	public PolarOptions setScale(final RadialLinearScale<?> scale)
+	public PolarOptions setScale(final RadialLinearScaleOptions scale)
 	{
 		this.scale = scale;
 		return this;

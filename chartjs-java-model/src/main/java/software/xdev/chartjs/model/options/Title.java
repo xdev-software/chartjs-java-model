@@ -16,9 +16,11 @@
 package software.xdev.chartjs.model.options;
 
 import software.xdev.chartjs.model.color.Color;
-import software.xdev.chartjs.model.options.scales.Font;
 
 
+/**
+ * @see <a href="https://www.chartjs.org/docs/latest/axes/labelling.html#scale-title-configuration">ChartJS docs</a>
+ */
 public class Title
 {
 	protected String align;

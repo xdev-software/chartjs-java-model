@@ -13,36 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.ticks;
+package software.xdev.chartjs.model.options.scale.cartesian.time;
 
-public class TimeTicks extends Ticks<TimeTicks>
+import software.xdev.chartjs.model.options.scale.cartesian.CartesianTickOptions;
+
+
+/**
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3373">ChartJS Source</a>
+ */
+public class TimeScaleTickOptions extends CartesianTickOptions<TimeScaleTickOptions>
 {
-	/**
-	 * Default {@code "auto"}
-	 *
-	 * @see #setSource(String type)
-	 */
 	protected String source;
+	protected Number stepSize;
 	
-	/**
-	 * @see #setSource(String)
-	 */
 	public String getSource()
 	{
 		return this.source;
 	}
 	
-	/**
-	 * How ticks are generated, possible values are:
-	 * <ul>
-	 *     <li>'auto' - generates "optimal" ticks based on scale size and time options</li>
-	 *     <li>'data' - generates ticks from data (including labels from data {x|y} objects</li>
-	 *     <li>'labels' - generates ticks from user given labels ONLY</li>
-	 * </ul>
-	 */
-	public TimeTicks setSource(final String source)
+	public TimeScaleTickOptions setSource(final String source)
 	{
 		this.source = source;
-		return this;
+		return this.self();
+	}
+	
+	public Number getStepSize()
+	{
+		return this.stepSize;
+	}
+	
+	public TimeScaleTickOptions setStepSize(final Number stepSize)
+	{
+		this.stepSize = stepSize;
+		return this.self();
 	}
 }

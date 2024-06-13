@@ -25,8 +25,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Immutable RGBa color model.
+ * @deprecated Will be phased out and replaced by the simpler 'string'
  */
 @SuppressWarnings("checkstyle:MagicNumber") // RGB Numbers
+@Deprecated
 public class Color
 {
 	private static final Random RANDOMIZER = new SecureRandom();

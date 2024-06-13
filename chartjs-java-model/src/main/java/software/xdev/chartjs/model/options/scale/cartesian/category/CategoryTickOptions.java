@@ -13,23 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.scales;
+package software.xdev.chartjs.model.options.scale.cartesian.category;
 
-/**
- * Options for adapter for external date library if that adapter needs or supports options.
- */
-public class ScaleAdapters
+import software.xdev.chartjs.model.options.scale.cartesian.CartesianTickOptions;
+
+
+public class CategoryTickOptions extends CartesianTickOptions<CategoryTickOptions>
 {
-	protected Object date;
-	
-	public Object getDate()
-	{
-		return this.date;
-	}
-	
-	public ScaleAdapters setDate(final Object date)
-	{
-		this.date = date;
-		return this;
-	}
 }
