@@ -15,9 +15,6 @@
  */
 package software.xdev.chartjs.model.options.elements;
 
-import software.xdev.chartjs.model.color.Color;
-
-
 /**
  * <p>
  * Arcs are used in the polar area, doughnut and pie charts.
@@ -29,17 +26,16 @@ import software.xdev.chartjs.model.color.Color;
  */
 public class Arc
 {
+	protected Object backgroundColor;
 	
-	protected Color backgroundColor;
-	
-	protected Color borderColor;
+	protected Object borderColor;
 	
 	protected Integer borderWidth;
 	
 	/**
-	 * @see #setBackgroundColor(Color)
+	 * @see #setBackgroundColor(Object)
 	 */
-	public Color getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
@@ -53,16 +49,16 @@ public class Arc
 	 * Default {@code 'rgba(0,0,0,0.1)'}
 	 * </p>
 	 */
-	public Arc setBackgroundColor(final Color backgroundColor)
+	public Arc setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this;
 	}
 	
 	/**
-	 * @see #setBorderColor(Color)
+	 * @see #setBorderColor(Object)
 	 */
-	public Color getBorderColor()
+	public Object getBorderColor()
 	{
 		return this.borderColor;
 	}
@@ -76,7 +72,7 @@ public class Arc
 	 * Default {@code '#fff'}
 	 * </p>
 	 */
-	public Arc setBorderColor(final Color borderColor)
+	public Arc setBorderColor(final Object borderColor)
 	{
 		this.borderColor = borderColor;
 		return this;

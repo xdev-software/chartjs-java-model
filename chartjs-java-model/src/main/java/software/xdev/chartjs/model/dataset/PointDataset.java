@@ -18,7 +18,6 @@ package software.xdev.chartjs.model.dataset;
 import java.util.ArrayList;
 import java.util.List;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.BorderCapStyle;
 import software.xdev.chartjs.model.enums.BorderJoinStyle;
 import software.xdev.chartjs.model.enums.PointStyle;
@@ -34,11 +33,11 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	
 	private Float lineTension;
 	
-	private Color backgroundColor;
+	private Object backgroundColor;
 	
 	private Integer borderWidth;
 	
-	private Color borderColor;
+	private Object borderColor;
 	
 	private BorderCapStyle borderCapStyle;
 	
@@ -48,9 +47,9 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	
 	private BorderJoinStyle borderJoinStyle;
 	
-	private final List<Color> pointBorderColor = new OptionalArray<>();
+	private final List<Object> pointBorderColor = new OptionalArray<>();
 	
-	private final List<Color> pointBackgroundColor = new OptionalArray<>();
+	private final List<Object> pointBackgroundColor = new OptionalArray<>();
 	
 	private final List<Integer> pointBorderWidth = new OptionalArray<>();
 	
@@ -60,9 +59,9 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	
 	private final List<Integer> pointHitRadius = new OptionalArray<>();
 	
-	private final List<Color> pointHoverBackgroundColor = new OptionalArray<>();
+	private final List<Object> pointHoverBackgroundColor = new OptionalArray<>();
 	
-	private final List<Color> pointHoverBorderColor = new OptionalArray<>();
+	private final List<Object> pointHoverBorderColor = new OptionalArray<>();
 	
 	private final List<Integer> pointHoverBorderWidth = new OptionalArray<>();
 	
@@ -117,9 +116,9 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	}
 	
 	/**
-	 * @see #setBackgroundColor(Color)
+	 * @see #setBackgroundColor(Object)
 	 */
-	public Color getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
@@ -127,7 +126,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * The fill color under the line.
 	 */
-	public T setBackgroundColor(final Color backgroundColor)
+	public T setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this.self();
@@ -151,9 +150,9 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	}
 	
 	/**
-	 * @see #setBorderColor(Color)
+	 * @see #setBorderColor(Object)
 	 */
-	public Color getBorderColor()
+	public Object getBorderColor()
 	{
 		return this.borderColor;
 	}
@@ -161,7 +160,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * The color of the line.
 	 */
-	public T setBorderColor(final Color borderColor)
+	public T setBorderColor(final Object borderColor)
 	{
 		this.borderColor = borderColor;
 		return this.self();
@@ -275,7 +274,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointBorderColor(List)
 	 */
-	public List<Color> getPointBorderColor()
+	public List<Object> getPointBorderColor()
 	{
 		return this.pointBorderColor;
 	}
@@ -283,7 +282,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointBorderColor(List)
 	 */
-	public T addPointBorderColor(final Color pointBorderColor)
+	public T addPointBorderColor(final Object pointBorderColor)
 	{
 		this.pointBorderColor.add(pointBorderColor);
 		return this.self();
@@ -292,7 +291,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * The border color for points.
 	 */
-	public T setPointBorderColor(final List<Color> pointBorderColor)
+	public T setPointBorderColor(final List<Object> pointBorderColor)
 	{
 		this.pointBorderColor.clear();
 		if(pointBorderColor != null)
@@ -305,7 +304,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointBackgroundColor(List)
 	 */
-	public List<Color> getPointBackgroundColor()
+	public List<Object> getPointBackgroundColor()
 	{
 		return this.pointBackgroundColor;
 	}
@@ -313,7 +312,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointBackgroundColor(List)
 	 */
-	public T addPointBackgroundColor(final Color pointBackgroundColor)
+	public T addPointBackgroundColor(final Object pointBackgroundColor)
 	{
 		this.pointBackgroundColor.add(pointBackgroundColor);
 		return this.self();
@@ -322,7 +321,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * The fill color for points
 	 */
-	public T setPointBackgroundColor(final List<Color> pointBackgroundColor)
+	public T setPointBackgroundColor(final List<Object> pointBackgroundColor)
 	{
 		this.pointBackgroundColor.clear();
 		if(pointBackgroundColor != null)
@@ -455,7 +454,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointHoverBackgroundColor(List)
 	 */
-	public List<Color> getPointHoverBackgroundColor()
+	public List<Object> getPointHoverBackgroundColor()
 	{
 		return this.pointHoverBackgroundColor;
 	}
@@ -463,7 +462,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointHoverBackgroundColor(List)
 	 */
-	public T addPointHoverBackgroundColor(final Color pointHoverBackgroundColor)
+	public T addPointHoverBackgroundColor(final Object pointHoverBackgroundColor)
 	{
 		this.pointHoverBackgroundColor.add(pointHoverBackgroundColor);
 		return this.self();
@@ -472,7 +471,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * Point background color when hovered
 	 */
-	public T setPointHoverBackgroundColor(final List<Color> pointHoverBackgroundColor)
+	public T setPointHoverBackgroundColor(final List<Object> pointHoverBackgroundColor)
 	{
 		this.pointHoverBackgroundColor.clear();
 		if(pointHoverBackgroundColor != null)
@@ -485,7 +484,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointHoverBorderColor(List)
 	 */
-	public List<Color> getPointHoverBorderColor()
+	public List<Object> getPointHoverBorderColor()
 	{
 		return this.pointHoverBorderColor;
 	}
@@ -493,7 +492,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointHoverBorderColor(List)
 	 */
-	public T addPointHoverBorderColor(final Color pointHoverBorderColor)
+	public T addPointHoverBorderColor(final Object pointHoverBorderColor)
 	{
 		this.pointHoverBorderColor.add(pointHoverBorderColor);
 		return this.self();
@@ -502,7 +501,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * Point border color when hovered
 	 */
-	public T setPointHoverBorderColor(final List<Color> pointHoverBorderColor)
+	public T setPointHoverBorderColor(final List<Object> pointHoverBorderColor)
 	{
 		this.pointHoverBorderColor.clear();
 		if(pointHoverBorderColor != null)

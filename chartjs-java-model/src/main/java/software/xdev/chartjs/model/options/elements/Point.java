@@ -15,7 +15,6 @@
  */
 package software.xdev.chartjs.model.options.elements;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.PointStyle;
 
 
@@ -30,16 +29,15 @@ import software.xdev.chartjs.model.enums.PointStyle;
  */
 public class Point
 {
-	
 	protected Integer radius;
 	
 	protected PointStyle pointStyle;
 	
-	protected Color backgroundColor;
+	protected Object backgroundColor;
 	
 	protected Integer borderWidth;
 	
-	protected Color borderColor;
+	protected Object borderColor;
 	
 	protected Integer hitRadius;
 	
@@ -94,9 +92,9 @@ public class Point
 	}
 	
 	/**
-	 * @see #setBackgroundColor(Color)
+	 * @see #setBackgroundColor(Object)
 	 */
-	public Color getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
@@ -110,7 +108,7 @@ public class Point
 	 * Default {@code 'rgba(0,0,0,0.1)'}
 	 * </p>
 	 */
-	public Point setBackgroundColor(final Color backgroundColor)
+	public Point setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this;
@@ -140,9 +138,9 @@ public class Point
 	}
 	
 	/**
-	 * @see #setBorderColor(Color)
+	 * @see #setBorderColor(Object)
 	 */
-	public Color getBorderColor()
+	public Object getBorderColor()
 	{
 		return this.borderColor;
 	}
@@ -156,7 +154,7 @@ public class Point
 	 * Default {@code 'rgba(0,0,0,0.1)'}
 	 * </p>
 	 */
-	public Point setBorderColor(final Color borderColor)
+	public Point setBorderColor(final Object borderColor)
 	{
 		this.borderColor = borderColor;
 		return this;

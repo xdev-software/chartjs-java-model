@@ -13,86 +13,77 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options.scales;
+package software.xdev.chartjs.model.options.scale.radial;
 
-import software.xdev.chartjs.model.color.Color;
+import java.util.List;
+
+import software.xdev.chartjs.model.objects.OptionalArray;
 
 
 /**
- * Options to configure angled lines that radiate from the center of the chart to the point labels.
+ * @see <a href="https://www.chartjs.org/docs/latest/axes/radial/linear.html#angle-line-options">ChartJS Docs</a>
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3475">ChartJS source</a>
  */
 public class AngleLines
 {
 	protected Boolean display;
-	protected Color color;
+	protected Object color;
 	protected Number lineWidth;
+	protected List<Number> borderDash = new OptionalArray<>();
+	protected Number borderDashOffset;
 	
-	/**
-	 * @see #setDisplay(Boolean)
-	 */
 	public Boolean getDisplay()
 	{
 		return this.display;
 	}
 	
-	/**
-	 * <p>
-	 * If true, angle lines are shown.
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code true}
-	 * </p>
-	 */
 	public AngleLines setDisplay(final Boolean display)
 	{
 		this.display = display;
 		return this;
 	}
 	
-	/**
-	 * @see #setColor(Color)
-	 */
-	public Color getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
 	
-	/**
-	 * <p>
-	 * Color of angled lines
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code 'rgba(0, 0, 0, 0.1)'}
-	 * </p>
-	 */
-	public AngleLines setColor(final Color color)
+	public AngleLines setColor(final Object color)
 	{
 		this.color = color;
 		return this;
 	}
 	
-	/**
-	 * @see #setLineWidth(Number)
-	 */
 	public Number getLineWidth()
 	{
 		return this.lineWidth;
 	}
 	
-	/**
-	 * <p>
-	 * Width of angled lines
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code 1}
-	 * </p>
-	 */
 	public AngleLines setLineWidth(final Number lineWidth)
 	{
 		this.lineWidth = lineWidth;
+		return this;
+	}
+	
+	public List<Number> getBorderDash()
+	{
+		return this.borderDash;
+	}
+	
+	public AngleLines setBorderDash(final List<Number> borderDash)
+	{
+		this.borderDash = borderDash;
+		return this;
+	}
+	
+	public Number getBorderDashOffset()
+	{
+		return this.borderDashOffset;
+	}
+	
+	public AngleLines setBorderDashOffset(final Number borderDashOffset)
+	{
+		this.borderDashOffset = borderDashOffset;
 		return this;
 	}
 }

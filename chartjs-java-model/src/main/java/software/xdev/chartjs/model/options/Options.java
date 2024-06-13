@@ -23,7 +23,7 @@ import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 import software.xdev.chartjs.model.options.animation.Animation;
 import software.xdev.chartjs.model.options.animation.Animations;
 import software.xdev.chartjs.model.options.layout.Layout;
-import software.xdev.chartjs.model.options.scales.Scales;
+import software.xdev.chartjs.model.options.scale.Scales;
 
 
 public class Options<T extends Options<T, A>, A extends Animation<A>>
