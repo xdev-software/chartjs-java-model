@@ -1,5 +1,5 @@
 ## 2.0.0
-* Scales have been reworked and are now nearly identical to the types defined in ChartJS
+* Scales have been reworked and are now nearly identical to the [types defined in ChartJS](https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts)
 * The use of ``Color`` for various coloring related options is no longer required. 
   * It's now possible to use e.g. strings
 
