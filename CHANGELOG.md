@@ -1,3 +1,7 @@
+## 2.0.0
+* Scales have been reworked and are now nearly identical to the types defined in ChartJS
+* The use of ``Color`` is no longer required. It's also possible to use strings now.
+
 ## 1.5.0
 * Added ``JsonIgnore`` to certain fields to help prevent infinite loops #174
 * Corrected model for ``Title`` and ``Font`` #175
