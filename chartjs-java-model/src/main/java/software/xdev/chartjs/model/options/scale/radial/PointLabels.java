@@ -25,22 +25,22 @@ import software.xdev.chartjs.model.options.Font;
  */
 public class PointLabels
 {
-	protected String backdropColor;
+	protected Object backdropColor;
 	protected Object backdropPadding;
 	protected Object borderRadius;
 	protected Object display;
 	protected JavaScriptFunction callback;
-	protected String color;
+	protected Object color;
 	protected Font font;
 	protected Number padding;
 	protected Boolean centerPointLabels;
 	
-	public String getBackdropColor()
+	public Object getBackdropColor()
 	{
 		return this.backdropColor;
 	}
 	
-	public PointLabels setBackdropColor(final String backdropColor)
+	public PointLabels setBackdropColor(final Object backdropColor)
 	{
 		this.backdropColor = backdropColor;
 		return this;
@@ -90,12 +90,12 @@ public class PointLabels
 		return this;
 	}
 	
-	public String getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
 	
-	public PointLabels setColor(final String color)
+	public PointLabels setColor(final Object color)
 	{
 		this.color = color;
 		return this;

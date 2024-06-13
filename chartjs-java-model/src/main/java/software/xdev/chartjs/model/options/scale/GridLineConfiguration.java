@@ -27,13 +27,13 @@ public class GridLineConfiguration
 {
 	protected Boolean display;
 	protected Boolean circular;
-	protected String color;
+	protected Object color;
 	protected Number lineWidth;
 	protected Boolean drawOnChartArea;
 	protected Boolean drawTicks;
 	protected List<Number> tickBorderDash = new OptionalArray<>();
 	protected Number tickBorderDashOffset;
-	protected String tickColor;
+	protected Object tickColor;
 	protected Number tickWidth;
 	protected Boolean offset;
 	protected Number z;
@@ -60,12 +60,12 @@ public class GridLineConfiguration
 		return this;
 	}
 	
-	public String getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
 	
-	public GridLineConfiguration setColor(final String color)
+	public GridLineConfiguration setColor(final Object color)
 	{
 		this.color = color;
 		return this;
@@ -126,12 +126,12 @@ public class GridLineConfiguration
 		return this;
 	}
 	
-	public String getTickColor()
+	public Object getTickColor()
 	{
 		return this.tickColor;
 	}
 	
-	public GridLineConfiguration setTickColor(final String tickColor)
+	public GridLineConfiguration setTickColor(final Object tickColor)
 	{
 		this.tickColor = tickColor;
 		return this;

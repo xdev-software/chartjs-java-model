@@ -27,7 +27,7 @@ import software.xdev.chartjs.model.objects.OptionalArray;
 public class AngleLines
 {
 	protected Boolean display;
-	protected String color;
+	protected Object color;
 	protected Number lineWidth;
 	protected List<Number> borderDash = new OptionalArray<>();
 	protected Number borderDashOffset;
@@ -43,12 +43,12 @@ public class AngleLines
 		return this;
 	}
 	
-	public String getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
 	
-	public AngleLines setColor(final String color)
+	public AngleLines setColor(final Object color)
 	{
 		this.color = color;
 		return this;

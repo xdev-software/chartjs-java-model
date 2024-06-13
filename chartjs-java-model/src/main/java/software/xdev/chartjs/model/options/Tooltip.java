@@ -15,7 +15,6 @@
  */
 package software.xdev.chartjs.model.options;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.FontStyle;
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 
@@ -26,29 +25,29 @@ public class Tooltip
 	protected JavaScriptFunction external;
 	protected String mode;
 	protected JavaScriptFunction itemSort;
-	protected Color backgroundColor;
+	protected Object backgroundColor;
 	protected String titleFontFamily;
 	protected Integer titleFontSize;
 	protected FontStyle titleFontStyle;
-	protected Color titleFontColor;
+	protected Object titleFontColor;
 	protected Integer titleSpacing;
 	protected Integer titleMarginBottom;
 	protected String bodyFontFamily;
 	protected Integer bodyFontSize;
 	protected FontStyle bodyFontStyle;
-	protected Color bodyFontColor;
+	protected Object bodyFontColor;
 	protected Integer bodySpacing;
 	protected String footerFontFamily;
 	protected Integer footerFontSize;
 	protected FontStyle footerFontStyle;
-	protected Color footerFontColor;
+	protected Object footerFontColor;
 	protected Integer footerSpacing;
 	protected Integer footerMarginTop;
 	protected Integer xPadding;
 	protected Integer yPadding;
 	protected Integer caretSize;
 	protected Integer cornerRadius;
-	protected Color multiKeyBackground;
+	protected Object multiKeyBackground;
 	protected Callbacks callbacks;
 	
 	/**
@@ -148,9 +147,9 @@ public class Tooltip
 	}
 	
 	/**
-	 * @see #setBackgroundColor(Color)
+	 * @see #setBackgroundColor(Object)
 	 */
-	public Color getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
@@ -164,7 +163,7 @@ public class Tooltip
 	 * Default {@code 'rgba(0,0,0,0.8)'}
 	 * </p>
 	 */
-	public Tooltip setBackgroundColor(final Color backgroundColor)
+	public Tooltip setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this;
@@ -240,9 +239,9 @@ public class Tooltip
 	}
 	
 	/**
-	 * @see #setTitleFontColor(Color)
+	 * @see #setTitleFontColor(Object)
 	 */
-	public Color getTitleFontColor()
+	public Object getTitleFontColor()
 	{
 		return this.titleFontColor;
 	}
@@ -256,7 +255,7 @@ public class Tooltip
 	 * Default {@code "#fff"}
 	 * </p>
 	 */
-	public Tooltip setTitleFontColor(final Color titleFontColor)
+	public Tooltip setTitleFontColor(final Object titleFontColor)
 	{
 		this.titleFontColor = titleFontColor;
 		return this;
@@ -378,9 +377,9 @@ public class Tooltip
 	}
 	
 	/**
-	 * @see #setBodyFontColor(Color)
+	 * @see #setBodyFontColor(Object)
 	 */
-	public Color getBodyFontColor()
+	public Object getBodyFontColor()
 	{
 		return this.bodyFontColor;
 	}
@@ -394,7 +393,7 @@ public class Tooltip
 	 * Default {@code "#fff"}
 	 * </p>
 	 */
-	public Tooltip setBodyFontColor(final Color bodyFontColor)
+	public Tooltip setBodyFontColor(final Object bodyFontColor)
 	{
 		this.bodyFontColor = bodyFontColor;
 		return this;
@@ -493,9 +492,9 @@ public class Tooltip
 	}
 	
 	/**
-	 * @see #setFooterFontColor(Color)
+	 * @see #setFooterFontColor(Object)
 	 */
-	public Color getFooterFontColor()
+	public Object getFooterFontColor()
 	{
 		return this.footerFontColor;
 	}
@@ -509,7 +508,7 @@ public class Tooltip
 	 * Default {@code "#fff"}
 	 * </p>
 	 */
-	public Tooltip setFooterFontColor(final Color footerFontColor)
+	public Tooltip setFooterFontColor(final Object footerFontColor)
 	{
 		this.footerFontColor = footerFontColor;
 		return this;
@@ -654,9 +653,9 @@ public class Tooltip
 	}
 	
 	/**
-	 * @see #setMultiKeyBackground(Color)
+	 * @see #setMultiKeyBackground(Object)
 	 */
-	public Color getMultiKeyBackground()
+	public Object getMultiKeyBackground()
 	{
 		return this.multiKeyBackground;
 	}
@@ -670,7 +669,7 @@ public class Tooltip
 	 * Default {@code "#fff"}
 	 * </p>
 	 */
-	public Tooltip setMultiKeyBackground(final Color multiKeyBackground)
+	public Tooltip setMultiKeyBackground(final Object multiKeyBackground)
 	{
 		this.multiKeyBackground = multiKeyBackground;
 		return this;

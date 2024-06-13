@@ -30,7 +30,7 @@ public abstract class AbstractCoreScaleOptions<S extends AbstractCoreScaleOption
 	
 	protected Object display;
 	protected Boolean alignToPixels;
-	protected String backgroundColor;
+	protected Object backgroundColor;
 	protected Boolean reverse;
 	protected Boolean clip;
 	protected Number weight;
@@ -101,12 +101,12 @@ public abstract class AbstractCoreScaleOptions<S extends AbstractCoreScaleOption
 		return this.self();
 	}
 	
-	public String getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
 	
-	public S setBackgroundColor(final String backgroundColor)
+	public S setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this.self();

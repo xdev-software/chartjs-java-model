@@ -30,7 +30,7 @@ public class BorderConfiguration
 	protected Boolean display;
 	protected List<Number> dash = new OptionalArray<>();
 	protected Number dashOffset;
-	protected String color;
+	protected Object color;
 	protected Number width;
 	protected Number z;
 	
@@ -45,12 +45,12 @@ public class BorderConfiguration
 		return this;
 	}
 	
-	public String getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
 	
-	public BorderConfiguration setColor(final String color)
+	public BorderConfiguration setColor(final Object color)
 	{
 		this.color = color;
 		return this;

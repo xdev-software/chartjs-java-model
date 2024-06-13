@@ -15,16 +15,13 @@
  */
 package software.xdev.chartjs.model.options;
 
-import software.xdev.chartjs.model.color.Color;
-
-
 /**
  * @see <a href="https://www.chartjs.org/docs/latest/axes/labelling.html#scale-title-configuration">ChartJS docs</a>
  */
 public class Title
 {
 	protected String align;
-	protected Color color;
+	protected Object color;
 	protected Boolean display;
 	protected Boolean fullSize;
 	protected String position;
@@ -52,9 +49,9 @@ public class Title
 	}
 	
 	/**
-	 * @see #setColor(Color)
+	 * @see #setColor(Object)
 	 */
-	public Color getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
@@ -62,7 +59,7 @@ public class Title
 	/**
 	 * Color of text
 	 */
-	public Title setColor(final Color color)
+	public Title setColor(final Object color)
 	{
 		this.color = color;
 		return this;

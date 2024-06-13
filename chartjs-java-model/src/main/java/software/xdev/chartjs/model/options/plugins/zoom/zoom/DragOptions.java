@@ -15,17 +15,14 @@
  */
 package software.xdev.chartjs.model.options.plugins.zoom.zoom;
 
-import software.xdev.chartjs.model.color.Color;
-
-
 /**
  * <a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/guide/options.html#drag-options">ChartJS docs</a>
  */
 public class DragOptions
 {
 	protected Boolean enabled;
-	protected Color backgroundColor;
-	protected Color borderColor;
+	protected Object backgroundColor;
+	protected Object borderColor;
 	protected Integer borderWidth;
 	protected String drawTime;
 	protected Integer threshold;
@@ -42,23 +39,23 @@ public class DragOptions
 		return this;
 	}
 	
-	public Color getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
 	
-	public DragOptions setBackgroundColor(final Color backgroundColor)
+	public DragOptions setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this;
 	}
 	
-	public Color getBorderColor()
+	public Object getBorderColor()
 	{
 		return this.borderColor;
 	}
 	
-	public DragOptions setBorderColor(final Color borderColor)
+	public DragOptions setBorderColor(final Object borderColor)
 	{
 		this.borderColor = borderColor;
 		return this;

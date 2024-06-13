@@ -18,7 +18,6 @@ package software.xdev.chartjs.model.options.elements;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.enums.BorderSkipped;
 
 
@@ -37,9 +36,9 @@ public class Bar
 {
 	
 	/**
-	 * @see #setBackgroundColor(Color)
+	 * @see #setBackgroundColor(Object)
 	 */
-	protected Color backgroundColor;
+	protected Object backgroundColor;
 	
 	/**
 	 * @see #setBorderWidth(Integer)
@@ -47,9 +46,9 @@ public class Bar
 	protected Integer borderWidth;
 	
 	/**
-	 * @see #setBorderColor(Color)
+	 * @see #setBorderColor(Object)
 	 */
-	protected Color borderColor;
+	protected Object borderColor;
 	
 	/**
 	 * @see #setBorderSkipped(BorderSkipped)
@@ -57,9 +56,9 @@ public class Bar
 	protected BorderSkipped borderSkipped;
 	
 	/**
-	 * @see #setBackgroundColor(Color)
+	 * @see #setBackgroundColor(Object)
 	 */
-	public Color getBackgroundColor()
+	public Object getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
@@ -73,7 +72,7 @@ public class Bar
 	 * Default {@code 'rgba(0,0,0,0.1)'}
 	 * </p>
 	 */
-	public Bar setBackgroundColor(final Color backgroundColor)
+	public Bar setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor = backgroundColor;
 		return this;
@@ -103,9 +102,9 @@ public class Bar
 	}
 	
 	/**
-	 * @see #setBorderColor(Color)
+	 * @see #setBorderColor(Object)
 	 */
-	public Color getBorderColor()
+	public Object getBorderColor()
 	{
 		return this.borderColor;
 	}
@@ -119,7 +118,7 @@ public class Bar
 	 * Default {@code 'rgba(0,0,0,0.1)'}
 	 * </p>
 	 */
-	public Bar setBorderColor(final Color borderColor)
+	public Bar setBorderColor(final Object borderColor)
 	{
 		this.borderColor = borderColor;
 		return this;

@@ -27,25 +27,25 @@ import software.xdev.chartjs.model.options.Font;
  */
 public abstract class AbstractTickOptions<T extends AbstractTickOptions<T>>
 {
-	protected String backdropColor;
+	protected Object backdropColor;
 	protected Object backdropPadding;
 	protected JavaScriptFunction callback;
 	protected Boolean display;
-	protected String color;
+	protected Object color;
 	protected Font font;
 	protected MajorTickConfiguration major;
 	protected Number padding;
 	protected Boolean showLabelBackdrop;
-	protected String textStrokeColor;
+	protected Object textStrokeColor;
 	protected Number textStrokeWidth;
 	protected Number z;
 	
-	public String getBackdropColor()
+	public Object getBackdropColor()
 	{
 		return this.backdropColor;
 	}
 	
-	public T setBackdropColor(final String backdropColor)
+	public T setBackdropColor(final Object backdropColor)
 	{
 		this.backdropColor = backdropColor;
 		return this.self();
@@ -84,12 +84,12 @@ public abstract class AbstractTickOptions<T extends AbstractTickOptions<T>>
 		return this.self();
 	}
 	
-	public String getColor()
+	public Object getColor()
 	{
 		return this.color;
 	}
 	
-	public T setColor(final String color)
+	public T setColor(final Object color)
 	{
 		this.color = color;
 		return this.self();
@@ -139,12 +139,12 @@ public abstract class AbstractTickOptions<T extends AbstractTickOptions<T>>
 		return this.self();
 	}
 	
-	public String getTextStrokeColor()
+	public Object getTextStrokeColor()
 	{
 		return this.textStrokeColor;
 	}
 	
-	public T setTextStrokeColor(final String textStrokeColor)
+	public T setTextStrokeColor(final Object textStrokeColor)
 	{
 		this.textStrokeColor = textStrokeColor;
 		return this.self();
