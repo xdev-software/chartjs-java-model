@@ -20,7 +20,7 @@ import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianScal
 
 /**
  * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/logarithmic.html">Chart JS</a>
- * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3312>ChartJS Source</a>
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3312">ChartJS Source</a>
  */
 public class LogarithmicScaleOptions
 	extends AbstractCartesianScaleOptions<LogarithmicScaleOptions, LogarithmicTickOptions>

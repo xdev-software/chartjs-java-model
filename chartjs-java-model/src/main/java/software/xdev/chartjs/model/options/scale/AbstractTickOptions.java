@@ -22,7 +22,7 @@ import software.xdev.chartjs.model.options.Font;
 /**
  * Common Tick Options to all axes.
  *
- * @see <a href="https://www.chartjs.org/docs/latest/axes/#common-tick-options-to-all-axes>ChartJS Docs</a>
+ * @see <a href="https://www.chartjs.org/docs/latest/axes/#common-tick-options-to-all-axes">ChartJS Docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3026">ChartJS source</a>
  */
 public abstract class AbstractTickOptions<T extends AbstractTickOptions<T>>
