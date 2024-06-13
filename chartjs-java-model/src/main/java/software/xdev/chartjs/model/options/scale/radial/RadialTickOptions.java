@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.options.scale.radial;
 
-import software.xdev.chartjs.model.options.scale.TickOptions;
+import software.xdev.chartjs.model.options.scale.AbstractTickOptions;
 
 
 /**
  * @see <a href="https://www.chartjs.org/docs/latest/axes/radial/linear.html#linear-radial-axis-specific-tick-options">ChartJS Docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3442">ChartJS source</a>
  */
-public class RadialTickOptions extends TickOptions<RadialTickOptions>
+public class RadialTickOptions extends AbstractTickOptions<RadialTickOptions>
 {
 	protected Number count;
 	protected Object format;

@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.options.scale.cartesian.linear;
 
-import software.xdev.chartjs.model.options.scale.cartesian.CartesianScaleOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianScaleOptions;
 
 
 /**
  * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/linear.html#linear-axis-specific-options">ChartJS docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3263">ChartJS Source</a>
  */
-public class LinearScaleOptions extends CartesianScaleOptions<LinearScaleOptions, LinearTickOptions>
+public class LinearScaleOptions extends AbstractCartesianScaleOptions<LinearScaleOptions, LinearTickOptions>
 {
 	protected Boolean beginAtZero;
 	protected Object grace;

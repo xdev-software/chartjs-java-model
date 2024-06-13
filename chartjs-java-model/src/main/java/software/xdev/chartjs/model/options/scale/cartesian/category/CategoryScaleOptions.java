@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.options.scale.cartesian.category;
 
-import software.xdev.chartjs.model.options.scale.cartesian.CartesianScaleOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianScaleOptions;
 
 
 /**
  * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/category.html#category-axis-specific-options">ChartJS Docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3251">ChartJS Source</a>
  */
-public class CategoryScaleOptions extends CartesianScaleOptions<CategoryScaleOptions, CategoryTickOptions>
+public class CategoryScaleOptions extends AbstractCartesianScaleOptions<CategoryScaleOptions, CategoryTickOptions>
 {
 	protected Object labels;
 	

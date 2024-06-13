@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.options.scale.cartesian.logarithmic;
 
-import software.xdev.chartjs.model.options.scale.cartesian.CartesianTickOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianTickOptions;
 
 
 /**
  * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/logarithmic.html#logarithmic-axis-specific-options">ChartJS Docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3322">ChartJS Source</a>
  */
-public class LogarithmicTickOptions extends CartesianTickOptions<LogarithmicTickOptions>
+public class LogarithmicTickOptions extends AbstractCartesianTickOptions<LogarithmicTickOptions>
 {
 	protected Object format;
 	

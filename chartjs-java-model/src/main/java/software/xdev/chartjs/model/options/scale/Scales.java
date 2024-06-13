@@ -34,13 +34,13 @@ public class Scales
 		return this.scalesList;
 	}
 	
-	public Scales addScale(final String customScaleName, final CoreScaleOptions<?, ?> scale)
+	public Scales addScale(final String customScaleName, final AbstractCoreScaleOptions<?, ?> scale)
 	{
 		this.getScalesList().put(customScaleName, scale);
 		return this;
 	}
 	
-	public Scales addScale(final ScaleAxis axis, final CoreScaleOptions<?, ?> scale)
+	public Scales addScale(final ScaleAxis axis, final AbstractCoreScaleOptions<?, ?> scale)
 	{
 		return this.addScale(axis.toString(), scale);
 	}

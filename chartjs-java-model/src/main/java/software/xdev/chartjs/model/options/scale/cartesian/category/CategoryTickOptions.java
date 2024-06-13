@@ -15,9 +15,9 @@
  */
 package software.xdev.chartjs.model.options.scale.cartesian.category;
 
-import software.xdev.chartjs.model.options.scale.cartesian.CartesianTickOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianTickOptions;
 
 
-public class CategoryTickOptions extends CartesianTickOptions<CategoryTickOptions>
+public class CategoryTickOptions extends AbstractCartesianTickOptions<CategoryTickOptions>
 {
 }

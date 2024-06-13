@@ -15,7 +15,7 @@
  */
 package software.xdev.chartjs.model.options.scale.cartesian.linear;
 
-import software.xdev.chartjs.model.options.scale.cartesian.CartesianTickOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianTickOptions;
 
 
 /**
@@ -23,7 +23,7 @@ import software.xdev.chartjs.model.options.scale.cartesian.CartesianTickOptions;
  * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/linear.html#linear-axis-specific-tick-options">ChartJS Docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3283>ChartJS Source</a>
  */
-public class LinearTickOptions extends CartesianTickOptions<LinearTickOptions>
+public class LinearTickOptions extends AbstractCartesianTickOptions<LinearTickOptions>
 {
 	protected Object format;
 	protected Number precision;

@@ -15,14 +15,14 @@
  */
 package software.xdev.chartjs.model.options.scale.cartesian.time;
 
-import software.xdev.chartjs.model.options.scale.cartesian.CartesianScaleOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianScaleOptions;
 
 
 /**
  * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/time.html">ChartJS docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3391">ChartJS Source</a>
  */
-public class TimeScaleOptions extends CartesianScaleOptions<TimeScaleOptions, TimeScaleTickOptions>
+public class TimeScaleOptions extends AbstractCartesianScaleOptions<TimeScaleOptions, TimeScaleTickOptions>
 {
 	protected Boolean offsetAfterAutoskip;
 	protected Adapters adapters;

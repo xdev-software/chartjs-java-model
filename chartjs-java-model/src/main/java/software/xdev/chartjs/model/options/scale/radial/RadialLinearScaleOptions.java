@@ -15,7 +15,7 @@
  */
 package software.xdev.chartjs.model.options.scale.radial;
 
-import software.xdev.chartjs.model.options.scale.CoreScaleOptions;
+import software.xdev.chartjs.model.options.scale.AbstractCoreScaleOptions;
 import software.xdev.chartjs.model.options.scale.GridLineConfiguration;
 
 
@@ -23,7 +23,7 @@ import software.xdev.chartjs.model.options.scale.GridLineConfiguration;
  * @see <a href="https://www.chartjs.org/docs/latest/axes/radial/linear.html#linear-radial-axis-specific-options">ChartJS Docs</a>
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3470">ChartJS Source</a>
  */
-public class RadialLinearScaleOptions extends CoreScaleOptions<RadialLinearScaleOptions, RadialTickOptions>
+public class RadialLinearScaleOptions extends AbstractCoreScaleOptions<RadialLinearScaleOptions, RadialTickOptions>
 {
 	protected Boolean animate;
 	protected Number startAngle;

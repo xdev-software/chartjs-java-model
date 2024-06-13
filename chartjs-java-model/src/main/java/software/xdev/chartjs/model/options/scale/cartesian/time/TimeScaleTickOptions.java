@@ -15,13 +15,13 @@
  */
 package software.xdev.chartjs.model.options.scale.cartesian.time;
 
-import software.xdev.chartjs.model.options.scale.cartesian.CartesianTickOptions;
+import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianTickOptions;
 
 
 /**
  * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L3373">ChartJS Source</a>
  */
-public class TimeScaleTickOptions extends CartesianTickOptions<TimeScaleTickOptions>
+public class TimeScaleTickOptions extends AbstractCartesianTickOptions<TimeScaleTickOptions>
 {
 	protected String source;
 	protected Number stepSize;
