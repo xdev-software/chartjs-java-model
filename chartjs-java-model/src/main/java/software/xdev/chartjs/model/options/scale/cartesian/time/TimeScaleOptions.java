@@ -204,4 +204,122 @@ public class TimeScaleOptions extends AbstractCartesianScaleOptions<TimeScaleOpt
 			return this;
 		}
 	}
+	
+	
+	/**
+	 * Reference structure for {@link TimeScaleOptions#time}.
+	 *
+	 * @see <a href="https://www.chartjs.org/docs/latest/axes/cartesian/time.html#display-formats">ChartJS Docs</a>
+	 */
+	public static class DisplayFormats
+	{
+		protected String millisecond;
+		protected String second;
+		protected String minute;
+		protected String hour;
+		protected String day;
+		protected String week;
+		protected String month;
+		protected String quarter;
+		protected String year;
+		
+		public String getMillisecond()
+		{
+			return this.millisecond;
+		}
+		
+		public DisplayFormats setMillisecond(final String millisecond)
+		{
+			this.millisecond = millisecond;
+			return this;
+		}
+		
+		public String getSecond()
+		{
+			return this.second;
+		}
+		
+		public DisplayFormats setSecond(final String second)
+		{
+			this.second = second;
+			return this;
+		}
+		
+		public String getMinute()
+		{
+			return this.minute;
+		}
+		
+		public DisplayFormats setMinute(final String minute)
+		{
+			this.minute = minute;
+			return this;
+		}
+		
+		public String getHour()
+		{
+			return this.hour;
+		}
+		
+		public DisplayFormats setHour(final String hour)
+		{
+			this.hour = hour;
+			return this;
+		}
+		
+		public String getDay()
+		{
+			return this.day;
+		}
+		
+		public DisplayFormats setDay(final String day)
+		{
+			this.day = day;
+			return this;
+		}
+		
+		public String getWeek()
+		{
+			return this.week;
+		}
+		
+		public DisplayFormats setWeek(final String week)
+		{
+			this.week = week;
+			return this;
+		}
+		
+		public String getMonth()
+		{
+			return this.month;
+		}
+		
+		public DisplayFormats setMonth(final String month)
+		{
+			this.month = month;
+			return this;
+		}
+		
+		public String getQuarter()
+		{
+			return this.quarter;
+		}
+		
+		public DisplayFormats setQuarter(final String quarter)
+		{
+			this.quarter = quarter;
+			return this;
+		}
+		
+		public String getYear()
+		{
+			return this.year;
+		}
+		
+		public DisplayFormats setYear(final String year)
+		{
+			this.year = year;
+			return this;
+		}
+	}
 }
