@@ -89,21 +89,6 @@ class BarChartTest extends AbstractChartTest
 	@Test
 	void testStacked()
 	{
-		final BarDataset dataset1 = new BarDataset()
-			.setLabel("First stack")
-			.setData(65, 59, 80)
-			.addBackgroundColors(Color.RED, Color.RED, Color.RED);
-		
-		final BarDataset dataset2 = new BarDataset()
-			.setLabel("Second stack")
-			.setData(28, 45, 10)
-			.addBackgroundColors(Color.GREEN, Color.GREEN, Color.GREEN);
-		
-		final BarData data = new BarData()
-			.addLabels("First", "Second", "Third")
-			.addDataset(dataset1)
-			.addDataset(dataset2);
-		
 		final BarOptions options = new BarOptions()
 			.setAnimation(false);
 		options
@@ -112,7 +97,7 @@ class BarChartTest extends AbstractChartTest
 			.addScale(Scales.ScaleAxis.Y, new CartesianScaleOptions().setStacked(true));
 		
 		this.createScreenshotAndCompare(
-			new BarChart(data, options),
+			new BarChart(createDefaultTwoDatasetBarData(), options),
 			this.getWebContainer(),
 			"Stacked"
 		);
@@ -147,21 +132,6 @@ class BarChartTest extends AbstractChartTest
 	@Test
 	void testStackedHorizontal()
 	{
-		final BarDataset dataset1 = new BarDataset()
-			.setLabel("First stack")
-			.setData(65, 59, 80)
-			.addBackgroundColors(Color.RED, Color.RED, Color.RED);
-		
-		final BarDataset dataset2 = new BarDataset()
-			.setLabel("Second stack")
-			.setData(28, 45, 10)
-			.addBackgroundColors(Color.GREEN, Color.GREEN, Color.GREEN);
-		
-		final BarData data = new BarData()
-			.addLabels("First", "Second", "Third")
-			.addDataset(dataset1)
-			.addDataset(dataset2);
-		
 		final BarOptions options = new BarOptions()
 			.setAnimation(false)
 			.setIndexAxis(BarOptions.IndexAxis.Y);
@@ -171,7 +141,7 @@ class BarChartTest extends AbstractChartTest
 			.addScale(Scales.ScaleAxis.Y, new CartesianScaleOptions().setStacked(true));
 		
 		this.createScreenshotAndCompare(
-			new BarChart(data, options),
+			new BarChart(createDefaultTwoDatasetBarData(), options),
 			this.getWebContainer(),
 			"StackedHorizontal"
 		);
@@ -218,5 +188,23 @@ class BarChartTest extends AbstractChartTest
 			this.getWebContainer(),
 			"StackedWithGroups"
 		);
+	}
+	
+	static BarData createDefaultTwoDatasetBarData()
+	{
+		final BarDataset dataset1 = new BarDataset()
+			.setLabel("First stack")
+			.setData(65, 59, 80)
+			.addBackgroundColors(Color.RED, Color.RED, Color.RED);
+		
+		final BarDataset dataset2 = new BarDataset()
+			.setLabel("Second stack")
+			.setData(28, 45, 10)
+			.addBackgroundColors(Color.GREEN, Color.GREEN, Color.GREEN);
+		
+		return new BarData()
+			.addLabels("First", "Second", "Third")
+			.addDataset(dataset1)
+			.addDataset(dataset2);
 	}
 }

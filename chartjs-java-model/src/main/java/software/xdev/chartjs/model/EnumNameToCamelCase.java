@@ -35,8 +35,8 @@ public final class EnumNameToCamelCase
 			}
 			else
 			{
-				sb.append(s.substring(0, 1).toUpperCase(Locale.ENGLISH));
-				sb.append(s.substring(1).toLowerCase(Locale.ENGLISH));
+				sb.append(s.substring(0, 1).toUpperCase(Locale.ENGLISH))
+					.append(s.substring(1).toLowerCase(Locale.ENGLISH));
 			}
 		}
 		return sb.toString();
