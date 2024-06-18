@@ -35,4 +35,15 @@ public abstract class HomogeneousChart<T, O extends Options<O, ?>, D extends Hom
 	{
 		super(data, options);
 	}
+	
+	protected boolean hasScaleWithId(final String id)
+	{
+		if(this.getOptions() != null
+			&& this.getOptions().getScales() != null
+			&& this.getOptions().getScales().getScalesList() != null)
+		{
+			return this.getOptions().getScales().getScalesList().get(id) != null;
+		}
+		return false;
+	}
 }

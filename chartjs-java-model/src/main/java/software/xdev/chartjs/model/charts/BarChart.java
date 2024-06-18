@@ -106,15 +106,4 @@ public class BarChart extends HomogeneousChart<BarChart, BarOptions, BarData>
 		}
 		return sufficientData;
 	}
-	
-	private boolean hasScaleWithId(final String id)
-	{
-		if(this.getOptions() != null
-			&& this.getOptions().getScales() != null
-			&& this.getOptions().getScales().getScalesList() != null)
-		{
-			return this.getOptions().getScales().getScalesList().get(id) != null;
-		}
-		return false;
-	}
 }

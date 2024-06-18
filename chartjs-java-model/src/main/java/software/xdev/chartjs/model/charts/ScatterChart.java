@@ -96,15 +96,4 @@ public class ScatterChart extends HomogeneousChart<ScatterChart, LineOptions, Sc
 		}
 		return sufficientData;
 	}
-	
-	private boolean hasScaleWithId(final String id)
-	{
-		if(this.getOptions() != null
-			&& this.getOptions().getScales() != null
-			&& this.getOptions().getScales().getScalesList() != null)
-		{
-			return this.getOptions().getScales().getScalesList().get(id) != null;
-		}
-		return false;
-	}
 }
