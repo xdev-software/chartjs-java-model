@@ -17,6 +17,7 @@ package software.xdev.chartjs.model.options;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import software.xdev.chartjs.model.options.animation.DefaultAnimation;
 import software.xdev.chartjs.model.options.elements.LineElements;
@@ -36,6 +37,11 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 	 */
 	protected Boolean spanGaps;
 	protected LineElements elements;
+	
+	/**
+	 * The base axis of the dataset. 'x' for horizontal lines and 'y' for vertical lines.
+	 */
+	protected IndexAxis indexAxis;
 	
 	/**
 	 * @see #setShowLine(Boolean)
@@ -99,5 +105,36 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 	{
 		this.elements = elements;
 		return this;
+	}
+	
+	/**
+	 * @return {@link IndexAxis} value or {@code null} if not set
+	 */
+	public IndexAxis getIndexAxis()
+	{
+		return indexAxis;
+	}
+	
+	/**
+	 * @param indexAxis {@link IndexAxis} value or {@code null}
+	 * @return this instance for method chaining
+	 */
+	public LineOptions setIndexAxis(IndexAxis indexAxis)
+	{
+		this.indexAxis = indexAxis;
+		return this;
+	}
+	
+	public enum IndexAxis
+	{
+		X,
+		Y;
+		
+		@JsonValue
+		@Override
+		public String toString()
+		{
+			return super.toString().toLowerCase();
+		}
 	}
 }
