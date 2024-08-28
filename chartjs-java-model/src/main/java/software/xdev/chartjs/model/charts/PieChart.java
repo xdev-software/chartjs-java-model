@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.PieData;
-import software.xdev.chartjs.model.dataset.PieDataset;
 import software.xdev.chartjs.model.options.Options;
 import software.xdev.chartjs.model.options.PieOptions;
 
@@ -62,25 +61,5 @@ public class PieChart extends HomogeneousChart<PieChart, PieOptions, PieData>
 	public String getType()
 	{
 		return "pie";
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * {@code PieChart} is drawable if at least one dataset has at least one data point.
-	 * </p>
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		for(final PieDataset dataset : this.getData().getDatasets())
-		{
-			if(!dataset.getData().isEmpty())
-			{
-				return true;
-			}
-		}
-		return false;
 	}
 }

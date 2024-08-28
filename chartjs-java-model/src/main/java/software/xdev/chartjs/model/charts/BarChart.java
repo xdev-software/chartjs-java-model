@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.BarData;
 import software.xdev.chartjs.model.data.HomogeneousData;
-import software.xdev.chartjs.model.dataset.BarDataset;
 import software.xdev.chartjs.model.options.BarOptions;
 import software.xdev.chartjs.model.options.Options;
 
@@ -62,48 +61,5 @@ public class BarChart extends HomogeneousChart<BarChart, BarOptions, BarData>
 	public String getType()
 	{
 		return "bar";
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * A {@code BarChart} is drawable if:
-	 * </p>
-	 * <ul>
-	 * <li>at least one dataset has at least one data point
-	 * <li>an xAxis scale exists with the id of the xAxisID set on a dataset, if
-	 * such an id set
-	 * <li>a yAxis scale exists with the id of the yAxisID set on a dataset, if
-	 * such an id is set
-	 * <li>there is at least one label in the {@link BarData}
-	 * </ul>
-	 *
-	 * @return true if this {@link BarChart} is drawable in its current state
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		if(this.getData().getLabels().isEmpty())
-		{
-			return false;
-		}
-		boolean sufficientData = false;
-		for(final BarDataset dataset : this.getData().getDatasets())
-		{
-			if(dataset.getXAxisID() != null && !this.hasScaleWithId(dataset.getXAxisID()))
-			{
-				return false;
-			}
-			if(dataset.getYAxisID() != null && !this.hasScaleWithId(dataset.getYAxisID()))
-			{
-				return false;
-			}
-			if(!dataset.getData().isEmpty())
-			{
-				sufficientData = true;
-			}
-		}
-		return sufficientData;
 	}
 }

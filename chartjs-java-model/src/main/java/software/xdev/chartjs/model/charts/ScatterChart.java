@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.ScatterData;
-import software.xdev.chartjs.model.dataset.ScatterDataset;
 import software.xdev.chartjs.model.options.LineOptions;
 import software.xdev.chartjs.model.options.Options;
 
@@ -63,37 +62,5 @@ public class ScatterChart extends HomogeneousChart<ScatterChart, LineOptions, Sc
 	public String getType()
 	{
 		return "scatter";
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * {@code LineChart} is drawable if at least one dataset has at least one data point.<br> If an xAxisID is set on a
-	 * dataset, an xAxis scale must exist with that id.
-	 * <br>
-	 * If an yAxisID is set on a dataset, a yAxis scale must exist with that id.
-	 * </p>
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		boolean sufficientData = false;
-		for(final ScatterDataset dataset : this.getData().getDatasets())
-		{
-			if(dataset.getXAxisID() != null && !this.hasScaleWithId(dataset.getXAxisID()))
-			{
-				return false;
-			}
-			if(dataset.getYAxisID() != null && !this.hasScaleWithId(dataset.getYAxisID()))
-			{
-				return false;
-			}
-			if(!dataset.getData().isEmpty())
-			{
-				sufficientData = true;
-			}
-		}
-		return sufficientData;
 	}
 }

@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.LineData;
-import software.xdev.chartjs.model.dataset.LineDataset;
 import software.xdev.chartjs.model.options.LineOptions;
 import software.xdev.chartjs.model.options.Options;
 
@@ -62,37 +61,5 @@ public class LineChart extends HomogeneousChart<LineChart, LineOptions, LineData
 	public String getType()
 	{
 		return "line";
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * {@code LineChart} is drawable if at least one dataset has at least one data point.<br> If an xAxisID is set on a
-	 * dataset, an xAxis scale must exist with that id.
-	 * <br>
-	 * If an yAxisID is set on a dataset, a yAxis scale must exist with that id.
-	 * </p>
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		boolean sufficientData = false;
-		for(final LineDataset dataset : this.getData().getDatasets())
-		{
-			if(dataset.getXAxisID() != null && !this.hasScaleWithId(dataset.getXAxisID()))
-			{
-				return false;
-			}
-			if(dataset.getYAxisID() != null && !this.hasScaleWithId(dataset.getYAxisID()))
-			{
-				return false;
-			}
-			if(!dataset.getData().isEmpty())
-			{
-				sufficientData = true;
-			}
-		}
-		return sufficientData;
 	}
 }

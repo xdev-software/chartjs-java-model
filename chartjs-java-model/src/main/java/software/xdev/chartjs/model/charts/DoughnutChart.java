@@ -62,17 +62,4 @@ public class DoughnutChart extends HomogeneousChart<DoughnutChart, DoughnutOptio
 	{
 		return "doughnut";
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * {@code DoughnutChart} is drawable if at least one dataset has at least one data point.
-	 * </p>
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		return this.getData() != null && !this.getData().getDatasets().isEmpty();
-	}
 }

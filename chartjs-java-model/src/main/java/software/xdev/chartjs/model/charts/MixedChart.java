@@ -37,11 +37,4 @@ public class MixedChart extends AbstractChart<MixedChart, Options<?, ?>, MixedDa
 	{
 		return this.type;
 	}
-	
-	@Override
-	public boolean isDrawable()
-	{
-		// Warning: Unchecked
-		return true;
-	}
 }

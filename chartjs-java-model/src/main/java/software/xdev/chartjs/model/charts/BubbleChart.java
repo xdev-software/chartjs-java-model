@@ -62,17 +62,4 @@ public class BubbleChart extends HomogeneousChart<BubbleChart, BubbleOptions, Bu
 	{
 		return "bubble";
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * {@code BubbleChart} is drawable if at least one dataset has at least one data point.
-	 * </p>
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		return this.getData() != null && !this.getData().getDatasets().isEmpty();
-	}
 }
