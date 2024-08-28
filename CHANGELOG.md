@@ -1,3 +1,9 @@
+## 2.1.0
+* Charts no longer check if they are drawable #198
+  * ChartJS behavior: If a chart can't be drawn it will render a empty canvas
+  * Deprecated methods: ``Chart#toJsonNative`` and ``Chart#isDrawable``
+* Make ``IndexAxis`` available in all options
+
 ## 2.0.1
 * Restored ``DisplayFormats`` #186
 

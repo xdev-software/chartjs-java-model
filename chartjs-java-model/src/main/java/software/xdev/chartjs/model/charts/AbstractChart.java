@@ -100,7 +100,7 @@ public abstract class AbstractChart<T, O extends Options<?, ?>, D extends Abstra
 	}
 	
 	@Override
-	public String toJsonNative()
+	public String toJson()
 	{
 		try
 		{

@@ -15,17 +15,12 @@
  */
 package software.xdev.chartjs.model.options;
 
-import java.util.Locale;
-
-import com.fasterxml.jackson.annotation.JsonValue;
-
 import software.xdev.chartjs.model.options.animation.DefaultAnimation;
 import software.xdev.chartjs.model.options.elements.BarElements;
 
 
 public class BarOptions extends Options<BarOptions, DefaultAnimation>
 {
-	protected IndexAxis indexAxis = IndexAxis.X;
 	protected BarElements elements;
 	
 	/**
@@ -36,48 +31,9 @@ public class BarOptions extends Options<BarOptions, DefaultAnimation>
 		return this.elements;
 	}
 	
-	/**
-	 * @param elements an {@link BarElements} instance, or {@code null}
-	 * @return this instance for method chaining
-	 */
 	public BarOptions setElements(final BarElements elements)
 	{
 		this.elements = elements;
 		return this;
-	}
-	
-	/**
-	 * @return the orientation of the bars
-	 */
-	public IndexAxis getIndexAxis()
-	{
-		return this.indexAxis;
-	}
-	
-	/**
-	 * <p>
-	 * Sets the orientation of the bars. {@code "y"} results in horizontal bars.
-	 * </p>
-	 * <p>
-	 * Default {@code "x"}
-	 * </p>
-	 */
-	public BarOptions setIndexAxis(final IndexAxis indexAxis)
-	{
-		this.indexAxis = indexAxis;
-		return this;
-	}
-	
-	public enum IndexAxis
-	{
-		X,
-		Y;
-		
-		@JsonValue
-		@Override
-		public String toString()
-		{
-			return super.toString().toLowerCase(Locale.ENGLISH);
-		}
 	}
 }

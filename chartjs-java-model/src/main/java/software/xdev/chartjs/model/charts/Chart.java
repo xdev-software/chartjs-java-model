@@ -31,41 +31,31 @@ public interface Chart<SELF, O extends Options<?, ?>, D extends AbstractData<?, 
 	String getType();
 	
 	/**
+	 * @deprecated As of 2.1.0 {@link #toJson()} has the same functionality and should be used instead
+	 */
+	@Deprecated(since = "2.1.0", forRemoval = true)
+	default String toJsonNative()
+	{
+		return this.toJson();
+	}
+	
+	/**
 	 * <p>
 	 * Convert {@code this} instance to Json for use with Chart.js library.
 	 * </p>
 	 *
 	 * @return json representation of {@code this} {@link Chart}
 	 */
-	String toJsonNative();
+	String toJson();
 	
 	/**
-	 * Same as {@link #toJsonNative()} but also check if the diagram {@link #isDrawable() is drawable}
-	 * @see #toJson()
+	 * @deprecated No functionality implemented as of 2.1.0
 	 */
-	default String toJson()
+	@Deprecated(since = "2.1.0", forRemoval = true)
+	default boolean isDrawable()
 	{
-		if(!this.isDrawable())
-		{
-			throw new IllegalArgumentException("Chart is not drawable");
-		}
-		return this.toJsonNative();
+		return true;
 	}
-	
-	/**
-	 * <p>
-	 * Optional check to determine whether the current state of this {@link Chart} implementation instance will
-	 * generate
-	 * a drawable JSON string.
-	 * </p>
-	 * <p>
-	 * Implementations provide a best-effort evaluation, and can not guarantee that the serialized chart will be
-	 * rendered correctly.
-	 * </p>
-	 *
-	 * @return true if {@code this} {@link Chart} is drawable in its current state
-	 */
-	boolean isDrawable();
 	
 	SELF setOptions(final O options);
 	

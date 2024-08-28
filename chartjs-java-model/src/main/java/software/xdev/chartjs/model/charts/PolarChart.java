@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.PolarData;
-import software.xdev.chartjs.model.dataset.PolarDataset;
 import software.xdev.chartjs.model.options.Options;
 import software.xdev.chartjs.model.options.PolarOptions;
 
@@ -62,25 +61,5 @@ public class PolarChart extends HomogeneousChart<PolarChart, PolarOptions, Polar
 	public String getType()
 	{
 		return "polarArea";
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * {@code PolarChart} is drawable if at least one dataset has at least two data points.
-	 * </p>
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		for(final PolarDataset dataset : this.getData().getDatasets())
-		{
-			if(dataset.getData().size() >= 2)
-			{
-				return true;
-			}
-		}
-		return false;
 	}
 }

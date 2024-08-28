@@ -26,9 +26,13 @@ import software.xdev.chartjs.model.options.layout.Layout;
 import software.xdev.chartjs.model.options.scale.Scales;
 
 
+/**
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L1588">ChartJS Source</a>
+ */
 public class Options<T extends Options<T, A>, A extends Animation<A>>
 {
 	protected final Set<String> events = new HashSet<>();
+	protected IndexAxis indexAxis;
 	protected Boolean responsive;
 	protected Integer responsiveAnimationDuration;
 	protected Boolean maintainAspectRatio;
@@ -52,6 +56,17 @@ public class Options<T extends Options<T, A>, A extends Animation<A>>
 	public T setScales(final Scales scales)
 	{
 		this.scales = scales;
+		return this.self();
+	}
+	
+	public IndexAxis getIndexAxis()
+	{
+		return this.indexAxis;
+	}
+	
+	public T setIndexAxis(final IndexAxis indexAxis)
+	{
+		this.indexAxis = indexAxis;
 		return this.self();
 	}
 	

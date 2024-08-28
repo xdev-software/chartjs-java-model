@@ -15,18 +15,12 @@
  */
 package software.xdev.chartjs.model.options;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
-
 import software.xdev.chartjs.model.options.animation.DefaultAnimation;
 import software.xdev.chartjs.model.options.elements.LineElements;
 
 
-@JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility =
-	Visibility.NONE)
 public class LineOptions extends Options<LineOptions, DefaultAnimation>
 {
-	
 	/**
 	 * @see #setShowLine(Boolean)
 	 */

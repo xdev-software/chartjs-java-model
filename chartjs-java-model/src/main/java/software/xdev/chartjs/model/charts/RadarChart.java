@@ -17,7 +17,6 @@ package software.xdev.chartjs.model.charts;
 
 import software.xdev.chartjs.model.data.HomogeneousData;
 import software.xdev.chartjs.model.data.RadarData;
-import software.xdev.chartjs.model.dataset.RadarDataset;
 import software.xdev.chartjs.model.options.Options;
 import software.xdev.chartjs.model.options.RadarOptions;
 
@@ -62,25 +61,5 @@ public class RadarChart extends HomogeneousChart<RadarChart, RadarOptions, Radar
 	public String getType()
 	{
 		return "radar";
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>
-	 * {@code RadarChart} is drawable if at least one dataset has at least three data points.
-	 * </p>
-	 */
-	@Override
-	public boolean isDrawable()
-	{
-		for(final RadarDataset dataset : this.getData().getDatasets())
-		{
-			if(dataset.getData().size() >= 3)
-			{
-				return true;
-			}
-		}
-		return false;
 	}
 }
