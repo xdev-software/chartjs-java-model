@@ -15,9 +15,6 @@
  */
 package software.xdev.chartjs.model.options.elements;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
-
 import software.xdev.chartjs.model.enums.BorderSkipped;
 
 
@@ -30,8 +27,6 @@ import software.xdev.chartjs.model.enums.BorderSkipped;
  * attached to a dataset.
  * </p>
  */
-@JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility =
-	Visibility.NONE)
 public class Bar
 {
 	
