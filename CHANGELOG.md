@@ -1,3 +1,6 @@
+## 2.0.2
+* Make ``IndexAxis`` available in all options
+
 ## 2.0.1
 * Restored ``DisplayFormats`` #186
 

@@ -29,6 +29,7 @@ import software.xdev.chartjs.model.data.BarData;
 import software.xdev.chartjs.model.datapoint.XYDataPoint;
 import software.xdev.chartjs.model.dataset.BarDataset;
 import software.xdev.chartjs.model.options.BarOptions;
+import software.xdev.chartjs.model.options.IndexAxis;
 import software.xdev.chartjs.model.options.scale.Scales;
 import software.xdev.chartjs.model.options.scale.cartesian.AbstractCartesianScaleOptions;
 import software.xdev.chartjs.model.options.scale.cartesian.CartesianScaleOptions;
@@ -134,7 +135,7 @@ class BarChartTest extends AbstractChartTest
 	{
 		final BarOptions options = new BarOptions()
 			.setAnimation(false)
-			.setIndexAxis(BarOptions.IndexAxis.Y);
+			.setIndexAxis(IndexAxis.Y);
 		options
 			.getScales()
 			.addScale(Scales.ScaleAxis.X, new CartesianScaleOptions().setStacked(true))
@@ -177,7 +178,7 @@ class BarChartTest extends AbstractChartTest
 		
 		final BarOptions options = new BarOptions()
 			.setAnimation(false)
-			.setIndexAxis(BarOptions.IndexAxis.Y);
+			.setIndexAxis(IndexAxis.Y);
 		options
 			.getScales()
 			.addScale(Scales.ScaleAxis.X, new CartesianScaleOptions().setStacked(true))
