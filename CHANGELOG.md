@@ -4,6 +4,9 @@
   * Deprecated methods: ``Chart#toJsonNative`` and ``Chart#isDrawable``
 * Make ``IndexAxis`` available in all options
 
+## 2.0.2
+_Same as version 2.1.0 - Version was not incremented correctly_
+
 ## 2.0.1
 * Restored ``DisplayFormats`` #186
 
