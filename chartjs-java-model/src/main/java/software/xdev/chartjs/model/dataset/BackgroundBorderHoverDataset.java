@@ -18,31 +18,30 @@ package software.xdev.chartjs.model.dataset;
 import java.util.Arrays;
 import java.util.List;
 
-import software.xdev.chartjs.model.color.Color;
 import software.xdev.chartjs.model.objects.OptionalArray;
 
 
 public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHoverDataset<T, O>, O>
 	extends Dataset<T, O>
 {
-	protected final List<Color> backgroundColor = new OptionalArray<>();
+	protected final List<Object> backgroundColor = new OptionalArray<>();
 	
-	protected final List<Color> borderColor = new OptionalArray<>();
+	protected final List<Object> borderColor = new OptionalArray<>();
 	
 	protected final List<Integer> borderWidth = new OptionalArray<>();
 	
-	protected final List<Color> hoverBackgroundColor = new OptionalArray<>();
+	protected final List<Object> hoverBackgroundColor = new OptionalArray<>();
 	
-	protected final List<Color> hoverBorderColor = new OptionalArray<>();
+	protected final List<Object> hoverBorderColor = new OptionalArray<>();
 	
 	protected final List<Integer> hoverBorderWidth = new OptionalArray<>();
 	
-	public List<Color> getBackgroundColor()
+	public List<Object> getBackgroundColor()
 	{
 		return this.backgroundColor;
 	}
 	
-	public T addBackgroundColor(final Color backgroundColor)
+	public T addBackgroundColor(final Object backgroundColor)
 	{
 		if(backgroundColor != null)
 		{
@@ -51,7 +50,7 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public T addBackgroundColors(final Color... backgroundColors)
+	public T addBackgroundColors(final Object... backgroundColors)
 	{
 		if(backgroundColors != null)
 		{
@@ -60,14 +59,14 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public T setBackgroundColor(final Color backgroundColor)
+	public T setBackgroundColor(final Object backgroundColor)
 	{
 		this.backgroundColor.clear();
 		this.addBackgroundColor(backgroundColor);
 		return this.self();
 	}
 	
-	public T setBackgroundColor(final List<Color> backgroundColor)
+	public T setBackgroundColor(final List<Object> backgroundColor)
 	{
 		this.backgroundColor.clear();
 		if(backgroundColor != null)
@@ -77,12 +76,12 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public List<Color> getBorderColor()
+	public List<Object> getBorderColor()
 	{
 		return this.borderColor;
 	}
 	
-	public T addBorderColor(final Color borderColor)
+	public T addBorderColor(final Object borderColor)
 	{
 		if(borderColor != null)
 		{
@@ -91,7 +90,7 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public T addBorderColors(final Color... borderColors)
+	public T addBorderColors(final Object... borderColors)
 	{
 		if(borderColors != null)
 		{
@@ -100,14 +99,14 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public T setBorderColor(final Color borderColor)
+	public T setBorderColor(final Object borderColor)
 	{
 		this.borderColor.clear();
 		this.addBorderColor(borderColor);
 		return this.self();
 	}
 	
-	public T setBorderColor(final List<Color> borderColor)
+	public T setBorderColor(final List<Object> borderColor)
 	{
 		this.borderColor.clear();
 		if(borderColor != null)
@@ -148,12 +147,12 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public List<Color> getHoverBackgroundColor()
+	public List<Object> getHoverBackgroundColor()
 	{
 		return this.hoverBackgroundColor;
 	}
 	
-	public T addHoverBackgroundColor(final Color hoverBackgroundColor)
+	public T addHoverBackgroundColor(final Object hoverBackgroundColor)
 	{
 		if(hoverBackgroundColor != null)
 		{
@@ -162,14 +161,14 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public T setHoverBackgroundColor(final Color hoverBackgroundColor)
+	public T setHoverBackgroundColor(final Object hoverBackgroundColor)
 	{
 		this.hoverBackgroundColor.clear();
 		this.addHoverBackgroundColor(hoverBackgroundColor);
 		return this.self();
 	}
 	
-	public T setHoverBackgroundColor(final List<Color> hoverBackgroundColor)
+	public T setHoverBackgroundColor(final List<Object> hoverBackgroundColor)
 	{
 		this.hoverBackgroundColor.clear();
 		if(hoverBackgroundColor != null)
@@ -179,12 +178,12 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public List<Color> getHoverBorderColor()
+	public List<Object> getHoverBorderColor()
 	{
 		return this.hoverBorderColor;
 	}
 	
-	public T addHoverBorderColor(final Color hoverBorderColor)
+	public T addHoverBorderColor(final Object hoverBorderColor)
 	{
 		if(hoverBorderColor != null)
 		{
@@ -193,14 +192,14 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 		return this.self();
 	}
 	
-	public T setHoverBorderColor(final Color hoverBorderColor)
+	public T setHoverBorderColor(final Object hoverBorderColor)
 	{
 		this.hoverBorderColor.clear();
 		this.addHoverBorderColor(hoverBorderColor);
 		return this.self();
 	}
 	
-	public T setHoverBorderColor(final List<Color> hoverBorderColor)
+	public T setHoverBorderColor(final List<Object> hoverBorderColor)
 	{
 		this.hoverBorderColor.clear();
 		if(hoverBorderColor != null)

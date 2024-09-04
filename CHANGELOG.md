@@ -1,3 +1,9 @@
+## 2.2.0
+* Improve color handling #238
+  * Change ``Color`` to ``RGBAColor`` as it only handles RGBA
+  * Change all occurrences of ``Color`` to ``Object`` so that other color models (e.g. HSLA or Hex) can be applied
+  * Created ``HSLAColor`` that can be used like ``RGBAColor``
+
 ## 2.1.0
 * Charts no longer check if they are drawable #198
   * ChartJS behavior: If a chart can't be drawn it will render a empty canvas

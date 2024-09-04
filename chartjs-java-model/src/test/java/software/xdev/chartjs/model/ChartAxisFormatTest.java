@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 import org.junit.jupiter.api.Test;
 
 import software.xdev.chartjs.model.charts.BarChart;
-import software.xdev.chartjs.model.color.Color;
+import software.xdev.chartjs.model.color.RGBAColor;
 import software.xdev.chartjs.model.data.BarData;
 import software.xdev.chartjs.model.dataset.BarDataset;
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
@@ -91,7 +91,7 @@ class ChartAxisFormatTest extends AbstractChartTest
 	{
 		final BarDataset dataset1 = new BarDataset()
 			.setData(65)
-			.addBackgroundColors(Color.RED);
+			.addBackgroundColors(RGBAColor.RED);
 		
 		return new BarData()
 			.addLabels("First")
