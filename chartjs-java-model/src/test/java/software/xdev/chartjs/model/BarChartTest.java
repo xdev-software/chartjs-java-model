@@ -24,7 +24,7 @@ import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
 import software.xdev.chartjs.model.charts.BarChart;
-import software.xdev.chartjs.model.color.Color;
+import software.xdev.chartjs.model.color.RGBAColor;
 import software.xdev.chartjs.model.data.BarData;
 import software.xdev.chartjs.model.datapoint.XYDataPoint;
 import software.xdev.chartjs.model.dataset.BarDataset;
@@ -109,7 +109,7 @@ class BarChartTest extends AbstractChartTest
 	{
 		final BarDataset dataset1 = new BarDataset()
 			.setData(65, 59, 80)
-			.addBackgroundColors(Color.RED, Color.GREEN, Color.BLUE);
+			.addBackgroundColors(RGBAColor.RED, RGBAColor.GREEN, RGBAColor.BLUE);
 		
 		final BarData data = new BarData()
 			.addLabels("First", "Second", "Third")
@@ -155,19 +155,19 @@ class BarChartTest extends AbstractChartTest
 		final BarDataset dataset1 = new BarDataset()
 			.setLabel("First stack")
 			.setData(65, 59, 80)
-			.addBackgroundColors(Color.RED, Color.RED, Color.RED)
+			.addBackgroundColors(RGBAColor.RED, RGBAColor.RED, RGBAColor.RED)
 			.setStack("Stack 1");
 		
 		final BarDataset dataset2 = new BarDataset()
 			.setLabel("Second stack")
 			.setData(28, 45, 10)
-			.addBackgroundColors(Color.GREEN, Color.GREEN, Color.GREEN)
+			.addBackgroundColors(RGBAColor.GREEN, RGBAColor.GREEN, RGBAColor.GREEN)
 			.setStack("Stack 1");
 		
 		final BarDataset dataset3 = new BarDataset()
 			.setLabel("Third stack")
 			.setData(10, 23, 45)
-			.addBackgroundColors(Color.BLUE, Color.BLUE, Color.BLUE)
+			.addBackgroundColors(RGBAColor.BLUE, RGBAColor.BLUE, RGBAColor.BLUE)
 			.setStack("Stack 2");
 		
 		final BarData data = new BarData()
@@ -196,12 +196,12 @@ class BarChartTest extends AbstractChartTest
 		final BarDataset dataset1 = new BarDataset()
 			.setLabel("First stack")
 			.setData(65, 59, 80)
-			.addBackgroundColors(Color.RED, Color.RED, Color.RED);
+			.addBackgroundColors(RGBAColor.RED, RGBAColor.RED, RGBAColor.RED);
 		
 		final BarDataset dataset2 = new BarDataset()
 			.setLabel("Second stack")
 			.setData(28, 45, 10)
-			.addBackgroundColors(Color.GREEN, Color.GREEN, Color.GREEN);
+			.addBackgroundColors(RGBAColor.GREEN, RGBAColor.GREEN, RGBAColor.GREEN);
 		
 		return new BarData()
 			.addLabels("First", "Second", "Third")
