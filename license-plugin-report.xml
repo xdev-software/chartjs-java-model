@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<licensePluginReport goal="FORMAT" timestamp="1724848912298">
-    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.1.0"/>
+<licensePluginReport goal="FORMAT" timestamp="1725446807509">
+    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.2.0"/>
     <files>
         <file path="src/main/java/software/xdev/chartjs/model/EnumNameToCamelCase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/charts/AbstractChart.java" result="NOOP"/>
@@ -15,7 +15,8 @@
         <file path="src/main/java/software/xdev/chartjs/model/charts/PolarChart.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/charts/RadarChart.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/charts/ScatterChart.java" result="NOOP"/>
-        <file path="src/main/java/software/xdev/chartjs/model/color/Color.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/color/HSLAColor.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/color/RGBAColor.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/data/AbstractData.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/data/BarData.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/data/BubbleData.java" result="NOOP"/>
@@ -134,6 +135,7 @@
         <file path="src/test/java/software/xdev/chartjs/model/AbstractChartTest.java" result="NOOP"/>
         <file path="src/test/java/software/xdev/chartjs/model/BarChartTest.java" result="NOOP"/>
         <file path="src/test/java/software/xdev/chartjs/model/BasicChartTest.java" result="NOOP"/>
+        <file path="src/test/java/software/xdev/chartjs/model/ChartAxisFormatTest.java" result="NOOP"/>
         <file path="src/test/java/software/xdev/chartjs/model/RadialScaleTest.java" result="NOOP"/>
         <file path="src/test/java/software/xdev/chartjs/model/container/SeleniumBrowserWebDriverContainer.java" result="NOOP"/>
     </files>
