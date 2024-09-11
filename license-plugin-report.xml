@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<licensePluginReport goal="FORMAT" timestamp="1725446807509">
-    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.2.0"/>
+<licensePluginReport goal="FORMAT" timestamp="1726038110091">
+    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.3.0"/>
     <files>
         <file path="src/main/java/software/xdev/chartjs/model/EnumNameToCamelCase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/charts/AbstractChart.java" result="NOOP"/>
@@ -34,17 +34,17 @@
         <file path="src/main/java/software/xdev/chartjs/model/datapoint/XYDataPointBase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/BackgroundBorderHoverDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/BarDataset.java" result="NOOP"/>
-        <file path="src/main/java/software/xdev/chartjs/model/dataset/BaseLineDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/BubbleDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/Dataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/DoughnutDataset.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/dataset/DoughnutDatasetBase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/LineDataset.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/dataset/LineDatasetBase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/NumberDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/PieDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/PointDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/PolarDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/RadarDataset.java" result="NOOP"/>
-        <file path="src/main/java/software/xdev/chartjs/model/dataset/RoundDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/dataset/ScatterDataset.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/enums/BorderCapStyle.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/enums/BorderJoinStyle.java" result="NOOP"/>
@@ -53,6 +53,7 @@
         <file path="src/main/java/software/xdev/chartjs/model/enums/FillMode.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/enums/FontStyle.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/enums/HoverMode.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/enums/IndexAxis.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/enums/PointStyle.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/enums/ScaleLabelAlignment.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/enums/ScalesPosition.java" result="NOOP"/>
@@ -64,7 +65,6 @@
         <file path="src/main/java/software/xdev/chartjs/model/options/DoughnutOptions.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/Font.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/Hover.java" result="NOOP"/>
-        <file path="src/main/java/software/xdev/chartjs/model/options/IndexAxis.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/Legend.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/LegendLabels.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/LegendTitle.java" result="NOOP"/>
