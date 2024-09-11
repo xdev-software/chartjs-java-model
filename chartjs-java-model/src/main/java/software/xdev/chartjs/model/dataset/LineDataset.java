@@ -15,7 +15,7 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-public class LineDataset extends BaseLineDataset<LineDataset, Number> implements NumberDataset<LineDataset>
+public class LineDataset extends LineDatasetBase<LineDataset, Number> implements NumberDataset<LineDataset>
 {
 	@Override
 	protected String defaultType()

@@ -13,23 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.dataset;
+package software.xdev.chartjs.model.enums;
 
-public abstract class RoundDataset<T extends RoundDataset<T, O>, O> extends BackgroundBorderHoverDataset<T, O>
+import java.util.Locale;
+
+import com.fasterxml.jackson.annotation.JsonValue;
+
+
+public enum IndexAxis
 {
-	protected String label;
+	X,
+	Y;
 	
-	public String getLabel()
+	@JsonValue
+	@Override
+	public String toString()
 	{
-		return this.label;
-	}
-	
-	/**
-	 * The label for the dataset which appears in the legend and tooltips
-	 */
-	public T setLabel(final String label)
-	{
-		this.label = label;
-		return this.self();
+		return super.toString().toLowerCase(Locale.ENGLISH);
 	}
 }

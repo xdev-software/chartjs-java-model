@@ -19,14 +19,66 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.4/src/types/index.d.ts#L401">ChartJS Source</a>
+ */
 public class RadarDataset extends PointDataset<RadarDataset, Number> implements NumberDataset<RadarDataset>
 {
+	protected String xAxisID;
+	protected String yAxisID;
+	protected Object spanGaps;
+	protected Boolean showLine;
+	
 	private final List<Integer> hitRadius = new ArrayList<>();
 	
 	@Override
 	protected String defaultType()
 	{
 		return "radar";
+	}
+	
+	public String getXAxisID()
+	{
+		return this.xAxisID;
+	}
+	
+	public RadarDataset setXAxisID(final String xAxisID)
+	{
+		this.xAxisID = xAxisID;
+		return this;
+	}
+	
+	public String getYAxisID()
+	{
+		return this.yAxisID;
+	}
+	
+	public RadarDataset setYAxisID(final String yAxisID)
+	{
+		this.yAxisID = yAxisID;
+		return this;
+	}
+	
+	public Object getSpanGaps()
+	{
+		return this.spanGaps;
+	}
+	
+	public RadarDataset setSpanGaps(final Object spanGaps)
+	{
+		this.spanGaps = spanGaps;
+		return this;
+	}
+	
+	public Boolean getShowLine()
+	{
+		return this.showLine;
+	}
+	
+	public RadarDataset setShowLine(final Boolean showLine)
+	{
+		this.showLine = showLine;
+		return this;
 	}
 	
 	public List<Integer> getHitRadius()

@@ -22,11 +22,23 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import software.xdev.chartjs.model.enums.IndexAxis;
 
+
+/**
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.4/src/types/index.d.ts#L66">ChartJS Source</a>
+ */
 public abstract class Dataset<T extends Dataset<T, O>, O>
 {
 	protected String type;
 	protected final List<Object> data = new ArrayList<>();
+	
+	protected IndexAxis indexAxis;
+	protected Object clip;
+	protected String label;
+	protected Number order;
+	protected String stack;
+	protected Boolean hidden;
 	
 	protected abstract String defaultType();
 	
@@ -143,6 +155,72 @@ public abstract class Dataset<T extends Dataset<T, O>, O>
 	public T addData(final O data)
 	{
 		return this.addDataUnchecked(data);
+	}
+	
+	public IndexAxis getIndexAxis()
+	{
+		return this.indexAxis;
+	}
+	
+	public T setIndexAxis(final IndexAxis indexAxis)
+	{
+		this.indexAxis = indexAxis;
+		return this.self();
+	}
+	
+	public Object getClip()
+	{
+		return this.clip;
+	}
+	
+	public T setClip(final Object clip)
+	{
+		this.clip = clip;
+		return this.self();
+	}
+	
+	public String getLabel()
+	{
+		return this.label;
+	}
+	
+	public T setLabel(final String label)
+	{
+		this.label = label;
+		return this.self();
+	}
+	
+	public Number getOrder()
+	{
+		return this.order;
+	}
+	
+	public T setOrder(final Number order)
+	{
+		this.order = order;
+		return this.self();
+	}
+	
+	public String getStack()
+	{
+		return this.stack;
+	}
+	
+	public T setStack(final String stack)
+	{
+		this.stack = stack;
+		return this.self();
+	}
+	
+	public Boolean getHidden()
+	{
+		return this.hidden;
+	}
+	
+	public T setHidden(final Boolean hidden)
+	{
+		this.hidden = hidden;
+		return this.self();
 	}
 	
 	@SuppressWarnings("unchecked")

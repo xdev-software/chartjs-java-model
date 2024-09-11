@@ -25,15 +25,10 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 	extends Dataset<T, O>
 {
 	protected final List<Object> backgroundColor = new OptionalArray<>();
-	
 	protected final List<Object> borderColor = new OptionalArray<>();
-	
 	protected final List<Integer> borderWidth = new OptionalArray<>();
-	
 	protected final List<Object> hoverBackgroundColor = new OptionalArray<>();
-	
 	protected final List<Object> hoverBorderColor = new OptionalArray<>();
-	
 	protected final List<Integer> hoverBorderWidth = new OptionalArray<>();
 	
 	public List<Object> getBackgroundColor()

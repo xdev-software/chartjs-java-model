@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import software.xdev.chartjs.model.enums.IndexAxis;
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 import software.xdev.chartjs.model.options.animation.Animation;
 import software.xdev.chartjs.model.options.animation.Animations;

@@ -27,8 +27,6 @@ import software.xdev.chartjs.model.options.elements.Fill;
 
 public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T, O>
 {
-	private String label;
-	
 	private Fill<?> fill;
 	
 	private Float lineTension;
@@ -66,20 +64,6 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	private final List<Integer> pointHoverBorderWidth = new OptionalArray<>();
 	
 	private final List<PointStyle> pointStyle = new OptionalArray<>();
-	
-	public String getLabel()
-	{
-		return this.label;
-	}
-	
-	/**
-	 * The label for the dataset which appears in the legend and tooltips
-	 */
-	public T setLabel(final String label)
-	{
-		this.label = label;
-		return this.self();
-	}
 	
 	/**
 	 * @see #setFill(Fill)

@@ -15,7 +15,7 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-public class PieDataset extends RoundDataset<PieDataset, Number> implements NumberDataset<PieDataset>
+public class PieDataset extends DoughnutDatasetBase<PieDataset>
 {
 	@Override
 	protected String defaultType()
