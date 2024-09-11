@@ -31,15 +31,6 @@ public interface Chart<SELF, O extends Options<?, ?>, D extends AbstractData<?, 
 	String getType();
 	
 	/**
-	 * @deprecated As of 2.1.0 {@link #toJson()} has the same functionality and should be used instead
-	 */
-	@Deprecated(since = "2.1.0", forRemoval = true)
-	default String toJsonNative()
-	{
-		return this.toJson();
-	}
-	
-	/**
 	 * <p>
 	 * Convert {@code this} instance to Json for use with Chart.js library.
 	 * </p>
@@ -47,15 +38,6 @@ public interface Chart<SELF, O extends Options<?, ?>, D extends AbstractData<?, 
 	 * @return json representation of {@code this} {@link Chart}
 	 */
 	String toJson();
-	
-	/**
-	 * @deprecated No functionality implemented as of 2.1.0
-	 */
-	@Deprecated(since = "2.1.0", forRemoval = true)
-	default boolean isDrawable()
-	{
-		return true;
-	}
 	
 	SELF setOptions(final O options);
 	
