@@ -18,7 +18,7 @@ package software.xdev.chartjs.model.dataset;
 import software.xdev.chartjs.model.datapoint.ScatterDataPoint;
 
 
-public class ScatterDataset extends BaseLineDataset<ScatterDataset, ScatterDataPoint>
+public class ScatterDataset extends LineDatasetBase<ScatterDataset, ScatterDataPoint>
 {
 	@Override
 	protected String defaultType()

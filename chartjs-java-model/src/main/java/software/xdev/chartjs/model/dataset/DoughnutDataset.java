@@ -15,7 +15,7 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-public class DoughnutDataset extends RoundDataset<DoughnutDataset, Number>
+public class DoughnutDataset extends DoughnutDatasetBase<DoughnutDataset>
 	implements NumberDataset<DoughnutDataset>
 {
 	@Override

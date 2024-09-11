@@ -15,11 +15,28 @@
  */
 package software.xdev.chartjs.model.dataset;
 
-public class PolarDataset extends RoundDataset<PolarDataset, Number> implements NumberDataset<PolarDataset>
+/**
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.4/src/types/index.d.ts#L372">ChartJS Source</a>
+ */
+public class PolarDataset extends BackgroundBorderHoverDataset<PolarDataset, Number>
+	implements NumberDataset<PolarDataset>
 {
+	protected Number angle;
+	
 	@Override
 	protected String defaultType()
 	{
 		return "polarArea";
+	}
+	
+	public Number getAngle()
+	{
+		return this.angle;
+	}
+	
+	public PolarDataset setAngle(final Number angle)
+	{
+		this.angle = angle;
+		return this;
 	}
 }

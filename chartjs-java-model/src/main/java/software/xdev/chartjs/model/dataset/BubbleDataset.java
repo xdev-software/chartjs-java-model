@@ -23,24 +23,43 @@ import software.xdev.chartjs.model.objects.OptionalArray;
 
 
 /**
- * <p>
- * A collection of data points for a bubble chart.
- * </p>
- *
- * <p>
- * For best results, ensure that each property is set with a list of equal length.
- * </p>
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.4/src/types/index.d.ts#L165">ChartJS Source</a>
  */
-public class BubbleDataset extends RoundDataset<BubbleDataset, BubbleDataPoint>
+public class BubbleDataset extends BackgroundBorderHoverDataset<BubbleDataset, BubbleDataPoint>
 {
-	private final List<Integer> hoverRadius = new OptionalArray<>();
+	protected String xAxisID;
+	protected String yAxisID;
 	
-	private PointStyle pointStyle;
+	protected final List<Integer> hoverRadius = new OptionalArray<>();
+	
+	protected PointStyle pointStyle;
 	
 	@Override
 	protected String defaultType()
 	{
 		return "bubble";
+	}
+	
+	public String getXAxisID()
+	{
+		return this.xAxisID;
+	}
+	
+	public BubbleDataset setXAxisID(final String xAxisID)
+	{
+		this.xAxisID = xAxisID;
+		return this;
+	}
+	
+	public String getYAxisID()
+	{
+		return this.yAxisID;
+	}
+	
+	public BubbleDataset setYAxisID(final String yAxisID)
+	{
+		this.yAxisID = yAxisID;
+		return this;
 	}
 	
 	/**

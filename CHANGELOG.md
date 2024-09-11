@@ -1,3 +1,7 @@
+## 2.3.0
+* Update available datasets fields from ChartJS source code #244
+* Removed deprecated code
+
 ## 2.2.0
 * Improve color handling #238
   * Change ``Color`` to ``RGBAColor`` as it only handles RGBA
