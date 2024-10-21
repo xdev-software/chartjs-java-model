@@ -32,7 +32,8 @@ public abstract class LineDatasetBase<T extends PointDataset<T, O>, O> extends P
 	
 	private final List<Integer> pointHitRadius = new OptionalArray<>();
 	
-	private Boolean stepped;
+	protected Number tension;
+	protected Object stepped;
 	
 	public String getXAxisID()
 	{
@@ -78,12 +79,23 @@ public abstract class LineDatasetBase<T extends PointDataset<T, O>, O> extends P
 		return this.self();
 	}
 	
-	public Boolean getStepped()
+	public Number getTension()
+	{
+		return this.tension;
+	}
+	
+	public T setTension(final Number tension)
+	{
+		this.tension = tension;
+		return this.self();
+	}
+	
+	public Object getStepped()
 	{
 		return this.stepped;
 	}
 	
-	public T setStepped(final Boolean stepped)
+	public T setStepped(final Object stepped)
 	{
 		this.stepped = stepped;
 		return this.self();

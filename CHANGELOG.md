@@ -1,3 +1,7 @@
+## 2.3.1
+* Synced ``LineOptions/DataSet`` ``stepped`` and ``tension`` with ChartJS source #262
+* Updated dependencies
+
 ## 2.3.0
 * Update available datasets fields from ChartJS source code #244
 * Removed deprecated code
