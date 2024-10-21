@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<licensePluginReport goal="FORMAT" timestamp="1726038110091">
-    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.3.0"/>
+<licensePluginReport goal="FORMAT" timestamp="1729493710791">
+    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.3.1"/>
     <files>
         <file path="src/main/java/software/xdev/chartjs/model/EnumNameToCamelCase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/charts/AbstractChart.java" result="NOOP"/>
