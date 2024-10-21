@@ -19,8 +19,14 @@ import software.xdev.chartjs.model.options.animation.DefaultAnimation;
 import software.xdev.chartjs.model.options.elements.LineElements;
 
 
+/**
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.5/src/types/index.d.ts#L1892">ChartJS Source</a>
+ */
 public class LineOptions extends Options<LineOptions, DefaultAnimation>
 {
+	protected Number tension;
+	protected Object stepped;
+	
 	/**
 	 * @see #setShowLine(Boolean)
 	 */
@@ -30,6 +36,28 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 	 */
 	protected Boolean spanGaps;
 	protected LineElements elements;
+	
+	public Number getTension()
+	{
+		return this.tension;
+	}
+	
+	public LineOptions setTension(final Number tension)
+	{
+		this.tension = tension;
+		return this;
+	}
+	
+	public Object getStepped()
+	{
+		return this.stepped;
+	}
+	
+	public LineOptions setStepped(final Object stepped)
+	{
+		this.stepped = stepped;
+		return this;
+	}
 	
 	/**
 	 * @see #setShowLine(Boolean)
