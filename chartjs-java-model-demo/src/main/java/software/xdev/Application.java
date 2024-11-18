@@ -45,7 +45,7 @@ public final class Application
 					+ "<html lang='en'>\n"
 					+ "\t<head>\n"
 					+ "\t\t<meta charset='UTF-8'>\n"
-					+ "\t\t<script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.js\"></script>\n"
+					+ "\t\t<script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.js\"></script>\n"
 					+ "\t</head>\n"
 					+ "\t<body>\n"
 					+ "\t\t<canvas id='c' style='border:1px solid #555;'></canvas>\n"

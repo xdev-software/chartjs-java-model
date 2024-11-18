@@ -20,18 +20,23 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import software.xdev.chartjs.model.EnumNameToCamelCase;
 
 
+/**
+ * @apiNote Only contains the (string) constants. Other valid values are e.g. <code>false</code>, an image element or a
+ * canvas element.
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.4/src/types/index.d.ts#L1968">ChartJS Source</a>
+ */
 public enum PointStyle
 {
 	CIRCLE,
-	TRIANGLE,
+	CROSS,
+	CROSS_ROT,
+	DASH,
+	LINE,
 	RECT,
 	RECT_ROUNDED,
 	RECT_ROT,
-	CROSS,
-	CROSS_ROT,
 	STAR,
-	LINE,
-	DASH;
+	TRIANGLE;
 	
 	@JsonValue
 	@Override

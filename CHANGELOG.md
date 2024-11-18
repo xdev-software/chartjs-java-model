@@ -1,3 +1,8 @@
+## 2.4.0
+* PointStyle can also contain non-string constants #280
+* Use ``CoreInteractionOptions`` for ``Options#interaction`` and ``Options#hover`` #281
+* Updated dependencies
+
 ## 2.3.1
 * Synced ``LineOptions/DataSet`` ``stepped`` and ``tension`` with ChartJS source #262
 * Updated dependencies

@@ -15,9 +15,6 @@
  */
 package software.xdev.chartjs.model.options.elements;
 
-import software.xdev.chartjs.model.enums.PointStyle;
-
-
 /**
  * <p>
  * Point elements are used to represent the points in a line chart or a bubble chart.
@@ -26,12 +23,13 @@ import software.xdev.chartjs.model.enums.PointStyle;
  * When set, these options apply to all objects of that type unless specifically overridden by the configuration
  * attached to a dataset.
  * </p>
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.4/src/types/index.d.ts#L1983">ChartJS Source</a>
  */
 public class Point
 {
 	protected Integer radius;
 	
-	protected PointStyle pointStyle;
+	protected Object pointStyle;
 	
 	protected Object backgroundColor;
 	
@@ -68,24 +66,17 @@ public class Point
 		return this;
 	}
 	
-	/**
-	 * @see #setPointStyle(PointStyle)
-	 */
-	public PointStyle getPointStyle()
+	public Object getPointStyle()
 	{
 		return this.pointStyle;
 	}
 	
 	/**
 	 * <p>
-	 * Default point style
-	 * </p>
-	 *
-	 * <p>
 	 * Default {@code 'circle'}
 	 * </p>
 	 */
-	public Point setPointStyle(final PointStyle pointStyle)
+	public Point setPointStyle(final Object pointStyle)
 	{
 		this.pointStyle = pointStyle;
 		return this;

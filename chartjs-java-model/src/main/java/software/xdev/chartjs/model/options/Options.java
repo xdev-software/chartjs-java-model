@@ -40,7 +40,8 @@ public class Options<T extends Options<T, A>, A extends Animation<A>>
 	protected JavaScriptFunction onClick;
 	protected JavaScriptFunction legendCallback;
 	protected JavaScriptFunction onResize;
-	protected Hover hover;
+	protected CoreInteractionOptions interaction;
+	protected CoreInteractionOptions hover;
 	protected Animations<A> animations;
 	protected Boolean animation = true;
 	protected Layout layout;
@@ -215,10 +216,18 @@ public class Options<T extends Options<T, A>, A extends Animation<A>>
 		return this.self();
 	}
 	
-	/**
-	 * @see #setHover(Hover)
-	 */
-	public Hover getHover()
+	public CoreInteractionOptions getInteraction()
+	{
+		return this.interaction;
+	}
+	
+	public T setInteraction(final CoreInteractionOptions interaction)
+	{
+		this.interaction = interaction;
+		return this.self();
+	}
+	
+	public CoreInteractionOptions getHover()
 	{
 		return this.hover;
 	}
@@ -227,7 +236,7 @@ public class Options<T extends Options<T, A>, A extends Animation<A>>
 	 * The hover configuration is passed into the options.hover namespace. The global hover configuration is at
 	 * Chart.defaults.global.hover.
 	 */
-	public T setHover(final Hover hover)
+	public T setHover(final CoreInteractionOptions hover)
 	{
 		this.hover = hover;
 		return this.self();

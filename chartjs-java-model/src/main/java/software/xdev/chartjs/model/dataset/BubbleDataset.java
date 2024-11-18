@@ -18,7 +18,6 @@ package software.xdev.chartjs.model.dataset;
 import java.util.List;
 
 import software.xdev.chartjs.model.datapoint.BubbleDataPoint;
-import software.xdev.chartjs.model.enums.PointStyle;
 import software.xdev.chartjs.model.objects.OptionalArray;
 
 
@@ -32,7 +31,7 @@ public class BubbleDataset extends BackgroundBorderHoverDataset<BubbleDataset, B
 	
 	protected final List<Integer> hoverRadius = new OptionalArray<>();
 	
-	protected PointStyle pointStyle;
+	protected Object pointStyle;
 	
 	@Override
 	protected String defaultType()
@@ -95,12 +94,12 @@ public class BubbleDataset extends BackgroundBorderHoverDataset<BubbleDataset, B
 		return this.hoverRadius;
 	}
 	
-	public PointStyle getPointStyle()
+	public Object getPointStyle()
 	{
 		return this.pointStyle;
 	}
 	
-	public BubbleDataset setPointStyle(final PointStyle pointStyle)
+	public BubbleDataset setPointStyle(final Object pointStyle)
 	{
 		this.pointStyle = pointStyle;
 		return this;
