@@ -1,3 +1,6 @@
+## 2.4.0
+* PointStyle can also contain non-string constants #280
+
 ## 2.3.1
 * Synced ``LineOptions/DataSet`` ``stepped`` and ``tension`` with ChartJS source #262
 * Updated dependencies

@@ -20,7 +20,6 @@ import java.util.List;
 
 import software.xdev.chartjs.model.enums.BorderCapStyle;
 import software.xdev.chartjs.model.enums.BorderJoinStyle;
-import software.xdev.chartjs.model.enums.PointStyle;
 import software.xdev.chartjs.model.objects.OptionalArray;
 import software.xdev.chartjs.model.options.elements.Fill;
 
@@ -63,7 +62,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	
 	private final List<Integer> pointHoverBorderWidth = new OptionalArray<>();
 	
-	private final List<PointStyle> pointStyle = new OptionalArray<>();
+	private final List<Object> pointStyle = new OptionalArray<>();
 	
 	/**
 	 * @see #setFill(Fill)
@@ -528,7 +527,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointStyle(List)
 	 */
-	public List<PointStyle> getPointStyle()
+	public List<Object> getPointStyle()
 	{
 		return this.pointStyle;
 	}
@@ -536,7 +535,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	/**
 	 * @see #setPointStyle(List)
 	 */
-	public T addPointStyle(final PointStyle pointStyle)
+	public T addPointStyle(final Object pointStyle)
 	{
 		this.pointStyle.add(pointStyle);
 		return this.self();
@@ -547,7 +546,7 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	 * and
 	 * 'dash'. If the option is an image, that image is drawn on the canvas using drawImage.
 	 */
-	public T setPointStyle(final List<PointStyle> pointStyle)
+	public T setPointStyle(final List<Object> pointStyle)
 	{
 		this.pointStyle.clear();
 		if(pointStyle != null)

@@ -18,7 +18,6 @@ package software.xdev.chartjs.model.dataset;
 import java.util.List;
 
 import software.xdev.chartjs.model.enums.BorderSkipped;
-import software.xdev.chartjs.model.enums.PointStyle;
 import software.xdev.chartjs.model.objects.OptionalArray;
 
 
@@ -35,7 +34,7 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, Number>
 	protected Object barThickness;
 	protected Number maxBarThickness;
 	protected Number minBarLength;
-	protected PointStyle pointStyle;
+	protected Object pointStyle;
 	protected Boolean grouped;
 	
 	protected final List<BorderSkipped> borderSkipped = new OptionalArray<>();
@@ -123,12 +122,12 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, Number>
 		return this;
 	}
 	
-	public PointStyle getPointStyle()
+	public Object getPointStyle()
 	{
 		return this.pointStyle;
 	}
 	
-	public BarDataset setPointStyle(final PointStyle pointStyle)
+	public BarDataset setPointStyle(final Object pointStyle)
 	{
 		this.pointStyle = pointStyle;
 		return this;
