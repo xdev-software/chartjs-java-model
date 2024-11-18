@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<licensePluginReport goal="FORMAT" timestamp="1729493710791">
-    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.3.1"/>
+<licensePluginReport goal="FORMAT" timestamp="1731926174967">
+    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.4.0"/>
     <files>
         <file path="src/main/java/software/xdev/chartjs/model/EnumNameToCamelCase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/charts/AbstractChart.java" result="NOOP"/>
@@ -62,9 +62,9 @@
         <file path="src/main/java/software/xdev/chartjs/model/options/BarOptions.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/BubbleOptions.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/Callbacks.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/options/CoreInteractionOptions.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/DoughnutOptions.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/Font.java" result="NOOP"/>
-        <file path="src/main/java/software/xdev/chartjs/model/options/Hover.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/Legend.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/LegendLabels.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/LegendTitle.java" result="NOOP"/>
