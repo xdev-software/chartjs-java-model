@@ -8,6 +8,11 @@ Provides Java models for [Chart.js](https://www.chartjs.org/) so that e.g. a Jav
 
 This repo extends the abandoned [Chart.java](https://github.com/mdewilde/chart) and adds support for Chart.js Version 4+.
 
+> [!NOTE]
+> We try our best to implement the ChartJS v4 API however there are a lot of configuration options.<br/>
+> Therefore some parts migth still be missing or use the outdated v2 API from the original repo.<br/>
+> If you think you found a missing or incorrect API please open an issue and/or provide a pull request.
+
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/chartjs-java-model/releases/latest#Installation)
 
