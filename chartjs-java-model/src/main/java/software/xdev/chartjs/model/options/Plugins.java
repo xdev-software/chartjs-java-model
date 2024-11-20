@@ -22,7 +22,7 @@ public class Plugins
 {
 	protected Title title;
 	protected Title subtitle;
-	protected Legend legend;
+	protected LegendOptions legend;
 	protected Tooltip tooltip;
 	protected Zoom zoom;
 	
@@ -63,9 +63,9 @@ public class Plugins
 	}
 	
 	/**
-	 * @see #setLegend(Legend)
+	 * @see #setLegend(LegendOptions)
 	 */
-	public Legend getLegend()
+	public LegendOptions getLegend()
 	{
 		return this.legend;
 	}
@@ -74,7 +74,7 @@ public class Plugins
 	 * The legend configuration is passed into the options.legend namespace. The global options for the chart legend is
 	 * defined in Chart.defaults.global.legend.
 	 */
-	public Plugins setLegend(final Legend legend)
+	public Plugins setLegend(final LegendOptions legend)
 	{
 		this.legend = legend;
 		return this;
