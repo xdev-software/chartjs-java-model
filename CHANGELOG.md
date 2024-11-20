@@ -1,3 +1,6 @@
+## 2.5.0
+* Synced ``Legend`` from ChartJS source code #285
+
 ## 2.4.0
 * PointStyle can also contain non-string constants #280
 * Use ``CoreInteractionOptions`` for ``Options#interaction`` and ``Options#hover`` #281
