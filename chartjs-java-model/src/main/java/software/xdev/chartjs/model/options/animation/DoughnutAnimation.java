@@ -15,53 +15,6 @@
  */
 package software.xdev.chartjs.model.options.animation;
 
-public class DoughnutAnimation extends Animation<DoughnutAnimation>
+public class DoughnutAnimation extends DoughnutAnimationBase<DoughnutAnimation>
 {
-	/**
-	 * Default {@code true}
-	 *
-	 * @see #setAnimateRotate(Boolean)
-	 */
-	protected Boolean animateRotate;
-	
-	/**
-	 * Default {@code true}
-	 *
-	 * @see #setAnimateScale(Boolean)
-	 */
-	protected Boolean animateScale;
-	
-	/**
-	 * @see #setAnimateRotate(Boolean)
-	 */
-	public Boolean getAnimateRotate()
-	{
-		return this.animateRotate;
-	}
-	
-	/**
-	 * If true, will animate the rotation of the chart.
-	 */
-	public DoughnutAnimation setAnimateRotate(final Boolean animateRotate)
-	{
-		this.animateRotate = animateRotate;
-		return this;
-	}
-	
-	/**
-	 * @see #setAnimateScale(Boolean)
-	 */
-	public Boolean getAnimateScale()
-	{
-		return this.animateScale;
-	}
-	
-	/**
-	 * If true, will animate scaling the chart.
-	 */
-	public DoughnutAnimation setAnimateScale(final Boolean animateScale)
-	{
-		this.animateScale = animateScale;
-		return this;
-	}
 }

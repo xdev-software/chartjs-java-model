@@ -15,54 +15,6 @@
  */
 package software.xdev.chartjs.model.options.animation;
 
-public class PieAnimation extends Animation<PieAnimation>
+public class PieAnimation extends DoughnutAnimationBase<PieAnimation>
 {
-	
-	/**
-	 * Default {@code true}
-	 *
-	 * @see #setAnimateRotate(Boolean)
-	 */
-	protected Boolean animateRotate;
-	
-	/**
-	 * Default {@code true}
-	 *
-	 * @see #setAnimateScale(Boolean)
-	 */
-	protected Boolean animateScale;
-	
-	/**
-	 * @see #setAnimateRotate(Boolean)
-	 */
-	public Boolean getAnimateRotate()
-	{
-		return this.animateRotate;
-	}
-	
-	/**
-	 * If true, will animate the rotation of the chart.
-	 */
-	public PieAnimation setAnimateRotate(final Boolean animateRotate)
-	{
-		this.animateRotate = animateRotate;
-		return this;
-	}
-	
-	/**
-	 * @see #setAnimateScale(Boolean)
-	 */
-	public Boolean getAnimateScale()
-	{
-		return this.animateScale;
-	}
-	
-	/**
-	 * If true, will animate scaling the chart.
-	 */
-	public PieAnimation setAnimateScale(final Boolean animateScale)
-	{
-		this.animateScale = animateScale;
-		return this;
-	}
 }
