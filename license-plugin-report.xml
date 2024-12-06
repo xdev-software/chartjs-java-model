@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<licensePluginReport goal="FORMAT" timestamp="1732087667331">
-    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.5.0"/>
+<licensePluginReport goal="FORMAT" timestamp="1733491056335">
+    <module artifactId="chartjs-java-model" groupId="software.xdev" version="2.6.0"/>
     <files>
         <file path="src/main/java/software/xdev/chartjs/model/EnumNameToCamelCase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/charts/AbstractChart.java" result="NOOP"/>
@@ -64,6 +64,7 @@
         <file path="src/main/java/software/xdev/chartjs/model/options/Callbacks.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/CoreInteractionOptions.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/DoughnutOptions.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/options/DoughnutOptionsBase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/Font.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/LegendOptions.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/LineOptions.java" result="NOOP"/>
@@ -80,6 +81,7 @@
         <file path="src/main/java/software/xdev/chartjs/model/options/animation/Animations.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/animation/DefaultAnimation.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/animation/DoughnutAnimation.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/chartjs/model/options/animation/DoughnutAnimationBase.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/animation/PieAnimation.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/animation/PolarAnimation.java" result="NOOP"/>
         <file path="src/main/java/software/xdev/chartjs/model/options/animation/Resize.java" result="NOOP"/>
