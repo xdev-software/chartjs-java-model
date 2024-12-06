@@ -46,7 +46,7 @@ public class Options<T extends Options<T, A>, A extends Animation<A>>
 	protected CoreInteractionOptions interaction;
 	protected CoreInteractionOptions hover;
 	protected Animations<A> animations;
-	protected Object animation; // Not supported by all charts, but usually a boolean or of Type <A>
+	protected Object animation; // Usually a boolean or of Type <A>
 	protected Layout layout;
 	protected Plugins plugins = new Plugins();
 	
