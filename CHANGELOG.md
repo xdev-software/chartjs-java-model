@@ -1,3 +1,8 @@
+## 2.6.0
+* Synced ``Doughnut/PieOptions`` from ChartJS source code #293
+* Synced ``GridLineConfiguration`` from ChartJS source code / improved Types for more options #289
+* Updated dependencies
+
 ## 2.5.0
 * Synced ``Legend`` from ChartJS source code #285
 

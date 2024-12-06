@@ -28,7 +28,10 @@ import software.xdev.chartjs.model.options.scale.Scales;
 
 
 /**
- * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L1588">ChartJS Source</a>
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.7/src/types/index.d.ts#L1588">
+ *     ChartJS Source (Options)</a>
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.7/src/types/index.d.ts#L1756">
+ *     ChartJS Source (AnimationOptons)</a>
  */
 public class Options<T extends Options<T, A>, A extends Animation<A>>
 {
@@ -43,7 +46,7 @@ public class Options<T extends Options<T, A>, A extends Animation<A>>
 	protected CoreInteractionOptions interaction;
 	protected CoreInteractionOptions hover;
 	protected Animations<A> animations;
-	protected Boolean animation = true;
+	protected Object animation; // Usually a boolean or of Type <A>
 	protected Layout layout;
 	protected Plugins plugins = new Plugins();
 	
@@ -89,18 +92,12 @@ public class Options<T extends Options<T, A>, A extends Animation<A>>
 		return this.self();
 	}
 	
-	/**
-	 * @see #setAnimation(Boolean)
-	 */
-	public Boolean getAnimation()
+	public Object getAnimation()
 	{
 		return this.animation;
 	}
 	
-	/**
-	 * Default {@code true} Disables the Animation completely if set to {@code false}.
-	 */
-	public T setAnimation(final Boolean animation)
+	public T setAnimation(final Object animation)
 	{
 		this.animation = animation;
 		return this.self();

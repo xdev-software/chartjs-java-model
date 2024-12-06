@@ -15,25 +15,24 @@
  */
 package software.xdev.chartjs.model.options.scale;
 
-import java.util.List;
-
 import software.xdev.chartjs.model.objects.OptionalArray;
 
 
 /**
- * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.3/src/types/index.d.ts#L2971">ChartJS Source</a>
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.7/src/types/index.d.ts#L2977">ChartJS Source</a>
  */
 public class GridLineConfiguration
 {
 	protected Boolean display;
 	protected Boolean circular;
 	protected Object color;
-	protected Number lineWidth;
+	protected Object lineWidth;
 	protected Boolean drawOnChartArea;
 	protected Boolean drawTicks;
-	protected List<Number> tickBorderDash = new OptionalArray<>();
-	protected Number tickBorderDashOffset;
+	protected Object tickBorderDash = new OptionalArray<>();
+	protected Object tickBorderDashOffset;
 	protected Object tickColor;
+	protected Number tickLength;
 	protected Number tickWidth;
 	protected Boolean offset;
 	protected Number z;
@@ -71,12 +70,12 @@ public class GridLineConfiguration
 		return this;
 	}
 	
-	public Number getLineWidth()
+	public Object getLineWidth()
 	{
 		return this.lineWidth;
 	}
 	
-	public GridLineConfiguration setLineWidth(final Number lineWidth)
+	public GridLineConfiguration setLineWidth(final Object lineWidth)
 	{
 		this.lineWidth = lineWidth;
 		return this;
@@ -104,23 +103,23 @@ public class GridLineConfiguration
 		return this;
 	}
 	
-	public List<Number> getTickBorderDash()
+	public Object getTickBorderDash()
 	{
 		return this.tickBorderDash;
 	}
 	
-	public GridLineConfiguration setTickBorderDash(final List<Number> tickBorderDash)
+	public GridLineConfiguration setTickBorderDash(final Object tickBorderDash)
 	{
 		this.tickBorderDash = tickBorderDash;
 		return this;
 	}
 	
-	public Number getTickBorderDashOffset()
+	public Object getTickBorderDashOffset()
 	{
 		return this.tickBorderDashOffset;
 	}
 	
-	public GridLineConfiguration setTickBorderDashOffset(final Number tickBorderDashOffset)
+	public GridLineConfiguration setTickBorderDashOffset(final Object tickBorderDashOffset)
 	{
 		this.tickBorderDashOffset = tickBorderDashOffset;
 		return this;
@@ -135,6 +134,16 @@ public class GridLineConfiguration
 	{
 		this.tickColor = tickColor;
 		return this;
+	}
+	
+	public Number getTickLength()
+	{
+		return this.tickLength;
+	}
+	
+	public void setTickLength(final Number tickLength)
+	{
+		this.tickLength = tickLength;
 	}
 	
 	public Number getTickWidth()
