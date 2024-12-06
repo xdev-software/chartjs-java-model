@@ -1,5 +1,6 @@
 ## 2.6.0
 * Synced ``Doughnut/PieOptions`` from ChartJS source code #293
+* Updated dependencies
 
 ## 2.5.0
 * Synced ``Legend`` from ChartJS source code #285
