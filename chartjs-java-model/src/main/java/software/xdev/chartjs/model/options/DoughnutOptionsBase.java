@@ -24,12 +24,12 @@ import software.xdev.chartjs.model.options.animation.DoughnutAnimationBase;
 public abstract class DoughnutOptionsBase<O extends DoughnutOptionsBase<O, A>, A extends DoughnutAnimationBase<A>>
 	extends Options<O, A>
 {
-	private Number circumference;
-	private Object cutout; // number or string
-	private Object offset; // number or number[]
-	private Object radius; // number or string
-	private Number rotation;
-	private Number spacing;
+	protected Number circumference;
+	protected Object cutout; // number or string
+	protected Object offset; // number or number[]
+	protected Object radius; // number or string
+	protected Number rotation;
+	protected Number spacing;
 	
 	public Number getCircumference()
 	{

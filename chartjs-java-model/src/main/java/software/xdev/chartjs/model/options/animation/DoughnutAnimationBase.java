@@ -20,8 +20,8 @@ package software.xdev.chartjs.model.options.animation;
  */
 public abstract class DoughnutAnimationBase<T extends DoughnutAnimationBase<T>> extends Animation<T>
 {
-	private Boolean animateRotate;
-	private Boolean animateScale;
+	protected Boolean animateRotate;
+	protected Boolean animateScale;
 	
 	public Boolean getAnimateRotate()
 	{
