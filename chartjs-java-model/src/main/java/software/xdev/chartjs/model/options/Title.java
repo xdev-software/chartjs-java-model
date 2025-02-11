@@ -29,56 +29,33 @@ public class Title
 	protected Object padding;
 	protected Object text;
 	
-	/**
-	 * @see #setAlign(String)
-	 */
 	public String getAlign()
 	{
 		return this.align;
 	}
 	
-	/**
-	 * Alignment of the title
-	 *
-	 * <p>Default: center</p>
-	 */
 	public Title setAlign(final String align)
 	{
 		this.align = align;
 		return this;
 	}
 	
-	/**
-	 * @see #setColor(Object)
-	 */
 	public Object getColor()
 	{
 		return this.color;
 	}
 	
-	/**
-	 * Color of text
-	 */
 	public Title setColor(final Object color)
 	{
 		this.color = color;
 		return this;
 	}
 	
-	/**
-	 * @see #setFullSize(Boolean)
-	 */
 	public Boolean getFullSize()
 	{
 		return this.fullSize;
 	}
 	
-	/**
-	 * Marks that this box should take the full width/height of the canvas. If false, the box is sized and placed
-	 * above/beside the chart area.
-	 *
-	 * <p>Default: true</p>
-	 */
 	public Title setFullSize(final Boolean fullSize)
 	{
 		this.fullSize = fullSize;
@@ -96,92 +73,44 @@ public class Title
 		return this;
 	}
 	
-	/**
-	 * @see #setDisplay(Boolean)
-	 */
 	public Boolean getDisplay()
 	{
 		return this.display;
 	}
 	
-	/**
-	 * <p>
-	 * Display the title block
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code false}
-	 * </p>
-	 */
 	public Title setDisplay(final Boolean display)
 	{
 		this.display = display;
 		return this;
 	}
 	
-	/**
-	 * @see #setPosition(String)
-	 */
 	public String getPosition()
 	{
 		return this.position;
 	}
 	
-	/**
-	 * <p>
-	 * Position of the title. Only 'top' or 'bottom' are currently allowed
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code 'top'}
-	 * </p>
-	 */
 	public Title setPosition(final String position)
 	{
 		this.position = position;
 		return this;
 	}
 	
-	/**
-	 * @see #setPadding(Integer)
-	 */
 	public Object getPadding()
 	{
 		return this.padding;
 	}
 	
-	/**
-	 * <p>
-	 * Number of pixels to add above and below the title text
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code 10}
-	 * </p>
-	 */
 	public Title setPadding(final Object padding)
 	{
 		this.padding = padding;
 		return this;
 	}
 	
-	/**
-	 * @see #setText(String)
-	 */
 	public Object getText()
 	{
 		return this.text;
 	}
 	
-	/**
-	 * <p>
-	 * Title text
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code ""}
-	 * </p>
-	 */
 	public Title setText(final Object text)
 	{
 		this.text = text;
