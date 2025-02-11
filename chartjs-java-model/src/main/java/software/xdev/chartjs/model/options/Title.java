@@ -26,8 +26,8 @@ public class Title
 	protected Boolean fullSize;
 	protected String position;
 	protected Font font;
-	protected Integer padding;
-	protected String text;
+	protected Object padding;
+	protected Object text;
 	
 	/**
 	 * @see #setAlign(String)
@@ -145,7 +145,7 @@ public class Title
 	/**
 	 * @see #setPadding(Integer)
 	 */
-	public Integer getPadding()
+	public Object getPadding()
 	{
 		return this.padding;
 	}
@@ -159,7 +159,7 @@ public class Title
 	 * Default {@code 10}
 	 * </p>
 	 */
-	public Title setPadding(final Integer padding)
+	public Title setPadding(final Object padding)
 	{
 		this.padding = padding;
 		return this;
@@ -168,7 +168,7 @@ public class Title
 	/**
 	 * @see #setText(String)
 	 */
-	public String getText()
+	public Object getText()
 	{
 		return this.text;
 	}
@@ -182,7 +182,7 @@ public class Title
 	 * Default {@code ""}
 	 * </p>
 	 */
-	public Title setText(final String text)
+	public Title setText(final Object text)
 	{
 		this.text = text;
 		return this;
