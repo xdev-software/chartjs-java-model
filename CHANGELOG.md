@@ -1,3 +1,6 @@
+## 2.7.0
+* ``Title``: Make it possible to set custom padding and multi-line text #316
+
 ## 2.6.0
 * Synced ``Doughnut/PieOptions`` from ChartJS source code #293
 * Synced ``GridLineConfiguration`` from ChartJS source code / improved Types for more options #289
