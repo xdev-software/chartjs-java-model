@@ -31,15 +31,6 @@ public class Font
 		return this.family;
 	}
 	
-	/**
-	 * <p>
-	 * Font family for the scale title, follows CSS font-family options.
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"}
-	 * </p>
-	 */
 	public Font setFamily(final String family)
 	{
 		this.family = family;
@@ -51,15 +42,6 @@ public class Font
 		return this.size;
 	}
 	
-	/**
-	 * <p>
-	 * Font size for the scale title.
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code 12}
-	 * </p>
-	 */
 	public Font setSize(final Number size)
 	{
 		this.size = size;
@@ -71,15 +53,6 @@ public class Font
 		return this.style;
 	}
 	
-	/**
-	 * <p>
-	 * Font style for the scale title, follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit).
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code "normal"}
-	 * </p>
-	 */
 	public Font setStyle(final FontStyle style)
 	{
 		this.style = style;
@@ -97,17 +70,11 @@ public class Font
 		return this;
 	}
 	
-	/**
-	 * @see #setLineHeight(String)
-	 */
 	public String getLineHeight()
 	{
 		return this.lineHeight;
 	}
 	
-	/**
-	 * Height of an individual line of text
-	 */
 	public void setLineHeight(final String lineHeight)
 	{
 		this.lineHeight = lineHeight;
