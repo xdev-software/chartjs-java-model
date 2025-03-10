@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package software.xdev.chartjs.model.options;
+package software.xdev.chartjs.model.options.tooltip;
 
 import software.xdev.chartjs.model.javascript.JavaScriptFunction;
 
 
-public class Callbacks
+/**
+ * @see <a href="https://github.com/chartjs/Chart.js/blob/v4.4.8/src/types/index.d.ts#L2664">ChartJS Source<</a>
+ */
+public class TooltipCallbacks
 {
 	protected JavaScriptFunction beforeTitle;
 	protected JavaScriptFunction title;
@@ -28,254 +31,162 @@ public class Callbacks
 	protected JavaScriptFunction label;
 	protected JavaScriptFunction labelColor;
 	protected JavaScriptFunction labelTextColor;
+	protected JavaScriptFunction labelPointStyle;
 	protected JavaScriptFunction afterLabel;
 	protected JavaScriptFunction afterBody;
 	protected JavaScriptFunction beforeFooter;
 	protected JavaScriptFunction footer;
 	protected JavaScriptFunction afterFooter;
 	
-	/**
-	 * @see #setBeforeTitle(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getBeforeTitle()
 	{
 		return this.beforeTitle;
 	}
 	
-	/**
-	 * <p>
-	 * Returns the text to render before the title.
-	 * </p>
-	 */
-	public Callbacks setBeforeTitle(final JavaScriptFunction beforeTitle)
+	public TooltipCallbacks setBeforeTitle(final JavaScriptFunction beforeTitle)
 	{
 		this.beforeTitle = beforeTitle;
 		return this;
 	}
 	
-	/**
-	 * @see #setTitle(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getTitle()
 	{
 		return this.title;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render as the title of the tooltip.
-	 * </p>
-	 */
-	public Callbacks setTitle(final JavaScriptFunction title)
+	public TooltipCallbacks setTitle(final JavaScriptFunction title)
 	{
 		this.title = title;
 		return this;
 	}
 	
-	/**
-	 * @see #setAfterTitle(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getAfterTitle()
 	{
 		return this.afterTitle;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render after the title.
-	 * </p>
-	 */
-	public Callbacks setAfterTitle(final JavaScriptFunction afterTitle)
+	public TooltipCallbacks setAfterTitle(final JavaScriptFunction afterTitle)
 	{
 		this.afterTitle = afterTitle;
 		return this;
 	}
 	
-	/**
-	 * @see #setBeforeBody(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getBeforeBody()
 	{
 		return this.beforeBody;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render before the body section.
-	 * </p>
-	 */
-	public Callbacks setBeforeBody(final JavaScriptFunction beforeBody)
+	public TooltipCallbacks setBeforeBody(final JavaScriptFunction beforeBody)
 	{
 		this.beforeBody = beforeBody;
 		return this;
 	}
 	
-	/**
-	 * @see #setBeforeLabel(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getBeforeLabel()
 	{
 		return this.beforeLabel;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render before an individual label. This will be called for each item in the tooltip.
-	 * </p>
-	 */
-	public Callbacks setBeforeLabel(final JavaScriptFunction beforeLabel)
+	public TooltipCallbacks setBeforeLabel(final JavaScriptFunction beforeLabel)
 	{
 		this.beforeLabel = beforeLabel;
 		return this;
 	}
 	
-	/**
-	 * @see #setLabel(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getLabel()
 	{
 		return this.label;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render for an individual item in the tooltip.
-	 * </p>
-	 */
-	public Callbacks setLabel(final JavaScriptFunction label)
+	public TooltipCallbacks setLabel(final JavaScriptFunction label)
 	{
 		this.label = label;
 		return this;
 	}
 	
-	/**
-	 * @see #setLabelColor(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getLabelColor()
 	{
 		return this.labelColor;
 	}
 	
-	/**
-	 * <p>
-	 * Returns the colors to render for the tooltip item.
-	 * </p>
-	 */
-	public Callbacks setLabelColor(final JavaScriptFunction labelColor)
+	public TooltipCallbacks setLabelColor(final JavaScriptFunction labelColor)
 	{
 		this.labelColor = labelColor;
 		return this;
 	}
 	
-	/**
-	 * @see #setLabelTextColor(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getLabelTextColor()
 	{
 		return this.labelTextColor;
 	}
 	
-	/**
-	 * <p>
-	 * Returns the colors for the text of the label for the tooltip item.
-	 * </p>
-	 */
-	public Callbacks setLabelTextColor(final JavaScriptFunction labelTextColor)
+	public TooltipCallbacks setLabelTextColor(final JavaScriptFunction labelTextColor)
 	{
 		this.labelTextColor = labelTextColor;
 		return this;
 	}
 	
-	/**
-	 * @see #setAfterLabel(JavaScriptFunction)
-	 */
+	public JavaScriptFunction getLabelPointStyle()
+	{
+		return this.labelPointStyle;
+	}
+	
+	public TooltipCallbacks setLabelPointStyle(final JavaScriptFunction labelPointStyle)
+	{
+		this.labelPointStyle = labelPointStyle;
+		return this;
+	}
+	
 	public JavaScriptFunction getAfterLabel()
 	{
 		return this.afterLabel;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render after an individual label.
-	 * </p>
-	 */
-	public Callbacks setAfterLabel(final JavaScriptFunction afterLabel)
+	public TooltipCallbacks setAfterLabel(final JavaScriptFunction afterLabel)
 	{
 		this.afterLabel = afterLabel;
 		return this;
 	}
 	
-	/**
-	 * @see #setAfterBody(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getAfterBody()
 	{
 		return this.afterBody;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render after the body section.
-	 * </p>
-	 */
-	public Callbacks setAfterBody(final JavaScriptFunction afterBody)
+	public TooltipCallbacks setAfterBody(final JavaScriptFunction afterBody)
 	{
 		this.afterBody = afterBody;
 		return this;
 	}
 	
-	/**
-	 * @see #setBeforeFooter(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getBeforeFooter()
 	{
 		return this.beforeFooter;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render before the footer section.
-	 * </p>
-	 */
-	public Callbacks setBeforeFooter(final JavaScriptFunction beforeFooter)
+	public TooltipCallbacks setBeforeFooter(final JavaScriptFunction beforeFooter)
 	{
 		this.beforeFooter = beforeFooter;
 		return this;
 	}
 	
-	/**
-	 * @see #setFooter(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getFooter()
 	{
 		return this.footer;
 	}
 	
-	/**
-	 * <p>
-	 * Returns text to render as the footer of the tooltip.
-	 * </p>
-	 */
-	public Callbacks setFooter(final JavaScriptFunction footer)
+	public TooltipCallbacks setFooter(final JavaScriptFunction footer)
 	{
 		this.footer = footer;
 		return this;
 	}
 	
-	/**
-	 * @see #setAfterFooter(JavaScriptFunction)
-	 */
 	public JavaScriptFunction getAfterFooter()
 	{
 		return this.afterFooter;
 	}
 	
-	/**
-	 * <p>
-	 * Text to render after the footer section.
-	 * </p>
-	 */
-	public Callbacks setAfterFooter(final JavaScriptFunction afterFooter)
+	public TooltipCallbacks setAfterFooter(final JavaScriptFunction afterFooter)
 	{
 		this.afterFooter = afterFooter;
 		return this;
