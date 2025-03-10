@@ -1,3 +1,6 @@
+## 2.8.0
+* Synced ``TooltipOptions`` from ChartJS source code #330
+
 ## 2.7.0
 * ``Title``: Make it possible to set custom padding and multi-line text #316
 
