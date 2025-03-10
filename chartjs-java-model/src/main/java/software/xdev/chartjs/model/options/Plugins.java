@@ -16,6 +16,7 @@
 package software.xdev.chartjs.model.options;
 
 import software.xdev.chartjs.model.options.plugins.zoom.Zoom;
+import software.xdev.chartjs.model.options.tooltip.TooltipOptions;
 
 
 public class Plugins
@@ -23,7 +24,7 @@ public class Plugins
 	protected Title title;
 	protected Title subtitle;
 	protected LegendOptions legend;
-	protected Tooltip tooltip;
+	protected TooltipOptions tooltip;
 	protected Zoom zoom;
 	
 	/**
@@ -81,9 +82,9 @@ public class Plugins
 	}
 	
 	/**
-	 * @see #setTooltip(Tooltip)
+	 * @see #setTooltip(TooltipOptions)
 	 */
-	public Tooltip getTooltip()
+	public TooltipOptions getTooltip()
 	{
 		return this.tooltip;
 	}
@@ -98,7 +99,7 @@ public class Plugins
 	 * functions must return either a string or an array of strings. Arrays of strings are treated as multiple lines of
 	 * text.
 	 */
-	public Plugins setTooltip(final Tooltip tooltip)
+	public Plugins setTooltip(final TooltipOptions tooltip)
 	{
 		this.tooltip = tooltip;
 		return this;
