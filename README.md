@@ -34,4 +34,4 @@ View the [license of the current project](LICENSE) or the [summary including all
 * To all [contributors](https://github.com/xdev-software/chartjs-java-model/graphs/contributors) that helped to improve this library
   * Especially to the devs at [PrimeTek/PrimeFaces](https://www.primefaces.org/) that regularly provide feedback and PRs
 
-<sub>Disclaimer: This is not an official ChartJS product and not associated</sub>
+<sub>Disclaimer: This is not an official Chart.js product and not associated</sub>
