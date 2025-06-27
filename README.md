@@ -21,6 +21,10 @@ This repo extends the abandoned [Chart.java](https://github.com/mdewilde/chart) 
 | --- | --- |
 | 4.x | ``1+`` |
 
+#### Integrations
+* Vaadin - You can utilize the library in combination with our [Chart.js Wrapper for Vaadin](https://github.com/xdev-software/vaadin-chartjs-wrapper)
+* [Primefaces's Charts](https://showcase.primefaces.org/ui/chart/bar.xhtml)
+
 ## Support
 If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services/support).
 
