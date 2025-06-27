@@ -10,8 +10,26 @@ This repo extends the abandoned [Chart.java](https://github.com/mdewilde/chart) 
 
 > [!NOTE]
 > We try our best to implement the ChartJS v4 API however there are a lot of configuration options.<br/>
-> Therefore some parts migth still be missing or use the outdated v2 API from the original repo.<br/>
+> Therefore some parts might still be missing or use the outdated v2 API from the original repo.<br/>
 > If you think you found a missing or incorrect API please open an issue and/or provide a pull request.
+
+## Usage
+
+Configuring a chart is straight forward and follows a builder like pattern:
+```java
+new BarChart(new BarData()
+  .addLabels("A", "B")
+  .addDataset(new BarDataset()
+    .setLabel("X")
+    .addData(1)
+    .addData(2)))
+  .toJson(); // Do something with the json like sending it to the client
+```
+
+If you need more examples:
+* Have a look at the [demo](./chartjs-java-model-demo/) 
+* or checkout how we do it in our [tests](./chartjs-java-model/src/test/java/software/xdev/chartjs/model/)
+  * there are also [screenshots](./chartjs-java-model/src/test/resources/screenshotReferences/) available
 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/chartjs-java-model/releases/latest#Installation)
