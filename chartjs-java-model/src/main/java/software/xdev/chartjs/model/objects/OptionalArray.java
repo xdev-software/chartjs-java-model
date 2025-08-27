@@ -31,12 +31,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize(using = OptionalArray.Serializer.class)
 public class OptionalArray<E> extends ArrayList<E>
 {
-	private static final long serialVersionUID = 1470940649764L;
-	
-	
 	public static class Serializer<T> extends JsonSerializer<OptionalArray<T>>
 	{
-		
 		@Override
 		public boolean isEmpty(final SerializerProvider provider, final OptionalArray<T> value)
 		{
