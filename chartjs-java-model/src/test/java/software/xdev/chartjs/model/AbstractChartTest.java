@@ -23,7 +23,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.testcontainers.utility.MountableFile;
@@ -81,7 +83,7 @@ public abstract class AbstractChartTest
 					"new Chart(document.getElementById('c').getContext('2d'), %s)",
 					chart.toJson()));
 			this.assertCurrentBrowserViewEqualsScreenshot(
-				browserContainer,
+				browserContainer.webDriver().findElement(By.id("c")),
 				chart.getClass().getSimpleName() + screenshotReference);
 		}
 		catch(final IOException ioe)
@@ -91,10 +93,10 @@ public abstract class AbstractChartTest
 	}
 	
 	protected void assertCurrentBrowserViewEqualsScreenshot(
-		final SeleniumBrowserWebDriverContainer browserContainer,
+		final TakesScreenshot takesScreenshot,
 		final String screenshotReference) throws IOException
 	{
-		final byte[] actual = browserContainer.webDriver().getScreenshotAs(OutputType.BYTES);
+		final byte[] actual = takesScreenshot.getScreenshotAs(OutputType.BYTES);
 		
 		byte[] expected = new byte[0];
 		
