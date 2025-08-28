@@ -122,6 +122,14 @@ jobs:
         java-version: ${{ matrix.java }}
         cache: 'maven'
 
+    - name: PMD Analysis Cache
+      uses: actions/cache@v4
+      with:
+        path: '**/target/pmd/pmd.cache'
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
     - name: Run PMD
       run: ./mvnw -B test pmd:aggregate-pmd-no-fork pmd:check -P pmd -DskipTests -T2C
 
