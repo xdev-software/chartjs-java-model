@@ -126,9 +126,9 @@ jobs:
       uses: actions/cache@v4
       with:
         path: '**/target/pmd/pmd.cache'
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        key: ${{ runner.os }}-pmd-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
-          ${{ runner.os }}-maven-
+          ${{ runner.os }}-pmd-
 
     - name: Run PMD
       run: ./mvnw -B test pmd:aggregate-pmd-no-fork pmd:check -P pmd -DskipTests -T2C
