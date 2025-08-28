@@ -176,7 +176,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: 'maven'
 
     # Try to reuse existing cache from check-build
     - name: Try restore Maven Cache
