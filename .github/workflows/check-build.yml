@@ -99,6 +99,14 @@ jobs:
         java-version: ${{ matrix.java }}
         cache: 'maven'
 
+    - name: CheckStyle Cache
+      uses: actions/cache@v4
+      with:
+        path: '**/target/checkstyle-cachefile'
+        key: ${{ runner.os }}-checkstyle-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-checkstyle-
+
     - name: Run Checkstyle
       run: ./mvnw -B checkstyle:check -P checkstyle -T2C
 
@@ -122,7 +130,7 @@ jobs:
         java-version: ${{ matrix.java }}
         cache: 'maven'
 
-    - name: PMD Analysis Cache
+    - name: PMD Cache
       uses: actions/cache@v4
       with:
         path: '**/target/pmd/pmd.cache'
