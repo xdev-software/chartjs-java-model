@@ -38,7 +38,14 @@ jobs:
       with:
         distribution: ${{ matrix.distribution }}
         java-version: ${{ matrix.java }}
-        cache: 'maven'
+
+    - name: Cache Maven
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-mvn-build-
       
     - name: Build with Maven
       run: ./mvnw -B clean package -P run-integration-tests
@@ -78,7 +85,7 @@ jobs:
 
   # Ensure compatibility with Java 11
   # See https://github.com/xdev-software/chartjs-java-model/issues/14
-  build-legacy-java-11:
+  build-java-11:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -94,9 +101,9 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.m2/repository
-        key: ${{ runner.os }}-mvn-java-11-${{ hashFiles('**/pom.xml') }}
+        key: ${{ runner.os }}-mvn-build-java-11-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
-          ${{ runner.os }}-mvn-java-11-
+          ${{ runner.os }}-mvn-build-java-11-
 
     - name: Build with Maven
       run: ./mvnw -B clean package -Dmaven.test.skip=true
