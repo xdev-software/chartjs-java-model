@@ -97,7 +97,14 @@ jobs:
       with:
         distribution: ${{ matrix.distribution }}
         java-version: ${{ matrix.java }}
-        cache: 'maven'
+
+    - name: Cache Maven
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-mvn-checkstyle-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-mvn-checkstyle-
 
     - name: CheckStyle Cache
       uses: actions/cache@v4
@@ -128,7 +135,14 @@ jobs:
       with:
         distribution: ${{ matrix.distribution }}
         java-version: ${{ matrix.java }}
-        cache: 'maven'
+
+    - name: Cache Maven
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-mvn-pmd-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-mvn-pmd-
 
     - name: PMD Cache
       uses: actions/cache@v4
