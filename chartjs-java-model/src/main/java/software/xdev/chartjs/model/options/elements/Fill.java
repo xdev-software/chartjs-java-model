@@ -24,7 +24,10 @@ import software.xdev.chartjs.model.enums.FillMode;
  * <p>
  * Option on the dataset object which can be used to create area between two datasets or a dataset and a boundary.
  * </p>
+ * @deprecated Use corresponding data type like <code>Boolean</code> or <code>String</code> directly.
+ * All internal usages have been replaced by <code>Object</code>.
  */
+@Deprecated
 public class Fill<T>
 {
 	@SuppressWarnings("java:S1700") // Used inside JSON model

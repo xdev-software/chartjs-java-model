@@ -21,12 +21,11 @@ import java.util.List;
 import software.xdev.chartjs.model.enums.BorderCapStyle;
 import software.xdev.chartjs.model.enums.BorderJoinStyle;
 import software.xdev.chartjs.model.objects.OptionalArray;
-import software.xdev.chartjs.model.options.elements.Fill;
 
 
 public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T, O>
 {
-	private Fill<?> fill;
+	private Object fill;
 	
 	private Float lineTension;
 	
@@ -64,18 +63,12 @@ public abstract class PointDataset<T extends Dataset<T, O>, O> extends Dataset<T
 	
 	private final List<Object> pointStyle = new OptionalArray<>();
 	
-	/**
-	 * @see #setFill(Fill)
-	 */
-	public Fill getFill()
+	public Object getFill()
 	{
 		return this.fill;
 	}
 	
-	/**
-	 * If true, fill the area under the line
-	 */
-	public T setFill(final Fill<?> fill)
+	public T setFill(final Object fill)
 	{
 		this.fill = fill;
 		return this.self();
