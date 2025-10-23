@@ -20,7 +20,6 @@ package software.xdev.chartjs.model.options.elements;
  */
 public class LineElements
 {
-	
 	protected Line line;
 	protected Point point;
 	

@@ -41,7 +41,7 @@ public class Line
 	protected Float borderDashOffset;
 	protected BorderJoinStyle borderJoinStyle;
 	protected Boolean capBezierPoints;
-	protected Fill<?> fill;
+	protected Object fill;
 	protected Boolean stepped;
 	
 	/**
@@ -277,10 +277,7 @@ public class Line
 		return this;
 	}
 	
-	/**
-	 * @see #setFill(Fill)
-	 */
-	public Fill getFill()
+	public Object getFill()
 	{
 		return this.fill;
 	}
@@ -294,7 +291,7 @@ public class Line
 	 * Default {@code true}
 	 * </p>
 	 */
-	public Line setFill(final Fill<?> fill)
+	public Line setFill(final Object fill)
 	{
 		this.fill = fill;
 		return this;

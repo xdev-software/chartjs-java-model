@@ -24,18 +24,84 @@ import software.xdev.chartjs.model.options.elements.LineElements;
  */
 public class LineOptions extends Options<LineOptions, DefaultAnimation>
 {
+	protected Object borderCapStyle;
+	protected Number[] borderDash;
+	protected Number borderDashOffset;
+	protected Object borderJoinStyle;
+	protected Boolean capBezierPoints;
+	protected String cubicInterpolationMode;
 	protected Number tension;
 	protected Object stepped;
-	
-	/**
-	 * @see #setShowLine(Boolean)
-	 */
 	protected Boolean showLine;
-	/**
-	 * @see #setSpanGaps(Boolean)
-	 */
-	protected Boolean spanGaps;
+	protected Object fill;
+	protected Object spanGaps;
 	protected LineElements elements;
+	
+	public Object getBorderCapStyle()
+	{
+		return this.borderCapStyle;
+	}
+	
+	public LineOptions setBorderCapStyle(final Object borderCapStyle)
+	{
+		this.borderCapStyle = borderCapStyle;
+		return this;
+	}
+	
+	public Number[] getBorderDash()
+	{
+		return this.borderDash;
+	}
+	
+	public LineOptions setBorderDash(final Number[] borderDash)
+	{
+		this.borderDash = borderDash;
+		return this;
+	}
+	
+	public Number getBorderDashOffset()
+	{
+		return this.borderDashOffset;
+	}
+	
+	public LineOptions setBorderDashOffset(final Number borderDashOffset)
+	{
+		this.borderDashOffset = borderDashOffset;
+		return this;
+	}
+	
+	public Object getBorderJoinStyle()
+	{
+		return this.borderJoinStyle;
+	}
+	
+	public LineOptions setBorderJoinStyle(final Object borderJoinStyle)
+	{
+		this.borderJoinStyle = borderJoinStyle;
+		return this;
+	}
+	
+	public Boolean getCapBezierPoints()
+	{
+		return this.capBezierPoints;
+	}
+	
+	public LineOptions setCapBezierPoints(final Boolean capBezierPoints)
+	{
+		this.capBezierPoints = capBezierPoints;
+		return this;
+	}
+	
+	public String getCubicInterpolationMode()
+	{
+		return this.cubicInterpolationMode;
+	}
+	
+	public LineOptions setCubicInterpolationMode(final String cubicInterpolationMode)
+	{
+		this.cubicInterpolationMode = cubicInterpolationMode;
+		return this;
+	}
 	
 	public Number getTension()
 	{
@@ -59,64 +125,44 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 		return this;
 	}
 	
-	/**
-	 * @see #setShowLine(Boolean)
-	 */
 	public Boolean getShowLine()
 	{
 		return this.showLine;
 	}
 	
-	/**
-	 * <p>
-	 * If false, the lines between points are not drawn
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code true}
-	 * </p>
-	 */
 	public LineOptions setShowLine(final Boolean showLine)
 	{
 		this.showLine = showLine;
 		return this;
 	}
 	
-	/**
-	 * @see #setSpanGaps(Boolean)
-	 */
-	public Boolean getSpanGaps()
+	public Object getFill()
+	{
+		return this.fill;
+	}
+	
+	public LineOptions setFill(final Object fill)
+	{
+		this.fill = fill;
+		return this;
+	}
+	
+	public Object getSpanGaps()
 	{
 		return this.spanGaps;
 	}
 	
-	/**
-	 * <p>
-	 * If true, NaN data does not break the line
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code false}
-	 * </p>
-	 */
-	public LineOptions setSpanGaps(final Boolean spanGaps)
+	public LineOptions setSpanGaps(final Object spanGaps)
 	{
 		this.spanGaps = spanGaps;
 		return this;
 	}
 	
-	/**
-	 * @return {@link LineElements} instance, or {@code null} if not set
-	 */
 	public LineElements getElements()
 	{
 		return this.elements;
 	}
 	
-	/**
-	 * @param elements an {@link LineElements} instance, or {@code null}
-	 * @return this instance for method chaining
-	 */
 	public LineOptions setElements(final LineElements elements)
 	{
 		this.elements = elements;
