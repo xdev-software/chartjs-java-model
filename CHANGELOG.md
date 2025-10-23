@@ -1,3 +1,7 @@
+# 2.9.0
+* Synced `LineOptions` from ChartJS source code #439
+* Updated dependencies
+
 # 2.8.1
 * Migrated deployment to _Sonatype Maven Central Portal_ [#155](https://github.com/xdev-software/standard-maven-template/issues/155)
 

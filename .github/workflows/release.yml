@@ -11,23 +11,33 @@ permissions:
   contents: write
   pull-requests: write
 
+# DO NOT RESTORE CACHE for critical release steps to prevent a (extremely unlikely) scenario 
+# where a supply chain attack could be achieved due to poisoned cache
 jobs:
   check-code:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-    - uses: actions/checkout@v4
-      
+    - uses: actions/checkout@v5
+
     - name: Set up JDK
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: 'maven'
-      
+
+    # Try to reuse existing cache from check-build
+    - name: Try restore Maven Cache
+      uses: actions/cache/restore@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-mvn-build-
+
     - name: Build with Maven
       run: ./mvnw -B clean package -T2C
-      
+
     - name: Check for uncommited changes
       run: |
         if [[ "$(git status --porcelain)" != "" ]]; then
@@ -51,26 +61,18 @@ jobs:
     needs: [check-code]
     timeout-minutes: 10
     outputs:
-      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      upload_url: ${{ steps.create-release.outputs.upload_url }}
     steps:
-    - uses: actions/checkout@v4
-      
+    - uses: actions/checkout@v5
+
     - name: Configure Git
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-  
+
     - name: Un-SNAP 
-      run: |
-        mvnwPath=$(readlink -f ./mvnw)
-        modules=("") # root
-        modules+=($(grep -oP '(?<=<module>)[^<]+' 'pom.xml'))
-        for i in "${modules[@]}"
-        do
-            echo "Processing $i/pom.xml"
-            (cd "$i" && $mvnwPath -B versions:set -DremoveSnapshot -DgenerateBackupPoms=false)
-        done
-  
+      run: ./mvnw -B versions:set -DremoveSnapshot -DprocessAllModules -DgenerateBackupPoms=false
+
     - name: Get version
       id: version
       run: |
@@ -78,7 +80,7 @@ jobs:
         echo "release=$version" >> $GITHUB_OUTPUT
         echo "releasenumber=${version//[!0-9]/}" >> $GITHUB_OUTPUT
       working-directory: ${{ env.PRIMARY_MAVEN_MODULE }}
-  
+
     - name: Commit and Push
       run: |
         git add -A
@@ -86,10 +88,10 @@ jobs:
         git push origin
         git tag v${{ steps.version.outputs.release }}
         git push origin --tags
-    
+
     - name: Create Release
-      id: create_release
-      uses: shogo82148/actions-create-release@e5f206451d4ace2da9916d01f1aef279997f8659 # v1
+      id: create-release
+      uses: shogo82148/actions-create-release@28d99e2a5b407558d17c15d0384fc0d7fb625b4c # v1
       with:
         tag_name: v${{ steps.version.outputs.release }}
         release_name: v${{ steps.version.outputs.release }}
@@ -113,27 +115,43 @@ jobs:
     needs: [prepare-release]
     timeout-minutes: 60
     steps:
-    - uses: actions/checkout@v4
-    
+    - uses: actions/checkout@v5
+
     - name: Init Git and pull
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
         git pull
-    
+
     - name: Set up JDK
-      uses: actions/setup-java@v4
-      with: # running setup-java again overwrites the settings.xml
-        java-version: '17'
+      uses: actions/setup-java@v5
+      with: # running setup-java overwrites the settings.xml
         distribution: 'temurin'
+        java-version: '17'
+        server-id: github-central
+        server-password: PACKAGES_CENTRAL_TOKEN
+        gpg-passphrase: MAVEN_GPG_PASSPHRASE
+        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Only import once
+
+    - name: Publish to GitHub Packages Central
+      run: ../mvnw -B deploy -P publish -DskipTests -DaltDeploymentRepository=github-central::https://maven.pkg.github.com/xdev-software/central
+      working-directory: ${{ env.PRIMARY_MAVEN_MODULE }}
+      env:
+        PACKAGES_CENTRAL_TOKEN: ${{ secrets.PACKAGES_CENTRAL_TOKEN }}
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+
+    - name: Set up JDK
+      uses: actions/setup-java@v5
+      with: # running setup-java again overwrites the settings.xml
+        distribution: 'temurin'
+        java-version: '17'
         server-id: sonatype-central-portal
         server-username: MAVEN_CENTRAL_USERNAME
         server-password: MAVEN_CENTRAL_TOKEN
         gpg-passphrase: MAVEN_GPG_PASSPHRASE
-        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
 
     - name: Publish to Central Portal
-      run: ../mvnw -B deploy -P publish-sonatype-central-portal -DskipTests
+      run: ../mvnw -B deploy -P publish,publish-sonatype-central-portal -DskipTests
       env:
         MAVEN_CENTRAL_USERNAME: ${{ secrets.SONATYPE_MAVEN_CENTRAL_PORTAL_USERNAME }}
         MAVEN_CENTRAL_TOKEN: ${{ secrets.SONATYPE_MAVEN_CENTRAL_PORTAL_TOKEN }}
@@ -145,8 +163,8 @@ jobs:
     needs: [prepare-release]
     timeout-minutes: 15
     steps:
-    - uses: actions/checkout@v4
-      
+    - uses: actions/checkout@v5
+
     - name: Init Git and pull
       run: |
         git config --global user.email "actions@github.com"
@@ -154,11 +172,19 @@ jobs:
         git pull
 
     - name: Setup - Java
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: 'maven'
+
+    # Try to reuse existing cache from check-build
+    - name: Try restore Maven Cache
+      uses: actions/cache/restore@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-mvn-build-
 
     - name: Build site
       run: ../mvnw -B compile site -DskipTests -T2C
@@ -176,8 +202,8 @@ jobs:
     needs: [publish-maven]
     timeout-minutes: 10
     steps:
-    - uses: actions/checkout@v4
-      
+    - uses: actions/checkout@v5
+
     - name: Init Git and pull
       run: |
         git config --global user.email "actions@github.com"
@@ -185,22 +211,14 @@ jobs:
         git pull
 
     - name: Inc Version and SNAP 
-      run: |
-        mvnwPath=$(readlink -f ./mvnw)
-        modules=("") # root
-        modules+=($(grep -oP '(?<=<module>)[^<]+' 'pom.xml'))
-        for i in "${modules[@]}"
-        do
-            echo "Processing $i/pom.xml"
-            (cd "$i" && $mvnwPath -B build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} -DgenerateBackupPoms=false -DnextSnapshot=true -DupdateMatchingVersions=false)
-        done
+      run: ./mvnw -B versions:set -DnextSnapshot -DprocessAllModules -DgenerateBackupPoms=false
 
     - name: Git Commit and Push
       run: |
         git add -A
         git commit -m "Preparing for next development iteration"
         git push origin
-    
+
     - name: pull-request
       env:
         GH_TOKEN: ${{ github.token }}

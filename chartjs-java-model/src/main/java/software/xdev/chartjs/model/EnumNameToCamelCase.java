@@ -24,6 +24,7 @@ public final class EnumNameToCamelCase
 	{
 	}
 	
+	@SuppressWarnings("PMD.AvoidStringBuilderOrBuffer")
 	public static String getName(final Enum<?> e)
 	{
 		final StringBuilder sb = new StringBuilder(e.name().length());
