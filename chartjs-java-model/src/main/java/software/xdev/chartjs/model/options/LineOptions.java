@@ -27,7 +27,7 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 	protected Number tension;
 	protected Object stepped;
 	protected Boolean showLine;
-	protected Boolean spanGaps;
+	protected Object spanGaps;
 	protected LineElements elements;
 	
 	public Number getTension()
@@ -63,12 +63,12 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 		return this;
 	}
 	
-	public Boolean getSpanGaps()
+	public Object getSpanGaps()
 	{
 		return this.spanGaps;
 	}
 	
-	public LineOptions setSpanGaps(final Boolean spanGaps)
+	public LineOptions setSpanGaps(final Object spanGaps)
 	{
 		this.spanGaps = spanGaps;
 		return this;
