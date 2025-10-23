@@ -26,14 +26,7 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 {
 	protected Number tension;
 	protected Object stepped;
-	
-	/**
-	 * @see #setShowLine(Boolean)
-	 */
 	protected Boolean showLine;
-	/**
-	 * @see #setSpanGaps(Boolean)
-	 */
 	protected Boolean spanGaps;
 	protected LineElements elements;
 	
@@ -59,64 +52,33 @@ public class LineOptions extends Options<LineOptions, DefaultAnimation>
 		return this;
 	}
 	
-	/**
-	 * @see #setShowLine(Boolean)
-	 */
 	public Boolean getShowLine()
 	{
 		return this.showLine;
 	}
 	
-	/**
-	 * <p>
-	 * If false, the lines between points are not drawn
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code true}
-	 * </p>
-	 */
 	public LineOptions setShowLine(final Boolean showLine)
 	{
 		this.showLine = showLine;
 		return this;
 	}
 	
-	/**
-	 * @see #setSpanGaps(Boolean)
-	 */
 	public Boolean getSpanGaps()
 	{
 		return this.spanGaps;
 	}
 	
-	/**
-	 * <p>
-	 * If true, NaN data does not break the line
-	 * </p>
-	 *
-	 * <p>
-	 * Default {@code false}
-	 * </p>
-	 */
 	public LineOptions setSpanGaps(final Boolean spanGaps)
 	{
 		this.spanGaps = spanGaps;
 		return this;
 	}
 	
-	/**
-	 * @return {@link LineElements} instance, or {@code null} if not set
-	 */
 	public LineElements getElements()
 	{
 		return this.elements;
 	}
 	
-	/**
-	 * @param elements an {@link LineElements} instance, or {@code null}
-	 * @return this instance for method chaining
-	 */
 	public LineOptions setElements(final LineElements elements)
 	{
 		this.elements = elements;
