@@ -77,7 +77,7 @@ jobs:
 
     - name: Upload screenshots of test failures
       if: failure()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: test-fail-screenshots-${{ matrix.java }}
         path: ${{ env.PRIMARY_MAVEN_MODULE }}/target/screenshots
