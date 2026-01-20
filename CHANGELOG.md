@@ -1,3 +1,8 @@
+# 3.0.0
+_Java 17 is now required_
+* Updated dependencies
+  * Updated to Jackson v3 #477
+
 # 2.9.1
 * Updated dependencies
 

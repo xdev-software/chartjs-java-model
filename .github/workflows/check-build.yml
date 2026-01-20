@@ -83,31 +83,6 @@ jobs:
         path: ${{ env.PRIMARY_MAVEN_MODULE }}/target/screenshots
         if-no-files-found: ignore
 
-  # Ensure compatibility with Java 11
-  # See https://github.com/xdev-software/chartjs-java-model/issues/14
-  build-java-11:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-    - uses: actions/checkout@v6
-
-    - name: Set up JDK
-      uses: actions/setup-java@v5
-      with:
-        distribution: temurin
-        java-version: 11
-
-    - name: Cache Maven
-      uses: actions/cache@v5
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-mvn-build-java-11-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-mvn-build-java-11-
-
-    - name: Build with Maven
-      run: ./mvnw -B clean package -Dmaven.test.skip=true
-
   checkstyle:
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'pull_request' || !startsWith(github.head_ref, 'renovate/') }}

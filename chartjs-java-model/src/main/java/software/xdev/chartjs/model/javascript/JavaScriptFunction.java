@@ -15,12 +15,10 @@
  */
 package software.xdev.chartjs.model.javascript;
 
-import java.io.IOException;
-
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.databind.ser.std.StdSerializer;
 
 
 @JsonSerialize(using = JavaScriptFunction.Serializer.class)
@@ -38,13 +36,18 @@ public class JavaScriptFunction
 		return this.function;
 	}
 	
-	public static class Serializer extends JsonSerializer<JavaScriptFunction>
+	public static class Serializer extends StdSerializer<JavaScriptFunction>
 	{
+		public Serializer()
+		{
+			super(JavaScriptFunction.class);
+		}
+		
 		@Override
 		public void serialize(
 			final JavaScriptFunction value,
 			final JsonGenerator gen,
-			final SerializerProvider serializers) throws IOException
+			final SerializationContext provider)
 		{
 			gen.writeRawValue(value.function);
 		}
