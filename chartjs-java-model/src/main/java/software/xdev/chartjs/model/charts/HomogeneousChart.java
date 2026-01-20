@@ -40,9 +40,9 @@ public abstract class HomogeneousChart<T, O extends Options<O, ?>, D extends Hom
 	{
 		if(this.getOptions() != null
 			&& this.getOptions().getScales() != null
-			&& this.getOptions().getScales().getScalesList() != null)
+			&& this.getOptions().getScales().getScales() != null)
 		{
-			return this.getOptions().getScales().getScalesList().get(id) != null;
+			return this.getOptions().getScales().getScales().get(id) != null;
 		}
 		return false;
 	}

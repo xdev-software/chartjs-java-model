@@ -25,18 +25,19 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class Scales
 {
+	@SuppressWarnings("java:S1700")
 	@JsonIgnore
-	Map<String, Object> scalesList = new LinkedHashMap<>();
+	Map<String, Object> scales = new LinkedHashMap<>();
 	
 	@JsonAnyGetter
-	public Map<String, Object> getScalesList()
+	public Map<String, Object> getScales()
 	{
-		return this.scalesList;
+		return this.scales;
 	}
 	
 	public Scales addScale(final String customScaleName, final AbstractCoreScaleOptions<?, ?> scale)
 	{
-		this.getScalesList().put(customScaleName, scale);
+		this.getScales().put(customScaleName, scale);
 		return this;
 	}
 	

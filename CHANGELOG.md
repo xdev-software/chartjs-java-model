@@ -1,3 +1,6 @@
+# 2.9.1
+* Updated dependencies
+
 # 2.9.0
 * Synced `LineOptions` from ChartJS source code #439
 * Updated dependencies
