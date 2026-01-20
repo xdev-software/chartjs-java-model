@@ -160,15 +160,15 @@ class BasicChartTest extends AbstractChartTest
 	}
 	
 	private static <D extends HomogeneousData<D, S>, S extends Dataset<S, Number>> Supplier<D> createData(
-		final Map<String, BigDecimal> defaultDataMap,
+		final Map<String, BigDecimal> defaultData,
 		final Supplier<D> dataSupplier,
 		final Supplier<S> dataSetSupplier)
 	{
-		return createData(defaultDataMap, dataSupplier, dataSetSupplier, Map.Entry::getValue);
+		return createData(defaultData, dataSupplier, dataSetSupplier, Map.Entry::getValue);
 	}
 	
 	private static <D extends HomogeneousData<D, S>, S extends Dataset<S, O>, O> Supplier<D> createData(
-		final Map<String, BigDecimal> defaultDataMap,
+		final Map<String, BigDecimal> defaultData,
 		final Supplier<D> dataSupplier,
 		final Supplier<S> dataSetSupplier,
 		final Function<Map.Entry<String, BigDecimal>, O> addDataFunc)
@@ -176,7 +176,7 @@ class BasicChartTest extends AbstractChartTest
 		return () -> {
 			final S dataset = dataSetSupplier.get();
 			final D data = dataSupplier.get().addDataset(dataset);
-			for(final Map.Entry<String, BigDecimal> entry : defaultDataMap.entrySet())
+			for(final Map.Entry<String, BigDecimal> entry : defaultData.entrySet())
 			{
 				data.addLabel(entry.getKey());
 				dataset.addData(addDataFunc.apply(entry));
