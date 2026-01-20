@@ -15,13 +15,12 @@
  */
 package software.xdev.chartjs.model.objects;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.annotation.JsonSerialize;
+import tools.jackson.databind.ser.std.StdSerializer;
 
 
 /**
@@ -31,10 +30,15 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize(using = OptionalArray.Serializer.class)
 public class OptionalArray<E> extends ArrayList<E>
 {
-	public static class Serializer<T> extends JsonSerializer<OptionalArray<T>>
+	public static class Serializer<T> extends StdSerializer<OptionalArray<T>>
 	{
+		public Serializer()
+		{
+			super(OptionalArray.class);
+		}
+		
 		@Override
-		public boolean isEmpty(final SerializerProvider provider, final OptionalArray<T> value)
+		public boolean isEmpty(final SerializationContext ctxt, final OptionalArray<T> value)
 		{
 			return value == null || value.isEmpty();
 		}
@@ -42,24 +46,23 @@ public class OptionalArray<E> extends ArrayList<E>
 		@Override
 		public void serialize(
 			final OptionalArray<T> value,
-			final JsonGenerator jgen,
-			final SerializerProvider provider)
-			throws IOException
+			final JsonGenerator gen,
+			final SerializationContext provider)
 		{
 			if(value != null && !value.isEmpty())
 			{
 				if(value.size() == 1)
 				{
-					jgen.writeObject(value.get(0));
+					gen.writePOJO(value.get(0));
 				}
 				else
 				{
-					jgen.writeStartArray();
+					gen.writeStartArray();
 					for(final T t : value)
 					{
-						jgen.writeObject(t);
+						gen.writePOJO(t);
 					}
-					jgen.writeEndArray();
+					gen.writeEndArray();
 				}
 			}
 		}

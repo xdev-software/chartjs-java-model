@@ -15,18 +15,14 @@
  */
 package software.xdev.chartjs.model.charts;
 
-import java.io.UncheckedIOException;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 import software.xdev.chartjs.model.data.AbstractData;
 import software.xdev.chartjs.model.options.Options;
+import tools.jackson.databind.ObjectWriter;
+import tools.jackson.databind.json.JsonMapper;
 
 
 public abstract class AbstractChart<T, O extends Options<?, ?>, D extends AbstractData<?, ?>>
@@ -36,13 +32,16 @@ public abstract class AbstractChart<T, O extends Options<?, ?>, D extends Abstra
 	protected O options;
 	
 	@JsonIgnore
-	protected ObjectWriter defaultObjectWriter = new ObjectMapper()
-		.setDefaultPropertyInclusion(JsonInclude.Include.NON_EMPTY)
-		.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
-		.setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)
-		.setVisibility(PropertyAccessor.IS_GETTER, JsonAutoDetect.Visibility.NONE)
-		.setVisibility(PropertyAccessor.SETTER, JsonAutoDetect.Visibility.NONE)
-		.setVisibility(PropertyAccessor.CREATOR, JsonAutoDetect.Visibility.NONE)
+	protected ObjectWriter defaultObjectWriter = JsonMapper.builder()
+		.changeDefaultPropertyInclusion(v -> v
+			.withValueInclusion(JsonInclude.Include.NON_EMPTY))
+		.changeDefaultVisibility(vc -> vc
+			.withFieldVisibility(JsonAutoDetect.Visibility.ANY)
+			.withGetterVisibility(JsonAutoDetect.Visibility.NONE)
+			.withIsGetterVisibility(JsonAutoDetect.Visibility.NONE)
+			.withSetterVisibility(JsonAutoDetect.Visibility.NONE)
+			.withCreatorVisibility(JsonAutoDetect.Visibility.NONE))
+		.build()
 		.writer()
 		.forType(this.getClass());
 	
@@ -102,14 +101,7 @@ public abstract class AbstractChart<T, O extends Options<?, ?>, D extends Abstra
 	@Override
 	public String toJson()
 	{
-		try
-		{
-			return this.defaultObjectWriter.writeValueAsString(this);
-		}
-		catch(final JsonProcessingException e)
-		{
-			throw new UncheckedIOException("Failed to write json", e);
-		}
+		return this.defaultObjectWriter.writeValueAsString(this);
 	}
 	
 	@SuppressWarnings("unchecked")
