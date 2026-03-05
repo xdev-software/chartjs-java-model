@@ -1,3 +1,6 @@
+# 3.0.1
+* Updated dependencies
+
 # 3.0.0
 _Java 17 is now required_
 * Updated dependencies
