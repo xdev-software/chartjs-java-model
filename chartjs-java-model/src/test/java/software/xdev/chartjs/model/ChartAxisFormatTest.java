@@ -51,40 +51,11 @@ class ChartAxisFormatTest extends AbstractChartTest
 			"Format");
 	}
 	
-	public static class CurrencyFormatOptions
+	public record CurrencyFormatOptions(
+		String style,
+		String currency
+	)
 	{
-		private String style;
-		private String currency;
-		
-		public CurrencyFormatOptions()
-		{
-		}
-		
-		public CurrencyFormatOptions(final String style, final String currency)
-		{
-			this.style = style;
-			this.currency = currency;
-		}
-		
-		public String getStyle()
-		{
-			return this.style;
-		}
-		
-		public void setStyle(final String style)
-		{
-			this.style = style;
-		}
-		
-		public String getCurrency()
-		{
-			return this.currency;
-		}
-		
-		public void setCurrency(final String currency)
-		{
-			this.currency = currency;
-		}
 	}
 	
 	static BarData data()

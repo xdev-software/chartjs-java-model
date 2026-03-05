@@ -185,35 +185,11 @@ class BasicChartTest extends AbstractChartTest
 		};
 	}
 	
-	public static class ArgumentDTO<O extends Options<?, ?>, D extends AbstractData<?, ?>>
+	public record ArgumentDTO<O extends Options<?, ?>, D extends AbstractData<?, ?>>(
+		Supplier<Chart<?, O, D>> chartSupplier,
+		Supplier<O> optionsSupplier,
+		Supplier<D> dataSupplier
+	)
 	{
-		private final Supplier<Chart<?, O, D>> chartSupplier;
-		private final Supplier<O> optionsSupplier;
-		private final Supplier<D> dataSupplier;
-		
-		public ArgumentDTO(
-			final Supplier<Chart<?, O, D>> chartSupplier,
-			final Supplier<O> optionsSupplier,
-			final Supplier<D> dataSupplier)
-		{
-			this.chartSupplier = chartSupplier;
-			this.optionsSupplier = optionsSupplier;
-			this.dataSupplier = dataSupplier;
-		}
-		
-		public Supplier<Chart<?, O, D>> chartSupplier()
-		{
-			return this.chartSupplier;
-		}
-		
-		public Supplier<O> optionsSupplier()
-		{
-			return this.optionsSupplier;
-		}
-		
-		public Supplier<D> dataSupplier()
-		{
-			return this.dataSupplier;
-		}
 	}
 }
