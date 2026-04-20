@@ -48,7 +48,7 @@ jobs:
           ${{ runner.os }}-mvn-build-
 
     - name: Build with Maven
-      run: ./mvnw -B clean package
+      run: ./mvnw -B clean package -P run-integration-tests
 
     - name: Check for uncommited changes
       run: |
@@ -74,6 +74,14 @@ jobs:
         name: demo-files-java-${{ matrix.java }}
         path: ${{ env.DEMO_MAVEN_MODULE }}/target/${{ env.DEMO_MAVEN_MODULE }}.jar
         if-no-files-found: error
+
+    - name: Upload screenshots of test failures
+      if: failure()
+      uses: actions/upload-artifact@v7
+      with:
+        name: test-fail-screenshots-${{ matrix.java }}
+        path: ${{ env.PRIMARY_MAVEN_MODULE }}/target/screenshots
+        if-no-files-found: ignore
 
   checkstyle:
     runs-on: ubuntu-latest
