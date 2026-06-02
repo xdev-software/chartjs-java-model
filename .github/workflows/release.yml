@@ -37,7 +37,7 @@ jobs:
 
     - name: Build with Maven
       run: ./mvnw -B clean package -T2C
-      
+
     - name: Check for uncommited changes
       run: |
         if [[ "$(git status --porcelain)" != "" ]]; then
