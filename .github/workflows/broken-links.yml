@@ -3,7 +3,7 @@ name: Broken links
 on:
   workflow_dispatch:
   schedule:
-    - cron: "23 23 * * 0"
+    - cron: "23 5 * * 0"
 
 permissions:
   issues: write
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - run: mv .github/.lycheeignore .lycheeignore
 
@@ -21,6 +21,7 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2
         with:
+          args: "--verbose --no-progress './**/*.md'"
           fail: false # Don't fail on broken links, create an issue instead
 
       - name: Find already existing issue
