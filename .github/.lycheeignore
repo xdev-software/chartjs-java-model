@@ -1,3 +1,5 @@
 # Ignorefile for broken link check
 localhost
 mvnrepository.com
+# Hides behind CloudFlare
+showcase.primefaces.org
