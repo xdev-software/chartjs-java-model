@@ -65,6 +65,7 @@
 		<module name="ExplicitInitialization">
 			<property name="severity" value="info"/>
 		</module>
+		<module name="ExpressionOverBlockLambda"/>
 		<module name="FinalClass"/>
 		<module name="FinalParameters"/>
 		<module name="GenericWhitespace"/>
@@ -87,9 +88,7 @@
 		<module name="IllegalImport"/>
 		<module name="IllegalSymbol"/>
 		<module name="InterfaceIsType"/>
-		<module name="JavadocStyle">
-			<property name="checkFirstSentence" value="false"/>
-		</module>
+		<module name="JavadocContentLocation"/>
 		<module name="LeftCurly">
 			<!-- Default minus Lambda -->
 			<property name="tokens" value="ANNOTATION_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, LITERAL_CASE, LITERAL_CATCH, LITERAL_DEFAULT, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, METHOD_DEF, OBJBLOCK, STATIC_INIT, RECORD_DEF, COMPACT_CTOR_DEF"/>
@@ -146,6 +145,7 @@
 		<module name="UnnecessarySemicolonInTryWithResources"/>
 		<module name="UnusedImports"/>
 		<module name="UnusedLocalVariable"/>
+		<module name="UnusedPrivateField"/>
 		<!-- Disabled by default; should be enabled on Java 25+ -->
 		<!-- <module name="UnusedTryResourceShouldBeUnnamed"/> -->
 		<module name="UpperEll"/>

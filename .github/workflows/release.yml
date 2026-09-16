@@ -20,20 +20,21 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    - name: Set up JDK
-      uses: actions/setup-java@v5
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+    - parallel:
+      - name: Set up JDK
+        uses: actions/setup-java@v6
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-    # Try to reuse existing cache from check-build
-    - name: Try restore Maven Cache
-      uses: actions/cache/restore@v6
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-mvn-build-
+      # Try to reuse existing cache from check-build
+      - name: Try restore Maven Cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-mvn-build-
 
     - name: Build with Maven
       run: ./mvnw -B clean package -T2C
@@ -91,7 +92,7 @@ jobs:
 
     - name: Create Release
       id: create-release
-      uses: shogo82148/actions-create-release@6a396031bc74c57403da1018fec74d24c6aa03cd # v1
+      uses: shogo82148/actions-create-release@8674c0ecee617c8dfb006526bcc22a362c70b88a # v1
       with:
         tag_name: v${{ steps.version.outputs.release }}
         release_name: v${{ steps.version.outputs.release }}
@@ -124,7 +125,7 @@ jobs:
         git pull
 
     - name: Set up JDK
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v6
       with: # running setup-java overwrites the settings.xml
         distribution: 'temurin'
         java-version: '17'
@@ -141,7 +142,7 @@ jobs:
         MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
     - name: Set up JDK
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v6
       with: # running setup-java again overwrites the settings.xml
         distribution: 'temurin'
         java-version: '17'
@@ -172,7 +173,7 @@ jobs:
         git pull
 
     - name: Setup - Java
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v6
       with:
         java-version: '17'
         distribution: 'temurin'

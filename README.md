@@ -43,7 +43,7 @@ If you need more examples:
 * [Primefaces's Charts](https://showcase.primefaces.org/ui/chart/bar.xhtml)
 
 ## Support
-If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services/support).
+If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services-products/support).
 
 ## Contributing
 See the [contributing guide](./CONTRIBUTING.md) for detailed instructions on how to get started with our project.
