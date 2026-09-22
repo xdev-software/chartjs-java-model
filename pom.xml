@@ -32,7 +32,7 @@
 		<connection>scm:git:https://github.com/xdev-software/template-placeholder.git</connection>
 	</scm>
 
-	<inceptionYear>2026</inceptionYear>
+	<inceptionYear>2023</inceptionYear>
 
 	<organization>
 		<name>XDEV Software</name>
