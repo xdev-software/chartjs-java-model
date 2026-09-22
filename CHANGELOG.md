@@ -1,3 +1,7 @@
+# 3.1.0
+* Internal restructuring
+* Updated dependencies
+
 # 3.0.2
 * Updated dependencies
 
