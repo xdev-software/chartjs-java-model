@@ -14,7 +14,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>template-placeholder</module>
+		<module>chartjs-java-model</module>
 	</modules>
 
 	<build>
