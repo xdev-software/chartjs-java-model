@@ -1,4 +1,7 @@
 # 3.1.0
+* The default ObjectWriter is now a static field and only instantiated once
+  * Removed `setDefaultObjectWriter`
+  * Overwrite `getDefaultObjectWriter` if required
 * Internal restructuring
 * Updated dependencies
 

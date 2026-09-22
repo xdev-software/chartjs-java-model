@@ -28,11 +28,7 @@ import tools.jackson.databind.json.JsonMapper;
 public abstract class AbstractChart<T, O extends Options<?, ?>, D extends AbstractData<?, ?>>
 	implements Chart<T, O, D>
 {
-	protected D data;
-	protected O options;
-	
-	@JsonIgnore
-	protected ObjectWriter defaultObjectWriter = JsonMapper.builder()
+	protected static final ObjectWriter DEFAULT_OBJECT_WRITER = JsonMapper.builder()
 		.changeDefaultPropertyInclusion(v -> v
 			.withValueInclusion(JsonInclude.Include.NON_EMPTY))
 		.changeDefaultVisibility(vc -> vc
@@ -42,8 +38,10 @@ public abstract class AbstractChart<T, O extends Options<?, ?>, D extends Abstra
 			.withSetterVisibility(JsonAutoDetect.Visibility.NONE)
 			.withCreatorVisibility(JsonAutoDetect.Visibility.NONE))
 		.build()
-		.writer()
-		.forType(this.getClass());
+		.writer();
+	
+	protected D data;
+	protected O options;
 	
 	protected AbstractChart()
 	{
@@ -88,20 +86,13 @@ public abstract class AbstractChart<T, O extends Options<?, ?>, D extends Abstra
 	@JsonIgnore
 	public ObjectWriter getDefaultObjectWriter()
 	{
-		return this.defaultObjectWriter;
-	}
-	
-	@JsonIgnore
-	public T setDefaultObjectWriter(final ObjectWriter defaultObjectWriter)
-	{
-		this.defaultObjectWriter = defaultObjectWriter;
-		return this.self();
+		return DEFAULT_OBJECT_WRITER;
 	}
 	
 	@Override
 	public String toJson()
 	{
-		return this.defaultObjectWriter.writeValueAsString(this);
+		return this.getDefaultObjectWriter().writeValueAsString(this);
 	}
 	
 	@SuppressWarnings("unchecked")
