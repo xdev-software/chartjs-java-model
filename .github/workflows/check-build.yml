@@ -19,9 +19,6 @@ on:
       - '.idea/**'
       - 'assets/**'
 
-env:
-  DEMO_MAVEN_MODULE: ${{ github.event.repository.name }}-demo
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,19 +30,31 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    - name: Set up JDK
-      uses: actions/setup-java@v5
-      with:
-        distribution: ${{ matrix.distribution }}
-        java-version: ${{ matrix.java }}
+    - parallel:
+      - name: Set up JDK
+        uses: actions/setup-java@v6
+        with:
+          distribution: ${{ matrix.distribution }}
+          java-version: ${{ matrix.java }}
 
-    - name: Cache Maven
-      uses: actions/cache@v6
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-mvn-build-
+      - name: Cache Maven
+        uses: actions/cache@v6
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-mvn-build-
+      
+      - name: Docker Image Cache Restore
+        id: docker-image-cache-restore
+        uses: xdev-software/tci/.github/actions/docker-image-cache/restore@f75904872b55915e2a2f0080779a36e27c467d21 # v4.5.3
+        with:
+          # This cache could always change however because docker images can be changed remotely if the version is not fixated
+          # As a compromise it utilizes the hash of the pom files because when the dependencies stay the same 
+          # the images should also be roughly the same
+          key: ${{ runner.os }}-build-docker-images-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-docker-images-
 
     - name: Build with Maven
       run: ./mvnw -B clean package -P run-integration-tests
@@ -68,20 +77,13 @@ jobs:
           exit 1
         fi
 
-    - name: Upload demo files
-      uses: actions/upload-artifact@v7
+    - name: Docker Image Cache Save
+      uses: xdev-software/tci/.github/actions/docker-image-cache/save@f75904872b55915e2a2f0080779a36e27c467d21 # v4.5.3
+      # Only save cache for one instance, otherwise they try to overwrite each other
+      if: ${{ matrix.java == 25 }}
       with:
-        name: demo-files-java-${{ matrix.java }}
-        path: ${{ env.DEMO_MAVEN_MODULE }}/target/${{ env.DEMO_MAVEN_MODULE }}.jar
-        if-no-files-found: error
-
-    - name: Upload screenshots of test failures
-      if: failure()
-      uses: actions/upload-artifact@v7
-      with:
-        name: test-fail-screenshots-${{ matrix.java }}
-        path: ${{ env.PRIMARY_MAVEN_MODULE }}/target/screenshots
-        if-no-files-found: ignore
+        key: ${{ steps.docker-image-cache-restore.outputs.key }}
+        cache-hit: ${{ steps.docker-image-cache-restore.outputs.cache-hit }}
 
   checkstyle:
     runs-on: ubuntu-latest
@@ -94,27 +96,28 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    - name: Set up JDK
-      uses: actions/setup-java@v5
-      with:
-        distribution: ${{ matrix.distribution }}
-        java-version: ${{ matrix.java }}
+    - parallel:
+      - name: Set up JDK
+        uses: actions/setup-java@v6
+        with:
+          distribution: ${{ matrix.distribution }}
+          java-version: ${{ matrix.java }}
 
-    - name: Cache Maven
-      uses: actions/cache@v6
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-mvn-checkstyle-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-mvn-checkstyle-
+      - name: Cache Maven
+        uses: actions/cache@v6
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-mvn-checkstyle-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-mvn-checkstyle-
 
-    - name: CheckStyle Cache
-      uses: actions/cache@v6
-      with:
-        path: '**/target/checkstyle-cachefile'
-        key: ${{ runner.os }}-checkstyle-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-checkstyle-
+      - name: CheckStyle Cache
+        uses: actions/cache@v6
+        with:
+          path: '**/target/checkstyle-cachefile'
+          key: ${{ runner.os }}-checkstyle-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-checkstyle-
 
     - name: Run Checkstyle
       run: ./mvnw -B checkstyle:check -P checkstyle -T2C
@@ -130,33 +133,34 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    - name: Set up JDK
-      uses: actions/setup-java@v5
-      with:
-        distribution: ${{ matrix.distribution }}
-        java-version: ${{ matrix.java }}
+    - parallel:
+      - name: Set up JDK
+        uses: actions/setup-java@v6
+        with:
+          distribution: ${{ matrix.distribution }}
+          java-version: ${{ matrix.java }}
 
-    - name: Cache Maven
-      uses: actions/cache@v6
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-mvn-pmd-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-mvn-pmd-
+      - name: Cache Maven
+        uses: actions/cache@v6
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-mvn-pmd-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-mvn-pmd-
 
-    - name: PMD Cache
-      uses: actions/cache@v6
-      with:
-        path: '**/target/pmd/pmd.cache'
-        key: ${{ runner.os }}-pmd-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-pmd-
+      - name: PMD Cache
+        uses: actions/cache@v6
+        with:
+          path: '**/target/pmd/pmd.cache'
+          key: ${{ runner.os }}-pmd-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-pmd-
 
     - name: Run PMD
-      run: ./mvnw -B test pmd:aggregate-pmd-no-fork pmd:check -P pmd -DskipTests -T2C
+      run: ./mvnw -B test pmd:aggregate-pmd-no-fork pmd:check -P pmd -T2C
 
     - name: Run CPD (Copy Paste Detector)
-      run: ./mvnw -B pmd:aggregate-cpd pmd:cpd-check -P pmd -DskipTests -T2C
+      run: ./mvnw -B pmd:aggregate-cpd pmd:cpd-check -P pmd -T2C
 
     - name: Upload report
       if: ${{ !cancelled() }}
