@@ -27,6 +27,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.testcontainers.utility.MountableFile;
 
@@ -77,13 +78,18 @@ public abstract class AbstractChartTest
 	{
 		try
 		{
-			browserContainer.webDriver().get("file://" + CONTAINER_TEST_TEMPLATE_HTML_FILE);
-			browserContainer.webDriver().executeScript(
+			final RemoteWebDriver remoteWebDriver = browserContainer.webDriver();
+			remoteWebDriver.get("file://" + CONTAINER_TEST_TEMPLATE_HTML_FILE);
+			remoteWebDriver.executeScript(
 				String.format(
 					"new Chart(document.getElementById('c').getContext('2d'), %s)",
 					chart.toJson()));
+			
+			// Wait for render to finish
+			remoteWebDriver.executeAsyncScript("window.requestAnimationFrame(arguments[arguments.length - 1])");
+			
 			this.assertCurrentBrowserViewEqualsScreenshot(
-				browserContainer.webDriver().findElement(By.id("c")),
+				remoteWebDriver.findElement(By.id("c")),
 				chart.getClass().getSimpleName() + screenshotReference);
 		}
 		catch(final IOException ioe)
