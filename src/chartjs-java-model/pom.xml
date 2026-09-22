@@ -115,6 +115,6 @@
 			<properties>
 				<skipTests>false</skipTests>
 			</properties>
-		</profiler>
+		</profile>
 	</profiles>
 </project>
