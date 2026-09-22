@@ -7,9 +7,9 @@
 
 	<groupId>software.xdev</groupId>
 	<artifactId>root</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>3.1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<url>https://github.com/xdev-software/template-placeholder</url>
+	<url>https://github.com/xdev-software/chartjs-java-model</url>
 
 	<modules>
 		<module>src</module>
@@ -28,11 +28,11 @@
 		child.scm.connection.inherit.append.path="false"
 		child.scm.developerConnection.inherit.append.path="false"
 		child.scm.url.inherit.append.path="false">
-		<url>https://github.com/xdev-software/template-placeholder</url>
-		<connection>scm:git:https://github.com/xdev-software/template-placeholder.git</connection>
+		<url>https://github.com/xdev-software/chartjs-java-model</url>
+		<connection>scm:git:https://github.com/xdev-software/chartjs-java-model.git</connection>
 	</scm>
 
-	<inceptionYear>2026</inceptionYear>
+	<inceptionYear>2023</inceptionYear>
 
 	<organization>
 		<name>XDEV Software</name>
