@@ -84,7 +84,7 @@
 		<!-- Selenium -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-chrome-driver</artifactId>
+			<artifactId>selenium-firefox-driver</artifactId>
 			<version>4.49.0</version>
 			<scope>test</scope>
 			<exclusions>

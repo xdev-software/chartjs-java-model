@@ -26,7 +26,7 @@ import java.util.Arrays;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.testcontainers.utility.MountableFile;
@@ -60,7 +60,7 @@ public abstract class AbstractChartTest
 		}
 		
 		final SeleniumBrowserWebDriverContainer browserContainer =
-			new SeleniumBrowserWebDriverContainer(new ChromeOptions())
+			new SeleniumBrowserWebDriverContainer(new FirefoxOptions())
 				.withRecordingMode(BrowserWebDriverContainer.RecordingMode.SKIP)
 				.withCopyFileToContainer(
 					MountableFile.forClasspathResource("/" + TEST_TEMPLATE_HTML_FILE),
