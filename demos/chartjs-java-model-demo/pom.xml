@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>software.xdev</groupId>
 		<artifactId>demos</artifactId>
-		<version>3.1.0</version>
+		<version>3.1.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>chartjs-java-model-demo</artifactId>
