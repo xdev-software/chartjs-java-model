@@ -44,6 +44,17 @@ jobs:
           key: ${{ runner.os }}-mvn-build-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-mvn-build-
+      
+      - name: Docker Image Cache Restore
+        id: docker-image-cache-restore
+        uses: xdev-software/tci/.github/actions/docker-image-cache/restore@f75904872b55915e2a2f0080779a36e27c467d21 # v4.5.3
+        with:
+          # This cache could always change however because docker images can be changed remotely if the version is not fixated
+          # As a compromise it utilizes the hash of the pom files because when the dependencies stay the same 
+          # the images should also be roughly the same
+          key: ${{ runner.os }}-build-docker-images-${{ matrix.project }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-docker-images-${{ matrix.project }}-
 
     - name: Build with Maven
       run: ./mvnw -B clean package -P run-integration-tests
@@ -65,6 +76,14 @@ jobs:
           echo "::error::Unstaged changes detected. Locally try running: git clean -ffdx && ./mvnw -B clean package"
           exit 1
         fi
+
+    - name: Docker Image Cache Save
+      uses: xdev-software/tci/.github/actions/docker-image-cache/save@f75904872b55915e2a2f0080779a36e27c467d21 # v4.5.3
+      # Only save cache for one instance, otherwise they try to overwrite each other
+      if: ${{ matrix.java == 25 }}
+      with:
+        key: ${{ steps.docker-image-cache-restore.outputs.key }}
+        cache-hit: ${{ steps.docker-image-cache-restore.outputs.cache-hit }}
 
   checkstyle:
     runs-on: ubuntu-latest
