@@ -19,8 +19,11 @@ import org.junit.jupiter.api.Test;
 
 import software.xdev.chartjs.model.charts.LineChart;
 import software.xdev.chartjs.model.data.LineData;
+import software.xdev.chartjs.model.datapoint.XYDataPoint;
 import software.xdev.chartjs.model.dataset.LineDataset;
 import software.xdev.chartjs.model.options.LineOptions;
+import software.xdev.chartjs.model.options.scale.Scales;
+import software.xdev.chartjs.model.options.scale.cartesian.linear.LinearScaleOptions;
 
 
 @SuppressWarnings("java:S2699") // Done in custom method
@@ -53,6 +56,39 @@ class LineChartTest extends AbstractChartTest
 			new LineChart(data, options),
 			this.getWebContainer(),
 			"SpanGaps"
+		);
+	}
+	
+	@Test
+	void testWithXY()
+	{
+		final LineDataset dataset1 = new LineDataset()
+			.setLabel("A")
+			.addDataUnchecked(new XYDataPoint(1, 20))
+			.addDataUnchecked(new XYDataPoint(3, 20))
+			.setBorderColor("blue")
+			.setBackgroundColor("rgba(0, 0, 255, 0.2)");
+		
+		final LineDataset dataset2 = new LineDataset()
+			.setLabel("B")
+			.addDataUnchecked(new XYDataPoint(2, 20))
+			.addDataUnchecked(new XYDataPoint(4, 234))
+			.setBorderColor("gray");
+		
+		final LineData data = new LineData()
+			.addDataset(dataset1)
+			.addDataset(dataset2);
+		
+		final LineOptions options = new LineOptions()
+			.setAnimation(false)
+			.setScales(new Scales()
+				.addScale(Scales.ScaleAxis.X, new LinearScaleOptions())
+				.addScale(Scales.ScaleAxis.Y, new LinearScaleOptions()));
+		
+		this.createScreenshotAndCompare(
+			new LineChart(data, options),
+			this.getWebContainer(),
+			"XY"
 		);
 	}
 }
