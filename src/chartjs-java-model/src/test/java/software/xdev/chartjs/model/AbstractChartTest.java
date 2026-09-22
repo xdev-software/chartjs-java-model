@@ -45,6 +45,9 @@ public abstract class AbstractChartTest
 	protected static final String TEST_TEMPLATE_HTML_FILE = "test-template.html";
 	protected static final String CONTAINER_TEST_TEMPLATE_HTML_FILE = "/home/user/" + TEST_TEMPLATE_HTML_FILE;
 	
+	protected static final String TEST_CHART_JS_SOURCE = "chart.umd.js";
+	protected static final String CONTAINER_TEST_CHART_JS_SOURCE = "/home/user/" + TEST_CHART_JS_SOURCE;
+	
 	// One Container is started once and only the rendered HTML is changed. Improves performance.
 	protected static final SeleniumBrowserWebDriverContainer WEB_CONTAINER = createBrowserWithTempDirectoryMounted();
 	
@@ -61,7 +64,10 @@ public abstract class AbstractChartTest
 				.withRecordingMode(BrowserWebDriverContainer.RecordingMode.SKIP)
 				.withCopyFileToContainer(
 					MountableFile.forClasspathResource("/" + TEST_TEMPLATE_HTML_FILE),
-					CONTAINER_TEST_TEMPLATE_HTML_FILE);
+					CONTAINER_TEST_TEMPLATE_HTML_FILE)
+				.withCopyFileToContainer(
+					MountableFile.forClasspathResource("/" + TEST_CHART_JS_SOURCE),
+					CONTAINER_TEST_CHART_JS_SOURCE);
 		browserContainer.start();
 		return browserContainer;
 	}
