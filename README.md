@@ -26,9 +26,9 @@ new BarChart(new BarData()
 ```
 
 If you need more examples:
-* Have a look at the [demo](./chartjs-java-model-demo/) 
-* or checkout how we do it in our [tests](./chartjs-java-model/src/test/java/software/xdev/chartjs/model/)
-  * there are also [screenshots](./chartjs-java-model/src/test/resources/screenshotReferences/) available
+* Have a look at the [demo](./demos/chartjs-java-model-demo/) 
+* or checkout how we do it in our [tests](./src/chartjs-java-model/src/test/java/software/xdev/chartjs/model/)
+  * there are also [screenshots](./src/chartjs-java-model/src/test/resources/screenshotReferences/) available
 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/chartjs-java-model/releases/latest#Installation)
