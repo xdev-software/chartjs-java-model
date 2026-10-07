@@ -15,7 +15,7 @@
     {
       "description": "Ignore project internal dependencies",
       "matchPackagePatterns": [
-        "^software.xdev.*:template-placeholder",
+        "^software.xdev:chartjs-java-model",
         "^software.xdev.*:demos",
         "^software.xdev.*:src",
         "^software.xdev.*:root"
