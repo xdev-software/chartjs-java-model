@@ -47,7 +47,7 @@ jobs:
       
       - name: Docker Image Cache Restore
         id: docker-image-cache-restore
-        uses: xdev-software/tci/.github/actions/docker-image-cache/restore@f75904872b55915e2a2f0080779a36e27c467d21 # v4.5.3
+        uses: xdev-software/tci/.github/actions/docker-image-cache/restore@4d71cb391afc0c7e9a0a2128f5822cd78d356233 # v4.8.1
         with:
           # This cache could always change however because docker images can be changed remotely if the version is not fixated
           # As a compromise it utilizes the hash of the pom files because when the dependencies stay the same 
@@ -78,7 +78,7 @@ jobs:
         fi
 
     - name: Docker Image Cache Save
-      uses: xdev-software/tci/.github/actions/docker-image-cache/save@f75904872b55915e2a2f0080779a36e27c467d21 # v4.5.3
+      uses: xdev-software/tci/.github/actions/docker-image-cache/save@4d71cb391afc0c7e9a0a2128f5822cd78d356233 # v4.8.1
       # Only save cache for one instance, otherwise they try to overwrite each other
       if: ${{ matrix.java == 25 }}
       with:
