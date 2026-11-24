@@ -2,3 +2,5 @@
 localhost
 mvnrepository.com
 stackoverflow.com
+# Hides behind CloudFlare
+showcase.primefaces.org
